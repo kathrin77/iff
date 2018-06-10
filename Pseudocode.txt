@@ -1,0 +1,207 @@
+## Vorgehen IFF-Dublettensuche
+
+# Step 1: Rohdaten bereinigen in Datei Fulldump:
+- Entferne alle Zeichenumbrüche
+- Entferne alle Zeilen, welche im Zusatz "in:" enthalten --> separate Datei: Fulldump-nur-in, knapp 1800 Zeilen (Analytica)
+- Entferne alle Zeilen, welche im Subj1 "Zeitschriften" enthalten --> separate Datei Fulldump-nur-zs-ohne-in, ca. 1550 Zeilen (Zeitschriften)
+
+# Step 2: Datei Fulldump vorbereiten:
+- Datei Fulldump in csv-Datei umwandeln - es verbleiben ca. 12'000 Zeilen.
+- Testdateien anlegen: eine mit ca. 10,20,50,100 Zeilen 
+
+
+
+# Step 3: Daten einlesen
+
+- Datei zeilenweise in ein Array einlesen
+- jede Spalte in Variable schreiben zur Weiterverarbeitung
+- setze für bestimmte Spalten Flags:
+	- $HAS_ISBN=true
+	- $HAS_ISBN2=false
+	- $HAS_AUTHOR=true
+	- $HAS_AUTHOR2=false
+	- $HAS_PAGE=true
+	- $HAS_YEAR=true
+	- $HAS_PLACE=true
+	- $HAS_PUBLISHER=true
+	
+
+# Step 4: Variable ISBN bereinigen
+
+- Entferne alles ausser Zahlen und x oder X
+- prüfe: ist Variable nun leer?
+- wenn ja: setze Flag: HAS_ISBN=false // fertig
+- wenn nein: enthält die Variable genau 13 oder 9 Zahlen?
+- wenn ja: fertig
+- wenn nein: enthält die Variable möglicherweise zwei ISBN (d.h. enthält die Variable 26 oder 18 Zeichen)?
+- wenn ja: splitte in 2 Variablen, schreibe ISBN2 in separate Variable, setze Flag: $HAS_ISBN2=true // fertig
+- wenn nein: $HAS_ISBN=false 
+
+# Step 5: Variable Autor bereinigen
+
+- entferne Leerzeichen am Anfang und Ende
+- enthält die Variable nur noch "-" oder ist sie leer? 
+- wenn ja: setze Flag: $HAS_AUTHOR=false // fertig
+- enthält die Variable ein "/"?
+- wenn ja: setze Flag: $HAS_AUTHOR2=true, schreibe erstes Wort nach "/" bis zum nächsten Leerschlag in Variable $Author2
+- behalte nur das erste Wort (bis zum ersten Leerschlag) in Variable $Author 
+
+# Step 6: Weitere, evtl. benötigte Variablen bereinigen:
+
+- Titel: evtl. ein Trim, sonst nichts.
+- Seiten: wenn nur "-" enthält, flag $HAS_PAGE=false setzen, "-" entfernen, ansonsten vorerst so belassen.
+- Jahr: wenn nur "-" oder "online" enthält, flag $HAS_YEAR=false setzen, "-" entfernen.
+- Verlag-Ort: wenn nur "-" oder "" enthält, flag $HAS_PLACE=false setzen, "-" entfernen.
+- Verlag: wenn nur "-" oder "" enthält, flag $HAS_PUBLISHER=false setzen, "-" entfernen.
+
+
+# Step 7: Suche starten
+
+Wenn $HAS_ISBN: starte SRU-Abfrage mit $isbn als identifier
+- wenn Resultat >= 1, speichere den/die Treffer in einem Hash zur weiteren Prüfung
+- wenn Resultat 0, prüfe ob $HAS_ISBN2. Wenn ja, starte neue Suche mit $isbn2
+- wenn Resultat immer noch 0: starte folgenden Suchprozess
+
+Wenn $HAS_AUTHOR, suche mit creator=$author und title=$title, sonst: nur $title
+- wenn Resultat >= 10, starte Suche neu, ergänze mit $year
+- wenn Resultat >= 1, speichere den/die Treffer in einem Hash zur weiteren Prüfung
+- wenn Resultat 0, prüfe ob $HAS_AUTHOR2. Wenn ja, starte neue Suche mit $author2
+- wenn Resultat immer noch 0: 
+	- schreibe das array in eine Ausgabedatei "NOTFOUND" zur weiteren Prüfung.
+	- lies die nächste Zeile ein
+	
+# Step 8: Treffer-Hash überprüfen
+benötigte Match-Variablen:
+	- $TITLEMATCH = 0;
+	- $AUTHORMATCH = 0;
+	- $YEARMATCH = 0;
+	- $PAGEMATCH = 0;
+	- $PUBLISHERMATCH = 0;
+	- $PLACEMATCH = 0;
+	- $TOTALMATCH = ($TITLEMATCH+$AUTHORMATCH+$YEARMATCH+$PAGEMATCH+$PUBLISHERMATCH+$PLACEMATCH)
+	
+Prüfen: 
+- Resultat = 1 => weiter mit Step 8a
+- Resultat > 1 => weiter mit Step 8b
+
+## Step 8a: genau 1 Treffer
+
+Vergleiche Strings $title mit datafield  '245' subfield 'a' => match?
+	- wenn exakt: $TITLEMATCH = 10;
+	- wenn Teilworte-Treffer: $TITLEMATCH = 0;
+	- wenn falsch: $TITLEMATCH = -10;
+
+- wenn $TITLEMATCH <= 0: vergleiche Strings $title mit datafield  '246' subfield 'a' => match?
+	- wenn exakt: $TITLEMATCH = 10;
+	- wenn Teilworte-Treffer: $TITLEMATCH = 0;
+	- wenn falsch: $TITLEMATCH = -10;
+	
+- wenn $TITLEMATCH <= 0: vergleiche Strings $title mit datafield  '245' subfield 'b' => match?
+	- wenn exakt: $TITLEMATCH = 5;
+	- wenn Teilworte-Treffer: $TITLEMATCH = 0;
+	- wenn falsch: $TITLEMATCH = -10;
+	
+Vergleiche Strings $author mit datafield '100' subfield 'a' => match?
+	- wenn exakt: $AUTHORMATCH = 10;
+	- wenn einzelne Buchstaben abweichen oder datafield nicht existent: $AUTHORMATCH = 0;
+	- wenn falsch: $AUTHORMATCH = -10;
+	
+- wenn $AUTHORMATCH <= 0: vergleiche Strings $author mit dem ersten datafield '700' subfield 'a'
+	- wenn exakt: $AUTHORMATCH = 10;
+	- wenn einzelne Buchstaben abweichen oder datafield nicht existent: $AUTHORMATCH = 0;
+	- wenn falsch: $AUTHORMATCH = -10;
+
+- wenn $AUTHORMATCH <= 0: 
+	- prüfe ob weitere '700' Felder vorhanden und matchen:
+		- wenn exakt: $AUTHORMATCH = 5;
+		- wenn einzelne Buchstaben abweichen: $AUTHORMATCH=0;
+		- wenn falsch: $AUTHORMATCH = -10;
+	- prüfe ob $author2 vorhanden und ob eines der Felder matcht:
+		- wenn exakt: $AUTHORMATCH = 5;
+		- einzelne Buchstaben abweichen: $AUTHORMATCH=0;
+		- wenn falsch: $AUTHORMATCH = -10;
+	
+Vergleiche Zahl $year mit datafield '264' subfield 'c' => match?
+	- genau: $YEARMATCH = 10;
+	- +/- 1 Jahr: $YEARMATCH = 0;
+	- alles andere: $YEARMATCH = -10;
+	
+Zwischenstand berechnen: $TOTALMATCH
+- case 25-30: Datensatz übernehmen
+- case 0-20: weitere Vergleiche mit Feldern $page, $publisher, $place
+- case <= 0: Datensatz verwerfen, Array in Ausgabedatei NOTFOUND schreiben
+
+Weitere Vergleiche:
+
+- $page mit '300''a': 
+	- exakt: $PAGEMATCH = 20;
+	- anähernd: $PAGEMATCH = 10;
+	- falsch: $PAGEMATCH = -10;
+	
+- $publisher mit '264''b':
+	- exakt: $PUBLISHERMATCH = 10;
+	- Teilworte-Treffer: $PUBLISHERMATCH = 0;
+	- falsch: $PUBLISHERMATCH = -10;
+	
+- $place mit '264''a':
+	- exakt: $PLACEMATCH = 10;
+	- Teilworte-Treffer: $PLACEMATCH = 0;
+	- falsch: $PLACEMATCH = -10;
+
+Erneuter Zwischenstand: $TOTALMATCH
+- case 25-30: Datensatz übernehmen
+- case <= 20: Datensatz verwerfen, Array in Ausgabedatei NOTFOUND schreiben
+
+# Step 9: Datensatz aus HSG-Bibliothek?
+
+- prüfe ob '949''B' = 'IDSSG' oder 'IDSSG2'
+- wenn nein: Step 10
+- wenn ja: Step 11
+
+# Step 10: Titelsatz exportieren:
+<record> exportieren, ausser '900'-Felder ==> in Ausgabedatei OUTPUT
+
+# Step 11: IFF-spezifische Infos zum Titelsatz ergänzen in OUTPUT:
+
+- Felder tSignature, Subj1,2,3 (lokale Felder?) => IFF-Thesaurus!
+- Felder Materialart, Erstellt, Notiz und Zusatz in 500er-Felder?
+
+# Step 12: Exemplar erstellen und ergänzen in OUTPUT
+
+nach folgendem Muster:
+- 'B' = IDSSG(2?)
+- 'F' = IFF
+- 'c' = $standort
+- 'j' = $signatur
+
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSSG</subfield>
+            <subfield code="F">HSG</subfield>
+            <subfield code="c">EG</subfield>
+            <subfield code="j">QP 300 L525 +2</subfield>
+			
+
+
+## Step 8b: mehr als 1 Treffer:
+
+- Prüfe jeden einzelnen Datensatz im Hash nach Step 8a:
+	- können Hash-Einträge durch schlechten $TOTALMATCH entfernt werden? => delete from Hash
+	- kann aufgrund Vergleich von $TOTALMATCH der verbleibenden Einträge eindeutig ein Favorit festgestellt werden?
+
+- wenn ja: weiter mit Step 9
+- wenn nein: Master-Record finden:
+	- gibt es im Hash Treffer aus IDSSG/IDSSG2?
+	- gibt es im Favoritenset bevorzugte Treffer (zB. aus IDSBB, IDSLU, NEBIS)
+	- welcher Datensatz ist der vollständigste? (Kata-Level)
+	- welcher Datensatz ist der älteste? (Kata-Datum)?
+	
+- wenn nicht eruierbar: nimm den ersten Record mit dem höchsten $TOTALMATCH: weiter mit Step 9
+
+
+
+
+Bsp. 
+view-source:http://sru.swissbib.ch/sru/search/defaultdb?query=+dc.identifier+%3D+978-3-03909-126-3&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&startRecord=0&recordPacking=XML&availableDBs=defaultdb&sortKeys=Submit+query
+Leibfried Peter/Schäfer Dirk	25 Jahre Unternehmertum - Festschrift für Giorgio Behr	978-3-03909-126-3	429	Druckerzeugnis	07.06.2011 12:41		Haupt-Bibliothek	JB 165	Zürich	Versus Verlag AG	2010		JB			Allgemeine Steuerrechtsliteratur	Festschriften, Sammelwerke, Bibliographien	
+
+

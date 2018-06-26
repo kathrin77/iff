@@ -1,15 +1,21 @@
 ## Vorgehen IFF-Dublettensuche
 
+############## Vorbereitung
+
 # Step 1: Rohdaten bereinigen in Datei Fulldump:
 - Entferne alle Zeichenumbrüche
 - Entferne alle Zeilen, welche im Zusatz "in:" enthalten --> separate Datei: Fulldump-nur-in, knapp 1800 Zeilen (Analytica)
 - Entferne alle Zeilen, welche im Subj1 "Zeitschriften" enthalten --> separate Datei Fulldump-nur-zs-ohne-in, ca. 1550 Zeilen (Zeitschriften)
 
 # Step 2: Datei Fulldump vorbereiten:
-- Datei Fulldump in csv-Datei umwandeln - es verbleiben ca. 12'000 Zeilen.
-- Testdateien anlegen: eine mit ca. 10,20,50,100 Zeilen 
+- Datei Fulldump in csv-Datei umwandeln - es verbleiben ca. 12'000 Zeilen: Fulldump_MONO_20180601
+- Testdateien anlegen: 
+	- Fulldump200: jede 200. Zeile (ca. 60 Dok.)
+	- Fulldump400: jede 400. Zeile (ca. 30 Dok.)
+	- Fulldump800: jede 800. Zeile (ca. 15 Dok.)
+- Fulldumpdateien liegen in ./test
 
-
+############## Alles weitere in Datei iff_swisbb.pl 
 
 # Step 3: Daten einlesen
 

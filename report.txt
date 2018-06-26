@@ -1,0 +1,485 @@
+Titel-Suche: Das Lohnsteuerrecht
+Autor-Suche: Böckel
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Das%20Lohnsteuerrecht+AND+dc.creator+%3D+B%C3%B6ckel
+Treffer:1
+
+#Document 1:
+Feld 100a: Böckel
+A-Match: 10
+Feld 245a: Das Lohnsteuerrecht 1972
+Titel: Das Lohnsteuerrecht
+T-Match: 10
+Feld 264c: 1972
+Jahr: 1972
+J-Match: 20
+Feld 264a: Neuwied/Berlin
+Ort: Neuwied/Berlin
+P-Match: 15
+Feld 264b: Luchterhand
+Verlag: Luchterhand
+V-Match: 10
+Feld 300a bereinigt: 265
+Seiten: 265
+S-Match: 20
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Totalmatch: 85
+Korrekter Match.
+Es gibt nur das IFF-Kata. Keine Verbesserung möglich. Kata von Felix belassen.
+*****************************************************
+
+Titel-Suche: Die Besteuerung der Kapitalgesellschaften
+Autor-Suche: Schöne
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Besteuerung%20der%20Kapitalgesellschaften+AND+dc.creator+%3D+Sch%C3%B6ne
+Treffer:1
+
+#Document 1:
+Feld 100a: Schöne
+A-Match: 10
+Feld 245a: Die Besteuerung der Kapitalgesellschaften
+Titel: Die Besteuerung der Kapitalgesellschaften
+T-Match: 10
+Feld 260c: 1994
+Jahr: 1985
+J-Match: 0
+Feld 260a: Bielefeld
+Ort: Bielefeld
+P-Match: 15
+Feld 260b: Schmidt
+Verlag: Erich Schmidt Verlag
+V-Match: 0
+Feld 300a bereinigt: 232
+Seiten: 194
+S-Match: 15
+Feld 949B: NEBIS
+--------------------------OK! Im IDS vorhanden
+Totalmatch: 50
+Korrekter Match.
+Bestes Kata aus anderem Verbund exportieren und IFF-Exemplar anhängen.
+*****************************************************
+
+Titel-Suche: Die Realisierung des Vorarlberger Abfallkonzeptes
+Autor-Suche: Amt der Vorarlberger Landesregierung
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Realisierung%20des%20Vorarlberger%20Abfallkonzeptes+AND+dc.creator+%3D+Amt%20der%20Vorarlberger%20Landesregierung
+Treffer:0
+
+Titel-Suche: Eine Lanze für die Volkspension
+Autor-Suche: Theiler
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Eine%20Lanze%20f%C3%BCr%20die%20Volkspension+AND+dc.creator+%3D+Theiler
+Treffer:1
+
+#Document 1:
+Feld 100a: Theiler
+A-Match: 10
+Feld 245a: Eine Lanze für die Volkspension
+Titel: Eine Lanze für die Volkspension
+T-Match: 10
+Feld 773g: 23 (1968), Nr. 7, S. 538-542
+Jahr: 1968
+J-Match: 20
+Feld 773b: 23 (1968), Nr. 7, S. 538-542
+Seiten: 538-543
+S-Match: 0
+Feld 852B: IDSBB
+--------------------------OK! Im IDS vorhanden
+Totalmatch: 40
+Kein guter Match.
+*****************************************************
+
+ISBN-Suche: 2702102425
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+2702102425
+Treffer:1
+
+#Document 1:
+Feld 100a: Bobe
+A-Match: 10
+Feld 245a: Fiscalité et choix économiques
+Titel: Fiscalité et choix économiques
+T-Match: 10
+Feld 260c: 1978
+Jahr: 1978
+J-Match: 20
+Feld 260a: [Paris]
+Ort: Paris
+P-Match: 15
+Feld 260b: Calmann-Lévy
+Verlag: Calmann-Lévy
+V-Match: 10
+Feld 300a bereinigt: 286
+Seiten: 258
+S-Match: 15
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: VAUD
+--------------------------Nur im Rero/SNB vorhanden
+Totalmatch: 80
+Korrekter Match.
+Bestes Kata aus anderem Verbund exportieren und IFF-Exemplar anhängen.
+*****************************************************
+
+Titel-Suche: IFF-Aktuell Seminar Vereinfachung des MWSTG -
+Autor-Suche: IFF
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+IFF-Aktuell%20Seminar%20Vereinfachung%20des%20MWSTG%20-+AND+dc.creator+%3D+IFF
+Treffer:0
+
+Titel-Suche: Kostenarten-Kostenträger und Kostenhöhe im Strafprozess am Beispiel des Kantons StGallen
+Autor-Suche: Hansjakob
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Kostenarten-Kostentr%C3%A4ger%20und%20Kostenh%C3%B6he%20im%20Strafprozess%20am%20Beispiel%20des%20Kantons%20StGallen+AND+dc.creator+%3D+Hansjakob
+Treffer:0
+
+ISBN-Suche: 0815717601
+ISBN2-Suche: 0815717598
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+0815717601+OR+dc.identifier+%3D+0815717598
+Treffer:1
+
+#Document 1:
+Feld 100a: Davis
+A-Match: 10
+Feld 245a: National health insurance
+Titel: National Health Insurance
+T-Match: 10
+Feld 260c: 1975
+Jahr: 1975
+J-Match: 20
+Feld 260a: Washington, DC
+Ort: Washington
+P-Match: 15
+Feld 260b: Brookings Institution
+Verlag: Brookings Institution
+V-Match: 10
+Feld 300a bereinigt: 182
+Seiten: 175
+S-Match: 15
+Feld 949B: NEBIS
+--------------------------OK! Im IDS vorhanden
+Feld 949B: IDSBB
+--------------------------OK! Im IDS vorhanden
+Totalmatch: 80
+Korrekter Match.
+Bestes Kata aus anderem Verbund exportieren und IFF-Exemplar anhängen.
+*****************************************************
+
+ISBN-Suche: 0720202809
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+0720202809
+Treffer:1
+
+#Document 1:
+Feld 100a: Hicks
+A-Match: 10
+Feld 245a: Public finance
+Titel: Public Finance
+T-Match: 10
+Feld 260c: 1971
+Jahr: 1971
+J-Match: 20
+Feld 260a: Digswell Place
+Ort: Cambridge
+P-Match: 0
+Feld 260b: Nisbet
+Verlag: Cambridge University Press
+V-Match: 0
+Feld 300a bereinigt: 349
+Seiten: 343
+S-Match: 15
+Feld 949B: NEBIS
+--------------------------OK! Im IDS vorhanden
+Totalmatch: 55
+Korrekter Match.
+Bestes Kata aus anderem Verbund exportieren und IFF-Exemplar anhängen.
+*****************************************************
+
+Titel-Suche: Seminar Mehrwertsteuer
+Autor-Suche: IFF
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Seminar%20Mehrwertsteuer+AND+dc.creator+%3D+IFF
+Treffer:1
+
+#Document 1:
+Feld 100a: IFF
+A-Match: 10
+Feld 245a: St.Galler Seminar .... zur Mehrwertsteuer
+Titel: Seminar Mehrwertsteuer
+T-Match: 0
+Feld 264c: 
+Jahr: 2002
+J-Match: 0
+Feld 264a: St.Gallen
+Ort: St.Gallen
+P-Match: 15
+Feld 264b: IFF
+Verlag: IFF
+V-Match: 10
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Totalmatch: 35
+Kein guter Match.
+*****************************************************
+
+ISBN-Suche: 3952218014
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3952218014
+Treffer:2
+
+#Document 1:
+Feld 100a: Ackermann
+A-Match: 10
+Feld 245a: Steuern und Immobilien
+Titel: Steuern und Immobilien
+T-Match: 10
+Feld 264c: 2004
+Jahr: 2004
+J-Match: 20
+Feld 264a: St. Gallen
+Ort: St. Gallen
+P-Match: 15
+Feld 264b: HEV Verwaltungs AG
+Verlag: HEV Verwaltungs AG
+V-Match: 10
+Feld 300a bereinigt: 375
+Seiten: 378
+S-Match: 15
+Feld 949B: NEBIS
+--------------------------OK! Im IDS vorhanden
+Feld 949B: NEBIS
+--------------------------OK! Im IDS vorhanden
+Feld 949B: IDSLU
+--------------------------OK! Im IDS vorhanden
+Feld 949B: IDSLU
+--------------------------OK! Im IDS vorhanden
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949B: SGBN
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: SGBN
+--------------------------Nur im Rero/SNB vorhanden
+Totalmatch: 80
+Mehr als 1 guter Treffer.
+*****************************************************
+
+#Document 2:
+Feld 100a: Ackermann
+A-Match: 10
+Feld 245a: Steuern und Immobilien
+Titel: Steuern und Immobilien
+T-Match: 10
+Feld 260c: cop. 2004
+Jahr: 2004
+J-Match: 0
+Feld 260a: St. Gallen
+Ort: St. Gallen
+P-Match: 15
+Feld 260b: Vertrieb: HEV-Verwaltungs-AG
+Verlag: HEV Verwaltungs AG
+V-Match: 0
+Feld 300a bereinigt: 375
+Seiten: 378
+S-Match: 15
+Feld 949B: SNL
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: SNL
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Totalmatch: 50
+Mehr als 1 guter Treffer.
+*****************************************************
+
+ISBN-Suche: 0043360645
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+0043360645
+Treffer:1
+
+#Document 1:
+Feld 245a: The structure and reform of direct taxation
+Titel: The Structure and Reform of Direct Taxation
+T-Match: 10
+Feld 264c: 1978
+Jahr: 1978
+J-Match: 20
+Feld 264a: LondonBostonSydney
+Ort: London
+P-Match: 15
+Feld 264b: George Allen and Unwin
+Verlag: George Allen & Unwin
+V-Match: 0
+Feld 300a bereinigt: 533
+Seiten: 533
+S-Match: 20
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: RERO
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: ALEX
+--------------------------Nur im Rero/SNB vorhanden
+Feld 949B: IDSBB
+--------------------------OK! Im IDS vorhanden
+Feld 949B: IDSBB
+--------------------------OK! Im IDS vorhanden
+Totalmatch: 65
+Korrekter Match.
+Bestes Kata aus anderem Verbund exportieren und IFF-Exemplar anhängen.
+*****************************************************
+
+Titel-Suche: Voranschlag + Budget des Bundes
+Autor-Suche: Bundesrat der Schweiz Eidgenossenschaft
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Voranschlag%20%2B%20Budget%20des%20Bundes+AND+dc.creator+%3D+Bundesrat%20der%20Schweiz%20Eidgenossenschaft
+Treffer:1
+
+#Document 1:
+Feld 100a: Bundesrat der Schweiz. Eidgenossenschaft
+A-Match: 0
+Feld 245a: Voranschlag + Budget des Bundes
+Titel: Voranschlag + Budget des Bundes
+T-Match: 0
+Feld 264c: 1997
+Jahr: 1998
+J-Match: 10
+Feld 264a: Bern
+Ort: Bern
+P-Match: 15
+Feld 264b: Schweiz. Eidgenossenschaft
+Verlag: Schweiz. Eidgenossenschaft
+V-Match: 10
+Feld 300a bereinigt: 268
+Seiten: 264
+S-Match: 15
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Feld 949B: IDSSG
+--------------------------An HSG vorhanden
+Feld 949F: HIFF
+--------------------------Leider schon vom IFF eingespielt...
+Totalmatch: 50
+Korrekter Match.
+Es gibt nur das IFF-Kata. Keine Verbesserung möglich. Kata von Felix belassen.
+*****************************************************
+

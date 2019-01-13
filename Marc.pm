@@ -13,6 +13,7 @@ my $MARC264a;
 my $MARC260c;
 my $MARC260b;
 my $MARC260a;
+my $MARC773g;
 my $MARC300a;
 my $MARC949B;
 my $MARC949F;

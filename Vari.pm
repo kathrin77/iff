@@ -16,6 +16,7 @@ my $subtitle = '';
 my $volume = '';;
 my $titledate = '';
 my $escaped_title;
+my $shorttitle;
 
 #	ISBN:
 my $isbn;

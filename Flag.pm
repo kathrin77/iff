@@ -14,6 +14,8 @@ my $HAS_PAGES;
 my $HAS_PAGERANGE;
 my $HAS_PLACE;
 my $HAS_PUBLISHER;
+my $NO_MONOGRAPH;
+my $HAS_HIFF;
 
 
 

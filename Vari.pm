@@ -19,7 +19,7 @@ my $escaped_title;
 my $shorttitle;
 
 #	ISBN:
-my $isbn;
+my $isbn = '';
 my $isbn2;
 my $isbnlength;
 

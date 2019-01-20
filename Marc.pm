@@ -19,6 +19,11 @@ my $MARC949B;
 my $MARC949F;
 my $MARC852F;
 my $MARC852B;
+my $MARC035a;
+my $OCLCnr;
+my $MARC008;
+my $LDR;
+my $MARC001;
 
 
 

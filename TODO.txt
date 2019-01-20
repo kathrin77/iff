@@ -1,0 +1,28 @@
+TODO:
+
+- Seitenzahlen-Auswertung weglassen -> bringt nichts
+- Materialart auswerten: LDR:
+07 - Bibliographic level
+	
+"m" - Monografie/Exemplar
+"a" - Unselbstständiger Teil einer Monografie
+"b" - Unselbstständiger Teil eines fortlaufenden Sammelwerkes 
+"c" - Sammlung 
+"d" - Untereinheit
+"i" - Integrierende Ressource
+"s" - Fortlaufendes Sammelwerk
+	
+- IDSSG - IFF-Kata: Punkte abziehen
+- Jahr: aus Feld 008: pos. 07-10 - Date 1 
+
+- Schreibweisen St. Gallen / St.Gallen (Ort)
+- Verlag: -Verlag wegschneiden
+- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche ganz weglassen?
+- Cahiers de Droit fiscale. Korr. Titel im Zusatz!
+- Best record ist analytisch -> Uplink muss mitgeliefert werden. Bsp. Cahiers... 9789012390682
+
+- wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
+- Flick, Aussensteuerrecht, Bd. III 
+- Statistisches Bundesamt: Zusatz wird nicht beachtet.
+- Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden?
+

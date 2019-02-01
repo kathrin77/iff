@@ -1,6 +1,13 @@
+DONE:
+- Seitenzahlen-Auswertung weglassen -> bringt nichts
+- Fehler im Titel: Wenn Hochkomma vorkommen, müssen entfernt werden!!(oder ersetzt mit "") 
+- ISBN-Suche geändert. 
+- IDSSG - IFF-Kata: Punkte abziehen
+- Jahr: aus Feld 008: pos. 07-10 - Date 1 
+
 TODO:
 
-- Seitenzahlen-Auswertung weglassen -> bringt nichts
+
 - Materialart auswerten: LDR:
 07 - Bibliographic level
 	
@@ -12,17 +19,109 @@ TODO:
 "i" - Integrierende Ressource
 "s" - Fortlaufendes Sammelwerk
 	
-- IDSSG - IFF-Kata: Punkte abziehen
-- Jahr: aus Feld 008: pos. 07-10 - Date 1 
+
+
 
 - Schreibweisen St. Gallen / St.Gallen (Ort)
 - Verlag: -Verlag wegschneiden
-- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche ganz weglassen?
+- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche wird nicht mehr durchgeführt, aber noch nicht auf ISBN geprüft. 
+
 - Cahiers de Droit fiscale. Korr. Titel im Zusatz!
 - Best record ist analytisch -> Uplink muss mitgeliefert werden. Bsp. Cahiers... 9789012390682
 
 - wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
-- Flick, Aussensteuerrecht, Bd. III 
+- Flick, Aussensteuerrecht, Bd. III -> Loseblattsammlung. Evtl. nach Materialtyp suchen und auf Liste der manuell zu bereinigenden?
+
+
 - Statistisches Bundesamt: Zusatz wird nicht beachtet.
 - Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden?
 
+- Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
+- Festschriften beachten.
+
+
+
+- wenn gleich viele Punkte: wer hat am meisten angehängte Bibliotheken? (aktuell wird nach IDS SGBN bevorzugt --> willkürlich)
+- Fehlermeldung: index: cql.serverChoice not supported, Bsp. Nystad, Application of Control and System Theory to Macroeconomics
+- HSG-Dissertationen beachten.
+- Separata: ergibt das je was Schlaues?
+- wenn an HSG ein Treffer vorhanden: HSG-Bibnr. liefern statt Swissbibnr
+- wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen!
+
+
+------------
+
+
+!!!!!!!!!!!!
+Problem: Am IFF-Katalogisat haben sich schon andere angehängt. Nun wurde es sogar verbessert... Jetzt sollte man das doch neu importieren, oder?
+
+Bsp. 
+
+NEW ROW: #12
+*********************************************************************************
+ISBN: 3631328001
+Autor: Meerpohl --- Autor2: 
+Titel: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Frankfurt am Main - Verlag: Peter Lang - Jahr: 1998 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Mutter-%2FTochter-Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3D+1998
+Treffer: 
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3631328001
+Treffer mit geaendertem Suchstring: 1
+
+#Document 1:
+Feld 100a: Meerpohl
+AUTHORMATCH: 10
+Feld 245a: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten
+TITLEMATCH: 10
+Feld 008: 1998
+YEARMATCH: 10
+Feld 260a: Frankfurt am Main
+PLACEMATCH: 5
+Feld 260b: Lang
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 264946782
+Feld 035a: (NEBIS)001910902
+IDSMATCH: 9
+Feld 035a: (SNL)991016050069703976
+Feld 035a: (IDSSG)000991061
+Abzug fuer IFF_MATCH: 15
+Feld 035a: (Sz)1163968-41snl_51
+Feld 035a: (Sz)vtls001163968
+Feld 035a: (Sz)001163968
+Totalmatch: 44
+Bestmatch: 44, Bestrecordnr: 264946782
+Only IFF data available. Best solution from Felix.
+
+NEW ROW: #18
+*********************************************************************************
+
+
+
+Autor: Fries --- Autor2: 
+Titel: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Freiburg - Verlag: Universität - Jahr: 1997 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20%C3%BCberkantonale%20und%20%C3%BCberdi%C3%B6zesane%20Finanzierung%20der%20r%C3%B6misch-katholischen%20Kirche%20in%20der%20Schweiz+AND+dc.anywhere+%3D+Fries+AND+dc.date+%3D+1997
+Treffer: 1
+
+#Document 1:
+Feld 100a: Fries
+AUTHORMATCH: 10
+Feld 245a: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
+TITLEMATCH: 10
+Feld 008: 1997
+YEARMATCH: 10
+Feld 260a: [Freiburg/Schweiz]
+PLACEMATCH: 5
+Feld 260b: [s.n.]
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515929271
+Feld 035a: (RERO)R222931560
+Feld 035a: (IDSSG)000991066
+Abzug fuer IFF_MATCH: 15
+Totalmatch: 35
+Bestmatch: 35, Bestrecordnr: 515929271
+Only IFF data available. Best solution from Felix.

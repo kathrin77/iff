@@ -1,0 +1,73 @@
+
+https://www.swissbib.ch/Record/182638006
+Autor: Haas --- Autor2: 
+Titel: Chancen und Gefahren des New Public Managements --- Untertitel: für die Privatwirtschaft --- Titeldatum:  --- Band: 
+Ort: Bern - Verlag: ECOPLAN - Jahr: 1996 - Materialart: m
+- Problem: autor
+
+ISBN: 3504260416
+Autor: Flick --- Autor2: Wassermeyer
+Titel: Aussensteuerrecht --- Untertitel:  --- Titeldatum:  --- Band: Bd III
+Ort: Köln - Verlag: Verlag Dr. Otto Schmidt - Jahr: 2017 - Materialart: abcdis
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aussensteuerrecht+AND+dc.anywhere+%3D+Flick+AND+dc.date+%3D+2017
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3504260416
+Treffer mit geaendertem Suchstring: 4
+
+- Wieso wird das (und überhaupt HSg-Dokumente) nicht gefunden.
+https://aleph.unisg.ch/F?func=direct&doc_number=000991058&local_base=hsb01
+
+
+Fehlermeldung index: cql.serverChoice not supported
+Es gibt ein IFF-Treffer und ein IDSSG-Treffer!
+https://www.swissbib.ch/Record/261414798
+Autor: Nystad --- Autor2: 
+Titel: Application of Control and System Theory to Macroeconomics --- Untertitel: A Survey --- Titeldatum:  --- Band: 
+Ort: St. Gallen - Verlag: Forschungsgemeinschaft für Nationalökonomie - Jahr: 1981 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad+AND+dc.date+%3D+1981
+Treffer: 
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad
+Diese Suche taugt auch nichts.
+OOOOOOOOOO
+
+
+
+- IFF noch nicht angehängt:
+Bestmatch: 85, Bestrecordnr: 26888952X
+Bestmöglichster Fall: IFF bereits an HSG-Ex. angehängt - nichts mehr zu tun!
+Ersetzen: alt 515870234 mit neu 26888952X
+
+
+ISBN: 9041103929
+Autor: IFA --- Autor2: 
+Titel: Cahiers de Droit Fiscal International --- Untertitel:  --- Titeldatum:  --- Band: Vol LXXXIIb 1997
+Ort: The Hague / London / Boston - Verlag: Kluwer - Jahr: 1997 - Materialart: abcdis
+- zu viele & falsche Treffer!!
+
+NEW ROW: #27
+*********************************************************************************
+ISBN: 9041103929
+Autor: IFA --- Autor2: 
+Titel: Cahiers de Droit Fiscal International --- Untertitel:  --- Titeldatum:  --- Band: Vol LXXXIIb 1997
+Ort: The Hague / London / Boston - Verlag: Kluwer - Jahr: 1997 - Materialart: abcdis
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Cahiers%20de%20Droit%20Fiscal%20International+AND+dc.anywhere+%3D+IFA+AND+dc.date+%3D+1997
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+9041103929
+Treffer mit geaendertem Suchstring: 4
+
+Bestmatch: 39, Bestrecordnr: 180810901
+Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 180810901
+-------
+Autor: ﻿Bombach --- Autor2: 
+Titel: Wirtschaft und Bevölkerung im Kanton Aargau --- Untertitel:  --- Titeldatum: 1985 --- Band: 
+Ort: Basel - Verlag: Prognos AG - Jahr: 1965 - Materialart: abcdis
+zahlreiche gute Treffer (ohne Autor Bombach)
+
+https://www.swissbib.ch/Record/450662284
+NEW ROW: #2
+*********************************************************************************
+ISBN: 0801498600
+ISBN-2: 0801409144
+Autor: Miller --- Autor2: 
+Titel: A Program for Direct and Proxy Voting in the Legislative Process --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: London - Verlag: Cornell University Press - Jahr:  - Materialart: abcdis

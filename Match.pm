@@ -16,7 +16,6 @@ my $bibnr;
 
 my $bestmatch;
 my $bestrecord;
-my $iff2replace;
 my $bestrecordnr;
 
 ####################

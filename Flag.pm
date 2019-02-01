@@ -16,6 +16,8 @@ my $HAS_PLACE;
 my $HAS_PUBLISHER;
 my $NO_MONOGRAPH;
 my $HAS_HIFF;
+my $iff2replace;
+my $bestcase;
 
 
 

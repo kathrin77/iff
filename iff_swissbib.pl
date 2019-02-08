@@ -34,7 +34,7 @@ my @unsure;
 my $found_nr    = 0;
 my $notfound_nr = 0;
 my $replace_nr  = 0;
-my $unsure_nr = 0;
+my $unsure_nr   = 0;
 
 # regex:
 my $HYPHEN_ONLY = qr/\A\-/;       # a '-' in the beginning
@@ -42,17 +42,19 @@ my $EMPTY_CELL  = qr/\A\Z/;       #nothing in the cell
 my $TITLE_SPLIT = qr/\s{2,3}/;    #min 2, max 3 whitespaces
 
 # testfiles
-my $test30 = "data/test30.csv"; # 30 Dokumente
-my $test200 = "data/test200.csv"; # 200 Dokumente
+my $test30  = "data/test30.csv";     # 30 Dokumente
+my $test200 = "data/test200.csv";    # 200 Dokumente
 
 # input, output, filehandles:
 my $csv;
 my $fh_in;
+
 #my $fh_found;
 my $fh_notfound;
 my $fh_unsure;
 my $fh_report;
 my $fh_export;
+
 #my $fh_journals;
 
 # Swissbib SRU-Service for the complete content of Swissbib:
@@ -103,13 +105,15 @@ my $i;
 ##########################################################
 
 # open input/output:
-$csv = Text::CSV->new( { binary => 1, sep_char=> ";"} ) # CSV-Char-Separator = ;
+$csv =
+  Text::CSV->new( { binary => 1, sep_char => ";" } )    # CSV-Char-Separator = ;
   or die "Cannot use CSV: " . Text::CSV->error_diag();
 
-#open $fh_in, "<:encoding(utf8)", $test30 or die "$test30: $!";
-open $fh_in, "<:encoding(utf8)", $test200 or die "$test200: $!";
+open $fh_in, "<:encoding(utf8)", $test30 or die "$test30: $!";
+
+#open $fh_in, "<:encoding(utf8)", $test200 or die "$test200: $!";
 open $fh_notfound, ">:encoding(utf8)", "notfound.csv" or die "notfound.csv: $!";
-open $fh_unsure, ">:encoding(utf8)", "unsure.csv" or die "unsure.csv: $!";
+open $fh_unsure,   ">:encoding(utf8)", "unsure.csv"   or die "unsure.csv: $!";
 open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 open $fh_export, ">:encoding(utf8)", "swissbibexport.xml"
   or die "swissbibexport.xml: $!";
@@ -119,13 +123,15 @@ while ( $row = $csv->getline($fh_in) ) {
     push @rows, $row;
 
     #get all necessary variables
-    $Vari::author = $row->[0];
-    $Vari::title  = $row->[1];
-    $Vari::isbn   = $row->[2];
-    $Vari::pages  = $row->[3];
+    $Vari::author   = $row->[0];
+    $Vari::title    = $row->[1];
+    $Vari::isbn     = $row->[2];
+    $Vari::pages    = $row->[3];
     $Vari::material = $row->[4];
+
     #$Vari::created = $row->[5];
     $Vari::addendum = $row->[6];
+
     #$Vari::location = $row->[7];
     $Vari::callno    = $row->[8];
     $Vari::place     = $row->[9];
@@ -167,21 +173,21 @@ while ( $row = $csv->getline($fh_in) ) {
         $Vari::isbn  = substr $Vari::isbn, 0, 10;
         $Flag::HAS_ISBN2 = 1;
     }
-    elsif ( $Vari::isbnlength == 13 || $Vari::isbnlength == 10 ) {   #one valid ISBN
+    elsif ( $Vari::isbnlength == 13 || $Vari::isbnlength == 10 )
+    {                                      #one valid ISBN
         $Flag::HAS_ISBN = 1;
     }
-    else {    #not a valid ISBN
+    else {                                 #not a valid ISBN
         $Flag::HAS_ISBN = 0;
     }
 
     if ($Flag::HAS_ISBN) {
-        print $fh_report "ISBN: " . $Vari::isbn. "\n";
+        print $fh_report "ISBN: " . $Vari::isbn . "\n";
     }
-      
+
     if ($Flag::HAS_ISBN2) {
         print $fh_report "ISBN-2: " . $Vari::isbn2 . "\n";
     }
-
 
     #############################
     # Deal with AUTHOR/AUTORITIES
@@ -285,8 +291,8 @@ while ( $row = $csv->getline($fh_in) ) {
 
     $Vari::title =~ s/\.//g;       #remove dots
     $Vari::title =~ s/\(|\)//g;    #remove ()
-    $Vari::title =~ s/^L\'//g;		#remove L' in the beginning
-    $Vari::title =~ s/\'//g;        #remove '
+    $Vari::title =~ s/^L\'//g;     #remove L' in the beginning
+    $Vari::title =~ s/\'//g;       #remove '
 
 #check if title has subtitle that needs to be eliminated: (2 or 3 whitespaces) #TODO depends on how carriage returns are removed! works for now.
     if ( $Vari::title =~ /$TITLE_SPLIT/ ) {
@@ -459,14 +465,18 @@ while ( $row = $csv->getline($fh_in) ) {
 
     #empty sruquery:
     $sruquery = '';
-    
-    $Vari::escaped_title = uri_escape_utf8($Vari::title);
+
+    $Vari::escaped_title  = uri_escape_utf8($Vari::title);
     $Vari::escaped_author = uri_escape_utf8($Vari::author);
-    $sruquery = $server_endpoint . $titlequery . $Vari::escaped_title 
-    . "+AND" . $anyquery . $Vari::escaped_author; # "any" query sucht auch in 245$c;
-    
-    #note: all documents except journals have an "author" field in some kind, so it should never be empty.
-    
+    $sruquery =
+        $server_endpoint
+      . $titlequery
+      . $Vari::escaped_title . "+AND"
+      . $anyquery
+      . $Vari::escaped_author;    # "any" query sucht auch in 245$c;
+
+#note: all documents except journals have an "author" field in some kind, so it should never be empty.
+
     if ($Flag::HAS_YEAR) {
 
         $sruquery .= "+AND" . $yearquery . $Vari::year;
@@ -494,17 +504,23 @@ while ( $row = $csv->getline($fh_in) ) {
 
 ### debug output:
     if ( $numberofrecords == 0 ) {
-        
-        #repeat query without year or with isbn:        
+
+        #repeat query without year or with isbn:
         $sruquery = "";
         if ($Flag::HAS_ISBN) {
-             $sruquery = $server_endpoint . $isbnquery . $Vari::isbn;
-        } else {
-            $sruquery = $server_endpoint . $anyquery . $Vari::escaped_title 
-            ."+AND" . $anyquery . $Vari::escaped_author;
+            $sruquery = $server_endpoint . $isbnquery . $Vari::isbn;
+        }
+        else {
+            $sruquery =
+                $server_endpoint
+              . $anyquery
+              . $Vari::escaped_title . "+AND"
+              . $anyquery
+              . $Vari::escaped_author;
         }
 
         print $fh_report "URL geaendert, da 0 Treffer: " . $sruquery . "\n";
+
         #Suche wiederholen mit neuer query:
         # load xml as DOM object, # register namespaces of xml
         $dom = XML::LibXML->load_xml( location => $sruquery );
@@ -525,10 +541,7 @@ while ( $row = $csv->getline($fh_in) ) {
             #debug
             print $fh_report "Diese Suche taugt auch nichts.\n";
             print $fh_report "OOOOOOOOOO\n\n";
-        } 
-        
-
-
+        }
 
         # TODO: Fehlercode auswerten.
         # TODO: make a new query with other parameters, if still 0:
@@ -549,7 +562,7 @@ while ( $row = $csv->getline($fh_in) ) {
         else {
             #debug
             print $fh_report
-"Treffermenge zu hoch!!! Keine gute Suche möglich (Verlag/Ort nicht vorh.).\n";
+"Treffermenge zu hoch!!! Keine gute Suche moeglich (Verlag/Ort nicht vorh.).\n";
             print $fh_report "OOOOOOOOOO\n\n";
 
             # TODO: Treffer auswerten.
@@ -593,101 +606,93 @@ while ( $row = $csv->getline($fh_in) ) {
         foreach $rec (@record) {
             print $fh_report "\n#Document $i:\n";
             resetMatch();    # setze für jeden Record die MATCHES wieder auf 0.
-            
-            
+
             #TODO: check isbn
-            
-                             #CHECK AUTHORS & AUTHORITIES:
-            if (   $Flag::HAS_AUTHOR
-                && $xpc->exists( './datafield[@tag="100"]', $rec ) )
-            {
-                foreach $el ( $xpc->findnodes( './datafield[@tag=100]', $rec ) )
-                {
-                    $Marc::MARC100a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
+            #CHECK AUTHORS & AUTHORITIES:
 
-                    # debug:
-                    print $fh_report "Feld 100a: " . $Marc::MARC100a . "\n";
+            if ($Flag::HAS_AUTHOR) {
+                if ( hasTag( "100", $xpc, $rec ) ) {     
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=100]', $rec ) )
+                    {
+                        $Marc::MARC100a =
+                          $xpc->findnodes( './subfield[@code="a"]', $el )
+                          ->to_literal;
 
-                    #print $fh_report "Autor: ".$Vari::author."\n";
-                    if ( $Vari::author =~ m/$Marc::MARC100a/i )
-                    { #kommt Autor in 100a vor? (ohne Gross-/Kleinschreibung zu beachten)
-                        $Match::AUTHORMATCH = 10;
-                    }    #else { $Match::AUTHORMATCH = 0; }
-                         # debug:
-                    print $fh_report "AUTHORMATCH: "
-                      . $Match::AUTHORMATCH . "\n";
-                }
-            }
-            elsif ($Flag::HAS_AUTHOR
-                && $xpc->exists( './datafield[@tag="700"]', $rec ) )
-            {
-                foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
-                {
-                    $Marc::MARC700a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
+                        # debug:
+                        print $fh_report "Feld 100a: " . $Marc::MARC100a . "\n";
 
-                    # debug:
-                    print $fh_report "Feld 700a: " . $Marc::MARC700a . "\n";
-
-                    #print $fh_report "Autor: ".$Vari::author."\n";
-                    if ( $Marc::MARC700a =~ m/$Vari::author/i )
-                    { #kommt Autor in 700a vor? (ohne Gross-/Kleinschreibung zu beachten)
-                        $Match::AUTHORMATCH = 10;
-                    }    #else { $Match::AUTHORMATCH = 0; }
-                         # debug:
-                    print $fh_report "AUTHORMATCH: "
-                      . $Match::AUTHORMATCH . "\n";
-                }
-            }
-
-            if (   $Flag::HAS_AUTHOR2
-                && $xpc->exists( './datafield[@tag="700"]', $rec ) )
-            {
-                foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
-                {
-                    $Marc::MARC700a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 700a: " . $Marc::MARC700a . "\n";
-                    print $fh_report "Autor2: " . $Vari::author2 . "\n";
-                    if ( $Marc::MARC700a =~ m/$Vari::author2/i )
-                    { #kommt Autor2 in 700a vor? (ohne Gross-/Kleinschreibung zu beachten)
-                        $Match::AUTHORMATCH += 10;    #füge 10 Punkte hinzu.
+                        #print $fh_report "Autor: ".$Vari::author."\n";
+                        if ( $Vari::author =~ m/$Marc::MARC100a/i )
+                        { #kommt Autor in 100a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                            $Match::AUTHORMATCH = 10;
+                        }    #else { $Match::AUTHORMATCH = 0; }
+                             # debug:
+                        print $fh_report "AUTHORMATCH: "
+                          . $Match::AUTHORMATCH . "\n";
                     }
 
-                    # debug:
-                    print $fh_report "AUTHORMATCH: "
-                      . $Match::AUTHORMATCH . "\n";
+                }
+                if (hasTag( "700", $xpc, $rec ) ) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
+                    {
+                        $Marc::MARC700a =
+                          $xpc->findnodes( './subfield[@code="a"]', $el )
+                          ->to_literal;
+
+                        # debug:
+                        print $fh_report "Feld 700a: " . $Marc::MARC700a . "\n";
+
+                        #print $fh_report "Autor: ".$Vari::author."\n";
+                        if ( $Marc::MARC700a =~ m/$Vari::author/i || $Marc::MARC700a =~ m/$Vari::author2/i)
+                        { #kommt Autor oder Autor-2 in 700a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                            $Match::AUTHORMATCH += 10; # add 10 points
+                        }    #else { $Match::AUTHORMATCH = 0; }
+                             # debug:
+                        print $fh_report "AUTHORMATCH: "
+                          . $Match::AUTHORMATCH . "\n";
+                    }   
+                }
+                if (hasTag("110", $xpc, $rec)) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=110]', $rec ) )
+                    {
+                        $Marc::MARC110a =
+                          $xpc->findnodes( './subfield[@code="a"]', $el )
+                          ->to_literal;
+
+                        # debug:
+                        print $fh_report "Feld 110a: " . $Marc::MARC110a . "\n";
+
+                        if ( $Vari::author =~ m/$Marc::MARC110a/i )
+                        { #kommt Autor in 110a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                            $Match::AUTHORMATCH += 10;
+                        }    #else { $Match::AUTHORMATCH = 0; }
+                             # debug:
+                        print $fh_report "AUTHORMATCH: "
+                          . $Match::AUTHORMATCH . "\n";
+                    }
+                }
+                if (hasTag("710", $xpc, $rec)) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=710]', $rec ) )
+                    {
+                        $Marc::MARC710a =
+                          $xpc->findnodes( './subfield[@code="a"]', $el )
+                          ->to_literal;
+
+                        # debug:
+                        print $fh_report "Feld 710a: " . $Marc::MARC710a . "\n";
+
+                        if ( $Vari::author =~ m/$Marc::MARC710a/i )
+                        { #kommt Autor in 710a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                            $Match::AUTHORMATCH += 10;
+                        }    #else { $Match::AUTHORMATCH = 0; }
+                             # debug:
+                        print $fh_report "AUTHORMATCH: "
+                          . $Match::AUTHORMATCH . "\n";
+                    }
                 }
             }
 
-            if (   $Flag::HAS_AUTHORITY
-                && $xpc->exists( './datafield[@tag="110"]', $rec ) )
-            {
-                foreach $el ( $xpc->findnodes( './datafield[@tag=110]', $rec ) )
-                {
-                    $Marc::MARC110a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
 
-                    # debug:
-                    print $fh_report "Feld 110a: " . $Marc::MARC110a . "\n";
-
-                    #print $fh_report "Körperschaft: ".$Vari::author."\n";
-                    if ( $Marc::MARC110a =~ m/$Vari::author/i )
-                    { #kommt Körperschaft in 110a vor? (ohne Gross-/Kleinschreibung zu beachten)
-                        $Match::AUTHORMATCH = 10;
-                    }    #else { $Match::AUTHORMATCH = 0; }
-                         # debug:
-                    print $fh_report "AUTHORITYMATCH: "
-                      . $Match::AUTHORMATCH . "\n";
-                }
-            }
 
             ## CHECK TITLE: TODO subtitle, title addons, etc., other marc fields (246a, 245b, 246b)
             if ( $xpc->exists( './datafield[@tag="245"]', $rec ) ) {
@@ -865,24 +870,6 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 
-            #Get 949F Field if HIFF.
-            if ( $xpc->exists( './datafield[@tag="949"]', $rec ) ) {
-
-                foreach $el (
-                    $xpc->findnodes( './datafield[@tag=949 ]', $rec ) )
-                {
-
-                    $Marc::MARC949F =
-                      $xpc->findnodes( './subfield[@code="F"]', $el )
-                      ->to_literal;
-                    if ( $Marc::MARC949F =~ /HIFF/ ) {
-                        $Flag::HAS_HIFF = 1;
-
-                    }
-
-                }
-            }
-
             #Get 035 Field and check if old IFF data.
             if ( $xpc->exists( './datafield[@tag="035"]', $rec ) ) {
                 foreach $el (
@@ -895,44 +882,71 @@ while ( $row = $csv->getline($fh_in) ) {
                       unless ( $Marc::MARC035a =~ /OCoLC/ );
 
                     if ( $Marc::MARC035a =~ /IDSSG/ ) {    # book found in IDSSG
-                        $Match::bibnr = substr $Marc::MARC035a,-7;  #only the last 7 numbers
-                        if ( $Match::bibnr > 990000 ) {  #this is an IFF record
-                            $Match::IFFMATCH    = 15; # negative points
+                        $Match::bibnr = substr $Marc::MARC035a,
+                          -7;    #only the last 7 numbers
+                        if ( $Match::bibnr > 990000 ) {   #this is an IFF record
+                            $Match::IFFMATCH = 15;        # negative points
                             $Flag::iff2replace = $Marc::MARC001;
-                            print $fh_report "Abzug fuer IFF_MATCH: " . $Match::IFFMATCH . "\n";
-                        } else {
-                            $Match::IDSSGMATCH = 21; # a lot of plus points!
-                            print $fh_report "Zuschlag fuer altes HSG-Katalogisat: ".$Match::IDSSGMATCH."\n";                            
-                            if ($xpc->exists( './datafield[@tag="949"]', $rec)) {
-                                foreach $el ($xpc->findnodes( './datafield[@tag=949 ]', $rec ) )  {
-                                    $Marc::MARC949F = $xpc->findnodes( './subfield[@code="F"]', $el )->to_literal;
+                            print $fh_report "Abzug fuer IFF_MATCH: -"
+                              . $Match::IFFMATCH . "\n";
+                        }
+                        else {
+                            $Match::IDSSGMATCH = 21;    # a lot of plus points!
+                            print $fh_report
+                              "Zuschlag fuer altes HSG-Katalogisat: "
+                              . $Match::IDSSGMATCH . "\n";
+                            if ( $xpc->exists( './datafield[@tag="949"]', $rec )
+                              )
+                            {
+                                foreach $el (
+                                    $xpc->findnodes(
+                                        './datafield[@tag=949 ]', $rec
+                                    )
+                                  )
+                                {
+                                    $Marc::MARC949F =
+                                      $xpc->findnodes( './subfield[@code="F"]',
+                                        $el )->to_literal;
                                     if ( $Marc::MARC949F =~ /HIFF/ ) {
-                                        print $fh_report "Feld 949: ".$Marc::MARC949F ."\n" ;
+                                        print $fh_report "Feld 949: "
+                                          . $Marc::MARC949F . "\n";
                                         $Match::IDSSGMATCH += 10;
-                                        print $fh_report "HIFF already attached, IDSSGMATCH = ".$Match::IDSSGMATCH."\n";
+                                        print $fh_report
+                                          "HIFF already attached, IDSSGMATCH = "
+                                          . $Match::IDSSGMATCH . "\n";
                                         $Flag::iff2replace = $Marc::MARC001;
-                                        $Flag::bestcase = 1;
+                                        $Flag::bestcase    = 1;
                                     }
 
-                                }              
-                                
+                                }
+
                             }
                         }
 
                     }
                     else {
-                        if (   $Marc::MARC035a =~ m/IDS/ || $Marc::MARC035a =~ /NEBIS/ )  {    #book from IDS Library preferred
+                        if ( $Marc::MARC035a =~ m/RERO/ )
+                        {    #book from RERO slightly preferred to others
+                            $Match::IDSMATCH = 4;
+                            print $fh_report "REROMATCH: "
+                              . $Match::IDSMATCH . "\n";
+                        }
+                        if ( $Marc::MARC035a =~ m/SGBN/ )
+                        { #book from SGBN  slight preference over others if not IDS
+
+                            $Match::IDSMATCH = 6;
+                            print $fh_report "SGBNMATCH: "
+                              . $Match::IDSMATCH . "\n";
+                        }
+                        if (   $Marc::MARC035a =~ m/IDS/
+                            || $Marc::MARC035a =~ /NEBIS/ )
+                        {    #book from IDS Library preferred
 
                             $Match::IDSMATCH = 9;
                             print $fh_report "IDSMATCH: "
                               . $Match::IDSMATCH . "\n";
                         }
-                        if (   $Marc::MARC035a =~ m/SGBN/)  {    #book from SGBN  slight preference over others if not IDS
 
-                            $Match::IDSMATCH = 4;
-                            print $fh_report "SGBNMATCH: "
-                              . $Match::IDSMATCH . "\n";
-                        }
                     }
                 }
             }
@@ -955,7 +969,8 @@ while ( $row = $csv->getline($fh_in) ) {
             { #ist aktueller Match-Total der höchste aus Trefferliste? wenn ja:
                 $Match::bestmatch  = $Match::TOTALMATCH; # schreibe in bestmatch
                 $Match::bestrecord = $rec;               # speichere record weg.
-                $Match::bestrecordnr = $Marc::MARC001;    # Swissbib-Nr. des records
+                $Match::bestrecordnr =
+                  $Marc::MARC001;    # Swissbib-Nr. des records
             }
 
         }
@@ -973,12 +988,15 @@ while ( $row = $csv->getline($fh_in) ) {
 
             if ( $Flag::iff2replace eq $Match::bestrecordnr ) {
                 if ($Flag::bestcase) {
-                    print $fh_report "Best case scenario: IFF and HSG already matched!\n";
-                } else {
-                    print $fh_report "Only IFF data available. Best solution from Felix.\n";
+                    print $fh_report
+                      "Best case scenario: IFF and HSG already matched!\n";
+                }
+                else {
+                    print $fh_report
+                      "Only IFF data available. Best solution from Felix.\n";
 
                 }
-            } 
+            }
             else {
                 $replace_nr++;
                 if ( $Flag::iff2replace !~ /$EMPTY_CELL/ ) {
@@ -986,7 +1004,8 @@ while ( $row = $csv->getline($fh_in) ) {
                       . $Flag::iff2replace
                       . " mit neu "
                       . $Match::bestrecordnr . "\n";
-                } else {
+                }
+                else {
                     print $fh_report
 "Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit "
                       . $Match::bestrecordnr . "\n";
@@ -1006,8 +1025,9 @@ while ( $row = $csv->getline($fh_in) ) {
         }
         else {
             print $fh_report "BESTMATCH ziemlich tief, überprüfen!";
-            push @unsure, "\n", $unsure_nr, $Vari::isbn, $Vari::title,          $Vari::author, $Vari::year;
-            $unsure_nr++; 
+            push @unsure, "\n", $unsure_nr, $Vari::isbn, $Vari::title,
+              $Vari::author, $Vari::year;
+            $unsure_nr++;
         }
     }
     else {
@@ -1026,18 +1046,19 @@ $csv->eof or $csv->error_diag();
 close $fh_in;
 
 $csv->print( $fh_notfound, \@notfound );
-$csv->print($fh_unsure, \@unsure);
+$csv->print( $fh_unsure,   \@unsure );
+
 #$csv->print( $fh_found,    \@found );
 
 #close $fh_found    or die "found.csv: $!";
 close $fh_notfound or die "notfound.csv: $!";
-close $fh_unsure or die "unsure.csv: $!";
+close $fh_unsure   or die "unsure.csv: $!";
 close $fh_report   or die "report.txt: $!";
 close $fh_export   or die "swissbibexport.xml: $!";
 
 print "Total gefunden: " . $found_nr . "\n";
 print "Total zum Ersetzen: " . $replace_nr . "\n";
-print "Total unsicher: ". $unsure_nr . "\n";
+print "Total unsicher: " . $unsure_nr . "\n";
 print "Total nicht gefunden: " . $notfound_nr . "\n";
 
 ####################
@@ -1064,8 +1085,9 @@ sub resetFlags {
     $Flag::HAS_PLACE     = 1;
     $Flag::HAS_PUBLISHER = 1;
     $Flag::NO_MONOGRAPH  = 'm';
-    $Flag::iff2replace  = "";
-    $Flag::bestcase = 0;
+    $Flag::iff2replace   = "";
+    $Flag::bestcase      = 0;
+
     #$Flag::HAS_HIFF      = 0;
 
 }
@@ -1094,3 +1116,53 @@ sub emptyVariables {
     $Vari::isbn2 = "";
 
 }
+
+sub hasTag {
+    my $tag = $_[0];    # Marc tag
+    my $xpc = $_[1];    # xpc path
+    my $rec = $_[2];    # record path
+    if ( $xpc->exists( './datafield[@tag=' . $tag . ']', $rec ) ) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+
+}
+
+sub getMatchValue {
+
+    my $tag   = $_[0];    #Marc field
+    my $code  = $_[1];    #Marc subfield
+    my $vari  = $_[2];    #orignal data from csv
+    my $value = $_[3];    #which match value assigned to this match?
+    my $xpc   = $_[4];
+    my $rec   = $_[5];
+
+    foreach $el ( $xpc->findnodes( './datafield[@tag=' . $tag . ']', $rec ) )
+    {
+        my $marcfield =
+          $xpc->findnodes( './subfield[@code=' . $code . ']', $el )->to_literal;
+
+        # debug:
+        print $fh_report "marcfield " . $tag . $code . ": " . $marcfield . "\n";
+
+        if ( $vari =~ m/$marcfield/i ) {
+            print $fh_report "marcfield match \n";
+            return $value;
+        }
+    }
+    return 0;    #wenn nie ein match gefunden
+
+}
+
+sub getSubfield {
+    my $code   = $_[0];    #subfield
+    my $path   = $_[1];
+    
+    my $marcfield = $path->findnodes( './subfield[@code=' . $code . ']')->to_literal;
+    return $marcfield;
+    
+}
+
+

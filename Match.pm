@@ -1,6 +1,7 @@
 package Match;
 
 # Matching counters
+my $ISBN;
 my $AUTHORMATCH;
 my $TITLEMATCH;
 my $YEARMATCH;

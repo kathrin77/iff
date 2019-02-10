@@ -4,6 +4,7 @@ DONE:
 - ISBN-Suche geändert. 
 - IDSSG - IFF-Kata: Punkte abziehen
 - Jahr: aus Feld 008: pos. 07-10 - Date 1 
+- Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
 
 TODO:
 
@@ -36,8 +37,18 @@ TODO:
 - Statistisches Bundesamt: Zusatz wird nicht beachtet.
 - Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden?
 
-- Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
+
 - Festschriften beachten.
+- IFSt-Schrift: auf Zeitschriftenliste => manuell bereinigen, wenn Titel IFSt-Schrift <Nr.>. Es funktioniert, wenn im Titel etwas sinnvolles steht, bsp. 
+IFSt	Wirtschaft und Finanzen im Ausland - Grossbritannien und Dänemark	-	101	Druckerzeugnis	05.12.2003 08:38	IFSt-Heft 066 Bd. 1	Haupt-Bibliothek	-	-	-	-		YL1			Wirtschaftswissenschaften	Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre	Allgemeines
+
+- Cahiers de droit; separat behandeln:
+IFA	Cahiers de Droit Fiscal International - Vol. LXXXIIIa (1998)	90 411 1003 8	900	Druckerzeugnis	05.12.2003 08:38	Steuerliche Behandlung von Verlusten bei Körperschaften	Haupt-Bibliothek	LC 0301 083.1	The Hague / London / Boston	Kluwer	1998		LC			Interkantonales/Internationales Steuerrecht	Internationales Steuerrecht	
+
+- Lösung für Kommentare o.ä.
+- wenn iff bestes Dok: prüfen, ob noch anders 035-Feld und neu importieren. Dann sind Daten evtl. besser.
+
+
 
 
 
@@ -47,6 +58,23 @@ TODO:
 - Separata: ergibt das je was Schlaues?
 - wenn an HSG ein Treffer vorhanden: HSG-Bibnr. liefern statt Swissbibnr
 - wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen!
+- wenn Seitenzahlen mit ff. und/oder Separata: Analytica!
+- wenn seitenzahlen von..bis: (wird bereits in ein flag gschrieben) -- Analytica! Beispiel:
+Eiermann Rudolf	Ein öffentliches Unternehmen zwischen Markt und Staat: Die Unternehmensverfassung der Deutschen Bundesbahn	3-7890-1683-7	204-213	Druckerzeugnis	05.12.2003 08:38	In: Eichhorn Peter: Unternehmensverfassung in der privaten und öffentlichen Wirtschaft	Haupt-Bibliothek	-	Baden-Baden	Nomos	-		YQ			Wirtschaftswissenschaften	Spezielle Betriebswirtschaftslehren	
+Korrekter Treffer: https://www.swissbib.ch/Record/074813935/Details#tabnav
+773 	0 	U 	|t Unternehmensverfassung in der privaten und öffentlichen Wirtschaft : Festschrift für Erich Potthoff zur Vollendung des 75. Lebensjahres  |d Baden-Baden : Nomos Verlagsges., 1989  |g S. 204-212  |j 204-212  |w (IDSBB)000511269  |9 273769014  
+
+- Autor: Schweiz. Nationalfonds/Programmleitung NFP 'Regionalprobleme'
+- Wenn im titel Bd. oder ähnlich: Zusatz prüfen, dort ist meist der korrekte Titel.
+- erweiterte Suche: Place, Publisher noch bereinigen (encoded??)
+- Vorzug RERO vor Alex etc.?!! Ja, Rero ist fast immer besser. 
+- Reihenfolge der MAtches ändern (oder eigene Matchvariablen für RERO und SGBN. 
+SGBN braucht mehr Punkte! 
+- Wenn 0 Treffer: gibt es dann das Feld "Treffer" überhaupt? Wenn nein: manuell auf 0 setzen. 
+- wenn es in der Trefferliste mehrere IFF_Dokumente hat, dann muss nur 1 ersetzt werden, das relevanteste. Immer das erste?
+- 1 Jahr daneben: sollte einige Punkte geben. 
+- Bei Analytica braucht es mehr Punkte, sonst fallen sie durch (kein Jahr, kein Ort, kein Verlag...) => Stichworte aus Zusatz vergleichen?
+
 
 
 ------------

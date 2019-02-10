@@ -14,6 +14,7 @@ use Encode;
 use utf8;
 use 5.010;
 binmode( STDOUT, ":utf8" );
+use POSIX;
 
 use Vari;
 use Flag;
@@ -26,15 +27,18 @@ use Match;
 #
 ##########################################################
 
-my @rows;
 my $row;
 my $rowcounter = 0;
 my @notfound;
 my @unsure;
+my @journals;
+my @no_monograph;
 my $found_nr    = 0;
 my $notfound_nr = 0;
 my $replace_nr  = 0;
 my $unsure_nr   = 0;
+my $journal_nr = 0;
+my $no_monograph_nr = 0;
 
 # regex:
 my $HYPHEN_ONLY = qr/\A\-/;       # a '-' in the beginning
@@ -54,8 +58,8 @@ my $fh_notfound;
 my $fh_unsure;
 my $fh_report;
 my $fh_export;
-
-#my $fh_journals;
+my $fh_journals;
+my $fh_other;
 
 # Swissbib SRU-Service for the complete content of Swissbib:
 my $swissbib  = 'http://sru.swissbib.ch/sru/search/defaultdb?';
@@ -70,7 +74,6 @@ my $server_endpoint = $swissbib . $operation . $schema . $max . $query;
 # needed queries
 my $isbnquery   = '+dc.identifier+%3D+';
 my $titlequery  = '+dc.title+%3D+';
-my $authorquery = '+dc.creator+%3D+';
 my $yearquery   = '+dc.date+%3D+';
 my $anyquery    = '+dc.anywhere+%3D+';
 
@@ -89,19 +92,8 @@ my $el;
 my $i;
 
 ##########################################################
-
 # 	READ AND TREAT THE DATA
-
-# TODO before that:
-# Step 1: Rohdaten bereinigen in Datei Fulldump:
-# Entferne alle Zeichenumbrüche
-# Entferne alle Zeilen, welche im Zusatz "in:" enthalten --> separate Datei: Fulldump-nur-in, knapp 1800 Zeilen (Analytica)
-# Entferne alle Zeilen, welche im Subj1 "Zeitschriften" enthalten --> separate Datei Fulldump-nur-zs-ohne-in, ca. 1550 Zeilen (Zeitschriften)
-
-# Step 2: Datei Fulldump vorbereiten:
-# Datei Fulldump in csv-Datei umwandeln - es verbleiben ca. 12'000 Zeilen.
-# Aktuelle Testdateien sind so manuell vorbereitet.
-
+# Data: IFF_Katalog_FULL.csv contains all data, has been treated (removed \r etc.)
 ##########################################################
 
 # open input/output:
@@ -114,13 +106,14 @@ open $fh_in, "<:encoding(utf8)", $test30 or die "$test30: $!";
 #open $fh_in, "<:encoding(utf8)", $test200 or die "$test200: $!";
 open $fh_notfound, ">:encoding(utf8)", "notfound.csv" or die "notfound.csv: $!";
 open $fh_unsure,   ">:encoding(utf8)", "unsure.csv"   or die "unsure.csv: $!";
+open $fh_journals, ">:encoding(utf8)", "journals.csv"   or die "journals.csv: $!";
+open $fh_other, ">:encoding(utf8)", "other.csv"   or die "other.csv: $!";
 open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 open $fh_export, ">:encoding(utf8)", "swissbibexport.xml"
   or die "swissbibexport.xml: $!";
 
 # read each line and do...:
 while ( $row = $csv->getline($fh_in) ) {
-    push @rows, $row;
 
     #get all necessary variables
     $Vari::author   = $row->[0];
@@ -142,7 +135,7 @@ while ( $row = $csv->getline($fh_in) ) {
     #$Vari::tsignature = $row->[13];
     #$Vari::tsignature_1 = $row->[14];
     #$Vari::tsignature_2 = $row->[15];
-    #$Vari::subj1 = $row->[16];
+    $Vari::subj1 = $row->[16];
     #$Vari::subj2 = $row->[17];
     #$Vari::subj3 = $row->[18];
 
@@ -154,7 +147,8 @@ while ( $row = $csv->getline($fh_in) ) {
       . $rowcounter
       . "\n*********************************************************************************\n";
     $Match::bestmatch = 0;
-
+    
+    
     ##########################
     # Deal with ISBN:
     ##########################
@@ -370,7 +364,7 @@ while ( $row = $csv->getline($fh_in) ) {
       . $Vari::volume . "\n";
 
     #############################################
-    # Deal with YEAR, PLACE, PUBLISHER, MATERIAL:
+    # Deal with YEAR, PLACE, PUBLISHER
     #############################################
 
     if (   $Vari::year =~ /$EMPTY_CELL/
@@ -434,11 +428,41 @@ while ( $row = $csv->getline($fh_in) ) {
         #debug		print $Vari::publisher."\n";
     }
 
-    #Material:
+    ##########################
+    # Deal with Material type
+    # TODO:
+    # Entferne alle Zeilen, welche im Zusatz "in:" enthalten --> separate Datei: Fulldump-nur-in, knapp 1800 Zeilen (Analytica)
+    # Entferne alle Zeilen, welche im Subj1 "Zeitschriften" enthalten --> separate Datei Fulldump-nur-zs-ohne-in, ca. 1550 Zeilen (Zeitschriften)
+    ##########################
+    
+    if ($Vari::subj1 =~ /Zeitschrift/) {
+        #TODO:  read next line
+        $journal_nr++;
+        push @journals, "\n", $journal_nr, $Vari::isbn, $Vari::title,
+          $Vari::author, $Vari::year;
+        
+    }
+    
+    if ($Vari::material !~ /Druckerzeugnis/) {
+        #TODO: Treat separately, read next line
+        $no_monograph_nr++;
+        push @no_monograph, "\n", $no_monograph_nr, $Vari::isbn, $Vari::title,
+          $Vari::author, $Vari::year;
+    }
+    
+    if ($Vari::addendum =~ m/in: /i) {
+        #TODO: Treat separately, read next line
+        #print "Analytica!\n";
+        $no_monograph_nr++;
+        push @no_monograph, "\n", $no_monograph_nr, $Vari::isbn, $Vari::title,
+          $Vari::author, $Vari::year;
+        
+    }
+
 
     if ( $Flag::HAS_PAGERANGE || $Flag::HAS_VOLUME || $Flag::HAS_TITLEDATE )
     {    # ist ziemlich sicher keine Monographie
-        $Flag::NO_MONOGRAPH = 'abcdis';    # mögliche LDR-Werte (07)
+        $Flag::NO_MONOGRAPH = 'abcdis';    # possible LDR-pos (07)
     }
 
     print $fh_report "Ort: "
@@ -504,7 +528,6 @@ while ( $row = $csv->getline($fh_in) ) {
 
 ### debug output:
     if ( $numberofrecords == 0 ) {
-
         #repeat query without year or with isbn:
         $sruquery = "";
         if ($Flag::HAS_ISBN) {
@@ -608,6 +631,7 @@ while ( $row = $csv->getline($fh_in) ) {
             resetMatch();    # setze für jeden Record die MATCHES wieder auf 0.
 
             #TODO: check isbn
+            
             #CHECK AUTHORS & AUTHORITIES:
 
             if ($Flag::HAS_AUTHOR) {
@@ -694,7 +718,24 @@ while ( $row = $csv->getline($fh_in) ) {
 
 
 
-            ## CHECK TITLE: TODO subtitle, title addons, etc., other marc fields (246a, 245b, 246b)
+            ## CHECK TITLE: TODO subtitle, title addons, etc., other marc fields (245b, 246b)
+            
+            if (hasTag("245",$xpc,$rec)){
+                foreach $el ($xpc->findnodes('./datafield[@tag=245]', $rec)) {
+                    $Match::TITLEMATCH = getMatchValue("a",$xpc,$el,$Vari::title,10);
+                    print $fh_report "TITLEMATCH mit getMatchValue: " . $Match::TITLEMATCH . "\n";
+                    
+                }
+            } 
+            if (hasTag("246",$xpc,$rec)) {
+                foreach $el ($xpc->findnodes('./datafield[@tag=246]', $rec)) {
+                    $Match::TITLEMATCH = getMatchValue("a",$xpc,$el,$Vari::title,5);
+                    print $fh_report "TITLEMATCH mit getMatchValue: " . $Match::TITLEMATCH . "\n";
+                }
+            } 
+            
+            # OLD TITLE CHECK:
+            
             if ( $xpc->exists( './datafield[@tag="245"]', $rec ) ) {
                 foreach $el ( $xpc->findnodes( './datafield[@tag=245]', $rec ) )
                 {
@@ -743,8 +784,19 @@ while ( $row = $csv->getline($fh_in) ) {
                     print $fh_report "YEARMATCH: " . $Match::YEARMATCH . "\n";
                 }
             }
+            
+            # Place new:
+            
+            if ($Flag::HAS_PLACE) {
+                if (hasTag("264", $xpc, $rec) || hasTag("260", $xpc, $rec)) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=264 or @tag=260]', $rec ) ) {
+                        $Match::PLACEMATCH = getMatchValue("a",$xpc,$el,$Vari::place,5);
+                        print $fh_report "PlaceMatch with getMatchValue: " . $Match::PLACEMATCH . "\n";
+                    }
+                }
+            }
 
-            # PLACE:
+            # PLACE old:
 
             if (   $Flag::HAS_PLACE
                 && $xpc->exists( './datafield[@tag="264"]', $rec ) )
@@ -789,8 +841,19 @@ while ( $row = $csv->getline($fh_in) ) {
                     print $fh_report "PLACEMATCH: " . $Match::PLACEMATCH . "\n";
                 }
             }
+            
+            #Publisher new:
+            
+            if ($Flag::HAS_PUBLISHER) {
+                if (hasTag("264", $xpc, $rec) || hasTag("260", $xpc, $rec)) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=264 or @tag=260]', $rec ) ) {
+                        $Match::PUBLISHERMATCH = getMatchValue("b",$xpc,$el,$Vari::publisher,5);
+                        print $fh_report "Publisher-Match with getMatchValue: " . $Match::PUBLISHERMATCH . "\n";
+                    }
+                }
+            }
 
-   # PUBLISHER: TODO: nur das 1. Wort vergleichen oder alles nach / abschneiden.
+            # PUBLISHER OLD: TODO: nur das 1. Wort vergleichen oder alles nach / abschneiden.
 
             if (   $Flag::HAS_PUBLISHER
                 && $xpc->exists( './datafield[@tag="264"]', $rec ) )
@@ -856,7 +919,8 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 
-#Get Swissbib System Nr., Field 001: http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
+            #Get Swissbib System Nr., Field 001: 
+            #http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
 
             if ( $xpc->exists( './controlfield[@tag="001"]', $rec ) ) {
                 foreach $el (
@@ -1034,7 +1098,7 @@ while ( $row = $csv->getline($fh_in) ) {
         # TODO: something wrong with query.
         if ( $numberofrecords != 0 ) {
             print $fh_report "Suchparameter stimmen nicht !!!\n";
-        }
+        }        
         print $fh_report
           "*****************************************************\n\n";
 
@@ -1047,19 +1111,22 @@ close $fh_in;
 
 $csv->print( $fh_notfound, \@notfound );
 $csv->print( $fh_unsure,   \@unsure );
+$csv->print($fh_journals, \@journals);
+$csv->print($fh_other, \@no_monograph); # not working for some reason (value undefined))
 
-#$csv->print( $fh_found,    \@found );
-
-#close $fh_found    or die "found.csv: $!";
 close $fh_notfound or die "notfound.csv: $!";
 close $fh_unsure   or die "unsure.csv: $!";
+close $fh_journals or die "journals.csv: $!";
+close $fh_other or die "no_monograph.csv: $!";
 close $fh_report   or die "report.txt: $!";
 close $fh_export   or die "swissbibexport.xml: $!";
 
-print "Total gefunden: " . $found_nr . "\n";
-print "Total zum Ersetzen: " . $replace_nr . "\n";
-print "Total unsicher: " . $unsure_nr . "\n";
-print "Total nicht gefunden: " . $notfound_nr . "\n";
+print "Total found: " . $found_nr . "\n";
+print "Total to replace: " . $replace_nr . "\n";
+print "Total unsure: " . $unsure_nr . "\n";
+print "Total journals: " . $journal_nr. "\n";
+print "Total not monographs: " . $no_monograph_nr. "\n";
+print "Total not found: " . $notfound_nr . "\n";
 
 ####################
 
@@ -1122,6 +1189,8 @@ sub hasTag {
     my $xpc = $_[1];    # xpc path
     my $rec = $_[2];    # record path
     if ( $xpc->exists( './datafield[@tag=' . $tag . ']', $rec ) ) {
+        #debug
+        print $fh_report "hasTag(".$tag.")\n";
         return 1;
     }
     else {
@@ -1131,38 +1200,35 @@ sub hasTag {
 }
 
 sub getMatchValue {
-
-    my $tag   = $_[0];    #Marc field
-    my $code  = $_[1];    #Marc subfield
-    my $vari  = $_[2];    #orignal data from csv
-    my $value = $_[3];    #which match value assigned to this match?
-    my $xpc   = $_[4];
-    my $rec   = $_[5];
-
-    foreach $el ( $xpc->findnodes( './datafield[@tag=' . $tag . ']', $rec ) )
-    {
-        my $marcfield =
-          $xpc->findnodes( './subfield[@code=' . $code . ']', $el )->to_literal;
-
-        # debug:
-        print $fh_report "marcfield " . $tag . $code . ": " . $marcfield . "\n";
-
-        if ( $vari =~ m/$marcfield/i ) {
-            print $fh_report "marcfield match \n";
-            return $value;
-        }
-    }
-    return 0;    #wenn nie ein match gefunden
-
-}
-
-sub getSubfield {
     my $code   = $_[0];    #subfield
-    my $path   = $_[1];
+    my $path   = $_[1];     #xpc
+    my $element = $_[2];    #el
+    my $vari  = $_[3];    #orignal data from csv
+    my $posmatch = $_[4];    #which match value shoud be assigned to positive match?
+    my $matchvalue;
+    my $marcfield = '';
+    my $shortvari = substr $vari, 0,10;
     
-    my $marcfield = $path->findnodes( './subfield[@code=' . $code . ']')->to_literal;
-    return $marcfield;
     
+    $marcfield = $path->findnodes( './subfield[@code=' . $code . ']', $element)->to_literal;
+    #$marcfield = $path->findvalue( './subfield[@code=' . $code . ']', $element);
+
+    # debug: this does not work, why???
+    #print $fh_report "marcfield: " . $marcfield . "\n";
+    #my $length = length ($marcfield);
+    #my $halflength = ceil($length/2);
+    my $marcshort = substr $marcfield, 0,10;
+	
+    if ( ($vari =~ m/$marcfield/i ) || ($marcfield =~m/$vari/i)){ #Marc Data matches CSV Data
+        #debug: 
+        print $fh_report "marcfield full match! \n";
+        $matchvalue = $posmatch;
+    } elsif (($shortvari =~ m/$marcshort/i ) || ($marcshort =~m/$shortvari/i)) { #First 10 characters match
+        #debug: this never works, why?
+        print $fh_report "marcfield short match! \n";
+        $matchvalue = abs($posmatch/2);
+    } else {$matchvalue = 0;}
+    
+    return $matchvalue;
+	
 }
-
-

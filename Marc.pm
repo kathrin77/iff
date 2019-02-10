@@ -1,6 +1,7 @@
 package Marc;
 
 # MARC fields
+my $field;
 my $MARC100a;
 my $MARC110a;
 my $MARC700a;

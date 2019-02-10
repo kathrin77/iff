@@ -1,28 +1,34 @@
 
 NEW ROW: #1
 *********************************************************************************
-ISBN: 9782839914147
+ISBN: 9782839914147  ISBN-2: 
 Autor: ﻿Yerly --- Autor2: 
 Titel: The Political Economy of Budget Rules in the twenty-six Swiss Cantons --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Fribourg - Verlag: Uni Fribourg - Jahr: 2013 - Materialart: m
+Addendum: Institutional analysis, preferences and performances
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Political%20Economy%20of%20Budget%20Rules%20in%20the%20twenty-six%20Swiss%20Cantons+AND+dc.anywhere+%3D+%EF%BB%BFYerly+AND+dc.date+%3D+2013
 Treffer: 1
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Yerly
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: The political economy of budget rules in the twenty-six Swiss cantons
 TITLEMATCH: 10
 Feld 008: 2013
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: [Fribourg (rte du Comptoir 1)]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: N. Yerly
 PUBLISHERMATCH: 0
@@ -65,10 +71,11 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #2
 *********************************************************************************
-ISBN: 3725538875
+ISBN: 3725538875  ISBN-2: 
 Autor: Schmidhauser --- Autor2: 
 Titel: Der Begriff der mehreren Unternehmen im Sinne von Art 4 Abs 2 KG --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Zürich - Verlag: Schulthess Polygraphischer Verlag - Jahr:  - Materialart: abcdis
+Ort: Zürich - Verlag: Schulthess Polygraphischer  - Jahr:  - Materialart: abcdis
+Addendum: In: Baldi, Marino, Baumann, Max & u.a., (Hrsg.): Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60. Geburtstag
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Der%20Begriff%20der%20mehreren%20Unternehmen%20im%20Sinne%20von%20Art%204%20Abs%202%20KG+AND+dc.anywhere+%3D+Schmidhauser
 Treffer: 4
 
@@ -77,14 +84,17 @@ hasTag(100)
 Feld 100a: Schmidhauser
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH: 5
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: [S.l.]
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: [s.n.]
 PUBLISHERMATCH: 0
@@ -99,6 +109,7 @@ hasTag(100)
 Feld 100a: Schmidhauser
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Begriff der 'mehreren Unternehmen' im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH: 5
@@ -114,6 +125,7 @@ hasTag(100)
 Feld 100a: Schmidhauser
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH: 5
@@ -135,6 +147,7 @@ hasTag(100)
 Feld 100a: Schmidhauser
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH: 5
@@ -149,9 +162,11 @@ Ersetzen: alt 514587318 mit neu 045860890
 
 NEW ROW: #3
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Shultz --- Autor2: Harriss
 Titel: American Public Finance --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: New Jersey - Verlag: Prettice Hall Inc. Englewood Cliffs - Jahr: 1965 - Materialart: m
+Addendum: 8. A.
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+American%20Public%20Finance+AND+dc.anywhere+%3D+Shultz+AND+dc.date+%3D+1965
 Treffer: 2
 
@@ -163,16 +178,19 @@ hasTag(700)
 Feld 700a: Harriss
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: American public finance
 TITLEMATCH: 10
 Feld 008: 1965
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Englewood Cliffs N.J
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Prentice-Hall
 PUBLISHERMATCH: 0
@@ -191,16 +209,19 @@ hasTag(700)
 Feld 700a: Harriss
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: American Public Finance
 TITLEMATCH: 10
 Feld 008: 1965
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: New Jersey
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Prettice Hall Inc. Englewood Cliffs
 PUBLISHERMATCH: 5
@@ -215,9 +236,11 @@ Ersetzen: alt 515870137 mit neu 228062756
 
 NEW ROW: #4
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Hofer --- Autor2: 
 Titel: Die schweizerische Finanzhilfe an Lateinamerika --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort:  - Verlag:  - Jahr: 1968 - Materialart: m
+Addendum: Öffentliche Kolloquien, veranstaltet am Lateinamerikanischen Institut a. d. HSG, WS 1967/68
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20schweizerische%20Finanzhilfe%20an%20Lateinamerika+AND+dc.anywhere+%3D+Hofer+AND+dc.date+%3D+1968
 Treffer: 2
 
@@ -226,6 +249,7 @@ hasTag(100)
 Feld 100a: Hofer
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die schweizerische Finanzhilfe an Lateinamerika
 TITLEMATCH: 10
@@ -250,6 +274,7 @@ hasTag(710)
 Feld 710a: Hochschule St. Gallen für Wirtschafts- und Sozialwissenschaften
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die schweizerische Finanzhilfe an Lateinamerika
 TITLEMATCH: 10
@@ -279,9 +304,11 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #5
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Bohley --- Autor2: Peter
 Titel: Perspektiven des interkommunalen Finanzausgleichs --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort:  - Verlag:  - Jahr:  - Materialart: abcdis
+Addendum: In: Eng- Franz- Glatthard- Alexander- Koenig- Beat H.: Der interkommunale Finanzausgleich
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Perspektiven%20des%20interkommunalen%20Finanzausgleichs+AND+dc.anywhere+%3D+Bohley
 Treffer: 2
 
@@ -290,6 +317,7 @@ hasTag(100)
 Feld 100a: Bohley
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Perspektiven des interkommunalen Finanzausgleichs
 TITLEMATCH: 10
@@ -305,6 +333,7 @@ hasTag(100)
 Feld 100a: Bohley
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Perspektiven des interkommunalen Finanzausgleichs
 TITLEMATCH: 10
@@ -327,9 +356,11 @@ Ersetzen: alt 514587326 mit neu 266758762
 
 NEW ROW: #6
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Haas --- Autor2: 
 Titel: Chancen und Gefahren des New Public Managements --- Untertitel: für die Privatwirtschaft --- Titeldatum:  --- Band: 
 Ort: Bern - Verlag: ECOPLAN - Jahr: 1996 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Chancen%20und%20Gefahren%20des%20New%20Public%20Managements+AND+dc.anywhere+%3D+Haas+AND+dc.date+%3D+1996
 Treffer: 1
 
@@ -338,16 +369,19 @@ hasTag(100)
 Feld 100a: Haas
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Chancen und Gefahren des New Public Managements  für die Privatwirtschaft
 TITLEMATCH: 10
 Feld 008: 1996
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Bern
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: ECOPLAN
 PUBLISHERMATCH: 5
@@ -362,28 +396,34 @@ Only IFF data available. Best solution from Felix.
 
 NEW ROW: #7
 *********************************************************************************
-ISBN: 363148240X
+ISBN: 363148240X  ISBN-2: 
 Autor: OECD --- Autor2: 
 Titel: Die internationalen Bildungsindikatoren der OECD --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Frankfur - Verlag: Peter Lang - Jahr: 1994 - Materialart: m
+Addendum: Ein OECD/CERI-Bericht
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20internationalen%20Bildungsindikatoren%20der%20OECD+AND+dc.anywhere+%3D+OECD+AND+dc.date+%3D+1994
 Treffer: 4
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(710)
 Feld 710a: Centre pour la recherche et l'innovation dans l'enseignement (Paris)
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die internationalen Bildungsindikatoren der OECD
 TITLEMATCH: 10
 Feld 008: 1994
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt am Main [etc.]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Peter Lang
 PUBLISHERMATCH: 5
@@ -396,6 +436,8 @@ REROMATCH: 4
 Totalmatch: 49
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Schulze
 AUTHORMATCH: 0
@@ -403,16 +445,19 @@ hasTag(710)
 Feld 710a: Centre for Educational Research and Innovation
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die internationalen Bildungsindikatoren der OECD
 TITLEMATCH: 10
 Feld 008: 1994
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt a.MBerlinBern [etc.]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: P. Lang
 PUBLISHERMATCH: 0
@@ -426,22 +471,28 @@ Feld 035a: (Sz)000045843
 Totalmatch: 40
 
 #Document 3:
+marcfield: 
+ISBNMATCH: 0
 hasTag(710)
 Feld 710a: OECD
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die internationalen Bildungsindikatoren der OECD
 TITLEMATCH: 10
 Feld 008: 1994
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt am MainBern [etc.]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Lang
 PUBLISHERMATCH: 0
@@ -459,6 +510,8 @@ HIFF already attached, IDSSGMATCH = 31
 Totalmatch: 90
 
 #Document 4:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Bottani
 AUTHORMATCH: 0
@@ -468,20 +521,25 @@ AUTHORMATCH: 10
 Feld 710a: Centre for Educational Research and Innovation
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die internationalen Bildungsindikatoren der OECD - ein Analyserahmen
 TITLEMATCH: 10
 Feld 008: 1994
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Frankfurt a.M.Bern [etc.]
 P-Match: 5
 Feld 264a: 
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Peter Lang
 PUBLISHERMATCH: 5
@@ -498,32 +556,40 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #8
 *********************************************************************************
-ISBN: 3258034214
+ISBN: 3258034214  ISBN-2: 
 Autor: Schneider --- Autor2: 
 Titel: Der Einfluss von Interessengruppen auf die Wirtschaftspolitik --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Bern und Stuttgart - Verlag: Paul Haupt - Jahr: 1985 - Materialart: m
+Addendum: Eine empirische Untersuchung für die Schweiz
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Der%20Einfluss%20von%20Interessengruppen%20auf%20die%20Wirtschaftspolitik+AND+dc.anywhere+%3D+Schneider+AND+dc.date+%3D+1985
 Treffer: 1
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Schneider
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Einfluss von Interessengruppen auf die Wirtschaftspolitik
 TITLEMATCH: 10
 Feld 008: 1985
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: BernStuttgart
 P-Match: 0
 Feld 264a: 
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Paul Haupt
 PUBLISHERMATCH: 5
@@ -572,16 +638,19 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #9
 *********************************************************************************
-ISBN: 3504260416
+ISBN: 3504260416  ISBN-2: 
 Autor: Flick --- Autor2: Wassermeyer
 Titel: Aussensteuerrecht --- Untertitel:  --- Titeldatum:  --- Band: Bd III
-Ort: Köln - Verlag: Verlag Dr. Otto Schmidt - Jahr: 2017 - Materialart: abcdis
+Ort: Köln - Verlag:  Dr. Otto Schmidt - Jahr: 2017 - Materialart: abcdis
+Addendum: Kommentar
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aussensteuerrecht+AND+dc.anywhere+%3D+Flick+AND+dc.date+%3D+2017
 Treffer: 0
 URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3504260416
 Treffer mit geaendertem Suchstring: 4
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Wassermeyer
 AUTHORMATCH: 10
@@ -589,18 +658,22 @@ hasTag(710)
 Feld 710a: Deutschland
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aussensteuerrecht
 TITLEMATCH: 10
 Feld 008: 2007
 YEARMATCH: 0
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Köln
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Schmidt
 PUBLISHERMATCH: 0
@@ -611,22 +684,27 @@ Feld 035a: (LIBIB)000277395
 Totalmatch: 25
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Wassermeyer
 AUTHORMATCH: 10
 Feld 700a: Thömmes
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aussensteuerrecht
 TITLEMATCH: 10
 Feld 008: 2000
 YEARMATCH: 0
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Köln
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Schmidt
 PUBLISHERMATCH: 0
@@ -637,19 +715,27 @@ Feld 035a: (LIBIB)000264665
 Totalmatch: 25
 
 #Document 3:
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aussensteuerrecht
 TITLEMATCH: 10
 Feld 008: 1983
 YEARMATCH: 0
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Köln
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: O. Schmidt
 PUBLISHERMATCH: 0
@@ -661,6 +747,10 @@ IDSMATCH: 9
 Totalmatch: 24
 
 #Document 4:
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Flick
 AUTHORMATCH: 10
@@ -669,16 +759,19 @@ AUTHORMATCH: 20
 Feld 700a: Baumhoff
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aussensteuerrecht
 TITLEMATCH: 10
 Feld 008: 1999
 YEARMATCH: 0
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Köln
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Schmidt
 PUBLISHERMATCH: 0
@@ -693,42 +786,48 @@ Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 15518
 
 NEW ROW: #10
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Nystad --- Autor2: 
 Titel: Application of Control and System Theory to Macroeconomics --- Untertitel: A Survey --- Titeldatum:  --- Band: 
 Ort: St. Gallen - Verlag: Forschungsgemeinschaft für Nationalökonomie - Jahr: 1981 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad+AND+dc.date+%3D+1981
-Treffer: 
+Treffer: 0
 URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad
-Diese Suche taugt auch nichts.
-OOOOOOOOOO
-
-*****************************************************
+Diese Suche taugt nichts.
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 
 NEW ROW: #11
 *********************************************************************************
-ISBN: 3725301328
+ISBN: 3725301328  ISBN-2: 
 Autor: Rölli --- Autor2: 
 Titel: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Diessenhofen - Verlag: Rüegger - Jahr: 1981 - Materialart: m
+Addendum: Dissertation der Hochschule St.Gallen Nr. 790
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20sozio-%C3%B6konomischen%20Bestimmungsfaktoren%20der%20Bildung%20von%20Wohneigentum%20in%20der%20Schweiz+AND+dc.anywhere+%3D+R%C3%B6lli+AND+dc.date+%3D+1981
 Treffer: 3
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Rölli
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
 TITLEMATCH: 10
 Feld 008: 1981
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Diessenhofen
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Rüegger
 PUBLISHERMATCH: 5
@@ -740,20 +839,25 @@ Abzug fuer IFF_MATCH: -15
 Totalmatch: 40
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Rölli
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
 TITLEMATCH: 10
 Feld 008: 1981
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Diessenhofen
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Verlag Rüegger
 PUBLISHERMATCH: 5
@@ -803,6 +907,8 @@ Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991011058759702851
 Totalmatch: 59
 
 #Document 3:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Rölli
 AUTHORMATCH: 10
@@ -810,16 +916,19 @@ hasTag(700)
 Feld 700a: Nydegger
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
 TITLEMATCH: 10
 Feld 008: 1981
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: 
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: 
 PUBLISHERMATCH: 0
@@ -834,30 +943,34 @@ Ersetzen: alt 515870161 mit neu 031361935
 
 NEW ROW: #12
 *********************************************************************************
-ISBN: 3631328001
+ISBN: 3631328001  ISBN-2: 
 Autor: Meerpohl --- Autor2: 
-Titel: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten --- Untertitel:  --- Titeldatum:  --- Band: 
+Titel: Die Mutter- Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Frankfurt am Main - Verlag: Peter Lang - Jahr: 1998 - Materialart: m
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Mutter-%2FTochter-Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3D+1998
-Treffer: 
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3631328001
-Treffer mit geaendertem Suchstring: 1
+Addendum: Europäische Hochschulschriften, Reihe II, Rechtswissenschaft, Bd. 2334
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Mutter-%20Tochter-Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3D+1998
+Treffer: 1
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Meerpohl
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten
-TITLEMATCH: 10
+TITLEMATCH: 5
 Feld 008: 1998
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt am Main
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Lang
 PUBLISHERMATCH: 0
@@ -872,15 +985,17 @@ Abzug fuer IFF_MATCH: -15
 Feld 035a: (Sz)1163968-41snl_51
 Feld 035a: (Sz)vtls001163968
 Feld 035a: (Sz)001163968
-Totalmatch: 44
-Bestmatch: 44, Bestrecordnr: 264946782
+Totalmatch: 39
+Bestmatch: 39, Bestrecordnr: 264946782
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #13
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Schwarzenbach --- Autor2: 
 Titel: Bericht zur Frage --- Untertitel: Wie soll das Personal zürcherischer Gemeinden angestellt sein --- Titeldatum:  --- Band: 
 Ort: Erlenbach - Verlag:  - Jahr: 1992 - Materialart: m
+Addendum: ...- öffentlichrechtlich oder privatrechtlich, - auf Amtsdauer oder unbefristet auf Kündigung?
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Bericht%20zur%20Frage+AND+dc.anywhere+%3D+Schwarzenbach+AND+dc.date+%3D+1992
 Treffer: 1
 
@@ -889,12 +1004,14 @@ hasTag(100)
 Feld 100a: Schwarzenbach Hans Rudolf
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Bericht zur Frage: Wie soll das Personal zürcherischer Gemeinden angestellt sein
 TITLEMATCH: 10
 Feld 008: 1992
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Erlenbach
 P-Match: 5
@@ -909,14 +1026,17 @@ Only IFF data available. Best solution from Felix.
 
 NEW ROW: #14
 *********************************************************************************
-ISBN: 9783725561476
+ISBN: 9783725561476  ISBN-2: 
 Autor: Isler --- Autor2: Cerutti
 Titel: Vermögensverwaltung III --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Zürich / Basel / Genf - Verlag: Schulthess Juristische Medien AG - Jahr: 2010 - Materialart: m
+Addendum: Europa-Institut an der Uni Zürich
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verm%C3%B6gensverwaltung%20III+AND+dc.anywhere+%3D+Isler+AND+dc.date+%3D+2010
 Treffer: 3
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Isler
 AUTHORMATCH: 10
@@ -929,18 +1049,22 @@ hasTag(710)
 Feld 710a: Europa Institut Zürich
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Vermögensverwaltung III
 TITLEMATCH: 10
 Feld 008: 2010
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Zürich [etc.]
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Schulthess
 PUBLISHERMATCH: 0
@@ -955,22 +1079,28 @@ Feld 035a: (Sz)001618187
 Totalmatch: 55
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Isler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Vermögensverwaltung III
 TITLEMATCH: 10
 Feld 008: 2010
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Zürich
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Schulthess
 PUBLISHERMATCH: 0
@@ -997,6 +1127,8 @@ Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991020775169702851
 Totalmatch: 80
 
 #Document 3:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Isler
 AUTHORMATCH: 10
@@ -1004,16 +1136,19 @@ hasTag(710)
 Feld 710a: Europa Institut Zürich
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Vermögensverwaltung ; III, 2010
 TITLEMATCH: 5
 Feld 008: 2010
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Zürich
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Schulthess
 PUBLISHERMATCH: 0
@@ -1028,9 +1163,11 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #15
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Stadler --- Autor2: 
 Titel: Controlling in der öffentlichen Verwaltung --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Solothurn - Verlag: der FkF - Jahr: 1991 - Materialart: m
+Addendum: Zum Ausgabenaspekt- Bd. 1
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Controlling%20in%20der%20%C3%B6ffentlichen%20Verwaltung+AND+dc.anywhere+%3D+Stadler+AND+dc.date+%3D+1991
 Treffer: 3
 
@@ -1039,16 +1176,19 @@ hasTag(100)
 Feld 100a: Stadler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Controlling in der öffentlichen Verwaltung
 TITLEMATCH: 10
 Feld 008: 1991
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Solothurn
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Verlag der FkF
 PUBLISHERMATCH: 5
@@ -1064,16 +1204,19 @@ hasTag(100)
 Feld 100a: Stadler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Controlling in der öffentlichen Verwaltung
 TITLEMATCH: 10
 Feld 008: 1991
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: 
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Verlag der Fachgruppe für kantonale Finanzfragen Solothurn
 PUBLISHERMATCH: 0
@@ -1089,20 +1232,25 @@ hasTag(100)
 Feld 100a: Stadler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Controlling in der öffentlichen Verwaltung
 TITLEMATCH: 10
 Feld 008: 1991
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Solothurn
 P-Match: 5
 Feld 264a: 
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Verl. der FkF
 PUBLISHERMATCH: 5
@@ -1140,9 +1288,11 @@ Ersetzen: alt 515870196 mit neu 03338715X
 
 NEW ROW: #16
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Hansmeyer --- Autor2: 
 Titel: Der Weg zum Wohlfahrtsstaat --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Frankfurt - Verlag: Fritz Knapp Verlag - Jahr: 1957 - Materialart: m
+Ort: Frankfurt - Verlag: Fritz Knapp  - Jahr: 1957 - Materialart: m
+Addendum: Wandlungen der Staatstätigkeit im Spiegel der Finanzpolitik unseres Jahrhunderts
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Der%20Weg%20zum%20Wohlfahrtsstaat+AND+dc.anywhere+%3D+Hansmeyer+AND+dc.date+%3D+1957
 Treffer: 2
 
@@ -1151,16 +1301,19 @@ hasTag(100)
 Feld 100a: Hansmeyer
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Weg zum Wohlfahrtsstaat
 TITLEMATCH: 10
 Feld 008: 1957
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Frankfurt a.M
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Fritz Knapp Verlag
 PUBLISHERMATCH: 5
@@ -1176,16 +1329,19 @@ hasTag(100)
 Feld 100a: Hansmeyer
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Der Weg zum Wohlfahrtsstaat
 TITLEMATCH: 10
 Feld 008: 1957
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt am Main
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Knapp
 PUBLISHERMATCH: 0
@@ -1204,28 +1360,34 @@ Ersetzen: alt 51587020X mit neu 275140946
 
 NEW ROW: #17
 *********************************************************************************
-ISBN: 343018620X
+ISBN: 343018620X  ISBN-2: 
 Autor: Sorba --- Autor2: 
 Titel: Die grosse Schröpfung --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Düsseldorf/Wien - Verlag: Econ Verlag - Jahr: 1971 - Materialart: m
+Ort: Düsseldorf/Wien - Verlag: Econ  - Jahr: 1971 - Materialart: m
+Addendum: 5000 Jahre Wirtschaft trotz Finanzamt
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20grosse%20Schr%C3%B6pfung+AND+dc.anywhere+%3D+Sorba+AND+dc.date+%3D+1971
 Treffer: 2
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Sorba
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die grosse Schröpfung
 TITLEMATCH: 10
 Feld 008: 1971
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Düsseldorf/Wien
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Econ Verlag
 PUBLISHERMATCH: 5
@@ -1237,37 +1399,44 @@ Abzug fuer IFF_MATCH: -15
 Totalmatch: 40
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Sorba
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die grosse Schröpfung
 TITLEMATCH: 10
 Feld 008: 1971
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Düsseldorf [etc.]
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Econ Verl
-PUBLISHERMATCH: 0
+PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 228350492
 Feld 035a: (RERO)R003360739
 REROMATCH: 4
-Totalmatch: 49
-Bestmatch: 49, Bestrecordnr: 228350492
+Totalmatch: 54
+Bestmatch: 54, Bestrecordnr: 228350492
 Ersetzen: alt 515870218 mit neu 228350492
 
 NEW ROW: #18
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Fries --- Autor2: 
 Titel: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Freiburg - Verlag: Universität - Jahr: 1997 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20%C3%BCberkantonale%20und%20%C3%BCberdi%C3%B6zesane%20Finanzierung%20der%20r%C3%B6misch-katholischen%20Kirche%20in%20der%20Schweiz+AND+dc.anywhere+%3D+Fries+AND+dc.date+%3D+1997
 Treffer: 1
 
@@ -1276,16 +1445,19 @@ hasTag(100)
 Feld 100a: Fries
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
 TITLEMATCH: 10
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: [Freiburg/Schweiz]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: [s.n.]
 PUBLISHERMATCH: 0
@@ -1302,9 +1474,11 @@ Only IFF data available. Best solution from Felix.
 
 NEW ROW: #19
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Baur --- Autor2: 
 Titel: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im öffentlichen Ballungsverkehr --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Winterthur - Verlag: Ziegler Druck- und Verlags AG - Jahr: 1974 - Materialart: m
+Ort: Winterthur - Verlag: Ziegler - und s AG - Jahr: 1974 - Materialart: m
+Addendum: Dissertation der Hochschule St. Gallen, Nr. 534
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20tarifpolitischen%20Aspekte%20der%20zwischenbetrieblichen%20Zusammenarbeit%20im%20%C3%B6ffentlichen%20Ballungsverkehr+AND+dc.anywhere+%3D+Baur+AND+dc.date+%3D+1974
 Treffer: 4
 
@@ -1313,16 +1487,19 @@ hasTag(100)
 Feld 100a: Baur
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
 TITLEMATCH: 5
 Feld 008: 1974
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Winterthur
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Ziegler
 PUBLISHERMATCH: 0
@@ -1353,16 +1530,19 @@ hasTag(100)
 Feld 100a: Baur
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
 TITLEMATCH: 5
 Feld 008: 1974
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: [Erscheinungsort nicht ermittelbar]
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: [Verlag nicht ermittelbar]
 PUBLISHERMATCH: 0
@@ -1383,16 +1563,19 @@ hasTag(700)
 Feld 700a: Kaspar
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im öffentlichen Ballungsverkehr
 TITLEMATCH: 10
 Feld 008: 1974
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: 
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: 
 PUBLISHERMATCH: 0
@@ -1414,6 +1597,7 @@ hasTag(100)
 Feld 100a: Baur
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die tarifrechtlichen Voraussetzungen
 TITLEMATCH: 0
@@ -1430,9 +1614,11 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #20
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Altwegg --- Autor2: 
 Titel: Die Folgekosten von Waldschäden Bewertungsansätze für die volkswirtschaftlichen Auswirkungen bei einer Beeinträchtigung der Schutzfunktion von Gebirgswäldern --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Bamberg - Verlag: difo-druck schmacht - Jahr: 1988 - Materialart: m
+Addendum: Dissertation HSG, Nr. 1051
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Folgekosten%20von%20Waldsch%C3%A4den%20Bewertungsans%C3%A4tze%20f%C3%BCr%20die%20volkswirtschaftlichen%20Auswirkungen%20bei%20einer%20Beeintr%C3%A4chtigung%20der%20Schutzfunktion%20von%20Gebirgsw%C3%A4ldern+AND+dc.anywhere+%3D+Altwegg+AND+dc.date+%3D+1988
 Treffer: 2
 
@@ -1441,16 +1627,19 @@ hasTag(100)
 Feld 100a: Altwegg
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Folgekosten von Waldschäden
 TITLEMATCH: 5
 Feld 008: 1988
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Bamberg
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: 
 PUBLISHERMATCH: 0
@@ -1489,16 +1678,19 @@ hasTag(700)
 Feld 700a: Binswanger
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Folgekosten von Waldschäden
 TITLEMATCH: 5
 Feld 008: 1988
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Bamberg
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Difo-Druck
 PUBLISHERMATCH: 0
@@ -1515,28 +1707,34 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #21
 *********************************************************************************
-ISBN: 3820454586
+ISBN: 3820454586  ISBN-2: 
 Autor: Grass --- Autor2: 
 Titel: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Frankfurt - Verlag: Peter Lang - Jahr: 1984 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Ausweichwirtschaft%20Abgrenzungen-Auspr%C3%A4gungen-Ausmasse+AND+dc.anywhere+%3D+Grass+AND+dc.date+%3D+1984
 Treffer: 2
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Grass
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse
 TITLEMATCH: 10
 Feld 008: 1984
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Frankfurt
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Peter Lang
 PUBLISHERMATCH: 5
@@ -1548,20 +1746,27 @@ Abzug fuer IFF_MATCH: -15
 Totalmatch: 40
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Grass
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Ausweichwirtschaft
 TITLEMATCH: 5
 Feld 008: 1984
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Frankfurt am Main
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Lang
 PUBLISHERMATCH: 0
@@ -1582,9 +1787,11 @@ Ersetzen: alt 515870234 mit neu 26888952X
 
 NEW ROW: #22
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: U S General Accounting Office GAO --- Autor2: 
 Titel: Business Process Reengineering Assessment Guide --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Washington, - Verlag: GAO - Jahr: 1997 - Materialart: m
+Addendum: Accounting and Information Management Division
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Business%20Process%20Reengineering%20Assessment%20Guide+AND+dc.anywhere+%3D+U%20S%20General%20Accounting%20Office%20GAO+AND+dc.date+%3D+1997
 Treffer: 1
 
@@ -1593,16 +1800,19 @@ hasTag(100)
 Feld 100a: U. S. General Accounting Office
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Business Process Reengineering Assessment Guide
 TITLEMATCH: 10
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Washington, D.C
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: GAO
 PUBLISHERMATCH: 5
@@ -1617,9 +1827,11 @@ Only IFF data available. Best solution from Felix.
 
 NEW ROW: #23
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Hinrichs --- Autor2: 
 Titel: A general theory of tax structure change during economic development --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Cambridge - Verlag: Law School of Harvard University - Jahr: 1966 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+A%20general%20theory%20of%20tax%20structure%20change%20during%20economic%20development+AND+dc.anywhere+%3D+Hinrichs+AND+dc.date+%3D+1966
 Treffer: 2
 
@@ -1628,16 +1840,19 @@ hasTag(100)
 Feld 100a: Hinrichs
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: A general theory of tax structure change during economic development
 TITLEMATCH: 10
 Feld 008: 1966
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Cambridge
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: The Law School of Harvard University
 PUBLISHERMATCH: 5
@@ -1661,6 +1876,7 @@ hasTag(100)
 Feld 100a: Lutz
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Hinrichs, Harley H., A General Theory of Tax Structure Change during Economic Development, Cambridge, Harvard Law School, 1966, xvi + 154 pp. ($3.00)
 TITLEMATCH: 10
@@ -1676,15 +1892,17 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #24
 *********************************************************************************
-ISBN: 0521333991
-ISBN-2: 0521336589
+ISBN: 0521333991  ISBN-2: 0521336589
 Autor: Gärdenfors --- Autor2: Sahlin
 Titel: Decision-probability-and utility --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Cambridge - Verlag: Cambridge University Press - Jahr: 1988 - Materialart: m
+Addendum: Selected Readings
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Decision-probability-and%20utility+AND+dc.anywhere+%3D+G%C3%A4rdenfors+AND+dc.date+%3D+1988
 Treffer: 2
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Gärdenfors
 AUTHORMATCH: 10
@@ -1692,16 +1910,19 @@ hasTag(700)
 Feld 700a: Sahlin
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Decision-probability-and utility
 TITLEMATCH: 10
 Feld 008: 1988
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Cambridge
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Cambridge University Press
 PUBLISHERMATCH: 5
@@ -1713,24 +1934,34 @@ Abzug fuer IFF_MATCH: -15
 Totalmatch: 50
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Gärdenfors
 AUTHORMATCH: 10
 Feld 700a: Sahlin
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Decision, probability and utility
 TITLEMATCH: 0
 Feld 008: 1988
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Cambridge [etc.]
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Cambridge University Press
 PUBLISHERMATCH: 5
@@ -1749,9 +1980,11 @@ Ersetzen: alt 515870250 mit neu 279847408
 
 NEW ROW: #25
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Mmobuosi --- Autor2: Ndongko
 Titel: Cahier Africains dAdministration Publique --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Nigeria - Verlag: Africain de Formation et de Recherche Administratives pur le Développement - Jahr: 1989 - Materialart: m
+Addendum: African Administrative Studies
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Cahier%20Africains%20dAdministration%20Publique+AND+dc.anywhere+%3D+Mmobuosi+AND+dc.date+%3D+1989
 Treffer: 1
 
@@ -1763,16 +1996,19 @@ hasTag(700)
 Feld 700a: Ndongko
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Cahier Africains d'Administration Publique
 TITLEMATCH: 5
 Feld 008: 1989
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Nigeria
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Centre Africain de Formation et de Recherche Administratives pur le Développement
 PUBLISHERMATCH: 5
@@ -1787,14 +2023,17 @@ Only IFF data available. Best solution from Felix.
 
 NEW ROW: #26
 *********************************************************************************
-ISBN: 9783039091263
+ISBN: 9783039091263  ISBN-2: 
 Autor: Leibfried --- Autor2: Schäfer
 Titel: 25 Jahre Unternehmertum - Festschrift für Giorgio Behr --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Zürich - Verlag: Versus Verlag AG - Jahr: 2010 - Materialart: m
+Ort: Zürich - Verlag: Versus  AG - Jahr: 2010 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+25%20Jahre%20Unternehmertum%20-%20Festschrift%20f%C3%BCr%20Giorgio%20Behr+AND+dc.anywhere+%3D+Leibfried+AND+dc.date+%3D+2010
 Treffer: 1
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Leibfried
 AUTHORMATCH: 10
@@ -1804,18 +2043,22 @@ AUTHORMATCH: 20
 Feld 700a: Behr
 AUTHORMATCH: 20
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: 25 Jahre Unternehmertum
 TITLEMATCH: 5
 Feld 008: 2010
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Zürich
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Versus
 PUBLISHERMATCH: 0
@@ -1852,31 +2095,40 @@ Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #27
 *********************************************************************************
-ISBN: 9041103929
+ISBN: 9041103929  ISBN-2: 
 Autor: IFA --- Autor2: 
 Titel: Cahiers de Droit Fiscal International --- Untertitel:  --- Titeldatum:  --- Band: Vol LXXXIIb 1997
 Ort: The Hague / London / Boston - Verlag: Kluwer - Jahr: 1997 - Materialart: abcdis
+Addendum: Die Besteuerung von Investmentfonds
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Cahiers%20de%20Droit%20Fiscal%20International+AND+dc.anywhere+%3D+IFA+AND+dc.date+%3D+1997
 Treffer: 0
 URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+9041103929
 Treffer mit geaendertem Suchstring: 4
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: The taxation of investment funds
 TITLEMATCH: 0
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: The Hague <etc.>
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Kluwer Law International
 PUBLISHERMATCH: 5
@@ -1888,24 +2140,32 @@ Zuschlag fuer altes HSG-Katalogisat: 21
 Totalmatch: 36
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(710)
 Feld 710a: Association fiscale internationale
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: The taxation of investment funds
 TITLEMATCH: 0
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: The Hague
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Kluwer Law International
 PUBLISHERMATCH: 5
@@ -1923,17 +2183,22 @@ Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991018425309702851
 Totalmatch: 19
 
 #Document 3:
+marcfield: 
+ISBNMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: The taxation of investment funds
 TITLEMATCH: 0
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: The Hague
 P-Match: 0
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Kluwer Law International
 PUBLISHERMATCH: 5
@@ -1945,17 +2210,24 @@ IDSMATCH: 9
 Totalmatch: 24
 
 #Document 4:
+marcfield: 
+ISBNMATCH: 0
+marcfield: 
+ISBNMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: The taxation of investment funds
 TITLEMATCH: 0
 Feld 008: 1997
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: The Hague
 PLACEMATCH: 0
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Kluwer
 PUBLISHERMATCH: 5
@@ -1970,41 +2242,49 @@ Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 18081
 
 NEW ROW: #28
 *********************************************************************************
-ISBN: 3820206582
+ISBN: 3820206582  ISBN-2: 
 Autor: Schitag Ernst & Young-Gruppe --- Autor2: 
 Titel: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung - Festschrift zum 65 Geburtstag von Professor Dr Hans Luik --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Stuttgart - Verlag: Schäffer Verlag für Wirtschaft und Steuern GmbH - Jahr: 1991 - Materialart: m
+Ort: Stuttgart - Verlag: Schäffer  für Wirtschaft und Steuern GmbH - Jahr: 1991 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aktuelle%20Fachbeitr%C3%A4ge%20aus%20Wirtschaftspr%C3%BCfung%20und%20Beratung%20-%20Festschrift%20zum%2065%20Geburtstag%20von%20Professor%20Dr%20Hans%20Luik+AND+dc.anywhere+%3D+Schitag%20Ernst%20%26%20Young-Gruppe+AND+dc.date+%3D+1991
 Treffer: 0
 URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3820206582
 Treffer mit geaendertem Suchstring: 2
 
 #Document 1:
+marcfield: 
+ISBNMATCH: 0
 hasTag(100)
 Feld 100a: Schitag Ernst & Young-Gruppe
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung - Festschrift zum 65. Geburtstag von Professor Dr. Hans Luik
 TITLEMATCH: 5
 Feld 008: 1991
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Stuttgart
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Schäffer Verlag für Wirtschaft und Steuern GmbH
-PUBLISHERMATCH: 5
+PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870277
 Feld 035a: (IDSSG)000991072
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 35
+Totalmatch: 30
 
 #Document 2:
+marcfield: 
+ISBNMATCH: 0
 hasTag(700)
 Feld 700a: Luik
 AUTHORMATCH: 0
@@ -2012,16 +2292,19 @@ hasTag(710)
 Feld 710a: Ernst & Young AG
 AUTHORMATCH: 0
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung
 TITLEMATCH: 5
 Feld 008: 1991
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Stuttgart
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Schäffer, Verlag für Wirtschaft und Steuern
 PUBLISHERMATCH: 0
@@ -2036,9 +2319,11 @@ Ersetzen: alt 515870277 mit neu 136317596
 
 NEW ROW: #29
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Bircher --- Autor2: 
 Titel: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand --- Untertitel:  --- Titeldatum:  --- Band: 
 Ort: Bern - Verlag: Seminararbeit - Jahr:  - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Finanzierung%20der%20%C3%B6ffentlichen%20Spit%C3%A4ler%20durch%20die%20%C3%B6ffentliche%20Hand+AND+dc.anywhere+%3D+Bircher
 Treffer: 2
 
@@ -2047,14 +2332,17 @@ hasTag(100)
 Feld 100a: Bircher
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
 TITLEMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Bern
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Seminararbeit
 PUBLISHERMATCH: 5
@@ -2070,14 +2358,17 @@ hasTag(100)
 Feld 100a: Bircher
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
 TITLEMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Bern
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: [Verlag nicht ermittelbar]
 PUBLISHERMATCH: 0
@@ -2092,9 +2383,11 @@ Ersetzen: alt 515870285 mit neu 083239693
 
 NEW ROW: #30
 *********************************************************************************
+ISBN:   ISBN-2: 
 Autor: Thoma --- Autor2: Niemann
 Titel: Die Auslegung der Steuergesetze in Wissenschaft und Praxis --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Köln - Verlag: Verlag Dr. Otto Schmidt KG - Jahr: 1965 - Materialart: m
+Ort: Köln - Verlag:  Dr. Otto Schmidt KG - Jahr: 1965 - Materialart: m
+Addendum: 
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Auslegung%20der%20Steuergesetze%20in%20Wissenschaft%20und%20Praxis+AND+dc.anywhere+%3D+Thoma+AND+dc.date+%3D+1965
 Treffer: 3
 
@@ -2105,16 +2398,19 @@ AUTHORMATCH: 10
 Feld 700a: Spitaler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
 TITLEMATCH: 10
 Feld 008: 1965
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Köln
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Schmidt
 PUBLISHERMATCH: 0
@@ -2132,16 +2428,19 @@ AUTHORMATCH: 10
 Feld 700a: Spitaler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
 TITLEMATCH: 10
 Feld 008: 1965
 YEARMATCH: 10
 hasTag(264)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 264a: Köln
 P-Match: 5
 hasTag(264)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 264b: Verlag Otto Schmidt
 PUBLISHERMATCH: 0
@@ -2159,16 +2458,19 @@ AUTHORMATCH: 10
 Feld 700a: Spitaler
 AUTHORMATCH: 10
 hasTag(245)
+marcfield: 
 TITLEMATCH mit getMatchValue: 0
 Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
 TITLEMATCH: 10
 Feld 008: 1965
 YEARMATCH: 10
 hasTag(260)
+marcfield: 
 PlaceMatch with getMatchValue: 0
 Feld 260a: Köln
 PLACEMATCH: 5
 hasTag(260)
+marcfield: 
 Publisher-Match with getMatchValue: 0
 Feld 260b: Verlag Otto Schmidt
 PUBLISHERMATCH: 0

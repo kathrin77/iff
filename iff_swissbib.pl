@@ -534,94 +534,46 @@ while ( $row = $csv->getline($fh_in) ) {
             # CHECK ISBN MATCH
             ############################################   
             
-            if ($HAS_ISBN) {
-            	if ( $xpc->exists( './datafield[@tag="020"]', $rec ) ) {
-                	foreach $el ( $xpc->findnodes( './datafield[@tag=020]', $rec ) )
-                	{
-					$ISBNMATCH = getMatchValue("a",$xpc,$el,$isbn,10);
-
-                    # debug:
-                    print $fh_report "ISBNMATCH: " . $ISBNMATCH . "\n";
-                	}
-            	}  
-            } 
-            
+            # TODO: ISBN cannot be compared with getMatchvalue (yet).           
                   
             ############################################
             # CHECK AUTHORS & AUTHORITIES MATCH
             ############################################
+            
+            # TODO: check author2      
 
             if ($HAS_AUTHOR) {
                 if ( hasTag( "100", $xpc, $rec ) ) {     
                     foreach $el ( $xpc->findnodes( './datafield[@tag=100]', $rec ) )
                     {
-                        $MARC100a =  $xpc->findnodes( './subfield[@code="a"]', $el )->to_literal;
-
+						$AUTHORMATCH = getMatchValue("a",$xpc,$el,$author,10) ;
                         # debug:
-                        print $fh_report "Feld 100a: " . $MARC100a . "\n";
-
-                        if ( $author =~ m/$MARC100a/i )
-                        { 
-                            $AUTHORMATCH = 10;
-                        }    
-                             # debug:
-                        print $fh_report "AUTHORMATCH: ". $AUTHORMATCH . "\n";
+                        print $fh_report "AUTHORMATCH mit getMatchValue: ". $AUTHORMATCH . "\n";
                     }
 
                 }
                 if (hasTag( "700", $xpc, $rec ) ) {
                     foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
                     {
-                        $MARC700a =
-                          $xpc->findnodes( './subfield[@code="a"]', $el )
-                          ->to_literal;
-
+						$AUTHORMATCH = getMatchValue("a",$xpc,$el,$author,10) ;
                         # debug:
-                        print $fh_report "Feld 700a: " . $MARC700a . "\n";
-
-                        if ( $MARC700a =~ m/$author/i || $MARC700a =~ m/$author2/i)
-                        { 
-                            $AUTHORMATCH += 10; # add 10 points
-                        }   
-                             # debug:
-                        print $fh_report "AUTHORMATCH: "
-                          . $AUTHORMATCH . "\n";
-                    }   
+                        print $fh_report "AUTHORMATCH mit getMatchValue: ". $AUTHORMATCH . "\n";
+                    } 
                 }
                 if (hasTag("110", $xpc, $rec)) {
                     foreach $el ( $xpc->findnodes( './datafield[@tag=110]', $rec ) )
                     {
-                        $MARC110a =
-                          $xpc->findnodes( './subfield[@code="a"]', $el )
-                          ->to_literal;
-
+						$AUTHORMATCH = getMatchValue("a",$xpc,$el,$author,10) ;
                         # debug:
-                        print $fh_report "Feld 110a: " . $MARC110a . "\n";
-
-                        if ( $author =~ m/$MARC110a/i )
-                        { 
-                            $AUTHORMATCH += 10;
-                        }   
-                             # debug:
-                        print $fh_report "AUTHORMATCH: "  . $AUTHORMATCH . "\n";
+                        print $fh_report "AUTHORMATCH mit getMatchValue: ". $AUTHORMATCH . "\n";
                     }
                 }
                 if (hasTag("710", $xpc, $rec)) {
                     foreach $el ( $xpc->findnodes( './datafield[@tag=710]', $rec ) )
                     {
-                        $MARC710a =
-                          $xpc->findnodes( './subfield[@code="a"]', $el )
-                          ->to_literal;
-
+						$AUTHORMATCH = getMatchValue("a",$xpc,$el,$author,10) ;
                         # debug:
-                        print $fh_report "Feld 710a: " . $MARC710a . "\n";
-
-                        if ( $author =~ m/$MARC710a/i )
-                        { 
-                            $AUTHORMATCH += 10;
-                        }   
-                             # debug:
-                        print $fh_report "AUTHORMATCH: "  . $AUTHORMATCH . "\n";
+                        print $fh_report "AUTHORMATCH mit getMatchValue: ". $AUTHORMATCH . "\n";
                     }
                 }
             }
@@ -641,121 +593,43 @@ while ( $row = $csv->getline($fh_in) ) {
             } 
             if (hasTag("246",$xpc,$rec)) {
                 foreach $el ($xpc->findnodes('./datafield[@tag=246]', $rec)) {
-                    $TITLEMATCH = getMatchValue("a",$xpc,$el,$title,5);
+                    $TITLEMATCH += getMatchValue("a",$xpc,$el,$title,5);
                     print $fh_report "TITLEMATCH mit getMatchValue: " . $TITLEMATCH . "\n";
                 }
             } 
+                        
+            ############################################
+            # CHECK YEAR MATCH
+            ############################################
             
-            # OLD TITLE CHECK:
+            # OLD Year: Feld 008: pos. 07-10 - Date 1
             
-            if ( $xpc->exists( './datafield[@tag="245"]', $rec ) ) {
-                foreach $el ( $xpc->findnodes( './datafield[@tag=245]', $rec ) )
-                {
-                    $MARC245a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 245a: " . $MARC245a . "\n";
-
-                    #print $fh_report "Titel: ".$title. "\n";
-
-                    if ( $MARC245a =~ m/$title/i )
-                    { #kommt Titel in 245a vor? (ohne Gross-/Kleinschreibung zu beachten)
-                        $TITLEMATCH = 10;
-                    }
-                    elsif ( ( substr $MARC245a, 0, 10 ) =~
-                        m/$shorttitle/i )
-                    {    #TODO: Kurztitellänge anpassen? Hier: 10 Zeichen.
-                        $TITLEMATCH = 5;
-                    }
-
-                    # debug:
-                    print $fh_report "TITLEMATCH: " . $TITLEMATCH . "\n";
-                }
+            if ($HAS_YEAR) {
+            	if (hasTag("260", $xpc, $rec) || hasTag("264", $xpc, $rec)) {
+            		foreach $el ($xpc->findnodes('./datafield[@tag=260 or @tag=264]', $rec)) {
+            			$YEARMATCH = getMatchValue("c",$xpc,$el,$year,10);
+            			print $fh_report "YEARMATCH with getMatchValue: " . $YEARMATCH . "\n";		
+            		}            		
+            	}
             }
-            ## Year: Feld 008: pos. 07-10 - Date 1
 
-            if (   $HAS_YEAR
-                && $xpc->exists( './controlfield[@tag="008"]', $rec ) )
-            {
-                foreach $el (
-                    $xpc->findnodes( './controlfield[@tag=008]', $rec ) )
-                {
-                    $MARC008 = $el->to_literal;
-                    $MARC008 = substr $MARC008, 7, 4;
-
-                    # debug:
-                    print $fh_report "Feld 008: " . $MARC008 . "\n";
-
-                    if ( $MARC008 eq $year ) {
-                        $YEARMATCH = 10;
-                    }
-
-                    # debug:
-                    print $fh_report "YEARMATCH: " . $YEARMATCH . "\n";
-                }
-            }
-            
-            # Place new:
+            ############################################
+            # CHECK PLACE MATCH
+            ############################################
             
             if ($HAS_PLACE) {
                 if (hasTag("264", $xpc, $rec) || hasTag("260", $xpc, $rec)) {
-                    foreach $el ( $xpc->findnodes( './datafield[@tag=264 or @tag=260]', $rec ) ) {
+                    foreach $el ( $xpc->findnodes( './datafield[@tag=264 or @tag=260]', $rec )) {
                         $PLACEMATCH = getMatchValue("a",$xpc,$el,$place,5);
                         print $fh_report "PlaceMatch with getMatchValue: " . $PLACEMATCH . "\n";
                     }
                 }
             }
 
-            # PLACE old:
-
-            if (   $HAS_PLACE
-                && $xpc->exists( './datafield[@tag="264"]', $rec ) )
-            {    #264
-
-                foreach $el ( $xpc->findnodes( './datafield[@tag=264]', $rec ) )
-                {
-                    $MARC264a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 264a: " . $MARC264a . "\n";
-
-                    #print $fh_report "Ort: ".$place."\n";
-                    if ( $MARC264a =~ m/$place/i ) {
-                        $PLACEMATCH = 5;
-                    }    #else { $PLACEMATCH = 0; }
-                         # debug:
-                    print $fh_report "P-Match: " . $PLACEMATCH . "\n";
-                }
-
-            }
-            elsif ($HAS_PLACE
-                && $xpc->exists( './datafield[@tag="260"]', $rec ) )
-            {            # 260
-
-                foreach $el ( $xpc->findnodes( './datafield[@tag=260]', $rec ) )
-                {
-                    $MARC260a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 260a: " . $MARC260a . "\n";
-
-                    #print $fh_report "Ort: ".$place."\n";
-                    if ( $MARC260a =~ m/$place/i ) {
-                        $PLACEMATCH = 5;
-                    }    #else { $PLACEMATCH = 0; }
-                         # debug:
-                    print $fh_report "PLACEMATCH: " . $PLACEMATCH . "\n";
-                }
-            }
-            
-            #Publisher new:
-            
+            ############################################
+            # CHECK PUBLISHER MATCH
+            ############################################
+                        
             if ($HAS_PUBLISHER) {
                 if (hasTag("264", $xpc, $rec) || hasTag("260", $xpc, $rec)) {
                     foreach $el ( $xpc->findnodes( './datafield[@tag=264 or @tag=260]', $rec ) ) {
@@ -765,54 +639,10 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 
-            # PUBLISHER OLD: TODO: nur das 1. Wort vergleichen oder alles nach / abschneiden.
-
-            if (   $HAS_PUBLISHER
-                && $xpc->exists( './datafield[@tag="264"]', $rec ) )
-            {            #264
-
-                foreach $el ( $xpc->findnodes( './datafield[@tag=264]', $rec ) )
-                {
-                    $MARC264b =
-                      $xpc->findnodes( './subfield[@code="b"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 264b: " . $MARC264b . "\n";
-
-                    #print $fh_report "Verlag: ".$publisher."\n";
-                    if ( $MARC264b =~ m/$publisher/i ) {
-                        $PUBLISHERMATCH = 5;
-                    }    #else { $PUBLISHERMATCH = 0; }
-                         # debug:
-                    print $fh_report "PUBLISHERMATCH: "
-                      . $PUBLISHERMATCH . "\n";
-                }
-
-            }
-            elsif ($HAS_PUBLISHER
-                && $xpc->exists( './datafield[@tag="260"]', $rec ) )
-            {            # 260
-                foreach $el ( $xpc->findnodes( './datafield[@tag=260]', $rec ) )
-                {
-                    $MARC260b =
-                      $xpc->findnodes( './subfield[@code="b"]', $el )
-                      ->to_literal;
-
-                    # debug:
-                    print $fh_report "Feld 260b: " . $MARC260b . "\n";
-
-                    #print $fh_report "Verlag: ".$publisher."\n";
-                    if ( $MARC260b =~ m/$publisher/i ) {
-                        $PUBLISHERMATCH = 5;
-                    }    #else { $PUBLISHERMATCH = 0; }
-                         # debug:
-                    print $fh_report "PUBLISHERMATCH: "
-                      . $PUBLISHERMATCH . "\n";
-                }
-            }
-
-            #MATERIAL: LDR-Werte
+            ############################################
+            # CHECK MATERIAL MATCH (LDR)
+            ############################################
+            
             if ( $xpc->exists( './leader', $rec ) ) {
                 foreach $el ( $xpc->findnodes( './leader', $rec ) ) {
                     $LDR = $el->to_literal;
@@ -847,7 +677,7 @@ while ( $row = $csv->getline($fh_in) ) {
             }
 
             #Get 035 Field and check if old IFF data.
-            if ( $xpc->exists( './datafield[@tag="035"]', $rec ) ) {
+            if ( hasTag("035", $xpc, $rec) ) {
                 foreach $el (
                     $xpc->findnodes( './datafield[@tag=035 ]', $rec ) )
                 {
@@ -903,14 +733,14 @@ while ( $row = $csv->getline($fh_in) ) {
                     else {
                         if ( $MARC035a =~ m/RERO/ )
                         {    #book from RERO slightly preferred to others
-                            $IDSMATCH = 4;
+                            $REROMATCH = 6;
                             print $fh_report "REROMATCH: "
                               . $IDSMATCH . "\n";
                         }
                         if ( $MARC035a =~ m/SGBN/ )
                         { #book from SGBN  slight preference over others if not IDS
 
-                            $IDSMATCH = 6;
+                            $SGBNMATCH = 4;
                             print $fh_report "SGBNMATCH: "
                               . $IDSMATCH . "\n";
                         }
@@ -935,6 +765,8 @@ while ( $row = $csv->getline($fh_in) ) {
                   $PUBLISHERMATCH +
                   $PLACEMATCH +
                   $MATERIALMATCH +
+                  $REROMATCH +
+                  $SGBNMATCH +
                   $IDSMATCH +
                   $IDSSGMATCH -
                   $IFFMATCH );
@@ -1091,9 +923,9 @@ sub emptyVariables {
 
 sub hasTag {
     my $tag = $_[0];    # Marc tag
-    my $xpc = $_[1];    # xpc path
-    my $rec = $_[2];    # record path
-    if ( $xpc->exists( './datafield[@tag=' . $tag . ']', $rec ) ) {
+    my $xpath1 = $_[1];    # xpc path
+    my $record = $_[2];    # record path
+    if ( $xpath1->exists( './datafield[@tag=' . $tag . ']', $record ) ) {
         #debug
         print $fh_report "hasTag(".$tag.")\n";
         return 1;
@@ -1104,36 +936,63 @@ sub hasTag {
 
 }
 
+
+
 sub getMatchValue {
     my $code   = $_[0];    #subfield
-    my $xpc   = $_[1];     #xpc
-    my $el = $_[2];    #el
+    my $xpath   = $_[1];     #xpc
+    my $element = $_[2];    #el
     my $vari  = $_[3];    #orignal data from csv
     my $posmatch = $_[4];    #which match value shoud be assigned to positive match?
     my $matchvalue;
     my $marcfield;
-    my $shortvari = substr $vari, 0,10;
+    #my $shortvari = substr $vari, 0,10; # first 10 letters 
     
-    
-    $marcfield = $xpc->findnodes( './subfield[@code=' . $code . ']', $el)->to_literal;
-    #$marcfield = $xpc->findvalue( './subfield[@code=' . $code . ']', $el);
+    $marcfield = $xpath->findnodes( './subfield[@code="' . $code . '"]', $element)->to_literal;    
 
-    # debug: this does not work, why???
+    # debug: 
     print $fh_report "marcfield: " . $marcfield . "\n";
-    #my $length = length ($marcfield);
-    #my $halflength = ceil($length/2);
-    my $marcshort = substr $marcfield, 0,10;
+    my $length = length ($marcfield);
+    my $halflength = ceil($length/2);
+    my $marcshort = substr $marcfield, 0,$halflength;
+    my $shortvari = substr $vari, 0, $halflength;
 	
     if ( ($vari =~ m/$marcfield/i ) || ($marcfield =~m/$vari/i)){ #Marc Data matches CSV Data
-        #debug: 
-        print $fh_report "marcfield full match! \n";
+        #debug:        print $fh_report "marcfield full match! \n";
         $matchvalue = $posmatch;
-    } elsif (($shortvari =~ m/$marcshort/i ) || ($marcshort =~m/$shortvari/i)) { #First 10 characters match
+    } elsif (($shortvari =~ m/\$marcshort/i ) || ($marcshort =~m/$shortvari/i)) { #half the strings match
         #debug: this never works, why?
         print $fh_report "marcfield short match! \n";
         $matchvalue = abs($posmatch/2);
     } else {$matchvalue = 0;}
     
     return $matchvalue;
+	
+}
+
+## not needed??
+
+sub getMatch {
+    my $tag = $_[0];    # Marc tag
+    my $code = $_[1];	# Marc subfield
+    my $xpc = $_[2];    # xpc path
+    my $rec = $_[3];    # record path
+    my $var = $_[4]; 	# original value from csv
+    my $posmatch = $_[5]; # value to be assigned for positive match
+    my $match;
+    
+    foreach my $el ( $xpc->findnodes( './datafield[@tag="'.$tag.'"]', $rec ) )
+    	{
+    	my $marcfield = $xpc->findnodes( './subfield[@code="'.$code.'"]', $el )->to_literal;
+		# debug:
+		print $fh_report "getMatch MARC " . $tag. $code.": ".$marcfield . "\n";
+
+		if ( ($marcfield =~ m/$var/i) || ($var =~m/$marcfield/i) ) { 
+        	$match = $posmatch;
+        } else {$match = 0;}
+        
+        return $match;
+
+	}
 	
 }

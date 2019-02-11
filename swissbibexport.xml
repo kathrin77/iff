@@ -1,17 +1,42 @@
 <record xmlns:xs="http://www.w3.org/2001/XMLSchema">
-         <leader>     caa a22     4  4500</leader>
-         <controlfield tag="001">045860890</controlfield>
+         <leader>     caa a22        4500</leader>
+         <controlfield tag="001">48087008X</controlfield>
          <controlfield tag="003">CHVBK</controlfield>
-         <controlfield tag="005">20180808120027.0</controlfield>
-         <controlfield tag="008">991019s1999    sz            00    ger  </controlfield>
-         <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(OCoLC)887764637</subfield>
+         <controlfield tag="005">20181126164133.0</controlfield>
+         <controlfield tag="008">170413s1999    sz            00    ger d</controlfield>
+         <datafield tag="019" ind1=" " ind2=" ">
+            <subfield code="a">!!!"Bibliogr. du droit suisse"!!!</subfield>
+            <subfield code="5">geubfd/07.1999</subfield>
          </datafield>
          <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(SGBN)000282863</subfield>
+            <subfield code="a">(RERO)R255103460</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(VAUD)991017702099702852</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RNV)002551034-41bculausa_network</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RERO)002551034</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">R255103460</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(EXLNZ-41BCULAUSA_NETWORK)991021371909702851</subfield>
          </datafield>
          <datafield tag="040" ind1=" " ind2=" ">
-            <subfield code="a">SGBN SGKBZ</subfield>
+            <subfield code="a">CH-MyRERO</subfield>
+            <subfield code="d">CHVBK</subfield>
+         </datafield>
+         <datafield tag="044" ind1=" " ind2=" ">
+            <subfield code="a">sz</subfield>
+            <subfield code="c">ch-zh</subfield>
+         </datafield>
+         <datafield tag="072" ind1=" " ind2="7">
+            <subfield code="a">s1dr</subfield>
+            <subfield code="2">rero</subfield>
          </datafield>
          <datafield tag="100" ind1="1" ind2=" ">
             <subfield code="a">Schmidhauser</subfield>
@@ -21,45 +46,98 @@
             <subfield code="a">Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG</subfield>
             <subfield code="c">Bruno Schmidhauser</subfield>
          </datafield>
-         <datafield tag="690" ind1=" " ind2="7">
-            <subfield code="B">s</subfield>
-            <subfield code="a">Kartellrecht</subfield>
-            <subfield code="x">Schweiz</subfield>
-            <subfield code="2">sgbn S</subfield>
+         <datafield tag="580" ind1=" " ind2=" ">
+            <subfield code="a">In: Der Einfluss des europäischen Rechts auf die Schweiz. - Zürich : Schulthess Polygraphischer Verlag, 1999. - P. 429-445</subfield>
          </datafield>
-         <datafield tag="773" ind1=" " ind2="A">
-            <subfield code="t">Der Einfluss des europäischen Rechts auf die Schweiz</subfield>
-            <subfield code="d">Zürich : Schulthess, 1999</subfield>
-            <subfield code="g">S. 429-445</subfield>
-            <subfield code="j">429-445</subfield>
-            <subfield code="w">(SGBN)000282683</subfield>
-            <subfield code="9">281278865</subfield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Droit</subfield>
+            <subfield code="2">rero</subfield>
          </datafield>
-         <datafield tag="912" ind1=" " ind2="7">
-            <subfield code="a">rs</subfield>
-            <subfield code="2">SGBN</subfield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Cartels</subfield>
+            <subfield code="2">rero</subfield>
          </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">SGBN</subfield>
-            <subfield code="P">100</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Schmidhauser</subfield>
-            <subfield code="D">Bruno</subfield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">cartello(concorrenza)</subfield>
+            <subfield code="9">ita</subfield>
+            <subfield code="2">jurivoc</subfield>
          </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">SGBN</subfield>
-            <subfield code="P">773</subfield>
-            <subfield code="E">-A</subfield>
-            <subfield code="t">Der Einfluss des europäischen Rechts auf die Schweiz</subfield>
-            <subfield code="d">Zürich : Schulthess, 1999</subfield>
-            <subfield code="g">S. 429-445</subfield>
-            <subfield code="j">429-445</subfield>
-            <subfield code="w">(SGBN)000282683</subfield>
-            <subfield code="9">281278865</subfield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">posizione dominante</subfield>
+            <subfield code="9">ita</subfield>
+            <subfield code="2">jurivoc</subfield>
          </datafield>
-         <datafield tag="986" ind1=" " ind2=" ">
-            <subfield code="a">SWISSBIB</subfield>
-            <subfield code="b">045860890</subfield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">azienda</subfield>
+            <subfield code="9">ita</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">cartel</subfield>
+            <subfield code="9">fre</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">position dominante</subfield>
+            <subfield code="9">fre</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">entreprise</subfield>
+            <subfield code="9">fre</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Kartell</subfield>
+            <subfield code="9">ger</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">beherrschende Stellung</subfield>
+            <subfield code="9">ger</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Unternehmung</subfield>
+            <subfield code="9">ger</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">cartel</subfield>
+            <subfield code="x">* droit</subfield>
+            <subfield code="z">Suisse</subfield>
+            <subfield code="2">chrero</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Suisse</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Svizzera(Stato)</subfield>
+            <subfield code="9">ita</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Suisse(État)</subfield>
+            <subfield code="9">fre</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Schweiz</subfield>
+            <subfield code="9">ger</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="691" ind1=" " ind2="7">
+            <subfield code="2">rero dr-sys</subfield>
+            <subfield code="u">CA/CH 84 i</subfield>
+         </datafield>
+         <datafield tag="691" ind1=" " ind2="7">
+            <subfield code="2">vaud dr-sys</subfield>
+            <subfield code="u">CA/CH 84 i</subfield>
+         </datafield>
+         <datafield tag="773" ind1="1" ind2=" ">
+            <subfield code="t">Einfluss des europäischen Rechts auf die Schweiz : Festschrift für Professor Roger Zäch zum 60. Geburtstag</subfield>
+            <subfield code="g">429</subfield>
          </datafield>
          <datafield tag="898" ind1=" " ind2=" ">
             <subfield code="a">BK010000</subfield>
@@ -67,22 +145,80 @@
             <subfield code="c">XK010000</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">SGBN</subfield>
-            <subfield code="F">SGKBV</subfield>
-            <subfield code="c">KM</subfield>
-            <subfield code="j">H 6744</subfield>
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE31013</subfield>
+            <subfield code="c">RE310130001</subfield>
+            <subfield code="j">A 15.1 g ZAEC 1999</subfield>
+            <subfield code="s">nedm 49914</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">SGBN</subfield>
-            <subfield code="F">SGKGB</subfield>
-            <subfield code="c">JB</subfield>
-            <subfield code="j">JRS 026</subfield>
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE61050</subfield>
+            <subfield code="c">RE610500001</subfield>
+            <subfield code="j">CA/CH 15.1 g ZAEC 1999</subfield>
+            <subfield code="s">BFDA 40853</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">SGBN</subfield>
-            <subfield code="F">SGKGB</subfield>
-            <subfield code="c">JB</subfield>
-            <subfield code="j">JRS 026</subfield>
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE71040</subfield>
+            <subfield code="c">RE710400002</subfield>
+            <subfield code="j">TFLa A 37/708</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE71050</subfield>
+            <subfield code="c">RE710500052</subfield>
+            <subfield code="j">TFLu 7/168</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE71060</subfield>
+            <subfield code="c">RE710600016</subfield>
+            <subfield code="j">A 15.1 g ZÄCH 1999</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE71080</subfield>
+            <subfield code="c">RE710800050</subfield>
+            <subfield code="j">A 15.1 g ZAEC 1999</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="F">bcue</subfield>
+            <subfield code="j">ZAB 17214 Ana 34.0.05ZAE</subfield>
+            <subfield code="c">810030002</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Schmidhauser</subfield>
+            <subfield code="D">Bruno</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="P">773</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="t">Einfluss des europäischen Rechts auf die Schweiz : Festschrift für Professor Roger Zäch zum 60. Geburtstag</subfield>
+            <subfield code="g">429</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Schmidhauser</subfield>
+            <subfield code="D">Bruno</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="P">773</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="t">Einfluss des europäischen Rechts auf die Schweiz : Festschrift für Professor Roger Zäch zum 60. Geburtstag</subfield>
+            <subfield code="g">429</subfield>
+         </datafield>
+         <datafield tag="986" ind1=" " ind2=" ">
+            <subfield code="a">SWISSBIB</subfield>
+            <subfield code="b">045860890</subfield>
          </datafield>
       <datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">-</subfield></datafield></record>
 <record xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -411,230 +547,43 @@
       <datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">-</subfield></datafield></record>
 <record xmlns:xs="http://www.w3.org/2001/XMLSchema">
          <leader>     cam a22     4  4500</leader>
-         <controlfield tag="001">155189379</controlfield>
+         <controlfield tag="001">022269053</controlfield>
          <controlfield tag="003">CHVBK</controlfield>
-         <controlfield tag="005">20180904030831.0</controlfield>
-         <controlfield tag="008">010926m19999999gw       l    00    ger  </controlfield>
+         <controlfield tag="005">20160912111820.0</controlfield>
+         <controlfield tag="008">810101m19839999gw            00    ger d</controlfield>
          <datafield tag="020" ind1=" " ind2=" ">
-            <subfield code="a">3-504-26041-6</subfield>
+            <subfield code="a">978-3-504-26041-5</subfield>
          </datafield>
          <datafield tag="020" ind1=" " ind2=" ">
-            <subfield code="a">978-3-504-26041-5 (Lief. 68)</subfield>
+            <subfield code="a">3-504-26030-0</subfield>
          </datafield>
          <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(OCoLC)890242615</subfield>
+            <subfield code="a">(OCoLC)611328988</subfield>
          </datafield>
          <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(NEBIS)004190777</subfield>
+            <subfield code="a">(IDSLU)000130311</subfield>
          </datafield>
          <datafield tag="040" ind1=" " ind2=" ">
-            <subfield code="a">SzZuIDS NEBIS UNI-RWI</subfield>
+            <subfield code="a">SzZuIDS LU LUZHB</subfield>
+            <subfield code="e">kids</subfield>
          </datafield>
          <datafield tag="245" ind1="0" ind2="0">
             <subfield code="a">Aussensteuerrecht</subfield>
-            <subfield code="b">Kommentar : Außensteuergesetz, Einkommensteuergesetz (§§ 1, 1a, 2a, 34c, 34d EStG; Auslandstätigkeitserlaß), Körperschaftsteuergesetz (§§ 8b, 26 KStG), Gewerbesteuergesetz (§ 9 Nr. 7, 8, § 12 Abs. 3 Nr. 4, 5 GewStG), Bewertungsgesetz (§ 102 Abs. 2 BewG), Erbschaftsteuergesetz (§ 21 ErbStG)</subfield>
-            <subfield code="c">Flick, Wassermeyer, Baumhoff</subfield>
+            <subfield code="b">Kommentar : Aussensteuergesetz, Einkommensteuergesetz</subfield>
+            <subfield code="c">von Hans Flick ... [et al.]</subfield>
          </datafield>
-         <datafield tag="250" ind1=" " ind2=" ">
-            <subfield code="a">6. Aufl.</subfield>
-            <subfield code="b">hrsg. von Franz Wassermeyer ... [et al.] ; bearb. von Hubertus Baumhoff ... [et al.]</subfield>
-         </datafield>
-         <datafield tag="260" ind1=" " ind2=" ">
-            <subfield code="a">Köln</subfield>
-            <subfield code="b">Schmidt</subfield>
-            <subfield code="c">1999-</subfield>
-         </datafield>
-         <datafield tag="300" ind1=" " ind2=" ">
-            <subfield code="a">4 Ordner</subfield>
-         </datafield>
-         <datafield tag="500" ind1=" " ind2=" ">
-            <subfield code="a">Losebl.-Ausg., wird laufend ergänzt</subfield>
-         </datafield>
-         <datafield tag="500" ind1=" " ind2=" ">
-            <subfield code="a">Lfg 43- = Aufl. 6-</subfield>
-         </datafield>
-         <datafield tag="500" ind1=" " ind2=" ">
-            <subfield code="a">Lfg. 1-42 u.d.T.: Kommentar zum Aussensteuerrecht</subfield>
-         </datafield>
-         <datafield tag="500" ind1=" " ind2=" ">
-            <subfield code="a">Ab Lfg. 68 (Nov. 2011) Untertitel: Aussensteuergesetz, aussensteuerrechtliche Vorschriften des Einkommensteuergestzes und des Körperschaftsteuergesetzes</subfield>
-         </datafield>
-         <datafield tag="500" ind1=" " ind2=" ">
-            <subfield code="a">Enthält auch die ensprechenden Gesetzesmaterialien</subfield>
-         </datafield>
-         <datafield tag="650" ind1=" " ind2="7">
-            <subfield code="a">Internationales Steuerrecht</subfield>
-            <subfield code="2">idszbz</subfield>
-         </datafield>
-         <datafield tag="651" ind1=" " ind2="7">
-            <subfield code="a">Deutschland</subfield>
-            <subfield code="2">idszbz</subfield>
-         </datafield>
-         <datafield tag="655" ind1=" " ind2="7">
-            <subfield code="a">Kommentar</subfield>
-            <subfield code="2">idszbz</subfield>
-         </datafield>
-         <datafield tag="700" ind1="1" ind2=" ">
-            <subfield code="a">Flick</subfield>
-            <subfield code="D">Hans</subfield>
-            <subfield code="c">Steuerexperte, Deutschland</subfield>
-            <subfield code="d">1927-</subfield>
-            <subfield code="0">(DE-588)1090032579</subfield>
-         </datafield>
-         <datafield tag="700" ind1="1" ind2=" ">
-            <subfield code="a">Wassermeyer</subfield>
-            <subfield code="D">Franz</subfield>
-         </datafield>
-         <datafield tag="700" ind1="1" ind2=" ">
-            <subfield code="a">Baumhoff</subfield>
-            <subfield code="D">Hubertus</subfield>
-         </datafield>
-         <datafield tag="751" ind1=" " ind2=" ">
-            <subfield code="a">Deutschland</subfield>
-            <subfield code="0">(DE-588)4011882-4</subfield>
-         </datafield>
-         <datafield tag="908" ind1=" " ind2=" ">
-            <subfield code="D">1</subfield>
-            <subfield code="a">Gesetze und Verordnungen = Lois, règlements</subfield>
-         </datafield>
-         <datafield tag="909" ind1=" " ind2="7">
-            <subfield code="a">rwimon200109e</subfield>
-            <subfield code="c">biss 010926</subfield>
-            <subfield code="d">rwiswk200110b</subfield>
-            <subfield code="e">meim</subfield>
-            <subfield code="2">idszbz Z2</subfield>
-         </datafield>
-         <datafield tag="909" ind1=" " ind2="7">
-            <subfield code="a">E51ANH-2008</subfield>
-            <subfield code="2">nebis E5</subfield>
-         </datafield>
-         <datafield tag="912" ind1=" " ind2="7">
-            <subfield code="a">RWI-S</subfield>
-            <subfield code="2">RWI-</subfield>
-         </datafield>
-         <datafield tag="912" ind1=" " ind2="7">
-            <subfield code="a">M115</subfield>
-            <subfield code="2">Z01</subfield>
-         </datafield>
-         <datafield tag="912" ind1=" " ind2="7">
-            <subfield code="a">E51RP</subfield>
-            <subfield code="2">E51-20180124</subfield>
-         </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="P">700</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Flick</subfield>
-            <subfield code="D">Hans</subfield>
-            <subfield code="c">Steuerexperte, Deutschland</subfield>
-            <subfield code="d">1927-</subfield>
-            <subfield code="0">(DE-588)1090032579</subfield>
-         </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="P">700</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Wassermeyer</subfield>
-            <subfield code="D">Franz</subfield>
-         </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="P">700</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Baumhoff</subfield>
-            <subfield code="D">Hubertus</subfield>
-         </datafield>
-         <datafield tag="986" ind1=" " ind2=" ">
-            <subfield code="a">SWISSBIB</subfield>
-            <subfield code="b">155189379</subfield>
-         </datafield>
-         <datafield tag="898" ind1=" " ind2=" ">
-            <subfield code="a">BK020000</subfield>
-            <subfield code="b">XK020000</subfield>
-            <subfield code="c">XK020000</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">E51</subfield>
-            <subfield code="c">E51BR</subfield>
-            <subfield code="j">RP 349.304 004 3 Flic Aus Bd.1</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">E51</subfield>
-            <subfield code="c">E51BR</subfield>
-            <subfield code="j">RP 349.304 004 3 Flic Aus Bd.2</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">E51</subfield>
-            <subfield code="c">E51BR</subfield>
-            <subfield code="j">RP 349.304 004 3 Flic Aus Bd.3</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">E51</subfield>
-            <subfield code="c">E51BR</subfield>
-            <subfield code="j">RP 349.304 004 3 Flic Aus Bd.4</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">Z16</subfield>
-            <subfield code="j">Seq 725 : 1</subfield>
-            <subfield code="z">1: Gesetzestexte, § 1 AStG</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">Z16</subfield>
-            <subfield code="j">Seq 725 : 2</subfield>
-            <subfield code="z">2: §§ 2-8 AStG</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">Z16</subfield>
-            <subfield code="j">Seq 725 : 3</subfield>
-            <subfield code="z">3: §§ 9-22 AStG</subfield>
-         </datafield>
-         <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">NEBIS</subfield>
-            <subfield code="F">Z16</subfield>
-            <subfield code="j">Seq 725 : 4</subfield>
-            <subfield code="z">4: Aussensteuerrechtliche Vorschriften des EStG und KStG, Sachregister</subfield>
-         </datafield>
-      <datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">KB 308 3</subfield></datafield></record>
-<record xmlns:xs="http://www.w3.org/2001/XMLSchema">
-         <leader>     cam a22     u  4500</leader>
-         <controlfield tag="001">031361935</controlfield>
-         <controlfield tag="003">CHVBK</controlfield>
-         <controlfield tag="005">20181213035212.0</controlfield>
-         <controlfield tag="008">941209s1981    sz a     m    000 0 ger  </controlfield>
-         <datafield tag="020" ind1=" " ind2=" ">
-            <subfield code="a">3-7253-0132-8</subfield>
-         </datafield>
-         <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(OCoLC)163310681</subfield>
-         </datafield>
-         <datafield tag="035" ind1=" " ind2=" ">
-            <subfield code="a">(IDSSG)000076516</subfield>
-         </datafield>
-         <datafield tag="040" ind1=" " ind2=" ">
-            <subfield code="a">SzZuIDS HSG</subfield>
-            <subfield code="b">ger</subfield>
-            <subfield code="e">kids</subfield>
-         </datafield>
-         <datafield tag="100" ind1="1" ind2=" ">
-            <subfield code="a">Rölli</subfield>
-            <subfield code="D">Alfred</subfield>
-         </datafield>
-         <datafield tag="245" ind1="1" ind2="4">
-            <subfield code="a">Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz</subfield>
-            <subfield code="c">von Alfred Rölli</subfield>
+         <datafield tag="246" ind1="1" ind2=" ">
+            <subfield code="i">Bis Lfg. 42 u.d.T.:</subfield>
+            <subfield code="a">Kommentar zum Aussensteuerrecht</subfield>
          </datafield>
          <datafield tag="264" ind1=" " ind2="1">
-            <subfield code="c">1981</subfield>
+            <subfield code="a">Köln</subfield>
+            <subfield code="b">O. Schmidt</subfield>
+            <subfield code="c">1983-</subfield>
          </datafield>
          <datafield tag="300" ind1=" " ind2=" ">
-            <subfield code="a">XIII, 318 S</subfield>
+            <subfield code="a">Loseblattwerk, wird laufend ergänzt</subfield>
+            <subfield code="c">25 cm</subfield>
          </datafield>
          <datafield tag="336" ind1=" " ind2=" ">
             <subfield code="a">Text</subfield>
@@ -651,17 +600,303 @@
             <subfield code="b">nc</subfield>
             <subfield code="2">rdacarrier/ger</subfield>
          </datafield>
-         <datafield tag="490" ind1="0" ind2=" ">
-            <subfield code="a">Dissertationen / Hochschule St. Gallen</subfield>
-            <subfield code="v">Nr. 790</subfield>
-            <subfield code="i">790</subfield>
-            <subfield code="w">(IDSSG)000231472</subfield>
-            <subfield code="9">280571712</subfield>
+         <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Am Kopf der Titelseite: Flick/Wassermeyer/Baumhoff/Schönfeld</subfield>
+         </datafield>
+         <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Mit Lfg. 43 (Juli 1999) Abspaltung von: Handbuch internationale Verrechnungspreise</subfield>
+         </datafield>
+         <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Wechselnde Auflagenbezeichnungen</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">Steuerrecht. Deutschland, B: Aussensteuerrecht: Kommentar</subfield>
+            <subfield code="2">idslu L1</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">Gesetze. Deutschland, B: Aussensteuergesetz</subfield>
+            <subfield code="2">idslu L1</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">Aussensteuergesetz. Deutschland. A. Kommentar</subfield>
+            <subfield code="2">idslu L1</subfield>
+         </datafield>
+         <datafield tag="691" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="u">PC 54 D</subfield>
+            <subfield code="2">idslu L1</subfield>
+         </datafield>
+         <datafield tag="912" ind1=" " ind2="7">
+            <subfield code="a">820</subfield>
+            <subfield code="2">IDS LU</subfield>
+         </datafield>
+         <datafield tag="898" ind1=" " ind2=" ">
+            <subfield code="a">BK020000</subfield>
+            <subfield code="b">XK020000</subfield>
+            <subfield code="c">XK020000</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUUHL</subfield>
+            <subfield code="c">U3FRE</subfield>
+            <subfield code="j">PC 54 D .b FLIC 1983:1</subfield>
+            <subfield code="z">Bd. 1: Gesetzestexte § 1 AStG</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUUHL</subfield>
+            <subfield code="c">U3FRE</subfield>
+            <subfield code="j">PC 54 D .b FLIC 1983:2</subfield>
+            <subfield code="z">Bd. 2: §§ 2-8 AStG</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUUHL</subfield>
+            <subfield code="c">U3FRE</subfield>
+            <subfield code="j">PC 54 D .b FLIC 1983:3</subfield>
+            <subfield code="z">Bd. 3: §§ 9-22 AStG</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUUHL</subfield>
+            <subfield code="c">U3FRE</subfield>
+            <subfield code="j">PC 54 D .b FLIC 1983:4</subfield>
+            <subfield code="z">Bd. 4: Aussensteuerrechtl. Vorschriften des EStG + KStG, Sachregister</subfield>
+         </datafield>
+         <datafield tag="852" ind1="4" ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUUHL</subfield>
+            <subfield code="c">U3FRE</subfield>
+            <subfield code="j">PC 54 D .b FLIC 1983</subfield>
+            <subfield code="a">1983-2014</subfield>
+         </datafield>
+      <datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">KB 308 3</subfield></datafield></record>
+<record xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <leader>     cam a22     u  4500</leader>
+         <controlfield tag="001">271097167</controlfield>
+         <controlfield tag="003">CHVBK</controlfield>
+         <controlfield tag="005">20181117040827.0</controlfield>
+         <controlfield tag="008">130817s1981    sz       m    00    ger d</controlfield>
+         <datafield tag="020" ind1=" " ind2=" ">
+            <subfield code="a">3-7253-0132-8</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(IDSBB)000019921</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NEBIS)000883147</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(SGBN)000014736</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(SBT)000615110</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(KBTG)5221</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(SNL)991007995309703976</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(SNL)991017580079703976</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(IDSLU)000663941</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(ALEX)993573684101791</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(SGBN)000014054</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(NEBIS)007885904</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RERO)0321967</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RERO)0461208</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(VAUD)991020265489702852</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(VAUD)991014882429702852</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(ALEX)991944204101791</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)976148-41snl_51</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)vtls000976148</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)000976148</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)1148488-41snl_51</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)vtls001148488</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(Sz)001148488</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RNV)000426004-41bculausa_network</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RERO)000426004</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">0461208</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(EXLNZ-41BCULAUSA_NETWORK)991015411839702851</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RNV)000297194-41bculausa_network</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(RERO)000297194</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">0321967</subfield>
+         </datafield>
+         <datafield tag="035" ind1=" " ind2=" ">
+            <subfield code="a">(EXLNZ-41BCULAUSA_NETWORK)991011058759702851</subfield>
+         </datafield>
+         <datafield tag="040" ind1=" " ind2=" ">
+            <subfield code="a">SzZuIDS BS/BE B589</subfield>
+            <subfield code="b">ger</subfield>
+            <subfield code="e">kids</subfield>
+         </datafield>
+         <datafield tag="072" ind1=" " ind2="7">
+            <subfield code="a">s1se</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="084" ind1=" " ind2=" ">
+            <subfield code="a">QY 500</subfield>
+            <subfield code="2">rvk</subfield>
+         </datafield>
+         <datafield tag="100" ind1="1" ind2=" ">
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="245" ind1="1" ind2="4">
+            <subfield code="a">Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz</subfield>
+            <subfield code="c">vorgelegt von Alfred Rölli</subfield>
+         </datafield>
+         <datafield tag="264" ind1=" " ind2="1">
+            <subfield code="a">Diessenhofen</subfield>
+            <subfield code="b">Verlag Rüegger</subfield>
+            <subfield code="c">1981</subfield>
+         </datafield>
+         <datafield tag="300" ind1=" " ind2=" ">
+            <subfield code="a">XIII, 318 S</subfield>
+            <subfield code="b">Ill</subfield>
+            <subfield code="c">23 cm</subfield>
+         </datafield>
+         <datafield tag="490" ind1="1" ind2=" ">
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="w">(IDSBB)000097950</subfield>
+            <subfield code="v">Bd. 4</subfield>
+            <subfield code="i">4</subfield>
+            <subfield code="9">268901309</subfield>
+         </datafield>
+         <datafield tag="500" ind1=" " ind2=" ">
+            <subfield code="a">Auch Diss. St. Gallen</subfield>
          </datafield>
          <datafield tag="502" ind1=" " ind2=" ">
-            <subfield code="b">Dissertation</subfield>
-            <subfield code="c">Universität St. Gallen</subfield>
-            <subfield code="d">1981</subfield>
+            <subfield code="a">Zugl.: Diss. Wirtschafts- und Sozialwiss. St. Gallen, 1981</subfield>
+         </datafield>
+         <datafield tag="504" ind1=" " ind2=" ">
+            <subfield code="a">Literaturverz</subfield>
+         </datafield>
+         <datafield tag="583" ind1=" " ind2=" ">
+            <subfield code="8">1900900077</subfield>
+            <subfield code="a">dea</subfield>
+            <subfield code="i">ps</subfield>
+            <subfield code="c">NB024-2000</subfield>
+            <subfield code="l">nt</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="0">
+            <subfield code="a">Home ownership</subfield>
+            <subfield code="z">Switzerland</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Wohnungseigentum</subfield>
+            <subfield code="0">(DE-588)4066789-3</subfield>
+            <subfield code="2">gnd</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Wirtschaftspolitik</subfield>
+            <subfield code="0">(DE-588)4066493-4</subfield>
+            <subfield code="2">gnd</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Eigentumserwerb</subfield>
+            <subfield code="0">(DE-588)4132511-4</subfield>
+            <subfield code="2">gnd</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Wohneigentum</subfield>
+            <subfield code="z">Schweiz</subfield>
+            <subfield code="2">idsbb</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Wohneigentum</subfield>
+            <subfield code="0">(DE-588)4117670-4</subfield>
+            <subfield code="2">gnd</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Indicateurs économiques</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Indicateurs sociaux</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">Logement</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">propriété privée</subfield>
+            <subfield code="2">rerovoc</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">1970-1980</subfield>
+            <subfield code="2">rero</subfield>
+         </datafield>
+         <datafield tag="650" ind1=" " ind2="7">
+            <subfield code="a">indicateurs économiques</subfield>
+            <subfield code="x">indicateurs sociaux</subfield>
+            <subfield code="x">logement</subfield>
+            <subfield code="x">propriété privée</subfield>
+            <subfield code="z">Suisse</subfield>
+            <subfield code="y">1970 / 1980</subfield>
+            <subfield code="2">chrero</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Schweiz</subfield>
+            <subfield code="0">(DE-588)4053881-3</subfield>
+            <subfield code="2">gnd</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Schweiz</subfield>
+            <subfield code="2">jurivoc</subfield>
+         </datafield>
+         <datafield tag="651" ind1=" " ind2="7">
+            <subfield code="a">Suisse</subfield>
+            <subfield code="2">rero</subfield>
          </datafield>
          <datafield tag="655" ind1=" " ind2="7">
             <subfield code="a">Hochschulschrift</subfield>
@@ -669,26 +904,267 @@
          </datafield>
          <datafield tag="690" ind1=" " ind2="7">
             <subfield code="B">u</subfield>
-            <subfield code="a">Vwl Bauwesen und Wohnungswesen : Wohnungswirtschaft</subfield>
-            <subfield code="2">idssg H9</subfield>
+            <subfield code="a">Stockwerkeigentum / Einzelne Gebiete und Orte / Schweiz</subfield>
+            <subfield code="2">idszbz Z9</subfield>
          </datafield>
          <datafield tag="690" ind1=" " ind2="7">
             <subfield code="B">u</subfield>
-            <subfield code="a">Vwl Sozialpolitik : Schweiz</subfield>
-            <subfield code="2">idssg H9</subfield>
+            <subfield code="a">Eigentum, B: Wohneigentum. Schweiz</subfield>
+            <subfield code="2">idslu L1</subfield>
          </datafield>
          <datafield tag="690" ind1=" " ind2="7">
             <subfield code="B">u</subfield>
-            <subfield code="a">Vwl Bauwesen und Wohnungswesen : Mietprobleme</subfield>
-            <subfield code="2">idssg H9</subfield>
+            <subfield code="a">Wohnungseigentum. Schweiz. A</subfield>
+            <subfield code="2">idslu L1</subfield>
          </datafield>
-         <datafield tag="700" ind1="1" ind2=" ">
-            <subfield code="a">Nydegger</subfield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">s</subfield>
+            <subfield code="a">Wohneigentum</subfield>
+            <subfield code="2">alex voc11</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">L 6</subfield>
+            <subfield code="d">Industry studies: manufacturing = Branchenstudien: Verarbeitung</subfield>
+            <subfield code="2">idsuzh VJ</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">I 3</subfield>
+            <subfield code="d">Welfare and poverty = Wohlfahrt und Armut</subfield>
+            <subfield code="2">idsuzh VJ</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">u</subfield>
+            <subfield code="a">E 2</subfield>
+            <subfield code="d">Consumption, saving, production, employment and investment = Konsum, Sparen, Produktion, Beschäftigung und Investition</subfield>
+            <subfield code="2">idsuzh VJ</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">s</subfield>
+            <subfield code="a">Wohneigentum</subfield>
+            <subfield code="2">alex helvetosaurus</subfield>
+         </datafield>
+         <datafield tag="690" ind1=" " ind2="7">
+            <subfield code="B">g</subfield>
+            <subfield code="a">Schweiz</subfield>
+            <subfield code="2">alex helvetosaurus</subfield>
+         </datafield>
+         <datafield tag="830" ind1=" " ind2="0">
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+            <subfield code="0">(CH-000086-2)M95506</subfield>
+         </datafield>
+         <datafield tag="908" ind1=" " ind2=" ">
+            <subfield code="D">1</subfield>
+            <subfield code="a">Hochschulschrift = Thèse/Mémoire</subfield>
+         </datafield>
+         <datafield tag="909" ind1=" " ind2="7">
+            <subfield code="f">medea 105685</subfield>
+            <subfield code="2">idslu LA</subfield>
+         </datafield>
+         <datafield tag="909" ind1=" " ind2="7">
+            <subfield code="f">DISS USG</subfield>
+            <subfield code="2">sgbn S</subfield>
+         </datafield>
+         <datafield tag="912" ind1=" " ind2="7">
+            <subfield code="a">wi</subfield>
+            <subfield code="2">SzZuIDS BS/BE</subfield>
+         </datafield>
+         <datafield tag="912" ind1=" " ind2="7">
+            <subfield code="a">ww</subfield>
+            <subfield code="2">SGBN</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
             <subfield code="D">Alfred</subfield>
-            <subfield code="d">1924-2018</subfield>
-            <subfield code="0">(DE-588)170388077</subfield>
-            <subfield code="e">Akademischer Betreuer</subfield>
-            <subfield code="4">dgs</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">0-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="w">(IDSBB)000097950</subfield>
+            <subfield code="v">Bd. 4</subfield>
+            <subfield code="i">4</subfield>
+            <subfield code="9">268901309</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">Band 4</subfield>
+            <subfield code="i">4</subfield>
+            <subfield code="w">(NEBIS)000020767</subfield>
+            <subfield code="9">268901309</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SGBN</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">0-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">Bd 4</subfield>
+            <subfield code="i">4</subfield>
+            <subfield code="w">(SGBN)000010188</subfield>
+            <subfield code="9">268901309</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SBT</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SBT</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">Bd. 4</subfield>
+            <subfield code="i">4</subfield>
+            <subfield code="w">(SBT)000614404</subfield>
+            <subfield code="9">268901309</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">KBTG</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+            <subfield code="0">(CH-000086-2)M95502</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">KBTG</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">KBTG</subfield>
+            <subfield code="P">830</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+            <subfield code="0">(CH-000086-2)M95506</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SNL</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SNL</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SNL</subfield>
+            <subfield code="P">830</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="P">830</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">SGBN</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">Bd. 4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="P">830</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="P">490</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Reihe Wirtschaftspolitik</subfield>
+            <subfield code="v">Bd. 4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="P">830</subfield>
+            <subfield code="E">--</subfield>
+            <subfield code="a">Wirtschaftspolitik</subfield>
+            <subfield code="v">4</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="950" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="P">100</subfield>
+            <subfield code="E">1-</subfield>
+            <subfield code="a">Rölli</subfield>
+            <subfield code="D">Alfred</subfield>
+         </datafield>
+         <datafield tag="986" ind1=" " ind2=" ">
+            <subfield code="a">SWISSBIB</subfield>
+            <subfield code="b">031361935</subfield>
+         </datafield>
+         <datafield tag="898" ind1=" " ind2=" ">
+            <subfield code="a">BK020000</subfield>
+            <subfield code="b">XK020000</subfield>
+            <subfield code="c">XK020000</subfield>
          </datafield>
          <datafield tag="898" ind1=" " ind2=" ">
             <subfield code="a">BK020300</subfield>
@@ -696,54 +1172,204 @@
             <subfield code="c">XK020000</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="F">HSG</subfield>
-            <subfield code="c">ZIG</subfield>
-            <subfield code="j">* Diss HSG 0790</subfield>
+            <subfield code="B">SNL</subfield>
+            <subfield code="F">NB001</subfield>
+            <subfield code="j">H 11494</subfield>
+            <subfield code="c">NB10010</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="F">HSG</subfield>
-            <subfield code="c">BURON</subfield>
-            <subfield code="j">+Vwl N 1158</subfield>
+            <subfield code="B">SNL</subfield>
+            <subfield code="F">NB001</subfield>
+            <subfield code="j">P 30404/4</subfield>
+            <subfield code="c">NB10011</subfield>
          </datafield>
          <datafield tag="949" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="F">HSG</subfield>
-            <subfield code="c">BURON</subfield>
-            <subfield code="j">+Vwl N 1158a</subfield>
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E02</subfield>
+            <subfield code="c">E02MI</subfield>
+            <subfield code="j">ZP 2633</subfield>
          </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="P">100</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Rölli</subfield>
-            <subfield code="D">Alfred</subfield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E03</subfield>
+            <subfield code="j">251 | 9501</subfield>
          </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="P">490</subfield>
-            <subfield code="E">0-</subfield>
-            <subfield code="a">Dissertationen / Hochschule St. Gallen</subfield>
-            <subfield code="v">Nr. 790</subfield>
-            <subfield code="i">790</subfield>
-            <subfield code="w">(IDSSG)000231472</subfield>
-            <subfield code="9">280571712</subfield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E06</subfield>
+            <subfield code="c">E06AZ</subfield>
+            <subfield code="j">C 4261</subfield>
          </datafield>
-         <datafield tag="950" ind1=" " ind2=" ">
-            <subfield code="B">IDSSG</subfield>
-            <subfield code="P">700</subfield>
-            <subfield code="E">1-</subfield>
-            <subfield code="a">Nydegger</subfield>
-            <subfield code="D">Alfred</subfield>
-            <subfield code="d">1924-2018</subfield>
-            <subfield code="0">(DE-588)170388077</subfield>
-            <subfield code="e">Akademischer Betreuer</subfield>
-            <subfield code="4">dgs</subfield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E16</subfield>
+            <subfield code="c">K1</subfield>
+            <subfield code="j">P 919435: 4</subfield>
          </datafield>
-         <datafield tag="986" ind1=" " ind2=" ">
-            <subfield code="a">SWISSBIB</subfield>
-            <subfield code="b">031361935</subfield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E19</subfield>
+            <subfield code="j">68892</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">E79</subfield>
+            <subfield code="j">NSL 5-BIB 490: 4</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">Z01</subfield>
+            <subfield code="c">04</subfield>
+            <subfield code="j">TC 4770: 4</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">Z01</subfield>
+            <subfield code="c">05</subfield>
+            <subfield code="j">UnS 1981: 1069</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">UECON</subfield>
+            <subfield code="c">ULMZN</subfield>
+            <subfield code="j">SOS N 1233</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">NEBIS</subfield>
+            <subfield code="F">UFSW</subfield>
+            <subfield code="j">A/N 56</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE31014</subfield>
+            <subfield code="c">RE310140001</subfield>
+            <subfield code="j">BSE C4/ 251</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE61040</subfield>
+            <subfield code="c">RE610400044</subfield>
+            <subfield code="j">330.9494 ROEs</subfield>
+            <subfield code="s">SESA 3374</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE71060</subfield>
+            <subfield code="c">RE710600011</subfield>
+            <subfield code="j">CA/CH 7.7 h RÖLL 1981</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE01001</subfield>
+            <subfield code="c">RE010010001</subfield>
+            <subfield code="j">UA 81.017</subfield>
+            <subfield code="z">$9 r/98/0038</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">RERO</subfield>
+            <subfield code="F">RE61001</subfield>
+            <subfield code="c">RE610010022</subfield>
+            <subfield code="j">BGE Qte 760</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="F">A100</subfield>
+            <subfield code="c">MAG</subfield>
+            <subfield code="j">UBH Diss 1981,1492</subfield>
+            <subfield code="x">Akz: 81 T</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="F">A125</subfield>
+            <subfield code="c">125ST</subfield>
+            <subfield code="j">SWA Vo H XII 10b Stockwerkeigentum</subfield>
+            <subfield code="x">122.0807</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="F">B400</subfield>
+            <subfield code="c">400F3</subfield>
+            <subfield code="j">BeM ZB Jus var 40283</subfield>
+            <subfield code="x">Akz: be/stub/u</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="F">B500</subfield>
+            <subfield code="c">FH</subfield>
+            <subfield code="j">VRF_MS_1810 11</subfield>
+            <subfield code="s">POL 563. 17</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSBB</subfield>
+            <subfield code="F">B589</subfield>
+            <subfield code="c">589AR</subfield>
+            <subfield code="j">VW L.XII.b 35</subfield>
+            <subfield code="x">REKATA1100412</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">IDSLU</subfield>
+            <subfield code="F">LUZHB</subfield>
+            <subfield code="c">SBIZB</subfield>
+            <subfield code="j">H.b 2206</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="F">bcud</subfield>
+            <subfield code="j">TOA 21016</subfield>
+            <subfield code="c">810010047</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">VAUD</subfield>
+            <subfield code="F">idheap</subfield>
+            <subfield code="j">APA 1882 351.778.5</subfield>
+            <subfield code="c">810620002</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">SBT</subfield>
+            <subfield code="F">BZSTA</subfield>
+            <subfield code="c">907</subfield>
+            <subfield code="j">STA 333.3/1323</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">KBTG</subfield>
+            <subfield code="F">KBS</subfield>
+            <subfield code="j">BA 6835</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">SGBN</subfield>
+            <subfield code="F">SGKBV</subfield>
+            <subfield code="c">KM</subfield>
+            <subfield code="j">E 5392</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">SGBN</subfield>
+            <subfield code="F">SGFDG</subfield>
+            <subfield code="c">BI</subfield>
+            <subfield code="j">FDGS BA 4</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">SGBN</subfield>
+            <subfield code="F">SGKBV</subfield>
+            <subfield code="c">DEPOT</subfield>
+            <subfield code="j">VDISS HSG 790</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="F">BIG</subfield>
+            <subfield code="j">BIG ARE 6.50.10</subfield>
+            <subfield code="c">Magazin1</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="F">BFS</subfield>
+            <subfield code="j">BFS 38 1703</subfield>
+            <subfield code="c">Archiv</subfield>
+         </datafield>
+         <datafield tag="949" ind1=" " ind2=" ">
+            <subfield code="B">ALEX</subfield>
+            <subfield code="F">BWO</subfield>
+            <subfield code="j">BWO 340 ROE</subfield>
+            <subfield code="c">BiblioDok</subfield>
          </datafield>
       <datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">AF 183</subfield></datafield></record>
 <record xmlns:xs="http://www.w3.org/2001/XMLSchema">

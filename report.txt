@@ -10,34 +10,28 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 1
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Yerly
-AUTHORMATCH: 10
+marcfield: Yerly
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: The political economy of budget rules in the twenty-six Swiss cantons
-TITLEMATCH: 10
-Feld 008: 2013
-YEARMATCH: 10
+marcfield: The political economy of budget rules in the twenty-six Swiss cantons
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: [Fribourg (rte du Comptoir 1)]
-PLACEMATCH: 5
+marcfield: cop. 2013
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
+marcfield: [Fribourg (rte du Comptoir 1)]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: N. Yerly
 Publisher-Match with getMatchValue: 0
-Feld 260b: N. Yerly
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 314530878
+hasTag(035)
 Feld 035a: (SNL)991013549769703976
 Feld 035a: (RERO)R007632012
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: (VAUD)991019974619702852
 Feld 035a: (SNL)991001123989703976
 Feld 035a: (IDSSG)000646815
@@ -45,7 +39,7 @@ Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
 Feld 035a: (SGBN)001301903
-SGBNMATCH: 6
+SGBNMATCH: 0
 Feld 035a: (IDSBB)006243643
 IDSMATCH: 9
 Feld 035a: (IDSLU)001145824
@@ -57,16 +51,16 @@ Feld 035a: (Sz)vtls001753816
 Feld 035a: (Sz)001753816
 Feld 035a: (RNV)007632012-41bculausa_network
 Feld 035a: (RERO)007632012
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: R007632012
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991013125239702851
 Feld 035a: (Sz)1743673-41snl_51
 Feld 035a: (Sz)vtls001743673
 Feld 035a: (Sz)001743673
 Feld 035a: (RERO)vtls007632012
-REROMATCH: 4
-Totalmatch: 85
-Bestmatch: 85, Bestrecordnr: 314530878
+REROMATCH: 9
+Totalmatch: 100
+Bestmatch: 100, Bestrecordnr: 314530878
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #2
@@ -81,84 +75,76 @@ Treffer: 4
 
 #Document 1:
 hasTag(100)
-Feld 100a: Schmidhauser
-AUTHORMATCH: 10
+marcfield: Schmidhauser
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
-TITLEMATCH: 5
 hasTag(260)
-marcfield: 
+marcfield: [S.l.]
 PlaceMatch with getMatchValue: 0
-Feld 260a: [S.l.]
-PLACEMATCH: 0
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: [s.n.]
-PUBLISHERMATCH: 0
+marcfield: [s.n.]
+Publisher-Match with getMatchValue: 5
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 347425143
+hasTag(035)
 Feld 035a: (ALEX)993960234101791
-Totalmatch: 30
+Totalmatch: 34
 
 #Document 2:
 hasTag(100)
-Feld 100a: Schmidhauser
-AUTHORMATCH: 10
+marcfield: Schmidhauser
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Der Begriff der 'mehreren Unternehmen' im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Begriff der 'mehreren Unternehmen' im Sinne von Art. 4 Abs. 2 KG
-TITLEMATCH: 5
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 514587318
+hasTag(035)
 Feld 035a: (IDSSG)000991054
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 15
+Totalmatch: 14
 
 #Document 3:
 hasTag(100)
-Feld 100a: Schmidhauser
-AUTHORMATCH: 10
+marcfield: Schmidhauser
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
-TITLEMATCH: 5
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 48087008X
+hasTag(035)
 Feld 035a: (RERO)R255103460
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: (VAUD)991017702099702852
 Feld 035a: (RNV)002551034-41bculausa_network
 Feld 035a: (RERO)002551034
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: R255103460
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991021371909702851
-Totalmatch: 34
+Totalmatch: 35
 
 #Document 4:
 hasTag(100)
-Feld 100a: Schmidhauser
-AUTHORMATCH: 10
+marcfield: Schmidhauser
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Begriff der "mehreren Unternehmen" im Sinne von Art. 4 Abs. 2 KG
-TITLEMATCH: 5
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 045860890
+hasTag(035)
 Feld 035a: (SGBN)000282863
-SGBNMATCH: 6
-Totalmatch: 36
-Bestmatch: 36, Bestrecordnr: 045860890
-Ersetzen: alt 514587318 mit neu 045860890
+SGBNMATCH: 0
+Totalmatch: 29
+Bestmatch: 35, Bestrecordnr: 48087008X
+Ersetzen: alt 514587318 mit neu 48087008X
 
 NEW ROW: #3
 *********************************************************************************
@@ -172,66 +158,58 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Shultz
-AUTHORMATCH: 10
+marcfield: Shultz
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Harriss
-AUTHORMATCH: 20
+marcfield: Harriss
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: American public finance
-TITLEMATCH: 10
-Feld 008: 1965
-YEARMATCH: 10
+marcfield: American public finance
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
+marcfield: 1965
+YEARMATCH with getMatchValue: 10
+hasTag(260)
+marcfield: Englewood Cliffs N.J
 PlaceMatch with getMatchValue: 0
-Feld 260a: Englewood Cliffs N.J
-PLACEMATCH: 0
 hasTag(260)
-marcfield: 
+marcfield: Prentice-Hall
 Publisher-Match with getMatchValue: 0
-Feld 260b: Prentice-Hall
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 228062756
+hasTag(035)
 Feld 035a: (RERO)R003329284
-REROMATCH: 4
-Totalmatch: 59
+REROMATCH: 0
+Totalmatch: 45
 
 #Document 2:
 hasTag(100)
-Feld 100a: Shultz
-AUTHORMATCH: 10
+marcfield: Shultz
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Harriss
-AUTHORMATCH: 20
+marcfield: Harriss
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: American Public Finance
-TITLEMATCH: 10
-Feld 008: 1965
-YEARMATCH: 10
+marcfield: American Public Finance
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: New Jersey
-P-Match: 5
+marcfield: 1965
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Prettice Hall Inc. Englewood Cliffs
-PUBLISHERMATCH: 5
+marcfield: New Jersey
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Prettice Hall Inc. Englewood Cliffs
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870137
+hasTag(035)
 Feld 035a: (IDSSG)000991055
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
-Bestmatch: 59, Bestrecordnr: 228062756
+Totalmatch: 34
+Bestmatch: 45, Bestrecordnr: 228062756
 Ersetzen: alt 515870137 mit neu 228062756
 
 NEW ROW: #4
@@ -246,60 +224,60 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Hofer
-AUTHORMATCH: 10
+marcfield: Hofer
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die schweizerische Finanzhilfe an Lateinamerika
-TITLEMATCH: 10
-Feld 008: 1968
-YEARMATCH: 10
+marcfield: Die schweizerische Finanzhilfe an Lateinamerika
+TITLEMATCH mit getMatchValue: 10
+hasTag(264)
+marcfield: 1968
+YEARMATCH with getMatchValue: 10
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 359460895
+hasTag(035)
 Feld 035a: (IDSLU)000757084
 IDSMATCH: 9
 Feld 035a: (NEBIS)002838263
 IDSMATCH: 9
 Feld 035a: (ALEX)996353644101791
 Feld 035a: (SLB)vtls000276297
-Totalmatch: 54
+Totalmatch: 58
 
 #Document 2:
 hasTag(100)
-Feld 100a: Hofer
-AUTHORMATCH: 10
+marcfield: Hofer
+AUTHORMATCH mit getMatchValue: 10
 hasTag(710)
-Feld 710a: Hochschule St. Gallen für Wirtschafts- und Sozialwissenschaften
-AUTHORMATCH: 10
+marcfield: Hochschule St. Gallen für Wirtschafts- und Sozialwissenschaften
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die schweizerische Finanzhilfe an Lateinamerika
-TITLEMATCH: 10
-Feld 008: 1968
-YEARMATCH: 10
+marcfield: Die schweizerische Finanzhilfe an Lateinamerika
+TITLEMATCH mit getMatchValue: 10
+hasTag(264)
+marcfield: 1968
+YEARMATCH with getMatchValue: 10
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 270175423
+hasTag(035)
 Feld 035a: (IDSBB)003771626
 IDSMATCH: 9
 Feld 035a: (SNL)991000452449703976
 Feld 035a: (RERO)R008253084
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (IDSSG)000359889
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
 Feld 035a: (SGBN)000145769
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (Sz)276297-41snl_51
 Feld 035a: (Sz)vtls000276297
 Feld 035a: (Sz)000276297
 Feld 035a: (SLB)vtls000276297
-Totalmatch: 82
-Bestmatch: 82, Bestrecordnr: 270175423
+Totalmatch: 85
+Bestmatch: 85, Bestrecordnr: 270175423
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #5
@@ -314,32 +292,30 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Bohley
-AUTHORMATCH: 10
+marcfield: Bohley
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Perspektiven des interkommunalen Finanzausgleichs
-TITLEMATCH: 10
+marcfield: Perspektiven des interkommunalen Finanzausgleichs
+TITLEMATCH mit getMatchValue: 10
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 514587326
+hasTag(035)
 Feld 035a: (IDSSG)000991056
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 20
+Totalmatch: 24
 
 #Document 2:
 hasTag(100)
-Feld 100a: Bohley
-AUTHORMATCH: 10
+marcfield: Bohley
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Perspektiven des interkommunalen Finanzausgleichs
-TITLEMATCH: 10
+marcfield: Perspektiven des interkommunalen Finanzausgleichs
+TITLEMATCH mit getMatchValue: 10
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 266758762
+hasTag(035)
 Feld 035a: (IDSBB)001079703
 IDSMATCH: 9
 Feld 035a: (NEBIS)001284405
@@ -350,8 +326,8 @@ Feld 035a: (SNL)991003720799703976
 Feld 035a: (Sz)113214-41snl_51
 Feld 035a: (Sz)vtls000113214
 Feld 035a: (Sz)000113214
-Totalmatch: 29
-Bestmatch: 29, Bestrecordnr: 266758762
+Totalmatch: 33
+Bestmatch: 33, Bestrecordnr: 266758762
 Ersetzen: alt 514587326 mit neu 266758762
 
 NEW ROW: #6
@@ -366,32 +342,28 @@ Treffer: 1
 
 #Document 1:
 hasTag(100)
-Feld 100a: Haas
-AUTHORMATCH: 10
+marcfield: Haas
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Chancen und Gefahren des New Public Managements  für die Privatwirtschaft
-TITLEMATCH: 10
-Feld 008: 1996
-YEARMATCH: 10
+marcfield: Chancen und Gefahren des New Public Managements  für die Privatwirtschaft
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Bern
-P-Match: 5
+marcfield: 1996
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: ECOPLAN
-PUBLISHERMATCH: 5
+marcfield: Bern
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: ECOPLAN
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870145
+hasTag(035)
 Feld 035a: (IDSSG)000991057
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
-Bestmatch: 40, Bestrecordnr: 515870145
+Totalmatch: 44
+Bestmatch: 44, Bestrecordnr: 515870145
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #7
@@ -405,100 +377,82 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 4
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(710)
-Feld 710a: Centre pour la recherche et l'innovation dans l'enseignement (Paris)
-AUTHORMATCH: 0
+marcfield: Centre pour la recherche et l'innovation dans l'enseignement (Paris)
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die internationalen Bildungsindikatoren der OECD
-TITLEMATCH: 10
-Feld 008: 1994
-YEARMATCH: 10
+marcfield: Die internationalen Bildungsindikatoren der OECD
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt am Main [etc.]
-PLACEMATCH: 5
+marcfield: 1994
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Peter Lang
-PUBLISHERMATCH: 5
+marcfield: Frankfurt am Main [etc.]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Peter Lang
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 294246452
+hasTag(035)
 Feld 035a: (ALEX)9925852005601791
 Feld 035a: (RERO)2094224
-REROMATCH: 4
-Totalmatch: 49
+REROMATCH: 0
+Totalmatch: 55
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Schulze
-AUTHORMATCH: 0
+marcfield: Schulze
+AUTHORMATCH mit getMatchValue: 0
 hasTag(710)
-Feld 710a: Centre for Educational Research and Innovation
-AUTHORMATCH: 0
+marcfield: Centre for Educational Research and Innovation
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die internationalen Bildungsindikatoren der OECD
-TITLEMATCH: 10
-Feld 008: 1994
-YEARMATCH: 10
+marcfield: Die internationalen Bildungsindikatoren der OECD
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt a.MBerlinBern [etc.]
-PLACEMATCH: 5
+marcfield: 1994
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
+marcfield: Frankfurt a.MBerlinBern [etc.]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: P. Lang
 Publisher-Match with getMatchValue: 0
-Feld 260b: P. Lang
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 53299048X
+hasTag(035)
 Feld 035a: (SNL)991002044519703976
 Feld 035a: (Sz)45843-41snl_51
 Feld 035a: (Sz)vtls000045843
 Feld 035a: (Sz)000045843
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 3:
-marcfield: 
-ISBNMATCH: 0
 hasTag(710)
-Feld 710a: OECD
-AUTHORMATCH: 10
+marcfield: OECD
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: Die internationalen Bildungsindikatoren der OECD
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die internationalen Bildungsindikatoren der OECD
-TITLEMATCH: 10
-Feld 008: 1994
-YEARMATCH: 10
+marcfield: The OECD international education indicators
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt am MainBern [etc.]
-PLACEMATCH: 5
+marcfield: 1994
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Lang
-PUBLISHERMATCH: 0
+marcfield: Frankfurt am MainBern [etc.]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Lang
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 294246444
+hasTag(035)
 Feld 035a: (NEBIS)001614536
 IDSMATCH: 9
 Feld 035a: (NEBIS)008104763
@@ -507,51 +461,43 @@ Feld 035a: (IDSSG)000094269
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
-Totalmatch: 90
+Totalmatch: 99
 
 #Document 4:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Bottani
-AUTHORMATCH: 0
+marcfield: Bottani
+AUTHORMATCH mit getMatchValue: 0
 hasTag(710)
-Feld 710a: OECD
-AUTHORMATCH: 10
-Feld 710a: Centre for Educational Research and Innovation
-AUTHORMATCH: 10
+marcfield: OECD
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Centre for Educational Research and Innovation
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die internationalen Bildungsindikatoren der OECD - ein Analyserahmen
-TITLEMATCH: 10
-Feld 008: 1994
-YEARMATCH: 10
+marcfield: Die internationalen Bildungsindikatoren der OECD - ein Analyserahmen
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
+marcfield: [1994]
+YEARMATCH with getMatchValue: 10
+marcfield: © 1994
+YEARMATCH with getMatchValue: 10
+hasTag(264)
+marcfield: Frankfurt a.M.Bern [etc.]
+PlaceMatch with getMatchValue: 5
 marcfield: 
 PlaceMatch with getMatchValue: 0
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Frankfurt a.M.Bern [etc.]
-P-Match: 5
-Feld 264a: 
-P-Match: 5
 hasTag(264)
+marcfield: Peter Lang
+Publisher-Match with getMatchValue: 5
 marcfield: 
 Publisher-Match with getMatchValue: 0
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Peter Lang
-PUBLISHERMATCH: 5
-Feld 264b: 
-PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 124891268
+hasTag(035)
 Feld 035a: (IDSBB)001648478
 IDSMATCH: 9
-Totalmatch: 64
-Bestmatch: 90, Bestrecordnr: 294246444
+Totalmatch: 48
+Bestmatch: 99, Bestrecordnr: 294246444
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #8
@@ -565,39 +511,31 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 1
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Schneider
-AUTHORMATCH: 10
+marcfield: Schneider
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Einfluss von Interessengruppen auf die Wirtschaftspolitik
-TITLEMATCH: 10
-Feld 008: 1985
-YEARMATCH: 10
+marcfield: Der Einfluss von Interessengruppen auf die Wirtschaftspolitik
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
+marcfield: [1985]
+YEARMATCH with getMatchValue: 10
+marcfield: © 1985
+YEARMATCH with getMatchValue: 10
+hasTag(264)
+marcfield: BernStuttgart
 PlaceMatch with getMatchValue: 0
 marcfield: 
 PlaceMatch with getMatchValue: 0
-Feld 264a: BernStuttgart
-P-Match: 0
-Feld 264a: 
-P-Match: 0
 hasTag(264)
+marcfield: Paul Haupt
+Publisher-Match with getMatchValue: 5
 marcfield: 
 Publisher-Match with getMatchValue: 0
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Paul Haupt
-PUBLISHERMATCH: 5
-Feld 264b: 
-PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 281289190
+hasTag(035)
 Feld 035a: (IDSBB)000121242
 IDSMATCH: 9
 Feld 035a: (SNL)991007900629703976
@@ -608,16 +546,16 @@ IDSMATCH: 9
 Feld 035a: (NEBIS)000339576
 IDSMATCH: 9
 Feld 035a: (RERO)0662692
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (RERO)0641990
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991005777549702852
 Feld 035a: (IDSSG)000201810
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
 Feld 035a: (SGBN)000058763
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (LIBIB)000279890
 Feld 035a: (ABN)000051505
 Feld 035a: (ALEX)991981974101791
@@ -629,11 +567,11 @@ Feld 035a: (Sz)vtls001146674
 Feld 035a: (Sz)001146674
 Feld 035a: (RNV)000580360-41bculausa_network
 Feld 035a: (RERO)000580360
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 0641990
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991019748369702851
-Totalmatch: 85
-Bestmatch: 85, Bestrecordnr: 281289190
+Totalmatch: 95
+Bestmatch: 95, Bestrecordnr: 281289190
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #9
@@ -649,140 +587,113 @@ URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operat
 Treffer mit geaendertem Suchstring: 4
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Wassermeyer
-AUTHORMATCH: 10
+marcfield: Wassermeyer
+AUTHORMATCH mit getMatchValue: 0
 hasTag(710)
-Feld 710a: Deutschland
-AUTHORMATCH: 10
+marcfield: Deutschland
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aussensteuerrecht
-TITLEMATCH: 10
-Feld 008: 2007
-YEARMATCH: 0
+marcfield: Kommentar zum Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 15
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Köln
-PLACEMATCH: 5
+marcfield: 2007-
+YEARMATCH with getMatchValue: 0
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Schmidt
-PUBLISHERMATCH: 0
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Schmidt
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 323102719
+hasTag(035)
 Feld 035a: (LIBIB)000277395
-Totalmatch: 25
+Totalmatch: 29
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Wassermeyer
-AUTHORMATCH: 10
-Feld 700a: Thömmes
-AUTHORMATCH: 10
+marcfield: Wassermeyer
+AUTHORMATCH mit getMatchValue: 0
+marcfield: Thömmes
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aussensteuerrecht
-TITLEMATCH: 10
-Feld 008: 2000
-YEARMATCH: 0
+marcfield: Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Köln
-PLACEMATCH: 5
+marcfield: 2000
+marcfield short match! 
+YEARMATCH with getMatchValue: 5
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Schmidt
-PUBLISHERMATCH: 0
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Schmidt
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 32265694X
+hasTag(035)
 Feld 035a: (LIBIB)000264665
-Totalmatch: 25
+Totalmatch: 29
 
 #Document 3:
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aussensteuerrecht
-TITLEMATCH: 10
-Feld 008: 1983
-YEARMATCH: 0
+marcfield: Kommentar zum Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 15
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Köln
-P-Match: 5
+marcfield: 1983-
+YEARMATCH with getMatchValue: 0
 hasTag(264)
-marcfield: 
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: O. Schmidt
 Publisher-Match with getMatchValue: 0
-Feld 264b: O. Schmidt
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 022269053
+hasTag(035)
 Feld 035a: (IDSLU)000130311
 IDSMATCH: 9
-Totalmatch: 24
+Totalmatch: 33
 
 #Document 4:
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Flick
-AUTHORMATCH: 10
-Feld 700a: Wassermeyer
-AUTHORMATCH: 20
-Feld 700a: Baumhoff
-AUTHORMATCH: 20
+marcfield: Flick
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Wassermeyer
+AUTHORMATCH mit getMatchValue: 0
+marcfield: Baumhoff
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aussensteuerrecht
-TITLEMATCH: 10
-Feld 008: 1999
-YEARMATCH: 0
+marcfield: Aussensteuerrecht
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Köln
-PLACEMATCH: 5
+marcfield: 1999-
+YEARMATCH with getMatchValue: 0
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Schmidt
-PUBLISHERMATCH: 0
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Schmidt
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 155189379
+hasTag(035)
 Feld 035a: (NEBIS)004190777
 IDSMATCH: 9
-Totalmatch: 44
-Bestmatch: 44, Bestrecordnr: 155189379
-Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 155189379
+Totalmatch: 33
+Bestmatch: 33, Bestrecordnr: 022269053
+Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 022269053
 
 NEW ROW: #10
 *********************************************************************************
@@ -809,67 +720,55 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 3
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Rölli
-AUTHORMATCH: 10
+marcfield: Rölli
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
-Feld 008: 1981
-YEARMATCH: 10
+marcfield: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Diessenhofen
-P-Match: 5
+marcfield: 1981
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Rüegger
-PUBLISHERMATCH: 5
+marcfield: Diessenhofen
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Rüegger
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870161
+hasTag(035)
 Feld 035a: (IDSSG)000991060
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Rölli
-AUTHORMATCH: 10
+marcfield: Rölli
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
-Feld 008: 1981
-YEARMATCH: 10
+marcfield: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Diessenhofen
-P-Match: 5
+marcfield: 1981
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Verlag Rüegger
-PUBLISHERMATCH: 5
+marcfield: Diessenhofen
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Verlag Rüegger
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 271097167
+hasTag(035)
 Feld 035a: (IDSBB)000019921
 IDSMATCH: 9
 Feld 035a: (NEBIS)000883147
 IDSMATCH: 9
 Feld 035a: (SGBN)000014736
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (SBT)000615110
 Feld 035a: (KBTG)5221
 Feld 035a: (SNL)991007995309703976
@@ -878,13 +777,13 @@ Feld 035a: (IDSLU)000663941
 IDSMATCH: 9
 Feld 035a: (ALEX)993573684101791
 Feld 035a: (SGBN)000014054
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (NEBIS)007885904
 IDSMATCH: 9
 Feld 035a: (RERO)0321967
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (RERO)0461208
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991020265489702852
 Feld 035a: (VAUD)991014882429702852
 Feld 035a: (ALEX)991944204101791
@@ -896,50 +795,44 @@ Feld 035a: (Sz)vtls001148488
 Feld 035a: (Sz)001148488
 Feld 035a: (RNV)000426004-41bculausa_network
 Feld 035a: (RERO)000426004
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 0461208
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991015411839702851
 Feld 035a: (RNV)000297194-41bculausa_network
 Feld 035a: (RERO)000297194
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 0321967
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991011058759702851
-Totalmatch: 59
+Totalmatch: 74
 
 #Document 3:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Rölli
-AUTHORMATCH: 10
+marcfield: Rölli
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Nydegger
-AUTHORMATCH: 10
+marcfield: Nydegger
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
-Feld 008: 1981
-YEARMATCH: 10
+marcfield: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
+TITLEMATCH mit getMatchValue: 10
+hasTag(264)
+marcfield: 1981
+YEARMATCH with getMatchValue: 10
 hasTag(264)
 marcfield: 
 PlaceMatch with getMatchValue: 0
-Feld 264a: 
-P-Match: 0
 hasTag(264)
 marcfield: 
 Publisher-Match with getMatchValue: 0
-Feld 264b: 
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 031361935
+hasTag(035)
 Feld 035a: (IDSSG)000076516
 Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 66
-Bestmatch: 66, Bestrecordnr: 031361935
-Ersetzen: alt 515870161 mit neu 031361935
+Totalmatch: 60
+Bestmatch: 74, Bestrecordnr: 271097167
+Ersetzen: alt 515870161 mit neu 271097167
 
 NEW ROW: #12
 *********************************************************************************
@@ -952,31 +845,25 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 1
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Meerpohl
-AUTHORMATCH: 10
+marcfield: Meerpohl
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten
-TITLEMATCH: 5
-Feld 008: 1998
-YEARMATCH: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt am Main
-PLACEMATCH: 5
+marcfield: 1998
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Lang
-PUBLISHERMATCH: 0
+marcfield: Frankfurt am Main
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Lang
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 264946782
+hasTag(035)
 Feld 035a: (NEBIS)001910902
 IDSMATCH: 9
 Feld 035a: (SNL)991016050069703976
@@ -985,8 +872,8 @@ Abzug fuer IFF_MATCH: -15
 Feld 035a: (Sz)1163968-41snl_51
 Feld 035a: (Sz)vtls001163968
 Feld 035a: (Sz)001163968
-Totalmatch: 39
-Bestmatch: 39, Bestrecordnr: 264946782
+Totalmatch: 43
+Bestmatch: 43, Bestrecordnr: 264946782
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #13
@@ -1001,27 +888,25 @@ Treffer: 1
 
 #Document 1:
 hasTag(100)
-Feld 100a: Schwarzenbach Hans Rudolf
-AUTHORMATCH: 0
+marcfield: Schwarzenbach Hans Rudolf
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Bericht zur Frage: Wie soll das Personal zürcherischer Gemeinden angestellt sein
-TITLEMATCH: 10
-Feld 008: 1992
-YEARMATCH: 10
+marcfield: Bericht zur Frage: Wie soll das Personal zürcherischer Gemeinden angestellt sein
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Erlenbach
-P-Match: 5
+marcfield: 1992
+YEARMATCH with getMatchValue: 10
+hasTag(264)
+marcfield: Erlenbach
+PlaceMatch with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870188
+hasTag(035)
 Feld 035a: (IDSSG)000991062
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 25
-Bestmatch: 25, Bestrecordnr: 515870188
+Totalmatch: 39
+Bestmatch: 39, Bestrecordnr: 515870188
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #14
@@ -1035,78 +920,69 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 3
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Isler
-AUTHORMATCH: 10
-Feld 700a: Cerutti
-AUTHORMATCH: 20
+marcfield: Isler
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Cerutti
+AUTHORMATCH mit getMatchValue: 0
 hasTag(110)
-Feld 110a: Europa-Institut Zürich
-AUTHORMATCH: 20
+marcfield: Europa-Institut Zürich
+AUTHORMATCH mit getMatchValue: 0
 hasTag(710)
-Feld 710a: Europa Institut Zürich
-AUTHORMATCH: 20
+marcfield: Europa Institut Zürich
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: Vermögensverwaltung III
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Vermögensverwaltung III
-TITLEMATCH: 10
-Feld 008: 2010
-YEARMATCH: 10
+marcfield: Vermögensverwaltung 3
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 12.5
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Zürich [etc.]
-PLACEMATCH: 0
+marcfield: 2010
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Schulthess
-PUBLISHERMATCH: 0
+marcfield: Zürich [etc.]
+marcfield short match! 
+PlaceMatch with getMatchValue: 2.5
+hasTag(260)
+marcfield: Schulthess
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 412314053
+hasTag(035)
 Feld 035a: (SNL)991015378559703976
 Feld 035a: (ALEX)9914398194101791
 Feld 035a: (Sz)1618187-41snl_51
 Feld 035a: (Sz)vtls001618187
 Feld 035a: (Sz)001618187
-Totalmatch: 55
+Totalmatch: 49
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Isler
-AUTHORMATCH: 10
+marcfield: Isler
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: Vermögensverwaltung III
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Vermögensverwaltung III
-TITLEMATCH: 10
-Feld 008: 2010
-YEARMATCH: 10
+marcfield: Vermögensverwaltung 3
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 12.5
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Zürich
-P-Match: 0
+marcfield: 2010
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Schulthess
-PUBLISHERMATCH: 0
+marcfield: Zürich
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Schulthess
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 274269430
+hasTag(035)
 Feld 035a: (IDSLU)000927837
 IDSMATCH: 9
 Feld 035a: (NEBIS)006162749
@@ -1116,49 +992,44 @@ Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
 Feld 035a: (RERO)R005664108
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991003573969702852
 Feld 035a: (LIBIB)000317475
 Feld 035a: (RNV)005664108-41bculausa_network
 Feld 035a: (RERO)005664108
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: R005664108
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991020775169702851
-Totalmatch: 80
+Totalmatch: 107.5
 
 #Document 3:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Isler
-AUTHORMATCH: 10
+marcfield: Isler
+AUTHORMATCH mit getMatchValue: 10
 hasTag(710)
-Feld 710a: Europa Institut Zürich
-AUTHORMATCH: 10
+marcfield: Europa Institut Zürich
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Vermögensverwaltung ; III, 2010
-TITLEMATCH: 5
-Feld 008: 2010
-YEARMATCH: 10
+marcfield: Vermögensverwaltung ; III, 2010
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 5
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Zürich
-P-Match: 0
+marcfield: 2010
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Schulthess
-PUBLISHERMATCH: 0
+marcfield: Zürich
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Schulthess
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 118108220
+hasTag(035)
 Feld 035a: (IDSBB)005315168
 IDSMATCH: 9
-Totalmatch: 49
-Bestmatch: 80, Bestrecordnr: 274269430
+Totalmatch: 53
+Bestmatch: 107.5, Bestrecordnr: 274269430
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #15
@@ -1173,92 +1044,78 @@ Treffer: 3
 
 #Document 1:
 hasTag(100)
-Feld 100a: Stadler
-AUTHORMATCH: 10
+marcfield: Stadler
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Controlling in der öffentlichen Verwaltung
-TITLEMATCH: 10
-Feld 008: 1991
-YEARMATCH: 10
+marcfield: Controlling in der öffentlichen Verwaltung
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Solothurn
-P-Match: 5
+marcfield: 1991
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Verlag der FkF
-PUBLISHERMATCH: 5
+marcfield: Solothurn
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Verlag der FkF
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870196
+hasTag(035)
 Feld 035a: (IDSSG)000991063
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 2:
 hasTag(100)
-Feld 100a: Stadler
-AUTHORMATCH: 10
+marcfield: Stadler
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Controlling in der öffentlichen Verwaltung
-TITLEMATCH: 10
-Feld 008: 1991
-YEARMATCH: 10
+marcfield: Controlling in der öffentlichen Verwaltung
+TITLEMATCH mit getMatchValue: 10
+hasTag(264)
+marcfield: 1991
+YEARMATCH with getMatchValue: 10
 hasTag(264)
 marcfield: 
 PlaceMatch with getMatchValue: 0
-Feld 264a: 
-P-Match: 0
 hasTag(264)
-marcfield: 
+marcfield: Verlag der Fachgruppe für kantonale Finanzfragen Solothurn
 Publisher-Match with getMatchValue: 0
-Feld 264b: Verlag der Fachgruppe für kantonale Finanzfragen Solothurn
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 03338715X
+hasTag(035)
 Feld 035a: (IDSSG)000052388
 Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 66
+Totalmatch: 70
 
 #Document 3:
 hasTag(100)
-Feld 100a: Stadler
-AUTHORMATCH: 10
+marcfield: Stadler
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Controlling in der öffentlichen Verwaltung
-TITLEMATCH: 10
-Feld 008: 1991
-YEARMATCH: 10
+marcfield: Controlling in der öffentlichen Verwaltung
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
+marcfield: [1991]
+YEARMATCH with getMatchValue: 10
+marcfield: © 1991
+YEARMATCH with getMatchValue: 10
+hasTag(264)
+marcfield: Solothurn
+PlaceMatch with getMatchValue: 5
 marcfield: 
 PlaceMatch with getMatchValue: 0
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Solothurn
-P-Match: 5
-Feld 264a: 
-P-Match: 5
 hasTag(264)
+marcfield: Verl. der FkF
+Publisher-Match with getMatchValue: 5
 marcfield: 
 Publisher-Match with getMatchValue: 0
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Verl. der FkF
-PUBLISHERMATCH: 5
-Feld 264b: 
-PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 279244940
+hasTag(035)
 Feld 035a: (IDSLU)000077424
 IDSMATCH: 9
 Feld 035a: (IDSBB)001096424
@@ -1269,7 +1126,7 @@ Feld 035a: (SNL)991000108069703976
 Feld 035a: (KBTG)33243
 Feld 035a: (ALEX)996291704101791
 Feld 035a: (RERO)1583773
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991003072059702852
 Feld 035a: (IDSBB)006906548
 IDSMATCH: 9
@@ -1279,11 +1136,11 @@ Feld 035a: (Sz)vtls000001700
 Feld 035a: (Sz)000001700
 Feld 035a: (RNV)001447153-41bculausa_network
 Feld 035a: (RERO)001447153
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 1583773
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991010121309702851
-Totalmatch: 59
-Bestmatch: 66, Bestrecordnr: 03338715X
+Totalmatch: 64
+Bestmatch: 70, Bestrecordnr: 03338715X
 Ersetzen: alt 515870196 mit neu 03338715X
 
 NEW ROW: #16
@@ -1298,64 +1155,56 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Hansmeyer
-AUTHORMATCH: 10
+marcfield: Hansmeyer
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Weg zum Wohlfahrtsstaat
-TITLEMATCH: 10
-Feld 008: 1957
-YEARMATCH: 10
+marcfield: Der Weg zum Wohlfahrtsstaat
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Frankfurt a.M
-P-Match: 5
+marcfield: 1957
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Fritz Knapp Verlag
-PUBLISHERMATCH: 5
+marcfield: Frankfurt a.M
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Fritz Knapp Verlag
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 51587020X
+hasTag(035)
 Feld 035a: (IDSSG)000991064
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 2:
 hasTag(100)
-Feld 100a: Hansmeyer
-AUTHORMATCH: 10
+marcfield: Hansmeyer
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Der Weg zum Wohlfahrtsstaat
-TITLEMATCH: 10
-Feld 008: 1957
-YEARMATCH: 10
+marcfield: Der Weg zum Wohlfahrtsstaat
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt am Main
-PLACEMATCH: 5
+marcfield: 1957
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Knapp
-PUBLISHERMATCH: 0
+marcfield: Frankfurt am Main
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Knapp
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 275140946
+hasTag(035)
 Feld 035a: (NEBIS)005458629
 IDSMATCH: 9
 Feld 035a: (SGBN)000226462
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (RERO)R259065060
-REROMATCH: 4
-Totalmatch: 54
-Bestmatch: 54, Bestrecordnr: 275140946
+REROMATCH: 9
+Totalmatch: 74
+Bestmatch: 74, Bestrecordnr: 275140946
 Ersetzen: alt 51587020X mit neu 275140946
 
 NEW ROW: #17
@@ -1369,65 +1218,54 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 2
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Sorba
-AUTHORMATCH: 10
+marcfield: Sorba
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die grosse Schröpfung
-TITLEMATCH: 10
-Feld 008: 1971
-YEARMATCH: 10
+marcfield: Die grosse Schröpfung
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Düsseldorf/Wien
-P-Match: 5
+marcfield: 1971
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Econ Verlag
-PUBLISHERMATCH: 5
+marcfield: Düsseldorf/Wien
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Econ Verlag
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870218
+hasTag(035)
 Feld 035a: (IDSSG)000991065
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Sorba
-AUTHORMATCH: 10
+marcfield: Sorba
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die grosse Schröpfung
-TITLEMATCH: 10
-Feld 008: 1971
-YEARMATCH: 10
+marcfield: Die grosse Schröpfung
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Düsseldorf [etc.]
-PLACEMATCH: 0
+marcfield: 1971
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Econ Verl
-PUBLISHERMATCH: 5
+marcfield: Düsseldorf [etc.]
+marcfield short match! 
+PlaceMatch with getMatchValue: 2.5
+hasTag(260)
+marcfield: Econ Verl
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 228350492
+hasTag(035)
 Feld 035a: (RERO)R003360739
-REROMATCH: 4
-Totalmatch: 54
-Bestmatch: 54, Bestrecordnr: 228350492
+REROMATCH: 0
+Totalmatch: 62.5
+Bestmatch: 62.5, Bestrecordnr: 228350492
 Ersetzen: alt 515870218 mit neu 228350492
 
 NEW ROW: #18
@@ -1442,34 +1280,30 @@ Treffer: 1
 
 #Document 1:
 hasTag(100)
-Feld 100a: Fries
-AUTHORMATCH: 10
+marcfield: Fries
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
-TITLEMATCH: 10
-Feld 008: 1997
-YEARMATCH: 10
+marcfield: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: [Freiburg/Schweiz]
-PLACEMATCH: 5
+marcfield: 1997
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: [s.n.]
-PUBLISHERMATCH: 0
+marcfield: [Freiburg/Schweiz]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: [s.n.]
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515929271
+hasTag(035)
 Feld 035a: (RERO)R222931560
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: (IDSSG)000991066
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 39
-Bestmatch: 39, Bestrecordnr: 515929271
+Totalmatch: 50
+Bestmatch: 50, Bestrecordnr: 515929271
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #19
@@ -1484,34 +1318,31 @@ Treffer: 4
 
 #Document 1:
 hasTag(100)
-Feld 100a: Baur
-AUTHORMATCH: 10
+marcfield: Baur
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
-TITLEMATCH: 5
-Feld 008: 1974
-YEARMATCH: 10
+marcfield: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 5
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Winterthur
-PLACEMATCH: 5
+marcfield: 1974
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Ziegler
-PUBLISHERMATCH: 0
+marcfield: Winterthur
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Ziegler
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 272303542
+hasTag(035)
 Feld 035a: (VAUD)991002817919702852
 Feld 035a: (SGBN)000027352
-SGBNMATCH: 6
+SGBNMATCH: 0
 Feld 035a: (BGR)000032496
 Feld 035a: (RERO)0053573
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: (NEBIS)000182383
 IDSMATCH: 9
 Feld 035a: (IDSLU)000609323
@@ -1520,68 +1351,61 @@ Feld 035a: (IDSBB)002551842
 IDSMATCH: 9
 Feld 035a: (RNV)000051142-41bculausa_network
 Feld 035a: (RERO)000051142
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 0053573
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991001867309702851
-Totalmatch: 49
+Totalmatch: 69
 
 #Document 2:
 hasTag(100)
-Feld 100a: Baur
-AUTHORMATCH: 10
+marcfield: Baur
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
-TITLEMATCH: 5
-Feld 008: 1974
-YEARMATCH: 10
+marcfield: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im oeffentlichen Ballungsverkehr
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 5
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: [Erscheinungsort nicht ermittelbar]
-P-Match: 0
+marcfield: 1974
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: [Verlag nicht ermittelbar]
-PUBLISHERMATCH: 0
+marcfield: [Erscheinungsort nicht ermittelbar]
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: [Verlag nicht ermittelbar]
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 296984388
+hasTag(035)
 Feld 035a: (IDSBB)001487270
 IDSMATCH: 9
 Feld 035a: (ABN)000492150
 Feld 035a: ?
-Totalmatch: 49
+Totalmatch: 63
 
 #Document 3:
 hasTag(100)
-Feld 100a: Baur
-AUTHORMATCH: 10
+marcfield: Baur
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Kaspar
-AUTHORMATCH: 10
+marcfield: Kaspar
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im öffentlichen Ballungsverkehr
-TITLEMATCH: 10
-Feld 008: 1974
-YEARMATCH: 10
+marcfield: Die tarifpolitischen Aspekte der zwischenbetrieblichen Zusammenarbeit im öffentlichen Ballungsverkehr
+TITLEMATCH mit getMatchValue: 10
+hasTag(264)
+marcfield: 1974
+YEARMATCH with getMatchValue: 10
 hasTag(264)
 marcfield: 
 PlaceMatch with getMatchValue: 0
-Feld 264a: 
-P-Match: 0
 hasTag(264)
 marcfield: 
 Publisher-Match with getMatchValue: 0
-Feld 264b: 
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 309661048
+hasTag(035)
 Feld 035a: (IDSSG)000139085
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
@@ -1590,26 +1414,23 @@ Feld 035a: (SNL)991008449149703976
 Feld 035a: (Sz)227993-41snl_51
 Feld 035a: (Sz)vtls000227993
 Feld 035a: (Sz)000227993
-Totalmatch: 76
+Totalmatch: 70
 
 #Document 4:
 hasTag(100)
-Feld 100a: Baur
-AUTHORMATCH: 10
+marcfield: Baur
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
+marcfield: Die tarifrechtlichen Voraussetzungen
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die tarifrechtlichen Voraussetzungen
-TITLEMATCH: 0
-Feld 008: 1974
-YEARMATCH: 10
 LDR Materialart: a
 MATERIALMATCH: 0
 Swissbibnr.: 084591552
+hasTag(035)
 Feld 035a: (IDSBB)004204287
 IDSMATCH: 9
-Totalmatch: 29
-Bestmatch: 76, Bestrecordnr: 309661048
+Totalmatch: 23
+Bestmatch: 70, Bestrecordnr: 309661048
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #20
@@ -1624,28 +1445,24 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Altwegg
-AUTHORMATCH: 10
+marcfield: Altwegg
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Folgekosten von Waldschäden
-TITLEMATCH: 5
-Feld 008: 1988
-YEARMATCH: 10
+marcfield: Die Folgekosten von Waldschäden
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Bamberg
-PLACEMATCH: 5
+marcfield: 1988
+YEARMATCH with getMatchValue: 10
+hasTag(260)
+marcfield: Bamberg
+PlaceMatch with getMatchValue: 5
 hasTag(260)
 marcfield: 
 Publisher-Match with getMatchValue: 0
-Feld 260b: 
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 283363614
+hasTag(035)
 Feld 035a: (NEBIS)000485189
 IDSMATCH: 9
 Feld 035a: (ALEX)997792534101791
@@ -1656,53 +1473,49 @@ Feld 035a: (SNL)991003376619703976
 Feld 035a: (IDSLU)000035254
 IDSMATCH: 9
 Feld 035a: (RERO)0975763
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991013264779702852
 Feld 035a: (SGBN)000087737
-SGBNMATCH: 6
+SGBNMATCH: 9
 Feld 035a: (Sz)181685-41snl_51
 Feld 035a: (Sz)vtls000181685
 Feld 035a: (Sz)000181685
 Feld 035a: (RNV)000888836-41bculausa_network
 Feld 035a: (RERO)000888836
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: 0975763
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991001873849702851
-Totalmatch: 49
+Totalmatch: 69
 
 #Document 2:
 hasTag(100)
-Feld 100a: Altwegg
-AUTHORMATCH: 10
+marcfield: Altwegg
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Binswanger
-AUTHORMATCH: 10
+marcfield: Binswanger
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Folgekosten von Waldschäden
-TITLEMATCH: 5
-Feld 008: 1988
-YEARMATCH: 10
+marcfield: Die Folgekosten von Waldschäden
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Bamberg
-P-Match: 5
+marcfield: 1988
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Difo-Druck
-PUBLISHERMATCH: 0
+marcfield: Bamberg
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Difo-Druck
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 033336032
+hasTag(035)
 Feld 035a: (IDSSG)000008278
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
-Totalmatch: 76
-Bestmatch: 76, Bestrecordnr: 033336032
+Totalmatch: 80
+Bestmatch: 80, Bestrecordnr: 033336032
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #21
@@ -1716,63 +1529,49 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 2
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Grass
-AUTHORMATCH: 10
+marcfield: Grass
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse
-TITLEMATCH: 10
-Feld 008: 1984
-YEARMATCH: 10
+marcfield: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Frankfurt
-P-Match: 5
+marcfield: 1984
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Peter Lang
-PUBLISHERMATCH: 5
+marcfield: Frankfurt
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Peter Lang
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870234
+hasTag(035)
 Feld 035a: (IDSSG)000991067
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Totalmatch: 44
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Grass
-AUTHORMATCH: 10
+marcfield: Grass
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Ausweichwirtschaft
-TITLEMATCH: 5
-Feld 008: 1984
-YEARMATCH: 10
+marcfield: Ausweichwirtschaft
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Frankfurt am Main
-PLACEMATCH: 5
+marcfield: 1984
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Lang
-PUBLISHERMATCH: 0
+marcfield: Frankfurt am Main
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Lang
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 26888952X
+hasTag(035)
 Feld 035a: (NEBIS)003317457
 IDSMATCH: 9
 Feld 035a: (IDSSG)000201585
@@ -1781,8 +1580,8 @@ Feld 035a: (SNL)991005826189703976
 Feld 035a: (Sz)918806-41snl_51
 Feld 035a: (Sz)vtls000918806
 Feld 035a: (Sz)000918806
-Totalmatch: 75
-Bestmatch: 75, Bestrecordnr: 26888952X
+Totalmatch: 89
+Bestmatch: 89, Bestrecordnr: 26888952X
 Ersetzen: alt 515870234 mit neu 26888952X
 
 NEW ROW: #22
@@ -1797,32 +1596,28 @@ Treffer: 1
 
 #Document 1:
 hasTag(100)
-Feld 100a: U. S. General Accounting Office
-AUTHORMATCH: 0
+marcfield: U. S. General Accounting Office
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Business Process Reengineering Assessment Guide
-TITLEMATCH: 10
-Feld 008: 1997
-YEARMATCH: 10
+marcfield: Business Process Reengineering Assessment Guide
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Washington, D.C
-P-Match: 5
+marcfield: 1997
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: GAO
-PUBLISHERMATCH: 5
+marcfield: Washington, D.C
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: GAO
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870242
+hasTag(035)
 Feld 035a: (IDSSG)000991068
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 30
-Bestmatch: 30, Bestrecordnr: 515870242
+Totalmatch: 34
+Bestmatch: 34, Bestrecordnr: 515870242
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #23
@@ -1837,57 +1632,50 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Hinrichs
-AUTHORMATCH: 10
+marcfield: Hinrichs
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: A general theory of tax structure change during economic development
-TITLEMATCH: 10
-Feld 008: 1966
-YEARMATCH: 10
+marcfield: A general theory of tax structure change during economic development
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Cambridge
-P-Match: 5
+marcfield: 1966
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: The Law School of Harvard University
-PUBLISHERMATCH: 5
+marcfield: Cambridge
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: The Law School of Harvard University
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 284245186
+hasTag(035)
 Feld 035a: (IDSBB)000341279
 IDSMATCH: 9
 Feld 035a: (NEBIS)008674395
 IDSMATCH: 9
 Feld 035a: (RERO)0403474
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (IDSSG)000361360
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
 HIFF already attached, IDSSGMATCH = 31
-Totalmatch: 90
+Totalmatch: 105
 
 #Document 2:
 hasTag(100)
-Feld 100a: Lutz
-AUTHORMATCH: 0
+marcfield: Lutz
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Hinrichs, Harley H., A General Theory of Tax Structure Change during Economic Development, Cambridge, Harvard Law School, 1966, xvi + 154 pp. ($3.00)
-TITLEMATCH: 10
-Feld 008: 1966
-YEARMATCH: 10
+marcfield: Hinrichs, Harley H., A General Theory of Tax Structure Change during Economic Development, Cambridge, Harvard Law School, 1966, xvi + 154 pp. ($3.00)
+TITLEMATCH mit getMatchValue: 10
 LDR Materialart: a
 MATERIALMATCH: 0
 Swissbibnr.: 392136805
+hasTag(035)
 Feld 035a: (NATIONALLICENCE)oxford-10.2307/1236644
-Totalmatch: 20
-Bestmatch: 90, Bestrecordnr: 284245186
+Totalmatch: 14
+Bestmatch: 105, Bestrecordnr: 284245186
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #24
@@ -1901,81 +1689,65 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 2
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Gärdenfors
-AUTHORMATCH: 10
+marcfield: Gärdenfors
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Sahlin
-AUTHORMATCH: 20
+marcfield: Sahlin
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Decision-probability-and utility
-TITLEMATCH: 10
-Feld 008: 1988
-YEARMATCH: 10
+marcfield: Decision-probability-and utility
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Cambridge
-P-Match: 5
+marcfield: 1988
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Cambridge University Press
-PUBLISHERMATCH: 5
+marcfield: Cambridge
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Cambridge University Press
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870250
+hasTag(035)
 Feld 035a: (IDSSG)000991069
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
+Totalmatch: 34
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Gärdenfors
-AUTHORMATCH: 10
-Feld 700a: Sahlin
-AUTHORMATCH: 20
+marcfield: Gärdenfors
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Sahlin
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
+marcfield: Decision, probability and utility
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
-marcfield: 
+marcfield: Decision, probability, and utility
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Decision, probability and utility
-TITLEMATCH: 0
-Feld 008: 1988
-YEARMATCH: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Cambridge [etc.]
-PLACEMATCH: 5
+marcfield: 1988
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Cambridge University Press
-PUBLISHERMATCH: 5
+marcfield: Cambridge [etc.]
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Cambridge University Press
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 279847408
+hasTag(035)
 Feld 035a: (NEBIS)000895010
 IDSMATCH: 9
 Feld 035a: (RERO)0986182
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (IDSSG)000001479
 Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 80
-Bestmatch: 80, Bestrecordnr: 279847408
+Totalmatch: 75
+Bestmatch: 75, Bestrecordnr: 279847408
 Ersetzen: alt 515870250 mit neu 279847408
 
 NEW ROW: #25
@@ -1990,37 +1762,32 @@ Treffer: 1
 
 #Document 1:
 hasTag(100)
-Feld 100a: Mmobuosi
-AUTHORMATCH: 10
+marcfield: Mmobuosi
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Ndongko
-AUTHORMATCH: 20
+marcfield: Ndongko
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
+marcfield: Cahier Africains d'Administration Publique
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: Cahier Africains d'Administration Publique
-TITLEMATCH: 5
-Feld 008: 1989
-YEARMATCH: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Nigeria
-P-Match: 5
+marcfield: 1989
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Centre Africain de Formation et de Recherche Administratives pur le Développement
-PUBLISHERMATCH: 5
+marcfield: Nigeria
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Centre Africain de Formation et de Recherche Administratives pur le Développement
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870269
+hasTag(035)
 Feld 035a: (IDSSG)000991070
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 45
-Bestmatch: 45, Bestrecordnr: 515870269
-Only IFF data available. Best solution from Felix.
-
+Totalmatch: 24
+Bestmatch: 24, Bestrecordnr: 515870269
+BESTMATCH ziemlich tief, überprüfen!
 NEW ROW: #26
 *********************************************************************************
 ISBN: 9783039091263  ISBN-2: 
@@ -2032,39 +1799,33 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Treffer: 1
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Leibfried
-AUTHORMATCH: 10
+marcfield: Leibfried
+AUTHORMATCH mit getMatchValue: 10
 hasTag(700)
-Feld 700a: Schäfer
-AUTHORMATCH: 20
-Feld 700a: Behr
-AUTHORMATCH: 20
+marcfield: Schäfer
+AUTHORMATCH mit getMatchValue: 0
+marcfield: Behr
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
+marcfield: 25 Jahre Unternehmertum
+TITLEMATCH mit getMatchValue: 10
 hasTag(246)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: 25 Jahre Unternehmertum
-TITLEMATCH: 5
-Feld 008: 2010
-YEARMATCH: 10
+marcfield: Fünfundzwanzig Jahre Unternehmertum
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Zürich
-P-Match: 5
+marcfield: 2010
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Versus
-PUBLISHERMATCH: 0
+marcfield: Zürich
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Versus
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 283612851
+hasTag(035)
 Feld 035a: (IDSSG)000514785
 Zuschlag fuer altes HSG-Katalogisat: 21
 Feld 949: HIFF
@@ -2073,7 +1834,7 @@ Feld 035a: (SNL)991009633569703976
 Feld 035a: (IDSLU)001064371
 IDSMATCH: 9
 Feld 035a: (RERO)R005496644
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: (VAUD)991003140499702852
 Feld 035a: (LIBIB)000318840
 Feld 035a: (IDSBB)005384618
@@ -2086,11 +1847,11 @@ Feld 035a: (Sz)vtls001627788
 Feld 035a: (Sz)001627788
 Feld 035a: (RNV)005496644-41bculausa_network
 Feld 035a: (RERO)005496644
-REROMATCH: 4
+REROMATCH: 9
 Feld 035a: R005496644
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991020448459702851
-Totalmatch: 90
-Bestmatch: 90, Bestrecordnr: 283612851
+Totalmatch: 95
+Bestmatch: 95, Bestrecordnr: 283612851
 Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #27
@@ -2106,138 +1867,113 @@ URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operat
 Treffer mit geaendertem Suchstring: 4
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(245)
-marcfield: 
+marcfield: The taxation of investment funds
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
-marcfield: 
+marcfield: La imposicion d́e los fondos de inversion
 TITLEMATCH mit getMatchValue: 0
-marcfield: 
+marcfield: L'imposition des fonds de placement
 TITLEMATCH mit getMatchValue: 0
-marcfield: 
+marcfield: Die Besteuerung von Investmentfonds
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: The taxation of investment funds
-TITLEMATCH: 0
-Feld 008: 1997
-YEARMATCH: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: The Hague <etc.>
-P-Match: 0
+marcfield: 1997
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Kluwer Law International
-PUBLISHERMATCH: 5
+marcfield: The Hague <etc.>
+marcfield short match! 
+PlaceMatch with getMatchValue: 2.5
+hasTag(264)
+marcfield: Kluwer Law International
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 03420380X
+hasTag(035)
 Feld 035a: (IDSSG)000149503
 Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 36
+Totalmatch: 42.5
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(710)
-Feld 710a: Association fiscale internationale
-AUTHORMATCH: 0
+marcfield: Association fiscale internationale
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
+marcfield: The taxation of investment funds
 TITLEMATCH mit getMatchValue: 0
 hasTag(246)
-marcfield: 
+marcfield: Imposition des fonds de placement
 TITLEMATCH mit getMatchValue: 0
-marcfield: 
+marcfield: Besteuerung von Investmentfonds
 TITLEMATCH mit getMatchValue: 0
-marcfield: 
+marcfield: Imposición de los fondos de inversión
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: The taxation of investment funds
-TITLEMATCH: 0
-Feld 008: 1997
-YEARMATCH: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: The Hague
-PLACEMATCH: 0
+marcfield: cop. 1997
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Kluwer Law International
-PUBLISHERMATCH: 5
+marcfield: The Hague
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Kluwer Law International
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 435246623
+hasTag(035)
 Feld 035a: (RERO)R218433860
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: (VAUD)991013793299702852
 Feld 035a: (RNV)002184338-41bculausa_network
 Feld 035a: (RERO)002184338
-REROMATCH: 4
+REROMATCH: 0
 Feld 035a: R218433860
 Feld 035a: (EXLNZ-41BCULAUSA_NETWORK)991018425309702851
-Totalmatch: 19
+Totalmatch: 30
 
 #Document 3:
-marcfield: 
-ISBNMATCH: 0
 hasTag(245)
-marcfield: 
+marcfield: The taxation of investment funds
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: The taxation of investment funds
-TITLEMATCH: 0
-Feld 008: 1997
-YEARMATCH: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: The Hague
-P-Match: 0
+marcfield: 1997
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Kluwer Law International
-PUBLISHERMATCH: 5
+marcfield: The Hague
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Kluwer Law International
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 0
 Swissbibnr.: 123065720
+hasTag(035)
 Feld 035a: (IDSBB)001441236
 IDSMATCH: 9
-Totalmatch: 24
+Totalmatch: 33
 
 #Document 4:
-marcfield: 
-ISBNMATCH: 0
-marcfield: 
-ISBNMATCH: 0
 hasTag(245)
-marcfield: 
+marcfield: The taxation of investment funds
 TITLEMATCH mit getMatchValue: 0
-Feld 245a: The taxation of investment funds
-TITLEMATCH: 0
-Feld 008: 1997
-YEARMATCH: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: The Hague
-PLACEMATCH: 0
+marcfield: 1997
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 260b: Kluwer
-PUBLISHERMATCH: 5
+marcfield: The Hague
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Kluwer
+Publisher-Match with getMatchValue: 5
 LDR Materialart: a
 MATERIALMATCH: 15
 Swissbibnr.: 180810901
+hasTag(035)
 Feld 035a: (NEBIS)007080434
 IDSMATCH: 9
-Totalmatch: 39
-Bestmatch: 39, Bestrecordnr: 180810901
+Totalmatch: 48
+Bestmatch: 48, Bestrecordnr: 180810901
 Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 180810901
 
 NEW ROW: #28
@@ -2253,68 +1989,57 @@ URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operat
 Treffer mit geaendertem Suchstring: 2
 
 #Document 1:
-marcfield: 
-ISBNMATCH: 0
 hasTag(100)
-Feld 100a: Schitag Ernst & Young-Gruppe
-AUTHORMATCH: 10
+marcfield: Schitag Ernst & Young-Gruppe
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung - Festschrift zum 65. Geburtstag von Professor Dr. Hans Luik
-TITLEMATCH: 5
-Feld 008: 1991
-YEARMATCH: 10
+marcfield: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung - Festschrift zum 65. Geburtstag von Professor Dr. Hans Luik
+marcfield short match! 
+TITLEMATCH mit getMatchValue: 5
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Stuttgart
-P-Match: 5
+marcfield: 1991
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
+marcfield: Stuttgart
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Schäffer Verlag für Wirtschaft und Steuern GmbH
 Publisher-Match with getMatchValue: 0
-Feld 264b: Schäffer Verlag für Wirtschaft und Steuern GmbH
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870277
+hasTag(035)
 Feld 035a: (IDSSG)000991072
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 30
+Totalmatch: 34
 
 #Document 2:
-marcfield: 
-ISBNMATCH: 0
 hasTag(700)
-Feld 700a: Luik
-AUTHORMATCH: 0
+marcfield: Luik
+AUTHORMATCH mit getMatchValue: 0
 hasTag(710)
-Feld 710a: Ernst & Young AG
-AUTHORMATCH: 0
+marcfield: Ernst & Young AG
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung
-TITLEMATCH: 5
-Feld 008: 1991
-YEARMATCH: 10
+marcfield: Aktuelle Fachbeiträge aus Wirtschaftsprüfung und Beratung
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Stuttgart
-PLACEMATCH: 5
+marcfield: 1991
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
+marcfield: Stuttgart
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Schäffer, Verlag für Wirtschaft und Steuern
 Publisher-Match with getMatchValue: 0
-Feld 260b: Schäffer, Verlag für Wirtschaft und Steuern
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 136317596
+hasTag(035)
 Feld 035a: (NEBIS)001191660
 IDSMATCH: 9
-Totalmatch: 44
-Bestmatch: 44, Bestrecordnr: 136317596
+Totalmatch: 53
+Bestmatch: 53, Bestrecordnr: 136317596
 Ersetzen: alt 515870277 mit neu 136317596
 
 NEW ROW: #29
@@ -2329,56 +2054,46 @@ Treffer: 2
 
 #Document 1:
 hasTag(100)
-Feld 100a: Bircher
-AUTHORMATCH: 10
+marcfield: Bircher
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
-TITLEMATCH: 10
+marcfield: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Bern
-P-Match: 5
+marcfield: Bern
+PlaceMatch with getMatchValue: 5
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Seminararbeit
-PUBLISHERMATCH: 5
+marcfield: Seminararbeit
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 515870285
+hasTag(035)
 Feld 035a: (IDSSG)000991073
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 30
+Totalmatch: 34
 
 #Document 2:
 hasTag(100)
-Feld 100a: Bircher
-AUTHORMATCH: 10
+marcfield: Bircher
+AUTHORMATCH mit getMatchValue: 10
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
-TITLEMATCH: 10
+marcfield: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Bern
-P-Match: 5
+marcfield: Bern
+PlaceMatch with getMatchValue: 5
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: [Verlag nicht ermittelbar]
-PUBLISHERMATCH: 0
+marcfield: [Verlag nicht ermittelbar]
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 083239693
+hasTag(035)
 Feld 035a: (IDSBB)003766725
 IDSMATCH: 9
-Totalmatch: 49
-Bestmatch: 49, Bestrecordnr: 083239693
+Totalmatch: 58
+Bestmatch: 58, Bestrecordnr: 083239693
 Ersetzen: alt 515870285 mit neu 083239693
 
 NEW ROW: #30
@@ -2393,94 +2108,82 @@ Treffer: 3
 
 #Document 1:
 hasTag(700)
-Feld 700a: Thoma
-AUTHORMATCH: 10
-Feld 700a: Spitaler
-AUTHORMATCH: 10
+marcfield: Thoma
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Spitaler
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
-TITLEMATCH: 10
-Feld 008: 1965
-YEARMATCH: 10
+marcfield: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Köln
-P-Match: 5
+marcfield: 1965
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
-Publisher-Match with getMatchValue: 0
-Feld 264b: Schmidt
-PUBLISHERMATCH: 0
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Schmidt
+Publisher-Match with getMatchValue: 5
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 031610471
+hasTag(035)
 Feld 035a: (IDSSG)000127933
 Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 71
+Totalmatch: 70
 
 #Document 2:
 hasTag(700)
-Feld 700a: Thoma
-AUTHORMATCH: 10
-Feld 700a: Spitaler
-AUTHORMATCH: 10
+marcfield: Thoma
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Spitaler
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
-TITLEMATCH: 10
-Feld 008: 1965
-YEARMATCH: 10
+marcfield: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
+TITLEMATCH mit getMatchValue: 10
 hasTag(264)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 264a: Köln
-P-Match: 5
+marcfield: 1965
+YEARMATCH with getMatchValue: 10
 hasTag(264)
-marcfield: 
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(264)
+marcfield: Verlag Otto Schmidt
 Publisher-Match with getMatchValue: 0
-Feld 264b: Verlag Otto Schmidt
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 077158105
+hasTag(035)
 Feld 035a: (IDSBB)001939616
 IDSMATCH: 9
-Totalmatch: 59
+Totalmatch: 53
 
 #Document 3:
 hasTag(700)
-Feld 700a: Thoma
-AUTHORMATCH: 10
-Feld 700a: Spitaler
-AUTHORMATCH: 10
+marcfield: Thoma
+AUTHORMATCH mit getMatchValue: 10
+marcfield: Spitaler
+AUTHORMATCH mit getMatchValue: 0
 hasTag(245)
-marcfield: 
-TITLEMATCH mit getMatchValue: 0
-Feld 245a: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
-TITLEMATCH: 10
-Feld 008: 1965
-YEARMATCH: 10
+marcfield: Die Auslegung der Steuergesetze in Wissenschaft und Praxis
+TITLEMATCH mit getMatchValue: 10
 hasTag(260)
-marcfield: 
-PlaceMatch with getMatchValue: 0
-Feld 260a: Köln
-PLACEMATCH: 5
+marcfield: 1965
+YEARMATCH with getMatchValue: 10
 hasTag(260)
-marcfield: 
+marcfield: Köln
+PlaceMatch with getMatchValue: 5
+hasTag(260)
+marcfield: Verlag Otto Schmidt
 Publisher-Match with getMatchValue: 0
-Feld 260b: Verlag Otto Schmidt
-PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
 Swissbibnr.: 297464213
+hasTag(035)
 Feld 035a: (NEBIS)002884737
 IDSMATCH: 9
 Feld 035a: (IDSSG)000991074
 Abzug fuer IFF_MATCH: -15
-Totalmatch: 44
-Bestmatch: 71, Bestrecordnr: 031610471
+Totalmatch: 38
+Bestmatch: 70, Bestrecordnr: 031610471
 Ersetzen: alt 297464213 mit neu 031610471

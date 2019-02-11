@@ -3,8 +3,8 @@ DONE:
 - Fehler im Titel: Wenn Hochkomma vorkommen, müssen entfernt werden!!(oder ersetzt mit "") 
 - ISBN-Suche geändert. 
 - IDSSG - IFF-Kata: Punkte abziehen
-- Jahr: aus Feld 008: pos. 07-10 - Date 1 
 - Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
+- wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
 
 TODO:
 
@@ -30,7 +30,7 @@ TODO:
 - Cahiers de Droit fiscale. Korr. Titel im Zusatz!
 - Best record ist analytisch -> Uplink muss mitgeliefert werden. Bsp. Cahiers... 9789012390682
 
-- wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
+
 - Flick, Aussensteuerrecht, Bd. III -> Loseblattsammlung. Evtl. nach Materialtyp suchen und auf Liste der manuell zu bereinigenden?
 
 
@@ -52,7 +52,7 @@ IFA	Cahiers de Droit Fiscal International - Vol. LXXXIIIa (1998)	90 411 1003 8	9
 
 
 
-- wenn gleich viele Punkte: wer hat am meisten angehängte Bibliotheken? (aktuell wird nach IDS SGBN bevorzugt --> willkürlich)
+- wenn gleich viele Punkte: wer hat am meisten angehängte Bibliotheken? (aktuell wird nach IDS  RERO dann SGBN bevorzugt --> willkürlich)
 - Fehlermeldung: index: cql.serverChoice not supported, Bsp. Nystad, Application of Control and System Theory to Macroeconomics
 - HSG-Dissertationen beachten.
 - Separata: ergibt das je was Schlaues?

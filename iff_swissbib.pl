@@ -21,28 +21,36 @@ use POSIX;
 ##########################################################
 
 my $row;
-my (@notfound, @unsure, @journals, @no_monograph);
+my (@notfound, @unsure, @journals, @iff_doc_missing);
 
-my ($rowcounter, $found_nr, $notfound_nr, $replace_nr, $replace_m_nr);
-my ($unsure_nr, $journal_nr, $no_monograph_nr, $bestcase_nr, $iff_only_nr);
-$rowcounter = $found_nr = $notfound_nr = $replace_nr = $replace_m_nr = 0;
-$unsure_nr = $journal_nr = $no_monograph_nr = $bestcase_nr = $iff_only_nr = 0;
+my ($rowcounter, $found_nr, $notfound_nr, $unsure_nr, $journal_nr);
+my ($replace_nr, $replace_m_nr, $bestcase_nr, $iff_only_nr);
+$rowcounter = $found_nr = $replace_nr = $replace_m_nr = 0;
+$unsure_nr = $journal_nr = $bestcase_nr = $iff_only_nr = 0;
 
 # regex:
 my $HYPHEN_ONLY = qr/\A\-/;       # a '-' in the beginning
 my $EMPTY_CELL  = qr/\A\Z/;       #nothing in the cell
 my $TITLE_SPLIT = qr/\s{2,3}/;    #min 2, max 3 whitespaces
 my $NO_NAME =  qr/\A(NN|N\.N\.|N\.\sN\.)/; # contains only nn or n.n. or n. n.
+my $CLEAN_TITLE = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]/ ; #clean following characters: .()'"/+[]
+my $CLEAN_PLACE = qr/D\.C\.|a\.M\.|a\/M/; #D.C., a.M.
+
+# material codes:
+my $analytica = qr/a|b/;
+my $monograph = "m";
+my $serial = "s";
+my $loseblatt = qr/m|i/;
 
 
 # testfiles
 #my $test  = "data/test30.csv";     # 30 Dokumente
-my $test = "data/test200.csv";    # 200 Dokumente
-#my $test = "data/test_difficult.csv";    # tricky documents
+#my $test = "data/test200.csv";    # 200 Dokumente
+my $test = "data/test_difficult.csv";    # tricky documents
 
 # input, output, filehandles:
 my $csv;
-my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_journals, $fh_no_monograph);
+my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_journals, $fh_iff_doc_missing);
 
 # Swissbib SRU-Service for the complete content of Swissbib: MARC XML-swissbib (less namespaces), default = 10 records
 my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve'.
@@ -61,14 +69,14 @@ my @record;
 
 # IFF values from CSV:
 my (@authors, $author, $author2, @authority, $author_size, $escaped_author);
-my (@titles, $title, $subtitle, $volume, $titledate, $escaped_title, $shorttitle);
-my ($isbn, $isbn2, $isbnlength);
+my (@titles, $title, $subtitle, $volume, $titledate, $escaped_title, $vol_title);
+my ($isbn, $isbn2, $isbnlength, $source, $materialtype);
 my ($pages, $material, $created, $addendum, $location, $callno, $place, $publisher, $year, $note);
 my ($tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3);
 
 # Flags
 my ($HAS_ISBN, $HAS_ISBN2, $HAS_AUTHOR, $HAS_AUTHOR2, $HAS_AUTHORITY, $HAS_SUBTITLE, $HAS_VOLUME, $HAS_TITLEDATE);
-my ($HAS_YEAR, $HAS_PAGES, $HAS_PAGERANGE, $HAS_PLACE, $HAS_PUBLISHER, $NO_MONOGRAPH);
+my ($HAS_YEAR, $HAS_PAGES, $HAS_PAGERANGE, $HAS_PLACE, $HAS_PUBLISHER, $IS_ANALYTICA, $IS_SERIAL, $IS_LOSEBLATT);
 my ($iff2replace, $bestcase);
 
 # Marc fields
@@ -79,7 +87,7 @@ my ($MARC264c, $MARC264b, $MARC264a, $MARC260c, $MARC260b, $MARC260a, $MARC300a)
 my ($MARC773g, $MARC949B, $MARC949F, $MARC852F, $MARC852B);
 
 # Matching variables
-my ($ISBNMATCH, $AUTHORMATCH, $TITLEMATCH, $YEARMATCH, $PUBLISHERMATCH, $PLACEMATCH, $MATERIALMATCH);
+my ($ISBNMATCH, $AUTHORMATCH, $TITLEMATCH, $YEARMATCH, $PUBLISHERMATCH, $PLACEMATCH, $MATERIALMATCH, $SOURCEMATCH);
 my ($TOTALMATCH, $IDSSGMATCH, $IFFMATCH, $IDSMATCH, $REROMATCH, $SGBNMATCH);
 my ($bibnr, $bestmatch, $bestrecord, $bestrecordnr);
 
@@ -97,7 +105,7 @@ open $fh_in, "<:encoding(utf8)", $test or die "$test: $!";
 open $fh_notfound, ">:encoding(utf8)", "notfound.csv" or die "notfound.csv: $!";
 open $fh_unsure,   ">:encoding(utf8)", "unsure.csv"   or die "unsure.csv: $!";
 open $fh_journals, ">:encoding(utf8)", "journals.csv"   or die "journals.csv: $!";
-open $fh_no_monograph, ">:encoding(utf8)", "no_monograph.csv"   or die "no_monograph.csv: $!";
+open $fh_iff_doc_missing, ">:encoding(utf8)", "iff_doc_missing.csv"   or die "iff_doc_missing.csv: $!";
 open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 open $fh_export, ">:encoding(utf8)", "swissbibexport.xml"  or die "swissbibexport.xml: $!";
 
@@ -148,7 +156,8 @@ while ( $row = $csv->getline($fh_in) ) {
     #############################
     # Deal with AUTHOR/AUTORITIES
     #############################
-
+	
+    $author =~ s/Schweiz./Schweizerische/i; #replace Schweiz. 
     $author = trim($author);
     $author =~ s/\.//g;       #remove dots
     $author =~ s/\(|\)//g;    #remove ()
@@ -160,7 +169,7 @@ while ( $row = $csv->getline($fh_in) ) {
         $author     = '';
     }
 
-    #TODO: Schweiz. ausschreiben? aber wie?
+
 
     #check if several authors: contains "/"?
     if ( $HAS_AUTHOR && $author =~ /[\/]/ ) {
@@ -171,9 +180,9 @@ while ( $row = $csv->getline($fh_in) ) {
     }
 
     #check if authority rather than author: check for typical words or if more than 3 words long:
-    
+
     if ($HAS_AUTHOR) {
-        if ( $author =~ /amt|Amt|kanzlei|Schweiz\.|institut|OECD/ ) 
+        if ( $author =~ /amt|Amt|kanzlei|Bankverein|Nationalfonds|institut|OECD/ ) 
         {    # TODO maybe more!
             $HAS_AUTHORITY = 1;
             $author_size   = 5;
@@ -204,22 +213,26 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
         }
+
     }
 
     #Debug:
     print $fh_report "Autor: "      . $author      . " --- Autor2: "      . $author2 . "\n";
+    
+    ##########################
+    # Deal with ADDENDUM:
+    ##########################
+    
+    $addendum = trim($addendum);
+    $addendum =~s/$CLEAN_TITLE//g;
 
     ##########################
     # Deal with TITLE:
     ##########################
 
     $title = trim($title);
-    $title =~ s/\.//g;       #remove dots
-    $title =~ s/\(|\)//g;    #remove ()
     $title =~ s/^L\'//g;     #remove L' in the beginning
-    $title =~ s/\'//g;       #replace ' 
-    $title =~s/\// /g;		#replace / with whitespace
-    $title =~ s/\+//g;	#replace + 
+	$title =~s/$CLEAN_TITLE//g;
 
 	#check if title has subtitle that needs to be eliminated: (2 or 3 whitespaces)
     if ( $title =~ /$TITLE_SPLIT/ ) {
@@ -246,6 +259,10 @@ while ( $row = $csv->getline($fh_in) ) {
         $volume = ( split / - /, $title, 2 )[1];
         $title  = ( split / - /, $title, 2 )[0];
         $HAS_VOLUME = 1;
+        if ($addendum !~ $EMPTY_CELL) {
+        	$vol_title = $addendum;
+        }
+
     }
 
     #check if the title contains years or other dates and remove them:
@@ -278,11 +295,9 @@ while ( $row = $csv->getline($fh_in) ) {
         $title         = ( split /\s\d{4}\-\d{4}/, $title, 2 )[0];
         $HAS_TITLEDATE = 1;
     }
-
-    $shorttitle = substr $title, 0, 10;    
-
+    
     print $fh_report "Titel: "      . $title      . " --- Untertitel: "      . $subtitle      . " --- Titeldatum: "
-      . $titledate      . " --- Band: "      . $volume . "\n";
+      . $titledate      . " --- Band: "      . $volume . " - Bandtitel: ".$vol_title."\n";
 
     #############################################
     # Deal with YEAR, PLACE, PUBLISHER
@@ -315,13 +330,9 @@ while ( $row = $csv->getline($fh_in) ) {
         $place     = '';
     }
 
-    #check if place has words that needs to be removed: (usually: D.C., a.M.)
-    #TODO: remove everything after / or ,
-    if ( $place =~ m/d\.c\.|a\.m\.|a\/m/i ) {
-        $place = substr $place, 0, -5;
-
-        #debug			print $place."\n";
-    }
+    $place =~s/$CLEAN_PLACE//g;
+    $place =~s/\,.*//; #remove everything after ,
+    $place =~s/\/.*//; #remove everything after /
 
     if (   $publisher =~ /$EMPTY_CELL/
         || $publisher =~ /$HYPHEN_ONLY/ )
@@ -336,44 +347,45 @@ while ( $row = $csv->getline($fh_in) ) {
 
     }
     # Remove "Verlag" etc. from publishers name.
-    $publisher =~ s/Verlag|Verl\.|Druck|publisher|publishers//g;
+    $publisher =~ s/Verlag|Verl\.|Verlagsbuchhandlung|Druck|publisher|publishers|\'//g;
     
     ##########################
     # Deal with Material type
     ##########################
     
-    if ($subj1 =~ /Zeitschrift/) {
-        #TODO:  Treat manually, read next line
-        $journal_nr++;
-        $NO_MONOGRAPH = 'abcdis';
-        push @journals, "\n", $journal_nr, $isbn, $title,$author, $year;        
+    if (($subj1 =~ /Zeitschrift/) || ($title =~ /jahrbuch|yearbook|cahiers de droit fiscal international|ifst-schrift/i)) {
+        $IS_SERIAL = 1; 
+        $materialtype = $serial;
     }
     
-    if ($material !~ /Druckerzeugnis/) {
-        #TODO: Treat separately, read next line
-        $no_monograph_nr++;
-        $NO_MONOGRAPH = 'abcdis';
-        push @no_monograph, "\n", $no_monograph_nr, $isbn, $title,$author, $year;
+    if ($material =~ /Loseblatt/) {
+		$IS_LOSEBLATT = 1;
+		$materialtype = $loseblatt;
     }
     
-    if ($addendum =~ m/in: /i) {
-        #TODO: Treat separately, read next line
-        $no_monograph_nr++;
-        $NO_MONOGRAPH = 'abcdis';
-        push @no_monograph, "\n", $no_monograph_nr, $isbn, $title,$author, $year;        
+    if (($addendum =~ m/in: /i) || ($HAS_PAGERANGE)) {
+        $IS_ANALYTICA = 1; 
+        $materialtype = $analytica;
+        $source = $addendum; 
+        $source =~ s/^in: //i; #replace "in: "    
+        $HAS_ISBN = 0; # ISBN for Analytica is confusing for search (ISBN for source, not analytica)
     }
-
-
-    if ( $HAS_PAGERANGE || $HAS_VOLUME || $HAS_TITLEDATE )
-    {   #TODO: Treat separately, read next line
-        $no_monograph_nr++;
-        $NO_MONOGRAPH = 'abcdis';
-        push @no_monograph, "\n", $no_monograph_nr, $isbn, $title,$author, $year; 
-    }
-
+    
+    
     print $fh_report "Ort: "      . $place      . " - Verlag: "      . $publisher      . " - Jahr: "      
-    . $year      . " - Materialart: "      . $NO_MONOGRAPH . "\n";
+    . $year      . " - Materialart: " . $materialtype . " - Source: $source \n";
     if (defined $addendum ) {print $fh_report "Addendum: ".$addendum."\n";}
+    
+    ############################
+    # Serials: skip, next row
+    ############################
+    
+    if ($IS_SERIAL) {
+    	print $fh_report "ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000\n";
+    	push @journals, $row;
+    	$journal_nr++;
+    	next;    	
+    }
 
     ######################################################################
     # START SEARCH ON SWISSBIB
@@ -461,7 +473,7 @@ while ( $row = $csv->getline($fh_in) ) {
             "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n\n";
             #TODO handle manually
             $notfound_nr++;
-            push @notfound, "\n", $notfound_nr, $isbn, $title,$author, $year;
+            push @notfound, $row;
         }
 
     }
@@ -485,7 +497,7 @@ while ( $row = $csv->getline($fh_in) ) {
 
             # TODO: make a new query with other parameters, if still over 10:
             $notfound_nr++;
-            push @notfound, "\n", $notfound_nr, $isbn, $title,$author, $year;
+            push @notfound, $row;
         }
         print $fh_report "URL erweitert: " . $sruquery . "\n";
 
@@ -511,7 +523,7 @@ while ( $row = $csv->getline($fh_in) ) {
               "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
             # TODO: make a new query with other parameters, if still over 10:
             $notfound_nr++;
-            push @notfound, "\n", $notfound_nr, $isbn, $title,$author, $year;
+            push @notfound, $row;
         }
 
     }
@@ -527,7 +539,7 @@ while ( $row = $csv->getline($fh_in) ) {
         foreach $rec (@record) {
             print $fh_report "\n#Document $i:\n";
             # reset all match variables to default value
-            $AUTHORMATCH = $TITLEMATCH = $YEARMATCH = $PUBLISHERMATCH = $PLACEMATCH= 0;
+            $AUTHORMATCH = $TITLEMATCH = $YEARMATCH = $PUBLISHERMATCH = $PLACEMATCH = $SOURCEMATCH = 0;
             $ISBNMATCH  = $MATERIALMATCH = $TOTALMATCH  = 0;
     		$IDSSGMATCH = $IFFMATCH = $SGBNMATCH = $IDSMATCH = $REROMATCH = 0;
 
@@ -622,7 +634,7 @@ while ( $row = $csv->getline($fh_in) ) {
             
             if ($HAS_YEAR) {
             	if (hasTag("260", $xpc, $rec) || hasTag("264", $xpc, $rec)) {
-            		foreach $el ($xpc->findnodes('./datafield[@tag=260 or @tag=264]', $rec)) {
+            		foreach $el ($xpc->findnodes('./datafield[@tag=264 or @tag=260]', $rec)) {
             			$YEARMATCH = getMatchValue("c",$xpc,$el,$year,10);
             			print $fh_report "YEARMATCH: " . $YEARMATCH . "\n";		
             		}            		
@@ -654,7 +666,38 @@ while ( $row = $csv->getline($fh_in) ) {
                     }
                 }
             }
-
+            
+            ###########################################
+            # CHECK MEHRBAENDIGE
+            ###########################################
+            
+            if ($HAS_VOLUME) {            	
+            	if (hasTag("505", $xpc, $rec)) {
+            		foreach $el ($xpc->findnodes('./datafield[@tag=505]', $rec)) {
+            			if (!$TITLEMATCH) {# if title has not matched yet
+            				$TITLEMATCH += getMatchValue("t",$xpc,$el, $title,10); # check 505 for title
+            				print $fh_report "TITLEMATCH 505 title: $TITLEMATCH \n";
+            			} else {
+            				$TITLEMATCH += getMatchValue("t",$xpc,$el, $vol_title,10); # check 505 for addendum
+            				print $fh_report "TITLEMATCH 505 volumetitle: $TITLEMATCH \n";
+            			}
+            		}   
+            	}
+            }
+            
+            ###########################################
+            # CHECK ANALYTICA # TODO: 580?
+            ###########################################
+            
+            if ($IS_ANALYTICA) {
+            	if (hasTag("773", $xpc, $rec)) {
+            		foreach $el ($xpc->findnodes('./datafield[@tag=773]', $rec)){
+                       	$SOURCEMATCH = getMatchValue("t", $xpc, $el, $source,5); 
+						print $fh_report "SOURCEMATCH Analytica: $SOURCEMATCH \n";		
+            		}					
+            	}            	
+            }            
+            
             ############################################
             # CHECK MATERIAL MATCH (LDR)
             ############################################
@@ -667,7 +710,7 @@ while ( $row = $csv->getline($fh_in) ) {
                     # debug:
                     print $fh_report "LDR Materialart: " . $LDR . "\n";
 
-                    if ( $NO_MONOGRAPH =~ m/$LDR/ ) {
+                    if ( $materialtype =~ m/$LDR/ ) {
                         $MATERIALMATCH = 15;
                     }
 
@@ -677,8 +720,10 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 
-            #Get Swissbib System Nr., Field 001: 
-            #http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
+            ###########################################
+            # Get Swissbib System Nr., Field 001:
+            ########################################### 
+            # http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
 
             if ( $xpc->exists( './controlfield[@tag="001"]', $rec ) ) {
                 foreach $el (
@@ -691,7 +736,10 @@ while ( $row = $csv->getline($fh_in) ) {
 
                 }
             }
+            
 
+            
+            
             #Get 035 Field and check if old IFF data.
             if ( hasTag("035", $xpc, $rec) ) {
                 foreach $el (
@@ -706,7 +754,11 @@ while ( $row = $csv->getline($fh_in) ) {
                     if ( $MARC035a =~ /IDSSG/ ) {    # book found in IDSSG
                         $bibnr = substr $MARC035a,-7;    #only the last 7 numbers
                         if ( $bibnr > 990000 ) {   #this is an IFF record
-                            $IFFMATCH = 15;        # negative points
+                        	if ($IS_ANALYTICA && ($numberofrecords = 1)) {
+                        		$IFFMATCH = 0;        # no negative points if analytica and only one hit.
+                        	} else {
+                        		$IFFMATCH = 15;        # negative points                        		
+                        	}
                             $iff2replace = $MARC001; # TODO: save bibnr IDSSG also!
                             print $fh_report "Abzug fuer IFF_MATCH: -". $IFFMATCH . "\n";
                         }
@@ -761,7 +813,7 @@ while ( $row = $csv->getline($fh_in) ) {
             $i++;
             $TOTALMATCH =
               ( $ISBNMATCH + $TITLEMATCH + $AUTHORMATCH + $YEARMATCH +
-                  $PUBLISHERMATCH + $PLACEMATCH + $MATERIALMATCH +
+                  $PUBLISHERMATCH + $PLACEMATCH + $MATERIALMATCH + $SOURCEMATCH +
                   $REROMATCH + $SGBNMATCH + $IDSMATCH + $IDSSGMATCH - $IFFMATCH );
 
             print $fh_report "Totalmatch: " . $TOTALMATCH . "\n";
@@ -776,15 +828,10 @@ while ( $row = $csv->getline($fh_in) ) {
 
         }
 
-		# TODO: if correct, write out as marcxml, if false, do another query with more parameters
-        $found_nr++;
-
-        print $fh_report "Bestmatch: "
-          . $bestmatch
-          . ", Bestrecordnr: "
-          . $bestrecordnr . "\n";
+        print $fh_report "Bestmatch: ". $bestmatch. ", Bestrecordnr: ". $bestrecordnr . "\n";
 
         if ( $bestmatch >= 25 ) {    #wenn guter Treffer gefunden
+            $found_nr++;
 
             if ( $iff2replace eq $bestrecordnr ) {
                 if ($bestcase) {
@@ -797,11 +844,12 @@ while ( $row = $csv->getline($fh_in) ) {
                 	$iff_only_nr++;
                     print $fh_report
                       "Only IFF data available. Best solution from Felix.\n";
+                      #TODO: check if other 035 fields and re-import if yes!
                 }
             }
             else {
-                $replace_nr++;
                 if ( $iff2replace !~ /$EMPTY_CELL/ ) {
+                	$replace_nr++;
                     print $fh_report "Ersetzen: alt "
                       . $iff2replace
                       . " mit neu "
@@ -809,28 +857,28 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
                 else {
                 	$replace_m_nr++;
-                    print $fh_report
-"Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit "
+                    print $fh_report "Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit "
                       . $bestrecordnr . "\n";
+                      push @iff_doc_missing, $row;
                 }
 
-                #IFF-Signatur anhängen
+                #IFF-Signatur anhaengen
                 $bestrecord->appendWellBalancedChunk(
 '<datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">'
                       . $callno
                       . '</subfield></datafield>' );
 
-                #TODO: Schlagworte IFF einfügen
-                #TODO: unnötige Exemplardaten etc. rauslöschen.
+                #TODO: Schlagworte IFF einfuegen
+                #TODO: unnoetige Exemplardaten etc. rausloeschen.
+                #TODO: Link zur Bibnr., die zu ersetzen ist??!! How?
                 print $fh_export $bestrecord->toString . "\n";
             }
 
         }
         else {
         	$unsure_nr++;
-            print $fh_report "BESTMATCH ziemlich tief, überprüfen!";
-            push @unsure, "\n", $unsure_nr, $isbn, $title,
-              $author, $year;
+            print $fh_report "BESTMATCH ziemlich tief, ueberpruefen!";
+            push @unsure, $row;
         }
     }
 }
@@ -838,28 +886,33 @@ while ( $row = $csv->getline($fh_in) ) {
 $csv->eof or $csv->error_diag();
 close $fh_in;
 
-$csv->print( $fh_notfound, \@notfound );
-$csv->print( $fh_unsure,   \@unsure );
-$csv->print($fh_journals, \@journals);
-$csv->print($fh_no_monograph, \@no_monograph); # not working for some reason (value undefined))
+$csv->say($fh_notfound, $_) for @notfound;
+$csv->say($fh_unsure, $_) for @unsure;
+$csv->say($fh_journals, $_) for @journals;
+$csv->say($fh_iff_doc_missing, $_) for @iff_doc_missing;
 
 close $fh_notfound or die "notfound.csv: $!";
 close $fh_unsure   or die "unsure.csv: $!";
 close $fh_journals or die "journals.csv: $!";
-close $fh_no_monograph or die "no_monograph.csv: $!";
+close $fh_iff_doc_missing or die "iff_doc_missing.csv: $!";
 close $fh_report   or die "report.txt: $!";
 close $fh_export   or die "swissbibexport.xml: $!";
 
+print "Total not found (notfound.csv): " . $notfound_nr . "\n";
+print "Total unsure (unsure.csv): " . $unsure_nr . "\n";
+print "Total journals: " . $journal_nr. "\n";
+
 print "Total found: " . $found_nr . "\n";
-print "Total to replace: " . $replace_nr . "\n";
-print "Total to replace where IFF-record not found: ".$replace_m_nr."\n";
+
+print "To do with found: \n";
+print "Total to replace (swissbibexport.xml): " . $replace_nr . "\n";
+print "Total to replace where IFF-record not found (iff_doc_missing.csv): ".$replace_m_nr."\n";
 print "Total already matched: " . $bestcase_nr. "\n";
 print "Total that cannot be improved: ".$iff_only_nr."\n";
 
-print "Total unsure: " . $unsure_nr . "\n";
-print "Total journals: " . $journal_nr. "\n";
-print "Total not monographs: " . $no_monograph_nr. "\n";
-print "Total not found: " . $notfound_nr . "\n";
+
+
+
 
 ####################
 
@@ -884,7 +937,9 @@ sub resetFlags {
     $HAS_PAGERANGE = 0;
     $HAS_PLACE     = 1; #default, most documents have a place
     $HAS_PUBLISHER = 1; #default, most documents have a publisher
-    $NO_MONOGRAPH  = 'm';
+    $IS_SERIAL = 0;
+    $IS_LOSEBLATT = 0;
+    $IS_ANALYTICA = 0;
     $iff2replace   = "";
     $bestcase      = 0;
     $bestmatch = 0; 
@@ -900,8 +955,8 @@ sub emptyVariables {
 
     $isbn = '';     $isbn2 = '';     $isbnlength = '';
     $author = '';     $author2 = '';     $author_size = '';
-    $title = '';     $subtitle = '';     $volume = '';     $titledate = '';
-    $pages= ''; 
+    $title = '';     $subtitle = '';     $volume = '';     $titledate = ''; $vol_title='';
+    $pages= ''; $source='';
     $material= '';
     $addendum= '';
     $location= '';
@@ -911,6 +966,7 @@ sub emptyVariables {
     $year= '';
     $note= '';
     $tsignature= ''; $tsignature_1= ''; $tsignature_2 = ''; $subj1= ''; $subj2= ''; $subj3= '';
+    $materialtype = $monograph; # default: most documents are monographs
 
 }
 
@@ -928,8 +984,6 @@ sub hasTag {
     }
 
 }
-
-
 
 sub getMatchValue {
     my $code   = $_[0];    #subfield

@@ -21,17 +21,23 @@ use POSIX;
 ##########################################################
 
 my $row;
-my (@notfound, @unsure, @journals, @iff_doc_missing);
+my (@notfound, @unsure, @journals, @iff_doc_missing, @iff2replace, @export, @re_import, @hsg_duplicate);
 
 my ($rowcounter, $found_nr, $notfound_nr, $unsure_nr, $journal_nr);
-my ($replace_nr, $replace_m_nr, $bestcase_nr, $iff_only_nr);
-$rowcounter = $found_nr = $replace_nr = $replace_m_nr = 0;
-$unsure_nr = $journal_nr = $bestcase_nr = $iff_only_nr = 0;
+my ($replace_nr, $hsg_duplicate_nr, $MARC035_counter, $replace_m_nr, $bestcase_nr, $iff_only_nr, $iff_update, $re_import);
+$rowcounter = $found_nr = $notfound_nr = $replace_nr = $replace_m_nr = $hsg_duplicate_nr = $MARC035_counter = 0;
+$unsure_nr = $journal_nr = $bestcase_nr = $iff_only_nr = $iff_update = $re_import = 0;
+
+# Fehlercodes:
+my $iff_doc_missing_E = 	"Error 101: IFF record not found on Swissbib";
+my $notfound_E = 			"Error 102: No records found\n";
+my $toomanyfound_E = 		"Error 103: Too many records found\n";
+my $bestcase_E = 			"Error 104: cannot be 100% proven: ";
 
 # regex:
 my $HYPHEN_ONLY = qr/\A\-/;       # a '-' in the beginning
 my $EMPTY_CELL  = qr/\A\Z/;       #nothing in the cell
-my $TITLE_SPLIT = qr/\s{2,3}/;    #min 2, max 3 whitespaces
+my $TITLE_SPLIT = qr/\s{2,3}|\s-\s|\.|:/;    #min 2, max 3 whitespaces / ' - ' / ':' / '.'
 my $NO_NAME =  qr/\A(NN|N\.N\.|N\.\sN\.)/; # contains only nn or n.n. or n. n.
 my $CLEAN_TITLE = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]/ ; #clean following characters: .()'"/+[]
 my $CLEAN_PLACE = qr/D\.C\.|a\.M\.|a\/M/; #D.C., a.M.
@@ -45,12 +51,13 @@ my $loseblatt = qr/m|i/;
 
 # testfiles
 #my $test  = "data/test30.csv";     # 30 Dokumente
+my $test  = "data/test50.csv";     # 50 Dokumente
 #my $test = "data/test200.csv";    # 200 Dokumente
-my $test = "data/test_difficult.csv";    # tricky documents
+#my $test = "data/test_difficult.csv";    # tricky documents
 
 # input, output, filehandles:
 my $csv;
-my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_journals, $fh_iff_doc_missing);
+my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_re_import, $fh_hsg_duplicate, $fh_journals, $fh_iff_doc_missing);
 
 # Swissbib SRU-Service for the complete content of Swissbib: MARC XML-swissbib (less namespaces), default = 10 records
 my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve'.
@@ -59,7 +66,9 @@ my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=se
 # needed queries
 my $isbnquery   = '+dc.identifier+%3D+';
 my $titlequery  = '+dc.title+%3D+';
-my $yearquery   = '+dc.date+%3D+';
+#my $yearquery   = '+dc.date+%3D+';
+my $year_st_query = '+dc.date+%3C%3D+'; # <=
+my $year_gt_query = '+dc.date+%3E%3D+'; # >=
 my $anyquery    = '+dc.anywhere+%3D+';
 my $sruquery;
 
@@ -70,26 +79,24 @@ my @record;
 # IFF values from CSV:
 my (@authors, $author, $author2, @authority, $author_size, $escaped_author);
 my (@titles, $title, $subtitle, $volume, $titledate, $escaped_title, $vol_title);
-my ($isbn, $isbn2, $isbnlength, $source, $materialtype);
-my ($pages, $material, $created, $addendum, $location, $callno, $place, $publisher, $year, $note);
+my ($isbn, $isbn2, $isbnlength, $source, $sourcetitle, $sourceauthor, $materialtype);
+my ($pages, $material, $created, $addendum, $location, $callno, $place, $publisher, $year, $yearminus1, $yearplus1, $note);
 my ($tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3);
 
 # Flags
 my ($HAS_ISBN, $HAS_ISBN2, $HAS_AUTHOR, $HAS_AUTHOR2, $HAS_AUTHORITY, $HAS_SUBTITLE, $HAS_VOLUME, $HAS_TITLEDATE);
 my ($HAS_YEAR, $HAS_PAGES, $HAS_PAGERANGE, $HAS_PLACE, $HAS_PUBLISHER, $IS_ANALYTICA, $IS_SERIAL, $IS_LOSEBLATT);
-my ($iff2replace, $bestcase);
+my ($bestcase);
 
 # Marc fields
 my $field;
 my ($LDR, $MARC008, $MARC001, $OCLCnr, $MARC035a);
-my ($MARC100a, $MARC110a, $MARC700a, $MARC710a, $MARC245a, $MARC246a);
-my ($MARC264c, $MARC264b, $MARC264a, $MARC260c, $MARC260b, $MARC260a, $MARC300a);
-my ($MARC773g, $MARC949B, $MARC949F, $MARC852F, $MARC852B);
+my ($MARC949j, $MARC949F, $MARC852F, $MARC852B);
 
 # Matching variables
 my ($ISBNMATCH, $AUTHORMATCH, $TITLEMATCH, $YEARMATCH, $PUBLISHERMATCH, $PLACEMATCH, $MATERIALMATCH, $SOURCEMATCH);
-my ($TOTALMATCH, $IDSSGMATCH, $IFFMATCH, $IDSMATCH, $REROMATCH, $SGBNMATCH);
-my ($bibnr, $bestmatch, $bestrecord, $bestrecordnr);
+my ($IFFTOTAL, $TOTALMATCH, $IDSSGMATCH, $IFFMATCH, $IDSMATCH, $REROMATCH, $SGBNMATCH);
+my ($bibnr, @bestmatch);
 
 ##########################################################
 # 	READ AND TREAT THE DATA
@@ -107,7 +114,9 @@ open $fh_unsure,   ">:encoding(utf8)", "unsure.csv"   or die "unsure.csv: $!";
 open $fh_journals, ">:encoding(utf8)", "journals.csv"   or die "journals.csv: $!";
 open $fh_iff_doc_missing, ">:encoding(utf8)", "iff_doc_missing.csv"   or die "iff_doc_missing.csv: $!";
 open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
-open $fh_export, ">:encoding(utf8)", "swissbibexport.xml"  or die "swissbibexport.xml: $!";
+open $fh_export, ">:encoding(utf8)", "export.csv"  or die "export.csv: $!";
+open $fh_re_import, ">:encoding(utf8)", "re_import.csv"  or die "re_import.csv: $!";
+open $fh_hsg_duplicate, ">:encoding(utf8)", "hsg_duplicate.csv"  or die "hsg_duplicate.csv: $!";
 
 # read each line and do...:
 while ( $row = $csv->getline($fh_in) ) {
@@ -117,8 +126,8 @@ while ( $row = $csv->getline($fh_in) ) {
     #get all necessary variables
     $author = $row->[0]; $title = $row->[1]; $isbn = $row->[2]; $pages = $row->[3]; $material = $row->[4]; $addendum = $row->[6]; 
     $callno = $row->[8]; $place = $row->[9]; $publisher = $row->[10]; $year = $row->[11]; $subj1 = $row->[16];
-    #$location = $row->[7]; $note = $row->[12]; $tsignature = $row->[13]; $tsignature_1 = $row->[14];
-    #$tsignature_2 = $row->[15]; $subj2 = $row->[17]; $subj3 = $row->[18];
+    $location = $row->[7]; $note = $row->[12]; 
+    $tsignature = $row->[13]; $tsignature_1 = $row->[14]; $tsignature_2 = $row->[15]; $subj2 = $row->[17]; $subj3 = $row->[18];
     
     resetFlags(); #reset all flags and counters
     
@@ -157,7 +166,14 @@ while ( $row = $csv->getline($fh_in) ) {
     # Deal with AUTHOR/AUTORITIES
     #############################
 	
-    $author =~ s/Schweiz./Schweizerische/i; #replace Schweiz. 
+    #replace Schweiz. 
+    if ($author =~ /Schweiz\./) {
+    	if ($author =~/Nationalfonds|Wissenschaftsrat/i) { # schweizerischer
+    		$author =~ s/Schweiz./Schweizerischer/i;
+    	} else {
+    		$author =~ s/Schweiz./Schweizerische/i;
+    	}
+    }
     $author = trim($author);
     $author =~ s/\.//g;       #remove dots
     $author =~ s/\(|\)//g;    #remove ()
@@ -182,7 +198,7 @@ while ( $row = $csv->getline($fh_in) ) {
     #check if authority rather than author: check for typical words or if more than 3 words long:
 
     if ($HAS_AUTHOR) {
-        if ( $author =~ /amt|Amt|kanzlei|Bankverein|Nationalfonds|institut|OECD/ ) 
+        if ( $author =~ /amt|Amt|kanzlei|Schweiz|institut|OECD/ ) 
         {    # TODO maybe more!
             $HAS_AUTHORITY = 1;
             $author_size   = 5;
@@ -232,7 +248,9 @@ while ( $row = $csv->getline($fh_in) ) {
 
     $title = trim($title);
     $title =~ s/^L\'//g;     #remove L' in the beginning
-	$title =~s/$CLEAN_TITLE//g;
+    
+    #check for eidg. in title:  
+    # check umlaut: $title =~ s/eidg\./eidgen\xc3\xb6ssischen/i;
 
 	#check if title has subtitle that needs to be eliminated: (2 or 3 whitespaces)
     if ( $title =~ /$TITLE_SPLIT/ ) {
@@ -241,15 +259,8 @@ while ( $row = $csv->getline($fh_in) ) {
         $title        = $titles[0];
         $HAS_SUBTITLE = 1;
     }
-    elsif ( $title =~ /\:/ )
-    {    #check if title has subtitle that needs to be eliminated: (':')
-        @titles       = ( split /\:/, $title );
-        $subtitle     = $titles[1];
-        $title        = $titles[0];
-        $title        = trim($title);
-        $subtitle     = trim($subtitle);
-        $HAS_SUBTITLE = 1;
-    }
+
+    $title =~s/$CLEAN_TITLE//g;
 
 	#check if title has volume information that needs to be removed: (usually: ... - Bd. ...)
     if ( $title =~
@@ -296,11 +307,10 @@ while ( $row = $csv->getline($fh_in) ) {
         $HAS_TITLEDATE = 1;
     }
     
-    print $fh_report "Titel: "      . $title      . " --- Untertitel: "      . $subtitle      . " --- Titeldatum: "
-      . $titledate      . " --- Band: "      . $volume . " - Bandtitel: ".$vol_title."\n";
+    print $fh_report "Titel: $title \nUntertitel: $subtitle  --- Titeldatum: $titledate --- Band: $volume --- Bandtitel: $vol_title\n";
 
     #############################################
-    # Deal with YEAR, PLACE, PUBLISHER
+    # Deal with YEAR
     #############################################
 
     if (   $year =~ /$EMPTY_CELL/        || $year =~ /$HYPHEN_ONLY/        || $year =~ /online/ )
@@ -312,15 +322,28 @@ while ( $row = $csv->getline($fh_in) ) {
         	$year = $titledate;
         }
     }
+    
+    if (defined $year) {
+    	$yearminus1 = ($year -1);
+    	$yearplus1 = ($year + 1);
+    }
+    
+    #############################################
+    # Deal with PAGES
+    #############################################
 
     if ( $pages =~ /$EMPTY_CELL/ || $pages =~ /$HYPHEN_ONLY/ ) {
         $HAS_PAGES = 0;
         $pages     = '';
     }
-    elsif ( $pages =~ /\AS.\s/ || $pages =~ /\-/ )
+    elsif ( $pages =~ /\AS.\s/ || $pages =~ /\-/ || $pages =~ /ff/)
     { #very likely not a monography but a volume or article, eg. S. 300ff or 134-567
         $HAS_PAGERANGE = 1;
     }
+    
+    #############################################
+    # Deal with PLACE 
+    #############################################
 
     if (   $place =~ /$EMPTY_CELL/
         || $place =~ /$HYPHEN_ONLY/
@@ -333,6 +356,11 @@ while ( $row = $csv->getline($fh_in) ) {
     $place =~s/$CLEAN_PLACE//g;
     $place =~s/\,.*//; #remove everything after ,
     $place =~s/\/.*//; #remove everything after /
+    $place =~s/St\.Gallen/St\. Gallen/; #write St. Gallen always with whitespace
+   
+    #############################################
+    # Deal with PUBLISHER
+    #############################################
 
     if (   $publisher =~ /$EMPTY_CELL/
         || $publisher =~ /$HYPHEN_ONLY/ )
@@ -347,13 +375,13 @@ while ( $row = $csv->getline($fh_in) ) {
 
     }
     # Remove "Verlag" etc. from publishers name.
-    $publisher =~ s/Verlag|Verl\.|Verlagsbuchhandlung|Druck|publisher|publishers|\'//g;
+    $publisher =~ s/Verlag|Verl\.|Verlagsbuchhandlung|Druck|Druckerei|publisher|publishers|\'//g;
     
     ##########################
     # Deal with Material type
     ##########################
     
-    if (($subj1 =~ /Zeitschrift/) || ($title =~ /jahrbuch|yearbook|cahiers de droit fiscal international|ifst-schrift/i)) {
+    if (($subj1 =~ /Zeitschrift/) || ($title =~ /jahrbuch|yearbook|cahiers de droit fiscal international|ifst-schrift|Steuerentscheid StE/i)) {
         $IS_SERIAL = 1; 
         $materialtype = $serial;
     }
@@ -361,6 +389,7 @@ while ( $row = $csv->getline($fh_in) ) {
     if ($material =~ /Loseblatt/) {
 		$IS_LOSEBLATT = 1;
 		$materialtype = $loseblatt;
+		$HAS_YEAR = 0; # year for Loseblatt is usually wrong and leads to zero search results.
     }
     
     if (($addendum =~ m/in: /i) || ($HAS_PAGERANGE)) {
@@ -369,12 +398,14 @@ while ( $row = $csv->getline($fh_in) ) {
         $source = $addendum; 
         $source =~ s/^in: //i; #replace "in: "    
         $HAS_ISBN = 0; # ISBN for Analytica is confusing for search (ISBN for source, not analytica)
+        $sourcetitle = (split /: /, $source, 2)[1];
+        $sourceauthor = (split /: /, $source, 2 )[0];
     }
     
     
-    print $fh_report "Ort: "      . $place      . " - Verlag: "      . $publisher      . " - Jahr: "      
-    . $year      . " - Materialart: " . $materialtype . " - Source: $source \n";
-    if (defined $addendum ) {print $fh_report "Addendum: ".$addendum."\n";}
+    print $fh_report "Ort: $place --- Verlag: $publisher --- Jahr: $year --- Materialart: $materialtype --- Seitenzahlen: $pages\n";
+    if (defined $sourcetitle) {print $fh_report "Sourcetitle: $sourcetitle, Sourceauthor: $sourceauthor\n";}
+    if (defined $addendum ) {print $fh_report "Addendum: $addendum\n";}
     
     ############################
     # Serials: skip, next row
@@ -406,7 +437,8 @@ while ( $row = $csv->getline($fh_in) ) {
 
 	#note: all documents except journals have an "author" field in some kind, so it should never be empty.
     if ($HAS_YEAR) {
-        $sruquery .= "+AND" . $yearquery . $year;
+       # $sruquery .= "+AND" . $yearquery . $year;
+       $sruquery .= "+AND" . $year_st_query . $yearplus1 . "+AND" . $year_gt_query . $yearminus1; 
     }
 
     # Debug:
@@ -469,9 +501,8 @@ while ( $row = $csv->getline($fh_in) ) {
         }
         else {
             #debug
-            print $fh_report "Diese Suche taugt nichts.\n". 
+            print $fh_report "$notfound_E\n". 
             "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n\n";
-            #TODO handle manually
             $notfound_nr++;
             push @notfound, $row;
         }
@@ -491,11 +522,8 @@ while ( $row = $csv->getline($fh_in) ) {
         }
         else {
             #debug
-            print $fh_report
-			"Treffermenge zu hoch!!! Keine gute Suche moeglich (Verlag/Ort nicht vorh.).\n"
-            . "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
-
-            # TODO: make a new query with other parameters, if still over 10:
+            print $fh_report "$toomanyfound_E\n";
+            print $fh_report "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
             $notfound_nr++;
             push @notfound, $row;
         }
@@ -518,10 +546,8 @@ while ( $row = $csv->getline($fh_in) ) {
         }
         else {
             #debug
-            print $fh_report
-              "Treffermenge immer noch zu hoch oder Null!!! Trotz erweiterter Suche!\n".
-              "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
-            # TODO: make a new query with other parameters, if still over 10:
+            print $fh_report "$toomanyfound_E\n".
+            print $fh_report "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
             $notfound_nr++;
             push @notfound, $row;
         }
@@ -540,8 +566,9 @@ while ( $row = $csv->getline($fh_in) ) {
             print $fh_report "\n#Document $i:\n";
             # reset all match variables to default value
             $AUTHORMATCH = $TITLEMATCH = $YEARMATCH = $PUBLISHERMATCH = $PLACEMATCH = $SOURCEMATCH = 0;
-            $ISBNMATCH  = $MATERIALMATCH = $TOTALMATCH  = 0;
+            $ISBNMATCH  = $MATERIALMATCH = $TOTALMATCH  = $IFFTOTAL = $MARC035_counter = 0;
     		$IDSSGMATCH = $IFFMATCH = $SGBNMATCH = $IDSMATCH = $REROMATCH = 0;
+    		$bibnr = 0;
 
             ############################################
             # CHECK ISBN MATCH
@@ -692,7 +719,7 @@ while ( $row = $csv->getline($fh_in) ) {
             if ($IS_ANALYTICA) {
             	if (hasTag("773", $xpc, $rec)) {
             		foreach $el ($xpc->findnodes('./datafield[@tag=773]', $rec)){
-                       	$SOURCEMATCH = getMatchValue("t", $xpc, $el, $source,5); 
+                       	$SOURCEMATCH = getMatchValue("t", $xpc, $el,$sourcetitle,10); 
 						print $fh_report "SOURCEMATCH Analytica: $SOURCEMATCH \n";		
             		}					
             	}            	
@@ -737,48 +764,67 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
             
-
+            ############################################
+            # Get 035 Field and check if old IFF data
+            ############################################
             
-            
-            #Get 035 Field and check if old IFF data.
             if ( hasTag("035", $xpc, $rec) ) {
                 foreach $el (
                     $xpc->findnodes( './datafield[@tag=035 ]', $rec ) )
                 {
-                    $MARC035a =
-                      $xpc->findnodes( './subfield[@code="a"]', $el )
-                      ->to_literal;
-                    print $fh_report $MARC035a . "\n"
-                      unless ( $MARC035a =~ /OCoLC/ );
+                   	$MARC035a = $xpc->findnodes( './subfield[@code="a"]', $el )->to_literal;
+                    #print $fh_report $MARC035a . "\n" unless ( $MARC035a =~ /OCoLC/ );
+                    $MARC035_counter++ unless ( $MARC035a =~ /OCoLC/ );
 
                     if ( $MARC035a =~ /IDSSG/ ) {    # book found in IDSSG
                         $bibnr = substr $MARC035a,-7;    #only the last 7 numbers
                         if ( $bibnr > 990000 ) {   #this is an IFF record
                         	if ($IS_ANALYTICA && ($numberofrecords = 1)) {
-                        		$IFFMATCH = 0;        # no negative points if analytica and only one hit.
+                        		$IFFMATCH = 1;        # few negative points if analytica and only one hit.
                         	} else {
                         		$IFFMATCH = 15;        # negative points                        		
                         	}
-                            $iff2replace = $MARC001; # TODO: save bibnr IDSSG also!
-                            print $fh_report "Abzug fuer IFF_MATCH: -". $IFFMATCH . "\n";
+                        	# get intermediate totalmatch
+                        	$IFFTOTAL = $ISBNMATCH + $TITLEMATCH + $AUTHORMATCH + $YEARMATCH + $PUBLISHERMATCH + $PLACEMATCH + $MATERIALMATCH + $SOURCEMATCH;
+                        	#check if this IFF document has better value than the one already in the replace-array
+                        	if (defined $iff2replace[0] && ($iff2replace[2]>$IFFTOTAL)) {
+                        		#do nothing! debug: print "das bereits gefundene IFF-Dokument ist besser!"                        		
+                        	} else {
+                        		push @iff2replace, $MARC001, $bibnr, $IFFTOTAL;
+                        	}
+
+                            print $fh_report "$MARC035a: Abzug fuer IFF_MATCH: -". $IFFMATCH . "\n";
+                            
+                            if ($MARC035_counter>1) { # other libraries have added to this bibrecord since upload from IFF => reimport
+                            	print $fh_report "Re-Import this document: $bibnr, No. of 035-fields: $MARC035_counter \n";
+                            	$re_import = 1;
+                            	
+                            }
                         }
                         else {
-                            $IDSSGMATCH = 21;    # a lot of plus points!
+                            $IDSSGMATCH = 25;    # a lot of plus points so that it definitely becomes $bestmatch.
                             print $fh_report
-                              "Zuschlag fuer altes HSG-Katalogisat: "
-                              . $IDSSGMATCH . "\n";
+                              "$MARC035a Zuschlag fuer altes HSG-Katalogisat: $IDSSGMATCH \n";
                             if ( $xpc->exists( './datafield[@tag="949"]', $rec ) )
                             {
                                 foreach $el ($xpc->findnodes('./datafield[@tag=949 ]', $rec))
                                 {
-                                    $MARC949F =   $xpc->findnodes( './subfield[@code="F"]', $el )->to_literal;
-                                    if ( $MARC949F =~ /HIFF/ ) {
-                                        print $fh_report "Feld 949: ". $MARC949F . "\n";
+                                    $MARC949F =  $xpc->findnodes( './subfield[@code="F"]', $el )->to_literal;
+                                    if ($xpc->exists('./subfield[@code="j"]', $el)) {
+                                    	$MARC949j =  $xpc->findnodes( './subfield[@code="j"]', $el )->to_literal;                                    	
+                                    }
+                                    if ( $MARC949F =~ /HIFF/ && $MARC949j =~/$callno/) { # check if this is the same IFF record as $row
+                                        print $fh_report "Feld 949: $MARC949F Signatur: $MARC949j --- callno: $callno \n";
                                         $IDSSGMATCH += 10;
-                                        print $fh_report "HIFF attached, IDSSGMATCH = ". $IDSSGMATCH . "\n";
-                                        $iff2replace = $MARC001;
+                                        print $fh_report "Best case: IFF attached, IDSSGMATCH = $IDSSGMATCH \n";
+                                        push @iff2replace, $MARC001, $bibnr, $IFFTOTAL;
                                         $bestcase    = 1;
-                                        #TODO: check if HIFF really is the same copy with $callno!
+                                    } elsif ($MARC949F =~ /HIFF/) {
+                                    	print $fh_report "Feld 949: $MARC949F Signatur: $MARC949j --- callno: $callno \n";
+                                        $IDSSGMATCH += 5;
+                                        print $fh_report "$bestcase_E Best case: IFF attached, IDSSGMATCH = $IDSSGMATCH \n";
+                                        push @iff2replace, $MARC001, $bibnr, $IFFTOTAL;
+                                        $bestcase    = 1;
                                     }
 
                                 }
@@ -791,23 +837,26 @@ while ( $row = $csv->getline($fh_in) ) {
                         if ( $MARC035a =~ m/RERO/ )
                         {    #book from RERO slightly preferred to others
                             $REROMATCH = 6;
-                            print $fh_report "REROMATCH: ". $REROMATCH . "\n";
+                            #print $fh_report "REROMATCH: ". $REROMATCH . "\n";
                         }
                         if ( $MARC035a =~ m/SGBN/ )
                         { #book from SGBN  slight preference over others if not IDS
 
                             $SGBNMATCH = 4;
-                            print $fh_report "SGBNMATCH: " . $SGBNMATCH . "\n";
+                            #print $fh_report "SGBNMATCH: " . $SGBNMATCH . "\n";
                         }
                         if (   $MARC035a =~ m/IDS/ || $MARC035a =~ /NEBIS/ )
                         {    #book from IDS Library preferred
 
-                            $IDSMATCH = 9;
-                            print $fh_report "IDSMATCH: " . $IDSMATCH . "\n";
+                            $IDSMATCH = 11;
+                            #print $fh_report "IDSMATCH: " . $IDSMATCH . "\n";
                         }
 
                     }
                 }
+                
+                    print $fh_report "Number of 035 fields: $MARC035_counter\n";
+                    print $fh_report "Matchpoints: IDS: $IDSMATCH, Rero: $REROMATCH, SGBN: $SGBNMATCH\n";
             }
 
             $i++;
@@ -818,66 +867,69 @@ while ( $row = $csv->getline($fh_in) ) {
 
             print $fh_report "Totalmatch: " . $TOTALMATCH . "\n";
 
-            if ( $TOTALMATCH > $bestmatch )
-            { #ist aktueller Match-Total der hoechste aus Trefferliste? wenn ja:
-                $bestmatch  = $TOTALMATCH; # schreibe in bestmatch
-                $bestrecord = $rec;               # speichere record weg.
-                $bestrecordnr =
-                  $MARC001;    # Swissbib-Nr. des records
+            if ( $TOTALMATCH > $bestmatch[0])
+            { #ist aktueller Match-Total der hoechste aus Trefferliste? wenn ja: 
+            	@bestmatch = (); #clear @bestmatch
+            	push @bestmatch, $TOTALMATCH, $MARC001, $rec, $bibnr;
             }
 
         }
 
-        print $fh_report "Bestmatch: ". $bestmatch. ", Bestrecordnr: ". $bestrecordnr . "\n";
+        print $fh_report "Bestmatch: $bestmatch[0], Bestrecordnr: $bestmatch[1], bestrecordnr-HSG: $bestmatch[3]\n";
 
-        if ( $bestmatch >= 25 ) {    #wenn guter Treffer gefunden
-            $found_nr++;
+        if ( $bestmatch[0] >= 25 ) {  # a good match was found
+            $found_nr++;            
+            if (defined $iff2replace[0]) { # an IFF record to replace was found
+            
+            	if ( $iff2replace[0] eq $bestmatch[1] ) { # IFF-replace matches with HSG-record
+	                if ($bestcase) {
+	                	$bestcase_nr++;
+	                    print $fh_report "Best case scenario: IFF and HSG already matched!\n";                      
+	                }
+	                else {
+	                	if ($re_import) { # IFF-replace can be improved by reimporting
+		                    $iff_update++;
+		                    print $fh_report "RE-IMPORT this document! Better data available from other libraries.\n";
+		                    push @re_import, $bibnr, $MARC001, $callno;
+		                    push @re_import, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
+		                    push @re_import, "\n";
+		                } else {
+		                    $iff_only_nr++;
+		                   	print $fh_report "Only IFF data available. Best solution from Felix.\n";
+		                }
+             		}
+         		} else { # IFF-replace and bestmatch are not the same;
+         		
+         			if ($bestmatch[3] != 0) { # bestmatch has a $bibnr and is therefore a HSG document 
+         				# export in separate file
+         				$hsg_duplicate_nr++;
+         				print $fh_report "HSB01 duplicate! Replace $iff2replace[1] with $bestmatch[3], see: hsg_duplicate.csv\n";
+	                    push @hsg_duplicate, $iff2replace[1], $bestmatch[3], $callno;
+	                    push @hsg_duplicate, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
+	                    push @hsg_duplicate, "\r";
+         				
+         			} else {			
+         				$replace_nr++;
+	                    print $fh_report "Replace $iff2replace[0] with $bestmatch[1], see: export.csv\n";
+	                    push @export, $iff2replace[1], $bestmatch[1], $callno;
+	                    push @export, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
+	                    push @export, "\r";
+         			}
 
-            if ( $iff2replace eq $bestrecordnr ) {
-                if ($bestcase) {
-                	$bestcase_nr++;
-                    print $fh_report
-                      "Best case scenario: IFF and HSG already matched!\n";
-                      
-                }
-                else {
-                	$iff_only_nr++;
-                    print $fh_report
-                      "Only IFF data available. Best solution from Felix.\n";
-                      #TODO: check if other 035 fields and re-import if yes!
-                }
-            }
-            else {
-                if ( $iff2replace !~ /$EMPTY_CELL/ ) {
-                	$replace_nr++;
-                    print $fh_report "Ersetzen: alt "
-                      . $iff2replace
-                      . " mit neu "
-                      . $bestrecordnr . "\n";
-                }
-                else {
-                	$replace_m_nr++;
-                    print $fh_report "Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit "
-                      . $bestrecordnr . "\n";
-                      push @iff_doc_missing, $row;
                 }
 
-                #IFF-Signatur anhaengen
-                $bestrecord->appendWellBalancedChunk(
-'<datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield><subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">'
-                      . $callno
-                      . '</subfield></datafield>' );
-
-                #TODO: Schlagworte IFF einfuegen
-                #TODO: unnoetige Exemplardaten etc. rausloeschen.
-                #TODO: Link zur Bibnr., die zu ersetzen ist??!! How?
-                print $fh_export $bestrecord->toString . "\n";
+            } else { # no IFF-replace was found
+            	$replace_m_nr++;
+                print $fh_report "$iff_doc_missing_E. Output: replace CSV line $rowcounter with $bestmatch[1]\n";
+                push @iff_doc_missing, $rowcounter, $bestmatch[1], $callno;
+                push @iff_doc_missing, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
+                push @iff_doc_missing, "\r";;
             }
 
         }
-        else {
+        else { # no good match was found
         	$unsure_nr++;
-            print $fh_report "BESTMATCH ziemlich tief, ueberpruefen!";
+            print $fh_report "BESTMATCH ziemlich tief, ueberpruefen!\n\n";
             push @unsure, $row;
         }
     }
@@ -889,26 +941,34 @@ close $fh_in;
 $csv->say($fh_notfound, $_) for @notfound;
 $csv->say($fh_unsure, $_) for @unsure;
 $csv->say($fh_journals, $_) for @journals;
-$csv->say($fh_iff_doc_missing, $_) for @iff_doc_missing;
+$csv->say($fh_iff_doc_missing, $_) for \@iff_doc_missing;
+$csv->say($fh_re_import, $_) for \@re_import;
+$csv->say($fh_export, $_) for \@export;
+$csv->say($fh_hsg_duplicate, $_) for \@hsg_duplicate;
+#print Dumper (@export);
 
 close $fh_notfound or die "notfound.csv: $!";
 close $fh_unsure   or die "unsure.csv: $!";
 close $fh_journals or die "journals.csv: $!";
 close $fh_iff_doc_missing or die "iff_doc_missing.csv: $!";
 close $fh_report   or die "report.txt: $!";
-close $fh_export   or die "swissbibexport.xml: $!";
+close $fh_export   or die "export.csv: $!";
+close $fh_re_import or die "re_import.csv: $!";
+close $fh_hsg_duplicate or die "hsg_duplicate.csv: $!";
 
 print "Total not found (notfound.csv): " . $notfound_nr . "\n";
 print "Total unsure (unsure.csv): " . $unsure_nr . "\n";
-print "Total journals: " . $journal_nr. "\n";
+print "Total journals (journals.csv): " . $journal_nr. "\n";
 
 print "Total found: " . $found_nr . "\n";
 
-print "To do with found: \n";
-print "Total to replace (swissbibexport.xml): " . $replace_nr . "\n";
+print "-----------------\nTo do with found: \n";
+print "Total to replace (export.csv): " . $replace_nr . "\n";
+print "Total HSB01 duplicates, to be reattached in HSB01 (hsg_duplicates.csv): $hsg_duplicate_nr \n";
 print "Total to replace where IFF-record not found (iff_doc_missing.csv): ".$replace_m_nr."\n";
 print "Total already matched: " . $bestcase_nr. "\n";
 print "Total that cannot be improved: ".$iff_only_nr."\n";
+print "Total that can be improved by re-importing: (re_import.csv) ".$iff_update."\n";
 
 
 
@@ -940,11 +1000,10 @@ sub resetFlags {
     $IS_SERIAL = 0;
     $IS_LOSEBLATT = 0;
     $IS_ANALYTICA = 0;
-    $iff2replace   = "";
+    @iff2replace   = ();
     $bestcase      = 0;
-    $bestmatch = 0; 
-
-
+    $bestmatch[0] = 0; 
+    $re_import = 0;
 }
 
 
@@ -956,15 +1015,9 @@ sub emptyVariables {
     $isbn = '';     $isbn2 = '';     $isbnlength = '';
     $author = '';     $author2 = '';     $author_size = '';
     $title = '';     $subtitle = '';     $volume = '';     $titledate = ''; $vol_title='';
-    $pages= ''; $source='';
-    $material= '';
-    $addendum= '';
-    $location= '';
-    $callno= '';
-    $place= '';
-    $publisher= '';
-    $year= '';
-    $note= '';
+    $pages= ''; $source='';     $sourcetitle=''; $sourceauthor=''; $material= '';
+    $addendum= '';     $location= '';     $callno= '';     $place= '';     $publisher= '';
+    $year= '';    $yearminus1 = ''; $yearplus1 = '';  $note= '';
     $tsignature= ''; $tsignature_1= ''; $tsignature_2 = ''; $subj1= ''; $subj2= ''; $subj3= '';
     $materialtype = $monograph; # default: most documents are monographs
 
@@ -976,7 +1029,7 @@ sub hasTag {
     my $record = $_[2];    # record path
     if ( $xpath1->exists( './datafield[@tag=' . $tag . ']', $record ) ) {
         #debug
-        print $fh_report "MARC ".$tag."\n";
+        print $fh_report "MARC $tag ";
         return 1;
     }
     else {
@@ -1005,7 +1058,7 @@ sub getMatchValue {
     my $marcshort = substr $marcfield, 0,$halflength;
     my $shortvari = substr $vari, 0, $halflength;
 	
-    if ( ($vari =~ m/$marcfield/i ) || ($marcfield =~m/$vari/i)){ #Marc Data matches CSV Data
+    if ( ($vari =~ m/$marcfield/i ) || ($marcfield =~m/$vari/i)){ #Marc Data matches IFF Data
         #debug:        print $fh_report "marcfield full match! \n";
         $matchvalue = $posmatch;
     } elsif (($shortvari =~ m/$marcshort/i ) || ($marcshort =~m/$shortvari/i)) { #half the strings match

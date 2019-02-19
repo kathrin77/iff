@@ -1,1223 +1,1725 @@
 
 NEW ROW: #1
 *********************************************************************************
-ISBN: 0801498600  ISBN-2: 0801409144
-Autor: ﻿Miller --- Autor2: 
-Titel: A Program for Direct and Proxy Voting in the Legislative Process --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: London - Verlag: Cornell University Press - Jahr:  - Materialart: (?^:a|b) - Source: Amacher Ryan CTollison Robert D: The Economic Approach to Public Policy 
-Addendum: In: Amacher Ryan CTollison Robert D: The Economic Approach to Public Policy
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+A%20Program%20for%20Direct%20and%20Proxy%20Voting%20in%20the%20Legislative%20Process+AND+dc.anywhere+%3D+%EF%BB%BFMiller
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+A%20Program%20for%20Direct%20and%20Proxy%20Voting%20in%20the%20Legislative%20Process+AND+dc.anywhere+%3D+%EF%BB%BFMiller
-Diese Suche taugt nichts.
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ISBN: 3725538875  ISBN-2: 
+Autor: ﻿Heini --- Autor2: 
+Titel: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten 
+Untertitel: zu einem Aufsatz von Roger Zäc  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Zürich --- Verlag: Schulthess Polygraphischer  --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: S. 317-324
+Sourcetitle: Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60 Geburtstag, Sourceauthor: Baldi, Marino, Baumann, Max & ua, Hrsg
+Addendum: In: Baldi, Marino, Baumann, Max & ua, Hrsg: Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60 Geburtstag
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wettbewerbsbeschr%C3%A4nkungen%20auf%20dem%20EU-Markt%20vor%20schweizerischen%20Schiedsgerichten+AND+dc.anywhere+%3D+%EF%BB%BFHeini
+Treffer: 4
 
+#Document 1:
+MARC 100 $a: Heini
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten
+TITLEMATCH: 10
+MARC 773 $t: Der Einfluss des europäischen Rechts auf die Schweiz
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 045856370
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 4
+Totalmatch: 49
+
+#Document 2:
+MARC 100 $a: Heini
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten - zu einem Aufsatz von Roger Zäch
+TITLEMATCH: 10
+MARC 260 $a: S.l.
+PLACEMATCH: 0
+MARC 260 $b: s.n.
+marcfield short match! 
+PUBLISHERMATCH: 2.5
+MARC 773 $t: Einfluss des europäischen Rechts auf die Schweiz : Festschrift für Professor Roger Zäch zum 60. Geburtstag
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 347428231
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 37.5
+
+#Document 3:
+MARC 100 $a: Heini
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten - zu einem Aufsatz von Roger Zäc
+TITLEMATCH: 10
+MARC 773 $t: Baldi, Marino, Baumann: Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60. Geburtstag
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514584114
+MARC 035 (IDSSG)000996622: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 34
+
+#Document 4:
+MARC 100 $a: Heini
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten - zu einem Aufsatz von Roger Zäch
+TITLEMATCH: 10
+MARC 773 $t: Einfluss des europäischen Rechts auf die Schweiz : Festschrift für Professor Roger Zäch zum 60. Geburtstag
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 480863717
+MARC 035 Number of 035 fields: 6
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 41
+Bestmatch: 49, Bestrecordnr: 045856370, bestrecordnr-HSG: 0
+Replace 514584114 with 045856370, see: export.csv
 
 NEW ROW: #2
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Winzeler --- Autor2: 
-Titel: Versuch eines interkommunalen Vergleichs von Gemeindeausgaben im Kanton Aargau --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Solothurn - Verlag: Vogt-Schild AG - Jahr: 1968 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Versuch%20eines%20interkommunalen%20Vergleichs%20von%20Gemeindeausgaben%20im%20Kanton%20Aargau+AND+dc.anywhere+%3D+Winzeler+AND+dc.date+%3D+1968
-Treffer: 1
+ISBN: 9783719029777  ISBN-2: 
+Autor: Geiser --- Autor2: Münch
+Titel: Prozessieren vor Bundesgericht 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Basel  --- Verlag: Helbing & Lichtenhahn --- Jahr: 2011 --- Materialart: m --- Seitenzahlen: 389
+Sourcetitle: , Sourceauthor: 
+Addendum: Handbücher für die Anwaltspraxis: Bd 1- 3 A
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Prozessieren%20vor%20Bundesgericht+AND+dc.anywhere+%3D+Geiser+AND+dc.date+%3C%3D+2012+AND+dc.date+%3E%3D+2010
+Treffer: 4
 
 #Document 1:
-MARC 100
-$a: Winzeler
+MARC 020 $a: 9783719029777
+ISBNMATCH: 10
+MARC 700 $a: Geiser
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Versuch eines interkommunalen Vergleichs von Gemeindeausgaben im Kanton Aargau
+MARC 700 $a: Geiser
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Prozessieren vor Bundesgericht
+TITLEMATCH: 10
+MARC 264 $c: 2011
+YEARMATCH: 10
+MARC 264 $a: Basel
+PLACEMATCH: 5
+MARC 264 $b: Helbing Lichtenhahn
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 268035199
+MARC 035 (IDSSG)000526719 Zuschlag fuer altes HSG-Katalogisat: 25 
+Feld 949: HIFF Signatur: WB 245 3 --- callno: WB 245 3 
+Best case: IFF attached, IDSSGMATCH = 35 
+Number of 035 fields: 6
+Matchpoints: IDS: 11, Rero: 0, SGBN: 4
+Totalmatch: 110
+
+#Document 2:
+MARC 020 $a: 9783719029777
+ISBNMATCH: 10
+MARC 700 $a: Geiser
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Geiser
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Prozessieren vor Bundesgericht
+TITLEMATCH: 10
+MARC 260 $c: 2011
+YEARMATCH: 10
+MARC 260 $a: Basel
+PLACEMATCH: 5
+MARC 260 $b: Helbing & Lichtenhahn
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 268035229
+MARC 035 Number of 035 fields: 13
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 71
+
+#Document 3:
+MARC 020 $a: 9783719029777
+ISBNMATCH: 10
+MARC 700 $a: Geiser
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Geiser
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Prozessieren vor Bundesgericht
+TITLEMATCH: 10
+MARC 260 $c: 2011
+YEARMATCH: 10
+MARC 260 $a: Basel
+PLACEMATCH: 5
+MARC 260 $b: Helbing Lichtenhahn
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 043735231
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 60
+
+#Document 4:
+MARC 100 $a: Geiser
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Uhlmann
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Grundlagen zu Prozessieren vor Bundesgericht
 TITLEMATCH: 10
 LDR Materialart: a
 MATERIALMATCH: 0
-Swissbibnr.: 102799504
-MARC 035
-(IDSBB)003878888
-IDSMATCH: 9
-Totalmatch: 29
-Bestmatch: 29, Bestrecordnr: 102799504
-Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 102799504
+Swissbibnr.: 249376296
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 26
+Bestmatch: 110, Bestrecordnr: 268035199, bestrecordnr-HSG: 0526719
+Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #3
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Schweizerische Nationalfonds --- Autor2: Programmleitung NFP 'Regionalprobleme'
-Titel: Überwälzungshypothesen zur effektiven regionalen Inzidenz des Bundeshaushaltes --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Bern - Verlag:  - Jahr: 1981 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+%C3%9Cberw%C3%A4lzungshypothesen%20zur%20effektiven%20regionalen%20Inzidenz%20des%20Bundeshaushaltes+AND+dc.anywhere+%3D+Schweizerische%20Nationalfonds+AND+dc.date+%3D+1981
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+%C3%9Cberw%C3%A4lzungshypothesen%20zur%20effektiven%20regionalen%20Inzidenz%20des%20Bundeshaushaltes+AND+dc.anywhere+%3D+Schweizerische%20Nationalfonds
-Diese Suche taugt nichts.
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ISBN: 3504260351  ISBN-2: 
+Autor: OECD --- Autor2: 
+Titel: Verrechnungspreisgrundsätze für multinationale Unternehmen und Steuerverwaltungen 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Köln --- Verlag:  Dr. Otto Schmidt --- Jahr: 2000 --- Materialart: m --- Seitenzahlen: 194
+Sourcetitle: , Sourceauthor: 
+Addendum: 2 A
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verrechnungspreisgrunds%C3%A4tze%20f%C3%BCr%20multinationale%20Unternehmen%20und%20Steuerverwaltungen+AND+dc.anywhere+%3D+OECD+AND+dc.date+%3C%3D+2001+AND+dc.date+%3E%3D+1999
+Treffer: 2
 
+#Document 1:
+MARC 020 $a: 3504260351
+ISBNMATCH: 10
+MARC 710 $a: OECD
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verrechnungspreisgrundsätze für multinationale Unternehmen und Steuerverwaltungen
+TITLEMATCH: 10
+MARC 260 $c: 2000
+YEARMATCH: 10
+MARC 260 $a: Köln
+PLACEMATCH: 5
+MARC 260 $b: Schmidt
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515929638
+MARC 035 (IDSSG)000996623: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996623, No. of 035-fields: 2 
+Number of 035 fields: 2
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 61
+
+#Document 2:
+MARC 020 $a: 3504260351
+ISBNMATCH: 10
+MARC 710 $a: Organisation de coopération et de développement économiques Paris
+AUTHOR-1-MATCH: 0
+MARC 245 $a: Verrechnungspreisgrundsätze für multinationale Unternehmen und Steuerverwaltungen
+TITLEMATCH: 10
+MARC 260 $c: 2000
+YEARMATCH: 10
+MARC 260 $a: Köln
+PLACEMATCH: 5
+MARC 260 $b: O. Schmidt
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 223626716
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 56
+Bestmatch: 61, Bestrecordnr: 515929638, bestrecordnr-HSG: 0996623
+RE-IMPORT this document! Better data available from other libraries.
 
 NEW ROW: #4
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Innenministerium --- Autor2: 
-Titel: Verwaltung --- Untertitel:  --- Titeldatum: 2000 --- Band: Bd 17 - Bandtitel: Die Mitarbeiterbefragung in der Landesverwaltung Baden-Württemberg
-Ort: Stuttgart - Verlag: Schwäbische erei - Jahr: 1996 - Materialart: m - Source:  
-Addendum: Die Mitarbeiterbefragung in der Landesverwaltung Baden-Württemberg
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verwaltung+AND+dc.anywhere+%3D+Innenministerium+AND+dc.date+%3D+1996
-Treffer: 1
+Autor: Kuster-Langford --- Autor2: 
+Titel: Wohnbaulandpreise im Umland von Zürich 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Zürich --- Verlag: Institut der Universität Zürich --- Jahr: 1989 --- Materialart: m --- Seitenzahlen: 161
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wohnbaulandpreise%20im%20Umland%20von%20Z%C3%BCrich+AND+dc.anywhere+%3D+Kuster-Langford+AND+dc.date+%3C%3D+1990+AND+dc.date+%3E%3D+1988
+Treffer: 4
 
 #Document 1:
-MARC 110
-$a: Schweiz
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Bericht des Bundesrates über seine Geschäftsführung
-TITLEMATCH: 0
-MARC 246
-$a: Der Geschäftsbericht des Bundesrats
-TITLEMATCH: 0
-$a: Bericht des Bundesrats über seine Geschäftsführung und die Schwerpunkte der Verwaltungsführung im Jahre ...
-TITLEMATCH: 5
-$a: Geschäftsbericht des Bundesrates
-TITLEMATCH: 5
-MARC 264
-$c: 1974-
-YEARMATCH: 0
-MARC 264
-$a: Bern
-PLACEMATCH: 0
-MARC 264
-$b: Vertrieb: Bundesamt für Bauten und Logistik BBL, Vertrieb Publikationen
+MARC 100 $a: Kuster-Langford
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wohnbaulandpreise im Umland von Zürich
+TITLEMATCH: 10
+MARC 260 $c: 1989
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: 
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 275691462
+MARC 035 Number of 035 fields: 12
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 72
+
+#Document 2:
+MARC 100 $a: Kuster-Langford
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wohnbaulandpreise im Umland von Zürich
+TITLEMATCH: 10
+MARC 264 $c: 1989
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Geographisches Institut, Abt. Anthropogeographie, Universität Zürich
 PUBLISHERMATCH: 0
-MARC 505
-$t: Schwerpunkte der Geschäftsführung des BundesratesSchwerpunkte der Geschäftsführung der eidgenössischen Departemente und der BundeskanzleiBericht des Bundesrats über Schwerpunkte der Verwaltungsführung ab 2009 nicht mehrGeschäftsbericht / Bundesgericht, Bundesstrafgericht, BundesverwaltungsgerichtBericht des Bundesrates ... über Motionen und Postulate der gesetzgebenden Räte im Jahre ... später nur noch onlineBerichte über die Geschäftsführung des Bundesrates, des Bundesgerichts, des Eidgenössischen Versicherungsgerichts und der Schweizerischen Verrechnungsstell im Jahre ...
-TITLEMATCH 505 volumetitle: 5 
-$t: Amtstätigkeit des Bundesgerichts und des Eidgenössischen VersicherungsgerichtsBerichte des Bundesgerichts und des Eidgenössischen Versicherungsgerichts über ihre Amtstätigkeit im Jahre ...Berichte über die Geschäftsführung des Bundesrates, des Bundesgerichts und des Eidgenössischen Versicherungsgerichts im Jahre ...Geschäftsberichte des Bundesrates, des Bundesgerichts und des Eidgenössischen VersicherungsgerichtsBericht des Schweizerischen Bundesgerichts über seine Amtstätigkeit im Jahre ...Bericht des Eidgenössischen Versicherungsgerichts über seine Amtstätigkeit im Jahre ...
-TITLEMATCH 505 volumetitle: 5 
-$t: Geschäftsbericht und Jahresrechnung ... der Schweizerischen VerrechnungsstelleBericht des Bundesrates über die Geschäftsführung der Eidgenössischen VerwaltungBericht des Bundesrates über Schwerpunkte der VerwaltungsführungAmtstätigkeit des Bundesgerichts und des Eidgenössischen VersicherungsgerichtsMotionen und Postulate der gesetzgebenden Räte im Jahre ...
-TITLEMATCH 505 volumetitle: 5 
-LDR Materialart: s
-MATERIALMATCH: 0
-Swissbibnr.: 126673896
-MARC 035
-(NEBIS)000028376
-IDSMATCH: 9
-Totalmatch: 14
-Bestmatch: 14, Bestrecordnr: 126673896
-BESTMATCH ziemlich tief, ueberpruefen!
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 024132292
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 61
+
+#Document 3:
+MARC 100 $a: Kuster-Langford
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Unterschiedliche Wohnbaulandpreise im Umland von Zürich
+TITLEMATCH: 10
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 185848982
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 46
+
+#Document 4:
+MARC 100 $a: Kuster-Langford
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wohnbaulandpreise im Umland von Zürich
+TITLEMATCH: 10
+MARC 264 $c: 1989
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Geograph. Institut
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 275691454
+MARC 035 (IDSSG)000996624: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996624, No. of 035-fields: 7 
+Number of 035 fields: 10
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 52
+Bestmatch: 72, Bestrecordnr: 275691462, bestrecordnr-HSG: 0
+Replace 275691454 with 275691462, see: export.csv
+
 NEW ROW: #5
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Schweizerische --- Autor2: 
-Titel: Wissenschafts-Politik --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Bern - Verlag: Sekr. des Schweiz. Wissenschaftsrates - Jahr: 1970 - Materialart: m - Source:  
-Addendum: Mitteilungsblatt des Schweizerischen Wissenschaftsrates, Nr 2  1970
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wissenschafts-Politik+AND+dc.anywhere+%3D+Schweizerische+AND+dc.date+%3D+1970
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Wissenschafts-Politik+AND+dc.anywhere+%3D+Schweizerische
-Treffer mit geaendertem Suchstring: 10
+Autor: Littmann --- Autor2: 
+Titel: Zunehmende Staatstätigkeit und wirtschaftliche Entwicklung 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Köln und Opladen --- Verlag: Westdeuscher  --- Jahr: 1957 --- Materialart: m --- Seitenzahlen: 179
+Sourcetitle: , Sourceauthor: 
+Addendum: Versuche über die Wirkungen staatswirtschaftlicher Prozesse in der spätkapitalistischen Periode
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Zunehmende%20Staatst%C3%A4tigkeit%20und%20wirtschaftliche%20Entwicklung+AND+dc.anywhere+%3D+Littmann+AND+dc.date+%3C%3D+1958+AND+dc.date+%3E%3D+1956
+Treffer: 5
 
 #Document 1:
-MARC 100
-$a: Schmid
-marcfield short match! 
-AUTHOR-1-MATCH: 5
-MARC 245
-$a: Der Wissenschaftsrat innerhalb der schweizerischen Bildungslandschaft
-TITLEMATCH: 0
-MARC 260
-$c: 2000
-YEARMATCH: 0
-MARC 260
-$a: S.l.
+MARC 100 $a: Littmann
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Zunehmende Staatstätigkeit und wirtschaftliche Entwicklung
+TITLEMATCH: 10
+MARC 264 $c: 1957
+YEARMATCH: 10
+MARC 264 $a: KölnOpladen
 PLACEMATCH: 0
-MARC 260
-$b: s.n.
-PUBLISHERMATCH: 5
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 351944915
-MARC 035
-(ALEX)9914684564101791
-Totalmatch: 10
+MARC 264 $b: Westdeutscher Verlag
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 090549872
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 56
 
 #Document 2:
-MARC 100
-$a: Pasternack
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Wissenschaftliche Wissenschaftspolitikberatung
-TITLEMATCH: 0
-MARC 264
-$c: 2011
-YEARMATCH: 0
-MARC 264
-$a: Wittenberg
+MARC 100 $a: Littmann
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Zunehmende Staatstätigkeit und Wirtschaftliche Entwicklung
+TITLEMATCH: 10
+MARC 264 $c: 1957
+YEARMATCH: 10
+MARC 264 $a: Wiesbaden
 PLACEMATCH: 0
-MARC 264
-$b: HoF
+MARC 264 $b: VS Verlag für Sozialwissenschaften
 PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 298271990
-MARC 035
-(IDSBB)005968232
-IDSMATCH: 9
-(NEBIS)007574816
-IDSMATCH: 9
-(DE-599)DNB1020879262
-Totalmatch: 24
+Swissbibnr.: 316217417
+MARC 035 (IDSSG)000652923 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 70
 
 #Document 3:
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Dossier BFT-Reform
-TITLEMATCH: 0
-MARC 260
-$c: 2005
-YEARMATCH: 0
-MARC 260
-$a: S.l.
-PLACEMATCH: 0
-MARC 260
-$b: s.n.
+MARC 100 $a: Littmann
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Zunehmende Staatstätigkeit und wirtschaftliche Entwicklung
+TITLEMATCH: 10
+MARC 264 $c: 1957
+YEARMATCH: 10
+MARC 264 $a: Köln und Opladen
+PLACEMATCH: 5
+MARC 264 $b: Westdeuscher Verlag
 PUBLISHERMATCH: 5
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 351945520
-MARC 035
-(ALEX)9914684814101791
-Totalmatch: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878200
+MARC 035 (IDSSG)000996625: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
 
 #Document 4:
-MARC 710
-$a: Schweizerischer Wissenschafts- und Technologierat
+MARC 100 $a: Littmann
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Wissenschafts- und Technologieräte in Europa: Welches Beratungsorgan für Bildung, Forschung und Technologie braucht die Schweiz?
-TITLEMATCH: 0
-MARC 260
-$c: 2002
-YEARMATCH: 0
-MARC 260
-$a: Bern
+MARC 245 $a: Zunehmende Staatstätigkeit und wirtschaftliche Entwicklung
+TITLEMATCH: 10
+MARC 260 $c: 1957
+YEARMATCH: 10
+MARC 260 $a: Köln
 PLACEMATCH: 5
-MARC 260
-$b: Schweizerischer Wissenschafts- und Technologierat SWTR
+MARC 260 $b: Westdeutscher Verl.
 PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 163376123
-MARC 035
-(NEBIS)005200557
-IDSMATCH: 9
-Totalmatch: 39
+Swissbibnr.: 247200751
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 56
 
 #Document 5:
-MARC 100
-$a: Geis
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Rechtsstatus und Einflussmöglichkeiten von Nichtregierungsorganisationen am Beispiel der AWR
-TITLEMATCH: 0
-MARC 264
-$c: 2004
-YEARMATCH: 0
-MARC 264
-$a: Berlin
+MARC 100 $a: Littamn
 marcfield short match! 
-PLACEMATCH: 2.5
-MARC 264
-$b: BWV, Berliner Wiss.-Verl.
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 268692807
-MARC 035
-(IDSLU)000427733
-IDSMATCH: 9
-(NEBIS)004832991
-IDSMATCH: 9
-(LIBIB)000267845
-(RERO)R004106890
-REROMATCH: 6
-Totalmatch: 32.5
-
-#Document 6:
-MARC 700
-$a: Klöti
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Handbuch der Schweizer Politik
-TITLEMATCH: 0
-MARC 246
-$a: Manuel de la politique suisse
-TITLEMATCH: 0
-MARC 264
-$c: 2002
-YEARMATCH: 0
-MARC 264
-$a: Zürich
-PLACEMATCH: 0
-MARC 264
-$b: Verlag Neue Zürcher Zeitung
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 479362416
-MARC 035
-(IDSSG)000259164
-Zuschlag fuer altes HSG-Katalogisat: 21
-(SERVAL)BIB_25601
-Totalmatch: 36
-
-#Document 7:
-MARC 100
-$a: Gonon
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Governance im Spannungsfeld des schweizerischen Bildungsföderalismus
-TITLEMATCH: 0
-MARC 264
-$c: 2016
-YEARMATCH: 0
-$c: 
-YEARMATCH: 0
-MARC 264
-$a: Bern
+AUTHOR-1-MATCH: 5
+MARC 245 $a: Zunehmende Staatstätigkeit und wirtschaftliche Entwicklung
+TITLEMATCH: 10
+MARC 260 $c: 1957
+YEARMATCH: 10
+MARC 260 $a: Köln
 PLACEMATCH: 5
-$a: © 2016
-PLACEMATCH: 5
-MARC 264
-$b: hep, der Bildungsverlag
-PUBLISHERMATCH: 0
-$b: 
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 369157532
-MARC 035
-(IDSSG)000896767
-Zuschlag fuer altes HSG-Katalogisat: 21
-(IDSBB)006573615
-IDSMATCH: 9
-(NEBIS)010716455
-IDSMATCH: 9
-(RERO)R008856970
-REROMATCH: 6
-(BGR)000664371
-(IDSLU)001254182
-IDSMATCH: 9
-Totalmatch: 61
-
-#Document 8:
-MARC 700
-$a: Kraus
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Soziale Arbeit zwischen Generalisierung und Spezialisierung
-TITLEMATCH: 0
-MARC 264
-$c: 2011
-YEARMATCH: 0
-MARC 264
-$a: Opladen
-PLACEMATCH: 0
-MARC 264
-$b: B. Budrich
+MARC 260 $b: Westdeutscher Verlag
 PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 271038330
-MARC 035
-(IDSLU)001016511
-IDSMATCH: 9
-(IDSBB)005660489
-IDSMATCH: 9
-(NEBIS)006665745
-IDSMATCH: 9
-(IDSSG)000819915
-Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 45
-
-#Document 9:
-MARC 700
-$a: Bonfadelli
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Gentechnologie im Spannungsfeld von Politik, Medien und Öffentlichkeit
-TITLEMATCH: 0
-MARC 264
-$c: 1999
-marcfield short match! 
-YEARMATCH: 5
-MARC 264
-$a: Zürich
-PLACEMATCH: 0
-MARC 264
-$b: IPMZ - Institut für Publizistikwissenschaft und Medienforschung der Universität Zürich
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 284297712
-MARC 035
-(IDSBB)001936206
-IDSMATCH: 9
-(NEBIS)002066325
-IDSMATCH: 9
-(SNL)991003154289703976
-(Sz)1218220-41snl_51
-(Sz)vtls001218220
-(Sz)001218220
-Totalmatch: 29
-
-#Document 10:
-MARC 100
-$a: Staub-Bernasconi
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Soziale Arbeit als Handlungswissenschaft
-TITLEMATCH: 0
-MARC 264
-$c: 2018
-YEARMATCH: 0
-MARC 264
-$a: Opladen
-PLACEMATCH: 0
-MARC 264
-$b: Verlag Barbara Budrich
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 507464028
-MARC 035
-(NEBIS)011126517
-IDSMATCH: 9
-(NEBIS)010809108
-IDSMATCH: 9
-(IDSBB)006715427
-IDSMATCH: 9
-(IDSLU)001298299
-IDSMATCH: 9
-Totalmatch: 24
-Bestmatch: 61, Bestrecordnr: 369157532
-Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 369157532
+Swissbibnr.: 146173449
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 56
+Bestmatch: 70, Bestrecordnr: 316217417, bestrecordnr-HSG: 0652923
+HSB01 duplicate! Replace 0996625 with 0652923, see: hsg_duplicate.csv
 
 NEW ROW: #6
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Hauser --- Autor2: 
-Titel: Hypothesen zur effektiven Inzidenz der Bundeseinnahmen --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Bern - Verlag:  - Jahr: 1981 - Materialart: (?^:a|b) - Source: Schweiz NationalfondsProgrammleitung NFP Regionalprobleme Hrsg: Überwälzungshypothesen zur effektiven regionalen Inzidenz des Bundeshaushaltes 
-Addendum: In: Schweiz NationalfondsProgrammleitung NFP Regionalprobleme Hrsg: Überwälzungshypothesen zur effektiven regionalen Inzidenz des Bundeshaushaltes
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Hypothesen%20zur%20effektiven%20Inzidenz%20der%20Bundeseinnahmen+AND+dc.anywhere+%3D+Hauser+AND+dc.date+%3D+1981
-Treffer: 1
-
-#Document 1:
-MARC 100
-$a: Hauser
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Hypothesen zur effektiven Inzidenz der Bundeseinnahmen
-TITLEMATCH: 10
-MARC 773
-$t: Schweiz. Nationalfonds/Programmleitung NFP Regionalprobleme Hrsg.: Überwälzungshypothesen zur effektiven regionalen Inzidenz des Bundeshaushaltes
-SOURCEMATCH Analytica: 0 
-LDR Materialart: a
-MATERIALMATCH: 15
-Swissbibnr.: 514583851
-MARC 035
-(IDSSG)000996483
-Abzug fuer IFF_MATCH: -0
-Totalmatch: 35
-Bestmatch: 35, Bestrecordnr: 514583851
-Only IFF data available. Best solution from Felix.
-
-NEW ROW: #7
-*********************************************************************************
-ISBN: 9282592472  ISBN-2: 
-Autor: Statistisches Amt des Eurostat --- Autor2: 
-Titel: Volkswirtschaftliche Gesamtrechnungen ESVG --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Luxembourg - Verlag: Amt der Europäischen Gemeinschaften - Jahr: 1989 - Materialart: m - Source:  
-Addendum: Aggregate 1970-1987
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Volkswirtschaftliche%20Gesamtrechnungen%20ESVG+AND+dc.anywhere+%3D+Statistisches%20Amt%20des%20Eurostat+AND+dc.date+%3D+1989
+ISBN: 0855207507  ISBN-2: 
+Autor: Grant --- Autor2: Nath
+Titel: The Politics of Economic Policymaking 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Oxford --- Verlag: Basil Blackwell --- Jahr: 1984 --- Materialart: m --- Seitenzahlen: 218
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Politics%20of%20Economic%20Policymaking+AND+dc.anywhere+%3D+Grant+AND+dc.date+%3C%3D+1985+AND+dc.date+%3E%3D+1983
 Treffer: 2
 
 #Document 1:
-MARC 020
-$a: 9282592472
+MARC 020 $a: 0855207507
 ISBNMATCH: 10
-MARC 100
-$a: Statistisches Amt des Eurostat
+MARC 100 $a: Grant
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Volkswirtschaftliche Gesamtrechnungen ESVG
+MARC 700 $a: Nath
+AUTHOR-2-MATCH: 20
+MARC 245 $a: The Politics of Economic Policymaking
 TITLEMATCH: 10
-MARC 264
-$c: 1989
+MARC 264 $c: 1984
 YEARMATCH: 10
-MARC 264
-$a: Luxembourg
+MARC 264 $a: Oxford
 PLACEMATCH: 5
-MARC 264
-$b: Statistisches Amt der Europäischen Gemeinschaften
+MARC 264 $b: Basil Blackwell
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877182
-MARC 035
-(IDSSG)000996485
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
+Swissbibnr.: 515878219
+MARC 035 (IDSSG)000996626: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 60
 
 #Document 2:
-MARC 710
-$a: Europäische Kommission
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Volkswirtschaftliche Gesamtrechnungen ESVG
+MARC 020 $a: 0855207507
+$a: 0855207515
+ISBNMATCH: 10
+MARC 100 $a: Grant
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Nath
+AUTHOR-2-MATCH: 20
+MARC 245 $a: The politics of economic policymaking
 TITLEMATCH: 10
-MARC 246
-$a: Comptes nationaux SEC
+MARC 264 $c: 1984
+YEARMATCH: 10
+MARC 264 $a: OxfordNew York
+PLACEMATCH: 5
+MARC 264 $b: Basil Blackwell
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 267283318
+MARC 035 (IDSSG)000201775 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 3
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 117
+Bestmatch: 117, Bestrecordnr: 267283318, bestrecordnr-HSG: 0201775
+HSB01 duplicate! Replace 0996626 with 0201775, see: hsg_duplicate.csv
+
+NEW ROW: #7
+*********************************************************************************
+ISBN:   ISBN-2: 
+Autor: Guieu --- Autor2: 
+Titel: Umsatzsteuerharmonisierung 
+Untertitel: Wirtschafts- und Währungsunion  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Berlin --- Verlag: Deutsche Gesellschaft für Betriebswirtschaft --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: Mai 31
+Sourcetitle: Perspektiven für die Steuerharmonisierung im Gemeinsamen Markt, Sourceauthor: Deutsche Gesellschaft für Betriebswirtschaft Hrsg
+Addendum: In: Deutsche Gesellschaft für Betriebswirtschaft Hrsg: Perspektiven für die Steuerharmonisierung im Gemeinsamen Markt
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Umsatzsteuerharmonisierung+AND+dc.anywhere+%3D+Guieu
+Treffer: 1
+
+#Document 1:
+MARC 100 $a: Guieu
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Umsatzsteuerharmonisierung - Wirtschafts- und Währungsunion
 TITLEMATCH: 10
-$a: National accounts ESA
-TITLEMATCH: 10
-$a: Aufgegliederte Tabellen nach Sektoren
-TITLEMATCH: 10
-MARC 264
-$c: 1970-
-YEARMATCH: 0
-MARC 264
-$a: Luxemburg
-marcfield short match! 
-PLACEMATCH: 2.5
-MARC 264
-$b: Amt für amtliche Veröffentlichungen der Europäischen Gemeinschaften
-PUBLISHERMATCH: 0
-LDR Materialart: s
-MATERIALMATCH: 0
-Swissbibnr.: 483597899
-MARC 035
-(IDSBB)000307273
-IDSMATCH: 9
-(NEBIS)005969283
-IDSMATCH: 9
-Totalmatch: 21.5
-Bestmatch: 50, Bestrecordnr: 515877182
+MARC 773 $t: Deutsche Gesellschaft für Betriebswirtschaft Hrsg.: Perspektiven für die Steuerharmonisierung im Gemeinsamen Markt
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514584122
+MARC 035 (IDSSG)000996627: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 44
+Bestmatch: 44, Bestrecordnr: 514584122, bestrecordnr-HSG: 0996627
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #8
 *********************************************************************************
-ISBN: 060438851  ISBN-2: 
-Autor: Leblanc --- Autor2: Allensworth
-Titel: The Politics of States and Urban Communities --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: New York - Verlag: Harper & Row - Jahr: 1971 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Politics%20of%20States%20and%20Urban%20Communities+AND+dc.anywhere+%3D+Leblanc+AND+dc.date+%3D+1971
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+The%20Politics%20of%20States%20and%20Urban%20Communities+AND+dc.anywhere+%3D+Leblanc
-Diese Suche taugt nichts.
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ISBN:   ISBN-2: 
+Autor: Staringer --- Autor2: 
+Titel: Veräusserungsgewinne nach dem neuen DBA Österreich-Deutschland 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort:  --- Verlag:  --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: S. 97-116
+Sourcetitle: Das neue Doppelbesteuerungsabkommen Österreich-Deutschland, Sourceauthor: Gassner, Wolfgang, Lang, Michael & ua, Hrsg
+Addendum: in: Gassner, Wolfgang, Lang, Michael & ua, Hrsg: Das neue Doppelbesteuerungsabkommen Österreich-Deutschland
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Ver%C3%A4usserungsgewinne%20nach%20dem%20neuen%20DBA%20%C3%96sterreich-Deutschland+AND+dc.anywhere+%3D+Staringer
+Treffer: 1
 
+#Document 1:
+MARC 100 $a: Staringer
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Veräusserungsgewinne nach dem neuen DBA Österreich-Deutschland
+TITLEMATCH: 10
+MARC 773 $t: Gassner, Wolfgang, Lang: Das neue Doppelbesteuerungsabkommen Österreich-Deutschland
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514584130
+MARC 035 (IDSSG)000996628: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 44
+Bestmatch: 44, Bestrecordnr: 514584130, bestrecordnr-HSG: 0996628
+Only IFF data available. Best solution from Felix.
 
 NEW ROW: #9
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Cosciani --- Autor2: und
-Titel: Problemi di Finanza Pubblica --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Milano - Verlag: Guiffrè - Jahr: 1968 - Materialart: m - Source:  
-Addendum: Studi di Finanza Pubblica
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Problemi%20di%20Finanza%20Pubblica+AND+dc.anywhere+%3D+Cosciani+AND+dc.date+%3D+1968
-Treffer: 1
+Autor: Gsell --- Autor2: Hill
+Titel: Zukunftsaufgaben in Wirtschaft und Gesellschaft 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Zürich --- Verlag: Polygraphischer  --- Jahr: 1963 --- Materialart: m --- Seitenzahlen: 497
+Sourcetitle: , Sourceauthor: 
+Addendum: Festschrift zur Einweihung der neuen Gebäude der Hochschule St Gallen für Wirtschafts- und Sozialwissenschaften
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Zukunftsaufgaben%20in%20Wirtschaft%20und%20Gesellschaft+AND+dc.anywhere+%3D+Gsell+AND+dc.date+%3C%3D+1964+AND+dc.date+%3E%3D+1962
+Treffer: 3
 
 #Document 1:
-MARC 100
-$a: Cosciani
+MARC 700 $a: Gsell
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Problemi di Finanza Pubblica
+MARC 700 $a: Gsell
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Zukunftsaufgaben in Wirtschaft und Gesellschaft
 TITLEMATCH: 10
-MARC 264
-$c: 1968
+MARC 260 $c: 1963
 YEARMATCH: 10
-MARC 264
-$a: Milano
+MARC 260 $a: ZürichSt. Gallen
 PLACEMATCH: 5
-MARC 264
-$b: Guiffrè
+MARC 260 $b: Polygraphischer Verlag
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877220
-MARC 035
-(IDSSG)000996490
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
-Bestmatch: 40, Bestrecordnr: 515877220
-Only IFF data available. Best solution from Felix.
+Swissbibnr.: 519144465
+MARC 035 (IDSSG)000996629: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996629, No. of 035-fields: 3 
+Number of 035 fields: 4
+Matchpoints: IDS: 0, Rero: 0, SGBN: 4
+Totalmatch: 44
+
+#Document 2:
+MARC 100 $a: Gsell
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Der Mensch in der Betriebswirtschaftslehre
+TITLEMATCH: 0
+LDR Materialart: a
+MATERIALMATCH: 0
+Swissbibnr.: 031786553
+MARC 035 (IDSSG)000172090 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 35
+
+#Document 3:
+MARC 100 $a: Gsell
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Der Mensch in der Betriebswirtschaftslehre
+TITLEMATCH: 0
+LDR Materialart: a
+MATERIALMATCH: 0
+Swissbibnr.: 082948941
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 21
+Bestmatch: 44, Bestrecordnr: 519144465, bestrecordnr-HSG: 0996629
+RE-IMPORT this document! Better data available from other libraries.
 
 NEW ROW: #10
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Furgler --- Autor2: 
-Titel: The Spirit of Competition --- Untertitel: Choice - Challenge - Committment --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort:  - Verlag:  - Jahr:  - Materialart: (?^:a|b) - Source: ISC Hrsg, The Spirit of Competition 
-Addendum: in: ISC Hrsg, The Spirit of Competition
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Spirit%20of%20Competition+AND+dc.anywhere+%3D+Furgler
-Treffer: 2
+Autor: Staatsministerium --- Autor2: 
+Titel: Verwaltungsreform in Baden-Württemberg 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Oberndorf --- Verlag: haus --- Jahr: 1993 --- Materialart: m --- Seitenzahlen: 158
+Sourcetitle: , Sourceauthor: 
+Addendum: Erster Bericht der Regierungskommission Verwaltungsreform
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verwaltungsreform%20in%20Baden-W%C3%BCrttemberg+AND+dc.anywhere+%3D+Staatsministerium+AND+dc.date+%3C%3D+1994+AND+dc.date+%3E%3D+1992
+Treffer: 1
 
 #Document 1:
-MARC 100
-$a: Furgler
+MARC 100 $a: Staatsministerium
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: The Spirit of Competition: Choice - Challenge - Committment
+MARC 245 $a: Verwaltungsreform in Baden-Württemberg
 TITLEMATCH: 10
-MARC 773
-$t: ISC Hrsg., The Spirit of Competition
-SOURCEMATCH Analytica: 0 
-LDR Materialart: a
-MATERIALMATCH: 15
-Swissbibnr.: 514571241
-MARC 035
-(IDSSG)000996491
-Abzug fuer IFF_MATCH: -0
-Totalmatch: 35
-
-#Document 2:
-MARC 100
-$a: Furgler
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: The spirit of competition - choice - challenge - commitment
-TITLEMATCH: 10
+MARC 264 $c: 1993
+YEARMATCH: 10
+MARC 264 $a: Oberndorf/Stuttgart
+PLACEMATCH: 5
+MARC 264 $b: Schwarwälder Druckhaus
+PUBLISHERMATCH: 5
 LDR Materialart: m
-MATERIALMATCH: 0
-Swissbibnr.: 352275405
-MARC 035
-(ALEX)996505984101791
-(ALEX)996538824101791
-Totalmatch: 20
-Bestmatch: 35, Bestrecordnr: 514571241
+MATERIALMATCH: 15
+Swissbibnr.: 515873195
+MARC 035 (IDSSG)000996245: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+Bestmatch: 40, Bestrecordnr: 515873195, bestrecordnr-HSG: 0996245
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #11
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Letsch --- Autor2: 
-Titel: Wirtschaftlichkeit in der öffentlichen Verwaltung --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort:  - Verlag:  - Jahr: 1970 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftlichkeit%20in%20der%20%C3%B6ffentlichen%20Verwaltung+AND+dc.anywhere+%3D+Letsch+AND+dc.date+%3D+1970
+ISBN: 37729503710  ISBN-2: 
+Autor: Schoeck --- Autor2: 
+Titel: Umverteilung als Klassenkampf? 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Osnabrück --- Verlag:  A. Fromm --- Jahr: 1973 --- Materialart: m --- Seitenzahlen: 74
+Sourcetitle: , Sourceauthor: 
+Addendum: Zur Politik und Psychologie der Vermögensbildung
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Umverteilung%20als%20Klassenkampf%3F+AND+dc.anywhere+%3D+Schoeck+AND+dc.date+%3C%3D+1974+AND+dc.date+%3E%3D+1972
 Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Wirtschaftlichkeit%20in%20der%20%C3%B6ffentlichen%20Verwaltung+AND+dc.anywhere+%3D+Letsch
-Treffer mit geaendertem Suchstring: 1
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Umverteilung%20als%20Klassenkampf%3F+AND+dc.anywhere+%3D+Schoeck
+Error 102: No records found
 
-#Document 1:
-MARC 100
-$a: Letsch
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Wirtschaftlichkeit in der öffentlichen Verwaltung
-TITLEMATCH: 10
-MARC 264
-$c: 1969
-marcfield short match! 
-YEARMATCH: 5
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 515872520
-MARC 035
-(IDSSG)000996150
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 25
-Bestmatch: 25, Bestrecordnr: 515872520
-Only IFF data available. Best solution from Felix.
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
 
 NEW ROW: #12
 *********************************************************************************
-ISBN: 3258052557  ISBN-2: 
-Autor: Jegge Dieter Schwaar Kar --- Autor2: 
-Titel: Warm-up für New Public Management --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Bern - Verlag: Paul Haupt - Jahr:  - Materialart: (?^:a|b) - Source: Hablützel-Peter- Haldemann-Theo- Schedler-Kuno- Schwaar-Karl: Umbruch in Politik und Verwaltung Vier Jahre Personal- und Organisationsentwicklung in der schweizerischen Bundesverwaltung 
-Addendum: In: Hablützel-Peter- Haldemann-Theo- Schedler-Kuno- Schwaar-Karl: Umbruch in Politik und Verwaltung Vier Jahre Personal- und Organisationsentwicklung in der schweizerischen Bundesverwaltung
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Warm-up%20f%C3%BCr%20New%20Public%20Management+AND+dc.anywhere+%3D+Jegge%20Dieter%20Schwaar%20Kar
-Treffer: 1
+ISBN:   ISBN-2: 
+Autor: Rose --- Autor2: 
+Titel: Survey of Cybernetics 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: London --- Verlag: London Iliffe Books Ltd --- Jahr: 1969 --- Materialart: m --- Seitenzahlen: 378
+Sourcetitle: , Sourceauthor: 
+Addendum: A Tribute to Dr Norbert Wiener
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Survey%20of%20Cybernetics+AND+dc.anywhere+%3D+Rose+AND+dc.date+%3C%3D+1970+AND+dc.date+%3E%3D+1968
+Treffer: 2
 
 #Document 1:
-MARC 100
-$a: Jegge Dieter Schwaar Kar
+MARC 700 $a: Rose
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Warm-up für New Public Management
+MARC 245 $a: Survey of Cybernetics
 TITLEMATCH: 10
-MARC 773
-$t: Hablützel,Peter, Haldemann,Theo, Schedler,Kuno, Schwaar,Karl: Umbruch in Politik und Verwaltung Vier Jahre Personal- und Organisationsentwicklung in der schweizerischen Bundesverwaltung
-SOURCEMATCH Analytica: 0 
-LDR Materialart: a
+MARC 260 $c: 1969
+YEARMATCH: 10
+MARC 260 $a: London
+PLACEMATCH: 5
+MARC 260 $b: Iliffe
+PUBLISHERMATCH: 5
+LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 51457125X
-MARC 035
-(IDSSG)000996493
-Abzug fuer IFF_MATCH: -0
-Totalmatch: 35
-Bestmatch: 35, Bestrecordnr: 51457125X
-Only IFF data available. Best solution from Felix.
+Swissbibnr.: 145374742
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 66
+
+#Document 2:
+MARC 100 $a: Rose
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Survey of Cybernetics
+TITLEMATCH: 10
+MARC 264 $c: 1969
+YEARMATCH: 10
+MARC 264 $a: London
+PLACEMATCH: 5
+MARC 264 $b: London Iliffe Books Ltd
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878235
+MARC 035 (IDSSG)000996630: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+Bestmatch: 66, Bestrecordnr: 145374742, bestrecordnr-HSG: 0
+Replace 515878235 with 145374742, see: export.csv
 
 NEW ROW: #13
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Borins --- Autor2: Warrington
-Titel: The New Public Administration --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Malta - Verlag: CAPAM - Jahr: 1996 - Materialart: m - Source:  
-Addendum: Global Challenges, Local Solutions
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20New%20Public%20Administration+AND+dc.anywhere+%3D+Borins+AND+dc.date+%3D+1996
-Treffer: 2
+Autor: Dahrendorf --- Autor2: 
+Titel: Wirtschaft und Gesellschaft am Ende des 
+Untertitel:  Jahrhunderts  --- Titeldatum: s 20 --- Band:  --- Bandtitel: 
+Ort: Zürich --- Verlag: Bank Hofmann AG --- Jahr: 1980 --- Materialart: m --- Seitenzahlen: 20
+Sourcetitle: , Sourceauthor: 
+Addendum: Vortrag auf Einladung der Bank Hofmann AG, Zürich
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaft%20und%20Gesellschaft%20am%20Ende%20des+AND+dc.anywhere+%3D+Dahrendorf+AND+dc.date+%3C%3D+1981+AND+dc.date+%3E%3D+1979
+Treffer: 6
 
 #Document 1:
-MARC 100
-$a: Borins
+MARC 700 $a: Dahrendorf
 AUTHOR-1-MATCH: 10
-MARC 700
-$a: Warrington
-AUTHOR-2-MATCH: 20
-MARC 245
-$a: The New Public Administration
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
 TITLEMATCH: 10
-MARC 264
-$c: 1996
+MARC 260 $c: 1980
 YEARMATCH: 10
-MARC 264
-$a: Malta
+MARC 260 $a: Zürich
 PLACEMATCH: 5
-MARC 264
-$b: CAPAM
+MARC 260 $b: Bank Hofmann
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877263
-MARC 035
-(IDSSG)000996496
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
+Swissbibnr.: 128788909
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 66
 
 #Document 2:
-MARC 100
-$a: Borins
+MARC 100 $a: Dahrendorf
 AUTHOR-1-MATCH: 10
-MARC 700
-$a: Warrington
-AUTHOR-2-MATCH: 20
-MARC 245
-$a: The New Public Administration: Global Challenges-Local Solutions
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
 TITLEMATCH: 10
-MARC 264
-$c: 1996
+MARC 260 $c: 1980
 YEARMATCH: 10
-MARC 264
-$a: San Gorg, Malta
+MARC 260 $a: Zürich
 PLACEMATCH: 5
-MARC 264
-$b: CAPAM
+MARC 260 $b: Bank Hofmann AG
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515868590
-MARC 035
-(IDSSG)000995904
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
-Bestmatch: 50, Bestrecordnr: 515877263
-Ersetzen: alt 515868590 mit neu 515877263
+Swissbibnr.: 053282779
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 4
+Totalmatch: 59
+
+#Document 3:
+MARC 100 $a: Dahrendorf
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
+TITLEMATCH: 10
+MARC 264 $c: 1980
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Bank Hofmann AG
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878243
+MARC 035 (IDSSG)000996631: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+
+#Document 4:
+MARC 100 $a: Dahrendorf
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
+TITLEMATCH: 10
+MARC 264 $c: 1980
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Bank Hofmann
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 083861831
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 66
+
+#Document 5:
+MARC 100 $a: Dahrendorf
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
+TITLEMATCH: 10
+MARC 260 $c: 1980
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: Bank Hofmann AG
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 349088500
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 55
+
+#Document 6:
+MARC 100 $a: Dahrendorf
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wirtschaft und Gesellschaft am Ende des 20. Jahrhunderts
+TITLEMATCH: 10
+MARC 260 $c: 1980.
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: Bank Hofmann
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 540526231
+MARC 035 Number of 035 fields: 4
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 55
+Bestmatch: 66, Bestrecordnr: 128788909, bestrecordnr-HSG: 0
+Replace 515878243 with 128788909, see: export.csv
 
 NEW ROW: #14
 *********************************************************************************
-ISBN: 3897370654  ISBN-2: 
-Autor: IFSt --- Autor2: 
-Titel: IFSt-Schrift --- Untertitel:  --- Titeldatum:  370 --- Band:  - Bandtitel: 
-Ort: Bonn - Verlag: IFSt - Jahr: 1999 - Materialart: s - Source:  
-Addendum: 
-ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000
-
-NEW ROW: #15
-*********************************************************************************
 ISBN:   ISBN-2: 
-Autor: UBS --- Autor2: 
-Titel: Thèses Outlook --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Genève - Verlag: UBS - Jahr: 1997 - Materialart: m - Source:  
-Addendum: sur le développement futur des administrations publiques en Suisse
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Th%C3%A8ses%20Outlook+AND+dc.anywhere+%3D+UBS+AND+dc.date+%3D+1997
-Treffer: 2
+Autor: Lindblom --- Autor2: 
+Titel: The Intelligence of Democracy 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: New York --- Verlag: Free Press --- Jahr: 1965 --- Materialart: m --- Seitenzahlen: 336
+Sourcetitle: , Sourceauthor: 
+Addendum: Decision making through mutual adjustment
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Intelligence%20of%20Democracy+AND+dc.anywhere+%3D+Lindblom+AND+dc.date+%3C%3D+1966+AND+dc.date+%3E%3D+1964
+Treffer: 3
 
 #Document 1:
-MARC 100
-$a: UBS
+MARC 100 $a: Lindblom
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Thèses Outlook
+MARC 245 $a: The intelligence of democracy
 TITLEMATCH: 10
-MARC 264
-$c: 1997
+MARC 264 $c: 1965
 YEARMATCH: 10
-MARC 264
-$a: Genève
+MARC 264 $a: New York
 PLACEMATCH: 5
-MARC 264
-$b: UBS
+MARC 264 $b: Free Press
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877271
-MARC 035
-(IDSSG)000996498
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
+Swissbibnr.: 029026768
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 66
 
 #Document 2:
-MARC 100
-$a: Fitze
-MARC 710
-$a: Union de banques suisses
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Gestion publique
-TITLEMATCH: 0
-MARC 260
-$c: 1997
+MARC 100 $a: Lindblom
+AUTHOR-1-MATCH: 10
+MARC 245 $a: The intelligence of democracy
+TITLEMATCH: 10
+MARC 264 $c: 1965
 YEARMATCH: 10
-MARC 260
-$a: Zurich
+MARC 264 $a: London
 PLACEMATCH: 0
-MARC 260
-$b: Union de banques suisses Manifestations et publications outlook pour la clientèle commerciale
+MARC 264 $b: Collier-Macmillan
 PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 220507252
-MARC 035
-(RERO)R226544160
-REROMATCH: 6
-Totalmatch: 31
-Bestmatch: 40, Bestrecordnr: 515877271
-Only IFF data available. Best solution from Felix.
+Swissbibnr.: 28524390X
+MARC 035 (IDSSG)000204938 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 4
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 87
 
-NEW ROW: #16
-*********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Michel --- Autor2: 
-Titel: Überbauungen Schwabgut und Weiermatt-Mieter --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Bern - Verlag: und Regionalforschungsstelle Bern - Jahr: 1967 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+%C3%9Cberbauungen%20Schwabgut%20und%20Weiermatt-Mieter+AND+dc.anywhere+%3D+Michel+AND+dc.date+%3D+1967
-Treffer: 1
-
-#Document 1:
-MARC 100
-$a: Michel
+#Document 3:
+MARC 100 $a: Lindblom
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Ueberbauungen Schwabgut und Weiermatt, Mieter
-TITLEMATCH: 0
-MARC 264
-$c: 1967
+MARC 245 $a: The Intelligence of Democracy
+TITLEMATCH: 10
+MARC 264 $c: 1965
 YEARMATCH: 10
-MARC 264
-$a: Bern
+MARC 264 $a: New York
 PLACEMATCH: 5
-MARC 264
-$b: Stadt- und Regionalforschungsstelle Bern
+MARC 264 $b: Free Press
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 273484249
-MARC 035
-(IDSBB)002914700
-IDSMATCH: 9
-(IDSSG)000443990
-Zuschlag fuer altes HSG-Katalogisat: 21
-Feld 949: HIFF
-HIFF attached, IDSSGMATCH = 31
-(IDSSG)000996504
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 70
-Bestmatch: 70, Bestrecordnr: 273484249
-Best case scenario: IFF and HSG already matched!
+Swissbibnr.: 515878251
+MARC 035 (IDSSG)000996632: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+Bestmatch: 87, Bestrecordnr: 28524390X, bestrecordnr-HSG: 0204938
+HSB01 duplicate! Replace 0996632 with 0204938, see: hsg_duplicate.csv
+
+NEW ROW: #15
+*********************************************************************************
+ISBN: 3261048395  ISBN-2: 
+Autor: Regierungsrat des Kts Basel-Stadt --- Autor2: 
+Titel: Beweggründe für die Abwanderung aus Basel 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Peter Lang --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 91-122
+Sourcetitle: Frey-René L Hrsg: Von der Land- zur Stadtflucht, Sourceauthor: Was veranlasste Schweizer Familien in den Jahren 197778, ihren Wohnsitz von Basel-Stadt in eine ausserkantonale Gemeinde der Agglomeration zu verlegen? In
+Addendum: Was veranlasste Schweizer Familien in den Jahren 197778, ihren Wohnsitz von Basel-Stadt in eine ausserkantonale Gemeinde der Agglomeration zu verlegen? In: Frey-René L Hrsg: Von der Land- zur Stadtflucht
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Beweggr%C3%BCnde%20f%C3%BCr%20die%20Abwanderung%20aus%20Basel+AND+dc.anywhere+%3D+Regierungsrat%20des%20Kts%20Basel-Stadt
+Treffer: 1
+
+#Document 1:
+MARC 100 $a: Regierungsrat des Kts. Basel-Stadt
+marcfield short match! 
+AUTHOR-1-MATCH: 5
+MARC 245 $a: Beweggründe für die Abwanderung aus Basel
+TITLEMATCH: 10
+MARC 264 $a: Bern
+PLACEMATCH: 5
+MARC 264 $b: Peter Lang
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 0
+Swissbibnr.: 51587826X
+MARC 035 (IDSSG)000996633: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 24
+Bestmatch: 24, Bestrecordnr: 51587826X, bestrecordnr-HSG: 0996633
+BESTMATCH ziemlich tief, ueberpruefen!
+
+
+NEW ROW: #16
+*********************************************************************************
+ISBN: 3820409327  ISBN-2: 
+Autor: Bethscheider --- Autor2: 
+Titel: Wahlkampfführung und politische Weltbilder 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Frankfurt und andere --- Verlag: Peter Lang --- Jahr: 1987 --- Materialart: m --- Seitenzahlen: 216
+Sourcetitle: , Sourceauthor: 
+Addendum: Eine systematische Analyse des Wahlkampfes der Bundestagsparteien in den Bundestagswahlkämpfen 1976 und 1980 Europäische Hochschulschriften, Reihe 31, Bd 103
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wahlkampff%C3%BChrung%20und%20politische%20Weltbilder+AND+dc.anywhere+%3D+Bethscheider+AND+dc.date+%3C%3D+1988+AND+dc.date+%3E%3D+1986
+Treffer: 2
+
+#Document 1:
+MARC 020 $a: 3820409327
+ISBNMATCH: 10
+MARC 100 $a: Bethscheider
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wahlkampfführung und politische Weltbilder
+TITLEMATCH: 10
+MARC 260 $c: 1987
+YEARMATCH: 10
+MARC 260 $a: Frankfurt
+PLACEMATCH: 5
+MARC 260 $b: Lang
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 274936852
+MARC 035 Number of 035 fields: 6
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 82
+
+#Document 2:
+MARC 020 $a: 3820409327
+ISBNMATCH: 10
+MARC 100 $a: Bethscheider
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wahlkampfführung und politische Weltbilder
+TITLEMATCH: 10
+MARC 264 $c: 1987
+YEARMATCH: 10
+MARC 264 $a: Frankfurt und andere
+PLACEMATCH: 5
+MARC 264 $b: Peter Lang
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878278
+MARC 035 (IDSSG)000996634: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 50
+Bestmatch: 82, Bestrecordnr: 274936852, bestrecordnr-HSG: 0
+Replace 515878278 with 274936852, see: export.csv
 
 NEW ROW: #17
 *********************************************************************************
-ISBN: 3897370891  ISBN-2: 
-Autor: IFSt --- Autor2: 
-Titel: IFSt-Schrift --- Untertitel:  --- Titeldatum:  394 --- Band:  - Bandtitel: 
-Ort: Bonn - Verlag: IFSt - Jahr: 2001 - Materialart: s - Source:  
-Addendum: 
-ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000
+ISBN: 0801498600  ISBN-2: 0801409144
+Autor: Greene --- Autor2: 
+Titel: Attitudes toward Risk and the Relative Size of the Public Sector 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: London --- Verlag: Cornell University Press --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 434-444
+Sourcetitle: The Economic Approach to Public Policy, Sourceauthor: Amacher Ryan CTollison Robert D
+Addendum: In: Amacher Ryan CTollison Robert D: The Economic Approach to Public Policy
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Attitudes%20toward%20Risk%20and%20the%20Relative%20Size%20of%20the%20Public%20Sector+AND+dc.anywhere+%3D+Greene
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Attitudes%20toward%20Risk%20and%20the%20Relative%20Size%20of%20the%20Public%20Sector+AND+dc.anywhere+%3D+Greene
+Error 102: No records found
+
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
 
 NEW ROW: #18
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Veröffentlichung der Schweizerische Verwaltungskurse --- Autor2: 
-Titel: Voranschlag und Rechnung der öffentlichen Gemeinwesen --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Einsiedeln - Verlag: Benziger & Co. - Jahr: 1945 - Materialart: m - Source:  
-Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Voranschlag%20und%20Rechnung%20der%20%C3%B6ffentlichen%20Gemeinwesen+AND+dc.anywhere+%3D+Ver%C3%B6ffentlichung%20der%20Schweizerische%20Verwaltungskurse+AND+dc.date+%3D+1945
+Autor: IBFD --- Autor2: 
+Titel: Taxation and Investment in Central & East European Countries 
+Untertitel: Vol  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Amsterdam --- Verlag: IBFD --- Jahr: 2002 --- Materialart: m --- Seitenzahlen: 
+Sourcetitle: , Sourceauthor: 
+Addendum: ursprünglich Loseblattwerk- 3 Bände
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Taxation%20and%20Investment%20in%20Central%20%26%20East%20European%20Countries+AND+dc.anywhere+%3D+IBFD+AND+dc.date+%3C%3D+2003+AND+dc.date+%3E%3D+2001
 Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Voranschlag%20und%20Rechnung%20der%20%C3%B6ffentlichen%20Gemeinwesen+AND+dc.anywhere+%3D+Ver%C3%B6ffentlichung%20der%20Schweizerische%20Verwaltungskurse
-Diese Suche taugt nichts.
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Taxation%20and%20Investment%20in%20Central%20%26%20East%20European%20Countries+AND+dc.anywhere+%3D+IBFD
+Error 102: No records found
+
 ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 
 NEW ROW: #19
 *********************************************************************************
-ISBN: 3445020329  ISBN-2: 
-Autor: Bremer --- Autor2: 
-Titel: Weltmodellstudien --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Königstein - Verlag: Anton Hain - Jahr: 1980 - Materialart: m - Source:  
-Addendum: Wachstumsprobleme und Lösungsmöglichkeiten
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Weltmodellstudien+AND+dc.anywhere+%3D+Bremer+AND+dc.date+%3D+1980
-Treffer: 5
+ISBN:   ISBN-2: 
+Autor: IFF --- Autor2: 
+Titel: Weiterbildungskurs im Steuerrecht für Kaderkräfte 
+Untertitel: 23  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: St. Gallen --- Verlag: IFF --- Jahr: 1983 --- Materialart: m --- Seitenzahlen: 
+Sourcetitle: , Sourceauthor: 
+Addendum: Seminarunterlagen
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Weiterbildungskurs%20im%20Steuerrecht%20f%C3%BCr%20Kaderkr%C3%A4fte+AND+dc.anywhere+%3D+IFF+AND+dc.date+%3C%3D+1984+AND+dc.date+%3E%3D+1982
+Treffer: 1
 
 #Document 1:
-MARC 020
-$a: 3445020329
-ISBNMATCH: 10
-MARC 100
-$a: Bremer
+MARC 100 $a: IFF
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Weltmodellstudien
+MARC 245 $a: Weiterbildungskurs im Steuerrecht für Kaderkräfte - 23.-26.8.1983
 TITLEMATCH: 10
-MARC 264
-$c: 1980
+MARC 264 $c: 1983
 YEARMATCH: 10
-MARC 264
-$a: Königstein
-PLACEMATCH: 5
-MARC 264
-$b: Anton Hain
+MARC 264 $a: St.Gallen
+PLACEMATCH: 0
+MARC 264 $b: IFF
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877360
-MARC 035
-(IDSSG)000996512
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 50
-
-#Document 2:
-MARC 020
-$a: 3445020329
-ISBNMATCH: 10
-MARC 700
-$a: Bremer
-$a: Deutsch
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Weltmodellstudien
-TITLEMATCH: 10
-MARC 264
-$c: 1980
-YEARMATCH: 10
-MARC 264
-$a: Königstein/Ts.
-PLACEMATCH: 5
-MARC 264
-$b: Anton Hain
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 275249247
-MARC 035
-(IDSBB)000100087
-IDSMATCH: 9
-(NEBIS)000215469
-IDSMATCH: 9
-(IDSSG)000354197
-Zuschlag fuer altes HSG-Katalogisat: 21
-Totalmatch: 95
-
-#Document 3:
-MARC 100
-$a: Bremer
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Technologischer Fortschritt und die Grenzen des Wachstums
-TITLEMATCH: 0
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 514583207
-MARC 035
-(IDSSG)000996060
-Abzug fuer IFF_MATCH: -15
-Totalmatch: -5
-
-#Document 4:
-MARC 100
-$a: Kappel
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Mögliche Entwicklungen der Weltbevölkerung
-TITLEMATCH: 0
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 514583754
-MARC 035
-(IDSSG)000996415
-Abzug fuer IFF_MATCH: -15
-Totalmatch: -15
-
-#Document 5:
-MARC 100
-$a: Otto
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Technologischer Fortschritt und Rohstoffe
-TITLEMATCH: 0
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 514584025
-MARC 035
-(IDSSG)000996574
-Abzug fuer IFF_MATCH: -15
-Totalmatch: -15
-Bestmatch: 95, Bestrecordnr: 275249247
-Ersetzen: alt 514584025 mit neu 275249247
+Swissbibnr.: 515878286
+MARC 035 (IDSSG)000996636: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 35
+Bestmatch: 35, Bestrecordnr: 515878286, bestrecordnr-HSG: 0996636
+Only IFF data available. Best solution from Felix.
 
 NEW ROW: #20
 *********************************************************************************
-ISBN: 9041110038  ISBN-2: 
-Autor: IFA --- Autor2: 
-Titel: Cahiers de Droit Fiscal International --- Untertitel:  --- Titeldatum:  --- Band: Vol LXXXIIIa 1998 - Bandtitel: Steuerliche Behandlung von Verlusten bei Körperschaften
-Ort: The Hague  - Verlag: Kluwer - Jahr: 1998 - Materialart: s - Source:  
-Addendum: Steuerliche Behandlung von Verlusten bei Körperschaften
-ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000
+ISBN: 3258052557  ISBN-2: 
+Autor: Knoepfel --- Autor2: 
+Titel: Vorprogrammierte Enttäuschungen oder politische Flurschäden 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Paul Haupt --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 453-470
+Sourcetitle: Umbruch in Politik und Verwaltung Eine Kritik aus der Sicht der Politikanalyse, Sourceauthor: Hablützel-Peter- Haldemann-Theo- Schedler-Kuno- Schwaar-Karl
+Addendum: In: Hablützel-Peter- Haldemann-Theo- Schedler-Kuno- Schwaar-Karl: Umbruch in Politik und Verwaltung Eine Kritik aus der Sicht der Politikanalyse
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Vorprogrammierte%20Entt%C3%A4uschungen%20oder%20politische%20Flursch%C3%A4den+AND+dc.anywhere+%3D+Knoepfel
+Treffer: 3
+
+#Document 1:
+MARC 100 $a: Knoepfel
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Vorprogrammierte Enttäuschungen oder politische Flurschäden
+TITLEMATCH: 10
+MARC 773 $t: Hablützel,Peter, Haldemann,Theo, Schedler,Kuno, Schwaar,Karl: Umbruch in Politik und Verwaltung Eine Kritik aus der Sicht der Politikanalyse
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514571357
+MARC 035 (IDSSG)000996637: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 44
+
+#Document 2:
+MARC 100 $a: Knoepfel
+AUTHOR-1-MATCH: 10
+MARC 245 $a: New Public Management
+TITLEMATCH: 0
+MARC 260 $a: S.l.
+PLACEMATCH: 0
+MARC 260 $b: s.n.
+PUBLISHERMATCH: 0
+MARC 773 $t: Umbruch in Politik und Verwaltung
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 350537801
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 35
+
+#Document 3:
+MARC 100 $a: Knoepfel
+AUTHOR-1-MATCH: 10
+MARC 245 $a: New Public Management
+TITLEMATCH: 0
+MARC 773 $t: Umbruch in Politik und Verwaltung : Ansichten und Erfahrungen zum New Public Management in der Schweiz
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 502704144
+MARC 035 Number of 035 fields: 6
+Matchpoints: IDS: 0, Rero: 6, SGBN: 0
+Totalmatch: 31
+Bestmatch: 44, Bestrecordnr: 514571357, bestrecordnr-HSG: 0996637
+Only IFF data available. Best solution from Felix.
 
 NEW ROW: #21
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: Linder --- Autor2: 
-Titel: Wettbewerb - was ist das? --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort:  - Verlag:  - Jahr:  - Materialart: (?^:a|b) - Source: ISC Hrsg, The Spirit of Competition 
-Addendum: in: ISC Hrsg, The Spirit of Competition
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wettbewerb%20-%20was%20ist%20das%3F+AND+dc.anywhere+%3D+Linder
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Wettbewerb%20-%20was%20ist%20das%3F+AND+dc.anywhere+%3D+Linder
-Diese Suche taugt nichts.
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ISBN: 9783727242557  ISBN-2: 
+Autor: Bopp --- Autor2: Zanner
+Titel: Repetitorium zur MWST 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Stämpfli  AG --- Jahr: 2011 --- Materialart: m --- Seitenzahlen: 140
+Sourcetitle: , Sourceauthor: 
+Addendum: Schweizer MWSTG 2010  EU-Richtlinie 20062010  Internationales Recht
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Repetitorium%20zur%20MWST+AND+dc.anywhere+%3D+Bopp+AND+dc.date+%3C%3D+2012+AND+dc.date+%3E%3D+2010
+Treffer: 1
 
+#Document 1:
+MARC 020 $a: 9783727242557
+ISBNMATCH: 10
+MARC 100 $a: Bopp
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Zanner
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Repetitorium zur MWST
+TITLEMATCH: 10
+MARC 260 $c: 2011
+YEARMATCH: 10
+MARC 260 $a: Bern
+PLACEMATCH: 5
+MARC 260 $b: Stämpfli
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 269070222
+MARC 035 (IDSSG)000543516 Zuschlag fuer altes HSG-Katalogisat: 25 
+Feld 949: HIFF Signatur: QB 258 --- callno: QB 258 
+Best case: IFF attached, IDSSGMATCH = 35 
+Number of 035 fields: 14
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 127
+Bestmatch: 127, Bestrecordnr: 269070222, bestrecordnr-HSG: 0543516
+Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #22
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Minsch --- Autor2: 
-Titel: Ursachen und Verursacherprinzip im Umweltbereich --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: St. Gallen - Verlag: Wilhelm Surbir - Jahr: 1988 - Materialart: m - Source:  
-Addendum: Dissertation HSG, 1988
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Ursachen%20und%20Verursacherprinzip%20im%20Umweltbereich+AND+dc.anywhere+%3D+Minsch+AND+dc.date+%3D+1988
+Autor: Ross --- Autor2: Zelder
+Titel: Western Economic Journal 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: USA --- Verlag: Western Economic Association --- Jahr: 1969 --- Materialart: m --- Seitenzahlen: 105
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Western%20Economic%20Journal+AND+dc.anywhere+%3D+Ross+AND+dc.date+%3C%3D+1970+AND+dc.date+%3E%3D+1968
 Treffer: 1
 
 #Document 1:
-MARC 100
-$a: Minsch
+MARC 100 $a: Ross
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Ursachen und Verursacherprinzip im Umweltbereich
+MARC 700 $a: Zelder
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Western Economic Journal
 TITLEMATCH: 10
-MARC 264
-$c: 1988
+MARC 264 $c: 1969
 YEARMATCH: 10
-MARC 264
-$a: St. Gallen
+MARC 264 $a: USA
 PLACEMATCH: 5
-MARC 264
-$b: Wilhelm Surbir
+MARC 264 $b: Western Economic Association
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877484
-MARC 035
-(IDSSG)000996528
-Abzug fuer IFF_MATCH: -15
-Totalmatch: 40
-Bestmatch: 40, Bestrecordnr: 515877484
+Swissbibnr.: 515878294
+MARC 035 (IDSSG)000996638: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 50
+Bestmatch: 50, Bestrecordnr: 515878294, bestrecordnr-HSG: 0996638
 Only IFF data available. Best solution from Felix.
 
 NEW ROW: #23
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Arthur Andersen & Co --- Autor2: 
-Titel: Tax and Trade Guide  --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort:  - Verlag: Arthur Andersen & Co. - Jahr: 1966 - Materialart: m - Source:  
+Autor: Weber-Fas --- Autor2: 
+Titel: Verfassungsrechtsprechung zum Steuerrecht 
+Untertitel: Die Entscheidungen des Bundesverfassungsgerichts der Bundesrepublik Deutschland Registerband  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Frankfurt --- Verlag: Athenäum  --- Jahr: 1971 --- Materialart: m --- Seitenzahlen: 164
+Sourcetitle: , Sourceauthor: 
 Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Tax%20and%20Trade%20Guide%20+AND+dc.anywhere+%3D+Arthur%20Andersen%20%26%20Co+AND+dc.date+%3D+1966
-Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Tax%20and%20Trade%20Guide%20+AND+dc.anywhere+%3D+Arthur%20Andersen%20%26%20Co
-Diese Suche taugt nichts.
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verfassungsrechtsprechung%20zum%20Steuerrecht+AND+dc.anywhere+%3D+Weber-Fas+AND+dc.date+%3C%3D+1972+AND+dc.date+%3E%3D+1970
+Treffer: 5
 
+#Document 1:
+MARC 700 $a: Weber-Fas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verfassungsrechtsprechung zum Steuerrecht
+TITLEMATCH: 10
+MARC 264 $c: 1971
+YEARMATCH: 10
+MARC 264 $a: Frankfurt a.M.
+PLACEMATCH: 5
+MARC 264 $b: Athenäum Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 274166828
+MARC 035 Number of 035 fields: 2
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 66
+
+#Document 2:
+MARC 700 $a: Weber-Fas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verfassungsrechtsprechung zum Steuerrecht
+TITLEMATCH: 10
+MARC 264 $c: 1971
+YEARMATCH: 10
+MARC 264 $a: Frankfurt a.M.
+PLACEMATCH: 5
+MARC 264 $b: Athenäum Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515929557
+MARC 035 (IDSSG)000996639: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996639, No. of 035-fields: 2 
+Number of 035 fields: 2
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 51
+
+#Document 3:
+MARC 700 $a: Weber-Fas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verfassungsrechtsprechung zum Steuerrecht
+TITLEMATCH: 10
+MARC 264 $c: 1971-1982
+YEARMATCH: 10
+$c: 1971-1982
+YEARMATCH: 10
+MARC 264 $a: Stuttgart
+PLACEMATCH: 0
+$a: Frankfurt a.M.
+PLACEMATCH: 5
+MARC 264 $b: Boorberg
+PUBLISHERMATCH: 0
+$b: Athenäum
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 031598773
+MARC 035 (IDSSG)000126116 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 80
+
+#Document 4:
+MARC 100 $a: Weber-Fas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verfassungsrechtsprechung zum Steuerrecht - Die Entscheidungen des Bundesverfassungsgerichts der Bundesrepublik Deutschland - Bd. I
+TITLEMATCH: 10
+MARC 264 $c: 1971
+YEARMATCH: 10
+MARC 264 $a: Frankfurt
+PLACEMATCH: 5
+MARC 264 $b: Athenäum Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515881694
+MARC 035 (IDSSG)000996800: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+
+#Document 5:
+MARC 100 $a: Weber-Fas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verfassungsrechtsprechung zum Steuerrecht  - Die Entscheidungen des Bundesverfassungsgerichts der Bundesrepublik Deutschland - Bd. II
+TITLEMATCH: 10
+MARC 264 $c: 1971
+YEARMATCH: 10
+MARC 264 $a: Frankfurt
+PLACEMATCH: 5
+MARC 264 $b: Athenäum Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515869988
+MARC 035 (IDSSG)000996103: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+Bestmatch: 80, Bestrecordnr: 031598773, bestrecordnr-HSG: 0126116
+HSB01 duplicate! Replace 0996639 with 0126116, see: hsg_duplicate.csv
 
 NEW ROW: #24
 *********************************************************************************
 ISBN:   ISBN-2: 
-Autor: Willmott --- Autor2: 
-Titel: Manpower and Education --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort:  - Verlag:  - Jahr:  - Materialart: (?^:a|b) - Source: Cowan-Peter: The Future of Planning 
-Addendum: In: Cowan-Peter: The Future of Planning
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Manpower%20and%20Education+AND+dc.anywhere+%3D+Willmott
+Autor: Capron --- Autor2: 
+Titel: Innovation and Change in Regulated Industries 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Washington --- Verlag: Brookings Institution --- Jahr: 1971 --- Materialart: m --- Seitenzahlen: 9
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Innovation%20and%20Change%20in%20Regulated%20Industries+AND+dc.anywhere+%3D+Capron+AND+dc.date+%3C%3D+1972+AND+dc.date+%3E%3D+1970
 Treffer: 0
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Manpower%20and%20Education+AND+dc.anywhere+%3D+Willmott
-Diese Suche taugt nichts.
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Innovation%20and%20Change%20in%20Regulated%20Industries+AND+dc.anywhere+%3D+Capron
+Error 102: No records found
+
 ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 
 NEW ROW: #25
 *********************************************************************************
-ISBN: 340604915X  ISBN-2: 
-Autor: Glaser --- Autor2: 
-Titel: Urbanistik --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: München - Verlag:  C.H. Beck - Jahr: 1974 - Materialart: m - Source:  
-Addendum: Neue Aspekte der Stadtentwicklung
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Urbanistik+AND+dc.anywhere+%3D+Glaser+AND+dc.date+%3D+1974
-Treffer: 4
+ISBN: 387895090X  ISBN-2: 
+Autor: Moser --- Autor2: 
+Titel: Tourismus und Entwicklungspolitik 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Hamburg --- Verlag:  Weltarchiv Gmbh --- Jahr: 1972 --- Materialart: m --- Seitenzahlen: 260
+Sourcetitle: , Sourceauthor: 
+Addendum: Veröffentlichung des HWWA-Instituts für Wirtschaftsforschung
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Tourismus%20und%20Entwicklungspolitik+AND+dc.anywhere+%3D+Moser+AND+dc.date+%3C%3D+1973+AND+dc.date+%3E%3D+1971
+Treffer: 2
 
 #Document 1:
-MARC 020
-$a: 340604915X
+MARC 020 $a: 387895090X
 ISBNMATCH: 10
-MARC 700
-$a: Glaser
+MARC 100 $a: Moser
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Urbanistik
+MARC 245 $a: Tourismus und Entwicklungspolitik
 TITLEMATCH: 10
-MARC 260
-$c: 1974
+MARC 264 $c: 1972
 YEARMATCH: 10
-MARC 260
-$a: München
+MARC 264 $a: Hamburg
 PLACEMATCH: 5
-MARC 260
-$b: Beck
-PUBLISHERMATCH: 5
+MARC 264 $b: Verlag Weltarchiv
+PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 144463458
-MARC 035
-(NEBIS)002120764
-IDSMATCH: 9
-Totalmatch: 74
+Swissbibnr.: 272921688
+MARC 035 (IDSSG)000328346 Zuschlag fuer altes HSG-Katalogisat: 25 
+Number of 035 fields: 8
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 102
 
 #Document 2:
-MARC 020
-$a: 340604915X
+MARC 020 $a: 387895090X
 ISBNMATCH: 10
-MARC 100
-$a: Glaser
+MARC 100 $a: Moser
 AUTHOR-1-MATCH: 10
-MARC 245
-$a: Urbanistik
+MARC 245 $a: Tourismus und Entwicklungspolitik
 TITLEMATCH: 10
-MARC 264
-$c: 1974
+MARC 264 $c: 1972
 YEARMATCH: 10
-MARC 264
-$a: München
+MARC 264 $a: Hamburg
 PLACEMATCH: 5
-MARC 264
-$b: Verlag C.H. Beck
+MARC 264 $b: Verlag Weltarchiv Gmbh
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH: 15
-Swissbibnr.: 515877565
-MARC 035
-(IDSSG)000996538
-Abzug fuer IFF_MATCH: -15
+Swissbibnr.: 515878324
+MARC 035 (IDSSG)000996641: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
 Totalmatch: 50
-
-#Document 3:
-MARC 020
-$a: 340604915X
-ISBNMATCH: 10
-MARC 700
-$a: Glaser
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Urbanistik
-TITLEMATCH: 10
-MARC 264
-$c: 1974
-YEARMATCH: 10
-MARC 264
-$a: München
-PLACEMATCH: 5
-MARC 264
-$b: Beck
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 273920456
-MARC 035
-(IDSBB)001591311
-IDSMATCH: 9
-(IDSLU)000675061
-IDSMATCH: 9
-(RERO)R003925895
-REROMATCH: 6
-(IDSSG)000346843
-Zuschlag fuer altes HSG-Katalogisat: 21
-(SGBN)000166652
-SGBNMATCH: 4
-Totalmatch: 105
-
-#Document 4:
-MARC 100
-$a: Ewers
-AUTHOR-1-MATCH: 0
-MARC 245
-$a: Bürgerbeteiligung als neue Form von Öffentlichkeit
-TITLEMATCH: 0
-LDR Materialart: a
-MATERIALMATCH: 0
-Swissbibnr.: 514583142
-MARC 035
-(IDSSG)000996011
-Abzug fuer IFF_MATCH: -15
-Totalmatch: -15
-Bestmatch: 105, Bestrecordnr: 273920456
-Ersetzen: alt 514583142 mit neu 273920456
+Bestmatch: 102, Bestrecordnr: 272921688, bestrecordnr-HSG: 0328346
+HSB01 duplicate! Replace 0996641 with 0328346, see: hsg_duplicate.csv
 
 NEW ROW: #26
 *********************************************************************************
-ISBN: 3922016170  ISBN-2: 
-Autor: Hagemann --- Autor2: Jeck
-Titel: Wachstum und Einkommensverteilung Strukturanalyse auf der Basis eines dreisektoralen Modells vom Lowe-Feldmann-Dobb-Typ --- Untertitel:  --- Titeldatum:  --- Band:  - Bandtitel: 
-Ort: Passau - Verlag: Passavia Universitätsverlag - Jahr:  - Materialart: (?^:a|b) - Source: Mückl Wolfgang J, Ott Alfred E Hrsg: Wirtschaftstheorie und Wirtschaftspolitik 
-Addendum: In: Mückl Wolfgang J, Ott Alfred E Hrsg: Wirtschaftstheorie und Wirtschaftspolitik
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wachstum%20und%20Einkommensverteilung%20Strukturanalyse%20auf%20der%20Basis%20eines%20dreisektoralen%20Modells%20vom%20Lowe-Feldmann-Dobb-Typ+AND+dc.anywhere+%3D+Hagemann
-Treffer: 1
-
-#Document 1:
-MARC 100
-$a: Hagemann
-AUTHOR-1-MATCH: 10
-MARC 245
-$a: Wachstum und Einkommensverteilung. Strukturanalyse auf der Basis eines dreisektoralen Modells vom Lowe-Feldmann-Dobb-Typ
-TITLEMATCH: 0
-MARC 773
-$t: Mückl Wolfgang J., Ott Alfred E. Hrsg.: Wirtschaftstheorie und Wirtschaftspolitik
-SOURCEMATCH Analytica: 0 
-LDR Materialart: a
-MATERIALMATCH: 15
-Swissbibnr.: 514583940
-MARC 035
-(IDSSG)000996540
-Abzug fuer IFF_MATCH: -0
-Totalmatch: 25
-Bestmatch: 25, Bestrecordnr: 514583940
-Only IFF data available. Best solution from Felix.
+ISBN: 389737062X  ISBN-2: 
+Autor: IFSt --- Autor2: 
+Titel: IFSt-Schrift 
+Untertitel:   --- Titeldatum:  367 --- Band:  --- Bandtitel: 
+Ort: Bonn --- Verlag: IFSt --- Jahr: 1998 --- Materialart: s --- Seitenzahlen: 73
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000
 
 NEW ROW: #27
 *********************************************************************************
-ISBN:   ISBN-2: 
-Autor: IFSt --- Autor2: 
-Titel: IFSt-Heft --- Untertitel:  --- Titeldatum:  066 --- Band: Bd 2 - Bandtitel: 
-Ort: Bonn - Verlag:  Stollberg - Jahr: 1963 - Materialart: s - Source:  
+ISBN: 0406064415  ISBN-2: 
+Autor: Rowland --- Autor2: 
+Titel: Moores Rowlands Yellow Tax Guide 1996-97 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: London --- Verlag: Butterworth --- Jahr: 1996 --- Materialart: m --- Seitenzahlen: 
+Sourcetitle: , Sourceauthor: 
+Addendum: Income Tax, Corporation Tax, Capital Gains Tax
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Moores%20Rowlands%20Yellow%20Tax%20Guide%201996-97+AND+dc.anywhere+%3D+Rowland+AND+dc.date+%3C%3D+1997+AND+dc.date+%3E%3D+1995
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+0406064415
+Error 102: No records found
+
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+NEW ROW: #28
+*********************************************************************************
+ISBN: 3820211470  ISBN-2: 
+Autor: Madl --- Autor2: 
+Titel: Umwandlungssteuerrecht 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Stuttgart --- Verlag: Schäffer-Poeschel  --- Jahr: 1999 --- Materialart: m --- Seitenzahlen: 160
+Sourcetitle: , Sourceauthor: 
+Addendum: Unter Berücksichtigung der Änderungen des BMF-Einführungsschreibens zum UmwStG vom 2531998
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Umwandlungssteuerrecht+AND+dc.anywhere+%3D+Madl+AND+dc.date+%3C%3D+2000+AND+dc.date+%3E%3D+1998
+Treffer: 1
+
+#Document 1:
+MARC 020 $a: 3820211470
+ISBNMATCH: 10
+MARC 100 $a: Madl
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Umwandlungssteuerrecht
+TITLEMATCH: 10
+MARC 264 $c: 1999
+YEARMATCH: 10
+MARC 264 $a: Stuttgart
+PLACEMATCH: 5
+MARC 264 $b: Schäffer-Poeschel Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878332
+MARC 035 (IDSSG)000996643: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 50
+Bestmatch: 50, Bestrecordnr: 515878332, bestrecordnr-HSG: 0996643
+Only IFF data available. Best solution from Felix.
+
+NEW ROW: #29
+*********************************************************************************
+ISBN: 3428023919  ISBN-2: 
+Autor: Gutowski --- Autor2: 
+Titel: Projektgebundene-nichtprojektgebundene Kapitalhilfe oder Programmfinanzierung 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Berlin --- Verlag: Duncker & Humblot --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 197-211
+Addendum: in: Voraussetzungen einer globalen Entwicklungspolitik und Beiträge zur Kosten- und Nutzenanalyse, hrsg von Rudolf Meimberg, Schriftenreihe des Vereins für Socialpolitik NF, Bd 59
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Projektgebundene-nichtprojektgebundene%20Kapitalhilfe%20oder%20Programmfinanzierung+AND+dc.anywhere+%3D+Gutowski
+Treffer: 1
+
+#Document 1:
+MARC 100 $a: Gutowski
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Projektgebundene-nichtprojektgebundene Kapitalhilfe oder Programmfinanzierung
+TITLEMATCH: 10
+MARC 773 $t: Voraussetzungen einer globalen Entwicklungspolitik und Beiträge zur Kosten- und Nutzenanalyse, hrsg. von Rudolf Meimberg, Schriftenreihe des Vereins für Socialpolitik NF, Bd. 59
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514571373
+MARC 035 (IDSSG)000996644: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 34
+Bestmatch: 34, Bestrecordnr: 514571373, bestrecordnr-HSG: 0996644
+Only IFF data available. Best solution from Felix.
+
+NEW ROW: #30
+*********************************************************************************
+ISBN: 9783631609866  ISBN-2: 
+Autor: Höller --- Autor2: 
+Titel: Eine kritische Analyse der Unternehmensteuerreform 2008 im historischen Kontext 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Frankfurt a. M.  --- Verlag: Peter Lang  --- Jahr: 2011 --- Materialart: m --- Seitenzahlen: 317
+Sourcetitle: , Sourceauthor: 
+Addendum: Bochumer Schriften zum Steuerrecht, Bd 21
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Eine%20kritische%20Analyse%20der%20Unternehmensteuerreform%202008%20im%20historischen%20Kontext+AND+dc.anywhere+%3D+H%C3%B6ller+AND+dc.date+%3C%3D+2012+AND+dc.date+%3E%3D+2010
+Treffer: 1
+
+#Document 1:
+MARC 020 $a: 9783631609866
+ISBNMATCH: 10
+MARC 100 $a: Höller
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Eine kritische Analyse der Unternehmensteuerreform 2008 im historischen Kontext
+TITLEMATCH: 10
+MARC 246 $a: Analyse der Unternehmensteuerreform 2008 im historischen Kontext
+TITLEMATCH: 15
+MARC 264 $c: 2011
+YEARMATCH: 10
+MARC 264 $a: Frankfurt am Main
+marcfield short match! 
+PLACEMATCH: 2.5
+MARC 264 $b: Lang
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 292542372
+MARC 035 (IDSSG)000996645: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996645, No. of 035-fields: 3 
+Number of 035 fields: 6
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 63.5
+Bestmatch: 63.5, Bestrecordnr: 292542372, bestrecordnr-HSG: 0996645
+RE-IMPORT this document! Better data available from other libraries.
+
+NEW ROW: #31
+*********************************************************************************
+ISBN: 3766702866  ISBN-2: 
+Autor: Laage --- Autor2: 
+Titel: Umwelt und Mittbestimmung 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: München --- Verlag:  Georg D.W. Callway --- Jahr: 1973 --- Materialart: m --- Seitenzahlen: 134
+Sourcetitle: , Sourceauthor: 
+Addendum: Ziele-Beteiligte-Methoden-Organisation der Planung
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Umwelt%20und%20Mittbestimmung+AND+dc.anywhere+%3D+Laage+AND+dc.date+%3C%3D+1974+AND+dc.date+%3E%3D+1972
+Treffer: 1
+
+#Document 1:
+MARC 020 $a: 3766702866
+ISBNMATCH: 10
+MARC 100 $a: Laage
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Umwelt und Mittbestimmung
+TITLEMATCH: 10
+MARC 264 $c: 1973
+YEARMATCH: 10
+MARC 264 $a: München
+PLACEMATCH: 5
+MARC 264 $b: Verlag Georg D.W. Callway
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878359
+MARC 035 (IDSSG)000996646: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 50
+Bestmatch: 50, Bestrecordnr: 515878359, bestrecordnr-HSG: 0996646
+Only IFF data available. Best solution from Felix.
+
+NEW ROW: #32
+*********************************************************************************
+ISBN: 0091199603  ISBN-2: 0091199611
+Autor: Bruton --- Autor2: andere
+Titel: The Spirit of Purpose of Planning 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: London --- Verlag: Hutchinson & Co Publishers --- Jahr: 1974 --- Materialart: m --- Seitenzahlen: 233
+Sourcetitle: , Sourceauthor: 
 Addendum: 
-ZEITSCHRIFT, JAHRBUCH ODER CAHIERS DE DROIT INTERNATIONAL...0000000000000000000000000000000000000
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20Spirit%20of%20Purpose%20of%20Planning+AND+dc.anywhere+%3D+Bruton+AND+dc.date+%3C%3D+1975+AND+dc.date+%3E%3D+1973
+Treffer: 2
+
+#Document 1:
+MARC 020 $a: 
+ISBNMATCH: 0
+MARC 100 $a: Bruton
+AUTHOR-1-MATCH: 10
+MARC 700 $a: andere
+AUTHOR-2-MATCH: 20
+MARC 245 $a: The Spirit of Purpose of Planning
+TITLEMATCH: 10
+MARC 264 $c: 1974
+YEARMATCH: 10
+MARC 264 $a: London
+PLACEMATCH: 5
+MARC 264 $b: Hutchinson & Co Publishers
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 515878367
+MARC 035 (IDSSG)000996647: Abzug fuer IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 50
+
+#Document 2:
+MARC 020 $a: 0091199603
+$a: 0091199611
+ISBNMATCH: 15
+MARC 700 $a: Bruton
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Bruton
+AUTHOR-2-MATCH: 10
+MARC 245 $a: The spirit and purpose of planning
+TITLEMATCH: 0
+MARC 260 $c: 1974
+YEARMATCH: 10
+MARC 260 $a: London
+PLACEMATCH: 5
+MARC 260 $b: Hutchinson
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 146045955
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 71
+Bestmatch: 71, Bestrecordnr: 146045955, bestrecordnr-HSG: 0
+Replace 515878367 with 146045955, see: export.csv
+
+NEW ROW: #33
+*********************************************************************************
+ISBN: 06044021X  ISBN-2: 
+Autor: Lineberry --- Autor2: Sharkansky
+Titel: Urban Politics and Public Policy 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: New York --- Verlag: Harper & Row --- Jahr: 1971 --- Materialart: m --- Seitenzahlen: 362
+Sourcetitle: , Sourceauthor: 
+Addendum: 
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Urban%20Politics%20and%20Public%20Policy+AND+dc.anywhere+%3D+Lineberry+AND+dc.date+%3C%3D+1972+AND+dc.date+%3E%3D+1970
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Urban%20Politics%20and%20Public%20Policy+AND+dc.anywhere+%3D+Lineberry
+Error 102: No records found
+
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+NEW ROW: #34
+*********************************************************************************
+ISBN:   ISBN-2: 
+Autor: Weingart --- Autor2: 
+Titel: Forschungsevaluation 
+Untertitel: aus der Sicht der Wissenschaftsforschung  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Bundesamt für Bildung und Wissenschaft --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 13-37
+Addendum: In: Bundesamt für Bildung und Wissenschaft, Wissenschaftspolitik
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Forschungsevaluation+AND+dc.anywhere+%3D+Weingart
+Treffer: 2
+
+#Document 1:
+MARC 100 $a: Weingart
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Forschungsevaluation - aus der Sicht der Wissenschaftsforschung
+TITLEMATCH: 10
+MARC 260 $a: S.l.
+PLACEMATCH: 0
+MARC 260 $b: s.n.
+PUBLISHERMATCH: 5
+MARC 773 $t: Wissenschaftspolitik
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 345162889
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 40
+
+#Document 2:
+MARC 100 $a: Weingart
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Forschungsevaluation - aus der Sicht der Wissenschaftsforschung
+TITLEMATCH: 10
+MARC 773 $t: Bundesamt für Bildung und Wissenschaft, Wissenschaftspolitik
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 514571381
+MARC 035 (IDSSG)000996649: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 34
+Bestmatch: 40, Bestrecordnr: 345162889, bestrecordnr-HSG: 0
+Replace 514571381 with 345162889, see: export.csv
+
+NEW ROW: #35
+*********************************************************************************
+ISBN: 9789087220884  ISBN-2: 
+Autor: Bullen --- Autor2: 
+Titel: Arms Length Transaction Structures 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Amsterdam --- Verlag: IBFD --- Jahr: 2011 --- Materialart: m --- Seitenzahlen: 878
+Sourcetitle: , Sourceauthor: 
+Addendum: Recognizing and restructuring controlled transactions in transfer pricing
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Arms%20Length%20Transaction%20Structures+AND+dc.anywhere+%3D+Bullen+AND+dc.date+%3C%3D+2012+AND+dc.date+%3E%3D+2010
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+9789087220884
+Treffer mit geaendertem Suchstring: 1
+
+#Document 1:
+MARC 020 $a: 9789087220884
+ISBNMATCH: 10
+MARC 100 $a: Bullen
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Arms length transaction structures
+TITLEMATCH: 10
+MARC 264 $c: 2011
+YEARMATCH: 10
+MARC 264 $a: Amsterdam
+PLACEMATCH: 5
+MARC 264 $b: IBFD
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH: 15
+Swissbibnr.: 263795098
+MARC 035 (IDSSG)000996650: Abzug fuer IFF_MATCH: -15
+Re-Import this document: 0996650, No. of 035-fields: 4 
+Number of 035 fields: 4
+Matchpoints: IDS: 11, Rero: 6, SGBN: 0
+Totalmatch: 67
+Bestmatch: 67, Bestrecordnr: 263795098, bestrecordnr-HSG: 0996650
+RE-IMPORT this document! Better data available from other libraries.
+
+NEW ROW: #36
+*********************************************************************************
+ISBN: 3492019870  ISBN-2: 
+Autor: Mills --- Autor2: 
+Titel: Wirtschaftliche Anreizfaktoren bei der Bekämpfung der Luftverschmutzung 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: München --- Verlag: Piper & Co.  --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: 163-171
+Sourcetitle: Umweltgefährdung und Gesellschaftssystem, S 163 ff, Sourceauthor: Glagow-Manfred Hrsg
+Addendum: In: Glagow-Manfred Hrsg: Umweltgefährdung und Gesellschaftssystem, S 163 ff
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftliche%20Anreizfaktoren%20bei%20der%20Bek%C3%A4mpfung%20der%20Luftverschmutzung+AND+dc.anywhere+%3D+Mills
+Treffer: 1
+
+#Document 1:
+MARC 100 $a: Mills
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Wirtschaftliche Anreizfaktoren bei der Bekämpfung der Luftverschmutzung
+TITLEMATCH: 10
+MARC 773 $t: Glagow,Manfred Hrsg.: Umweltgefährdung und Gesellschaftssystem, S. 163 ff.
+SOURCEMATCH Analytica: 0 
+LDR Materialart: a
+MATERIALMATCH: 15
+Swissbibnr.: 51457139X
+MARC 035 (IDSSG)000996651: Abzug fuer IFF_MATCH: -1
+Number of 035 fields: 1
+Matchpoints: IDS: 0, Rero: 0, SGBN: 0
+Totalmatch: 34
+Bestmatch: 34, Bestrecordnr: 51457139X, bestrecordnr-HSG: 0996651
+Only IFF data available. Best solution from Felix.

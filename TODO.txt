@@ -1,155 +1,144 @@
+TODO:
+- $338 $$b vergleichen, um nicht versehentlich Online-Ressource mit Print zu matchen!! Beispiel:
+ISBN: 3409600019  ISBN-2: 
+Autor: ﻿Mändle --- Autor2: Möller
+Titel: Wirtschaftspolitik in Theorie und Praxis 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Wiesbaden --- Verlag:  Dr. Th. Gabler KG --- Jahr: 1978 --- Materialart: m --- Seitenzahlen: 358
+Sourcetitle: , Sourceauthor: 
+Addendum: Festschrift zum 65 Geburtstag von Hans Georg Schachtschabel
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftspolitik%20in%20Theorie%20und%20Praxis+AND+dc.anywhere+%3D+%EF%BB%BFM%C3%A4ndle+AND+dc.date+%3C%3D+1979+AND+dc.date+%3E%3D+1977
+Treffer: 3
+
+- Loseblattsammlung: Jahr löschen, da Nulltreffer verursacht. Bsp. 
+
+ISBN: 350424061X  ISBN-2: 
+Autor: Rau --- Autor2: Dürrwächter
+Titel: Umsatzsteuergesetz 
+Untertitel: Nachtrag 176 (Mai 18)  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Köln --- Verlag: Dr. Otto Schmidt KG --- Jahr: 2018 --- Materialart: (?^:m|i) --- Seitenzahlen: 
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+350424061X
+Error 102: No records found
+
+- Fehlermeldung: index: cql.serverChoice not supported, Bsp. Nystad, Application of Control and System Theory to Macroeconomics
+
+- verkürzte Suche ergibt manchmal willkürliche Resultate. Bsp.
+
+MARC 260 $a: S.l.
+PLACEMATCH: 0
+MARC 260 $b: s.n.
+marcfield short match! 
+PUBLISHERMATCH: 2.5
+
+ISBN: 3725538875  ISBN-2: 
+Autor: Heini --- Autor2: 
+Titel: Wettbewerbsbeschränkungen auf dem EU-Markt vor schweizerischen Schiedsgerichten 
+Untertitel: zu einem Aufsatz von Roger Zäc  --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Zürich --- Verlag: Schulthess Polygraphischer  --- Jahr:  --- Materialart: (?^:a|b) --- Seitenzahlen: S. 317-324
+Sourcetitle: Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60 Geburtstag, Sourceauthor: Baldi, Marino, Baumann, Max & ua, Hrsg
+Addendum: In: Baldi, Marino, Baumann, Max & ua, Hrsg: Der Einfluss des europäischen Rechts auf die Schweiz, Festschrift für Professor Roger Zäch zum 60 Geburtstag
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wettbewerbsbeschr%C3%A4nkungen%20auf%20dem%20EU-Markt%20vor%20schweizerischen%20Schiedsgerichten+AND+dc.anywhere+%3D+Heini
+Treffer: 4
+
+- allg: suchen mit Titel = anywhere => findet auch Tippfehler (z.B. Diss: Minsch, Ursachen und Verursacherprinzip im Umweltbereich)
+
+
+
+- Falls Bandangaben im Titel etc., sollten diese für Export noch übergeben werden (für Angaben im Exemplar).
+
+
+
+
+
+Nice to have:
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+- Best record ist analytisch -> Uplink muss mitgeliefert werden. Bsp. Cahiers... 9789012390682. wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen!
+- Flick, Aussensteuerrecht, Bd. III -> Loseblattsammlung. Evtl. nach Materialtyp suchen und auf Liste der manuell zu bereinigenden?
+- Statistisches Bundesamt: Zusatz wird nicht beachtet.
+- Lösung für Kommentare o.ä.
+- HSG-Dissertationen beachten.
+- 0 Treffer: dritte Suche starten, aber welche? Nur Titel?
+- Problem, wenn IFF Dubletten hat => 2 Treffer in Suche, die sich ggs. überschreiben. Bsp.
+
+Autor: Borins --- Autor2: Warrington
+Titel: The New Public Administration 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Malta --- Verlag: CAPAM --- Jahr: 1996 --- Materialart: m --- Seitenzahlen: 32
+Sourcetitle: , Sourceauthor: 
+Addendum: Global Challenges, Local Solutions
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20New%20Public%20Administration+AND+dc.anywhere+%3D+Borins+AND+dc.date+%3D+1996
+Treffer: 2
+
+
+00000000000000000000000000000000000000000000000000000000000000000000000000
+
+
 DONE:
+
+- 1 Jahr daneben: sollte einige Punkte geben und auch in Suche zugelassen werden. 
+
+ Bsp. ISBN: 3908567513  ISBN-2: 
+Autor: Neuhaus --- Autor2: Zumoffen
+Titel: Verdeckte Gewinnausschüttungen 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Winterthur --- Verlag: Hans Schellenberg --- Jahr: 1996 --- Materialart: m --- Seitenzahlen: 182
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verdeckte%20Gewinnaussch%C3%BCttungen+AND+dc.anywhere+%3D+Neuhaus+AND+dc.date+%3D+1996
+Treffer: 1
+Es gibt aber noch weitere:
+https://www.swissbib.ch/Search/Results?lookfor=3908567513&type=AllFields
+
+- wenn iff bestes Dok: prüfen, ob noch anders 035-Feld und neu importieren. Dann sind Daten evtl. besser.
 - Seitenzahlen-Auswertung weglassen -> bringt nichts
 - Fehler im Titel: Wenn Hochkomma vorkommen, müssen entfernt werden!!(oder ersetzt mit "") 
 - ISBN-Suche geändert. 
 - IDSSG - IFF-Kata: Punkte abziehen
 - Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
 - wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
-
-TODO:
-
-
-- Materialart auswerten: LDR:
-07 - Bibliographic level
-	
+- Materialart auswerten: LDR:	
 "m" - Monografie/Exemplar
 "a" - Unselbstständiger Teil einer Monografie
 "b" - Unselbstständiger Teil eines fortlaufenden Sammelwerkes 
-"c" - Sammlung 
-"d" - Untereinheit
 "i" - Integrierende Ressource
 "s" - Fortlaufendes Sammelwerk
-	
-
-
 
 - Schreibweisen St. Gallen / St.Gallen (Ort)
 - Verlag: -Verlag wegschneiden
-- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche wird nicht mehr durchgeführt, aber noch nicht auf ISBN geprüft. 
+- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche wird nicht mehr als erstes durchgeführt
 
-- Cahiers de Droit fiscale. Korr. Titel im Zusatz!
-- Best record ist analytisch -> Uplink muss mitgeliefert werden. Bsp. Cahiers... 9789012390682
-
-
-- Flick, Aussensteuerrecht, Bd. III -> Loseblattsammlung. Evtl. nach Materialtyp suchen und auf Liste der manuell zu bereinigenden?
-
-
-- Statistisches Bundesamt: Zusatz wird nicht beachtet.
-- Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden?
-
-
-- Festschriften beachten.
+- Cahiers de Droit fiscale wird als Zeitschrift behandelt. 
 - IFSt-Schrift: auf Zeitschriftenliste => manuell bereinigen, wenn Titel IFSt-Schrift <Nr.>. Es funktioniert, wenn im Titel etwas sinnvolles steht, bsp. 
 IFSt	Wirtschaft und Finanzen im Ausland - Grossbritannien und Dänemark	-	101	Druckerzeugnis	05.12.2003 08:38	IFSt-Heft 066 Bd. 1	Haupt-Bibliothek	-	-	-	-		YL1			Wirtschaftswissenschaften	Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre	Allgemeines
-
-- Cahiers de droit; separat behandeln:
-IFA	Cahiers de Droit Fiscal International - Vol. LXXXIIIa (1998)	90 411 1003 8	900	Druckerzeugnis	05.12.2003 08:38	Steuerliche Behandlung von Verlusten bei Körperschaften	Haupt-Bibliothek	LC 0301 083.1	The Hague / London / Boston	Kluwer	1998		LC			Interkantonales/Internationales Steuerrecht	Internationales Steuerrecht	
-
-- Lösung für Kommentare o.ä.
-- wenn iff bestes Dok: prüfen, ob noch anders 035-Feld und neu importieren. Dann sind Daten evtl. besser.
-
-
-
-
-
+- Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden? => Autor ist nur im 245 $c => search anywhere statt authorsearch
 - wenn gleich viele Punkte: wer hat am meisten angehängte Bibliotheken? (aktuell wird nach IDS  RERO dann SGBN bevorzugt --> willkürlich)
-- Fehlermeldung: index: cql.serverChoice not supported, Bsp. Nystad, Application of Control and System Theory to Macroeconomics
-- HSG-Dissertationen beachten.
-- Separata: ergibt das je was Schlaues?
-- wenn an HSG ein Treffer vorhanden: HSG-Bibnr. liefern statt Swissbibnr
-- wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen!
-- wenn Seitenzahlen mit ff. und/oder Separata: Analytica!
-- wenn seitenzahlen von..bis: (wird bereits in ein flag gschrieben) -- Analytica! Beispiel:
+- Vorzug RERO vor Alex etc.?!! Ja, Rero ist fast immer besser. 
+- Reihenfolge der MAtches ändern (oder eigene Matchvariablen für RERO und SGBN. 
+SGBN braucht mehr Punkte! 
+- wenn Seitenzahlen mit ff. und/oder von..bis: (wird bereits in ein flag gschrieben) -- Analytica! Beispiel:
 Eiermann Rudolf	Ein öffentliches Unternehmen zwischen Markt und Staat: Die Unternehmensverfassung der Deutschen Bundesbahn	3-7890-1683-7	204-213	Druckerzeugnis	05.12.2003 08:38	In: Eichhorn Peter: Unternehmensverfassung in der privaten und öffentlichen Wirtschaft	Haupt-Bibliothek	-	Baden-Baden	Nomos	-		YQ			Wirtschaftswissenschaften	Spezielle Betriebswirtschaftslehren	
 Korrekter Treffer: https://www.swissbib.ch/Record/074813935/Details#tabnav
 773 	0 	U 	|t Unternehmensverfassung in der privaten und öffentlichen Wirtschaft : Festschrift für Erich Potthoff zur Vollendung des 75. Lebensjahres  |d Baden-Baden : Nomos Verlagsges., 1989  |g S. 204-212  |j 204-212  |w (IDSBB)000511269  |9 273769014  
 
-- Autor: Schweiz. Nationalfonds/Programmleitung NFP 'Regionalprobleme'
 - Wenn im titel Bd. oder ähnlich: Zusatz prüfen, dort ist meist der korrekte Titel.
-- erweiterte Suche: Place, Publisher noch bereinigen (encoded??)
-- Vorzug RERO vor Alex etc.?!! Ja, Rero ist fast immer besser. 
-- Reihenfolge der MAtches ändern (oder eigene Matchvariablen für RERO und SGBN. 
-SGBN braucht mehr Punkte! 
 - Wenn 0 Treffer: gibt es dann das Feld "Treffer" überhaupt? Wenn nein: manuell auf 0 setzen. 
-- wenn es in der Trefferliste mehrere IFF_Dokumente hat, dann muss nur 1 ersetzt werden, das relevanteste. Immer das erste?
-- 1 Jahr daneben: sollte einige Punkte geben. 
 - Bei Analytica braucht es mehr Punkte, sonst fallen sie durch (kein Jahr, kein Ort, kein Verlag...) => Stichworte aus Zusatz vergleichen?
+- Problem: Am IFF-Katalogisat haben sich schon andere angehängt. Nun wurde es sogar verbessert... Jetzt sollte man das doch neu importieren, oder?
+- Mehrere IFF-Treffer gefunden, welches ist der "richtigste" => der mit der höchsten Punktzahl. 
+- wenn es in der Trefferliste mehrere IFF_Dokumente hat, dann muss nur 1 ersetzt werden, das relevanteste. Immer das erste?
+- wenn replace by ein HSG-Dokument ist: eigener output!! Muss nicht von Swissbib importiert werden
+- wenn an HSG ein Treffer vorhanden: HSG-Bibnr. liefern zusätzlich zu Swissbibnr 
+Beispiele: 
+ISBN: 9783727285028  ISBN-2: 
+Autor: Marantelli --- Autor2: Opel
+Titel: Einführung in das internationale Steuerrecht der Schweiz 
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+9783727285028
 
 
+ISBN: 9783727285011  ISBN-2: 
+Autor: Lienhard --- Autor2: Mächler
+Titel: Öffentliches Finanzrecht 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Stämpfli  AG --- Jahr: 2017 --- Materialart: m --- Seitenzahlen: 477
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+%C3%96ffentliches%20Finanzrecht+AND+dc.anywhere+%3D+Lienhard+AND+dc.date+%3D+2017
 
-------------
-
-
-!!!!!!!!!!!!
-Problem: Am IFF-Katalogisat haben sich schon andere angehängt. Nun wurde es sogar verbessert... Jetzt sollte man das doch neu importieren, oder?
-
-Bsp. 
-
-NEW ROW: #12
-*********************************************************************************
-ISBN: 3631328001
-Autor: Meerpohl --- Autor2: 
-Titel: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Frankfurt am Main - Verlag: Peter Lang - Jahr: 1998 - Materialart: m
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Mutter-%2FTochter-Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3D+1998
-Treffer: 
-URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3631328001
-Treffer mit geaendertem Suchstring: 1
-
-#Document 1:
-Feld 100a: Meerpohl
-AUTHORMATCH: 10
-Feld 245a: Die Mutter-/Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten
-TITLEMATCH: 10
-Feld 008: 1998
-YEARMATCH: 10
-Feld 260a: Frankfurt am Main
-PLACEMATCH: 5
-Feld 260b: Lang
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 264946782
-Feld 035a: (NEBIS)001910902
-IDSMATCH: 9
-Feld 035a: (SNL)991016050069703976
-Feld 035a: (IDSSG)000991061
-Abzug fuer IFF_MATCH: 15
-Feld 035a: (Sz)1163968-41snl_51
-Feld 035a: (Sz)vtls001163968
-Feld 035a: (Sz)001163968
-Totalmatch: 44
-Bestmatch: 44, Bestrecordnr: 264946782
-Only IFF data available. Best solution from Felix.
-
-NEW ROW: #18
-*********************************************************************************
-
-
-
-Autor: Fries --- Autor2: 
-Titel: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz --- Untertitel:  --- Titeldatum:  --- Band: 
-Ort: Freiburg - Verlag: Universität - Jahr: 1997 - Materialart: m
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20%C3%BCberkantonale%20und%20%C3%BCberdi%C3%B6zesane%20Finanzierung%20der%20r%C3%B6misch-katholischen%20Kirche%20in%20der%20Schweiz+AND+dc.anywhere+%3D+Fries+AND+dc.date+%3D+1997
-Treffer: 1
-
-#Document 1:
-Feld 100a: Fries
-AUTHORMATCH: 10
-Feld 245a: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
-TITLEMATCH: 10
-Feld 008: 1997
-YEARMATCH: 10
-Feld 260a: [Freiburg/Schweiz]
-PLACEMATCH: 5
-Feld 260b: [s.n.]
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH: 15
-Swissbibnr.: 515929271
-Feld 035a: (RERO)R222931560
-Feld 035a: (IDSSG)000991066
-Abzug fuer IFF_MATCH: 15
-Totalmatch: 35
-Bestmatch: 35, Bestrecordnr: 515929271
-Only IFF data available. Best solution from Felix.

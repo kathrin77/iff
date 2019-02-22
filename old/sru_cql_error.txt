@@ -13,3 +13,7 @@ http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSche
 http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Tax%20and%20Trade%20Guide%20+AND+dc.anywhere+%3D+Arthur%20Andersen%20%26%20Co+AND+dc.date+%3D+1966
 
 http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Tax%20and%20Trade%20Guide%20+AND+dc.anywhere+%3D+Arthur%20Andersen%20%26%20Co
+
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Changes%20in%20Budget-Policy%20Goals%20and%20Instruments+AND+dc.anywhere+%3D+Geyer
+
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Changes%20in%20Budget-Policy%20Goals%20and%20Instruments+AND+dc.anywhere+%3D+Geyer

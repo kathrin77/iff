@@ -7,6 +7,7 @@ use Text::CSV;
 use String::Util qw(trim);
 use XML::LibXML;
 use XML::LibXML::XPathContext;
+#use XML::LibXML::Element; 
 use Data::Dumper;
 use Getopt::Long;
 use URI::Escape;
@@ -47,14 +48,15 @@ my $loseblatt = qr/m|i/;
 
 
 # testfiles
-#my $test  = "data/test30.csv";     # 30 Dokumente
+my $test  = "data/test30.csv";     # 30 Dokumente
 #my $test  = "data/test50.csv";     # 50 Dokumente
-my $test = "data/test200.csv";    # 200 Dokumente
+#my $test = "data/test200.csv";    # 200 Dokumente
 #my $test = "data/test_difficult.csv";    # tricky documents
 
 # input, output, filehandles:
 my $csv;
 my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_re_import, $fh_hsg_duplicate, $fh_journals, $fh_iff_doc_missing);
+my ($fh_XML, $export);
 
 # Swissbib SRU-Service for the complete content of Swissbib: MARC XML-swissbib (less namespaces), default = 10 records
 my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve'.
@@ -78,7 +80,7 @@ my (@authors, $author, $author2, @authority, $author_size, $escaped_author);
 my (@titles, $title, $subtitle, $volume, $titledate, $escaped_title, $vol_title);
 my ($isbn, $isbn2, $isbnlength, $source, $sourcetitle, $sourceauthor, $materialtype, $escaped_source);
 my ($pages, $material, $created, $addendum, $location, $callno, $place, $publisher, $year, $yearminus1, $yearplus1, $note);
-my ($tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3);
+my ($code1, $code2, $code3, $subj1, $subj2, $subj3);
 
 # Flags
 my ($HAS_ISBN, $HAS_ISBN2, $HAS_AUTHOR, $HAS_AUTHOR2, $HAS_AUTHORITY, $HAS_SUBTITLE, $HAS_VOLUME, $HAS_TITLEDATE);
@@ -129,6 +131,7 @@ open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 open $fh_export, ">:encoding(utf8)", "export.csv"  or die "export.csv: $!";
 open $fh_re_import, ">:encoding(utf8)", "re_import.csv"  or die "re_import.csv: $!";
 open $fh_hsg_duplicate, ">:encoding(utf8)", "hsg_duplicate.csv"  or die "hsg_duplicate.csv: $!";
+open $fh_XML, ">:encoding(utf8)", "XML_output.xml"  or die "XML_output.xml: $!";
 
 # read each line and do...:
 while ( $row = $csv->getline($fh_in) ) {
@@ -139,7 +142,7 @@ while ( $row = $csv->getline($fh_in) ) {
     $author = $row->[0]; $title = $row->[1]; $isbn = $row->[2]; $pages = $row->[3]; $material = $row->[4]; $addendum = $row->[6]; 
     $callno = $row->[8]; $place = $row->[9]; $publisher = $row->[10]; $year = $row->[11]; $subj1 = $row->[16];
     $location = $row->[7]; $note = $row->[12]; 
-    $tsignature = $row->[13]; $tsignature_1 = $row->[14]; $tsignature_2 = $row->[15]; $subj2 = $row->[17]; $subj3 = $row->[18];
+    $code1 = $row->[13]; $code2 = $row->[14]; $code3 = $row->[15]; $subj2 = $row->[17]; $subj3 = $row->[18];
     
     resetFlags(); #reset all flags and counters
     
@@ -875,7 +878,7 @@ while ( $row = $csv->getline($fh_in) ) {
                             print $fh_report "$MARC035a: Abzug fuer IFF_MATCH: -". $IFFMATCH . "\n";
                             
                             if ($MARC035_counter>1) { # other libraries have added to this bibrecord since upload from IFF => reimport
-                            	print $fh_report "Re-Import this document: $bibnr, No. of 035-fields: $MARC035_counter \n";
+                            	#print $fh_report "Re-Import this document: $bibnr, No. of 035-fields: $MARC035_counter \n";
                             	$re_import = 1;
                             	
                             }
@@ -972,9 +975,14 @@ while ( $row = $csv->getline($fh_in) ) {
 	                	if ($re_import) { # IFF-replace can be improved by reimporting
 		                    $iff_update++;
 		                    print $fh_report $re_import_M;
-		                    push @re_import, $bibnr, $MARC001, $callno;
-		                    push @re_import, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
-		                    push @re_import, "\n";
+		                    $row->[19] = "reimport";
+		                    $row->[20] = $iff2replace[1]; #old bibnr 
+		                    $row->[21] = $iff2replace[0]; #MARC001 to reimport
+		                    push @re_import, $row;
+		                    $export = createMARCXML($bestmatch[2],$iff2replace[1]);
+		                    
+		                    print $fh_XML $export;
+		                    
 		                } else {
 		                    $iff_only_nr++;
 		                   	print $fh_report $iff_only_M;
@@ -986,16 +994,23 @@ while ( $row = $csv->getline($fh_in) ) {
          				# export in separate file
          				$hsg_duplicate_nr++;
          				print $fh_report $hsg_duplicate_M. "Replace $iff2replace[1] with $bestmatch[3]\n";
-	                    push @hsg_duplicate, $iff2replace[1], $bestmatch[3], $callno;
-	                    push @hsg_duplicate, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
-	                    push @hsg_duplicate, "\r";
+
+	                    $row->[19] = "hsg duplicate";
+		                $row->[20] = $iff2replace[1]; #bibnr old
+		                $row->[21] = $bestmatch[3]; #bibnr HSG
+		                push @hsg_duplicate, $row;
          				
          			} else {			
          				$replace_nr++;
 	                    print $fh_report $replace_M ."Replace $iff2replace[0] with $bestmatch[1]\n";
-	                    push @export, $iff2replace[1], $bestmatch[1], $callno;
-	                    push @export, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
-	                    push @export, "\r";
+	                    
+	                    $row->[19] = "export";
+		                $row->[20] = $iff2replace[1]; #bibnr old
+		                $row->[21] = $bestmatch[1]; #MARC001 new
+		                push @export, $row;
+		                $export = createMARCXML($bestmatch[2],$iff2replace[1]);
+		                    
+		                print $fh_XML $export;
          			}
 
                 }
@@ -1003,9 +1018,10 @@ while ( $row = $csv->getline($fh_in) ) {
             } else { # no IFF-replace was found
             	$replace_m_nr++;
                 print $fh_report "$iff_doc_missing_E. Output: replace CSV line $rowcounter with $bestmatch[1]\n";
-                push @iff_doc_missing, $rowcounter, $bestmatch[1], $callno;
-                push @iff_doc_missing, $tsignature, $tsignature_1, $tsignature_2, $subj1, $subj2, $subj3;
-                push @iff_doc_missing, "\r";;
+                $row->[19] = "iff_doc_missing";
+		        $row->[20] = $rowcounter; # row number in original CSV
+		        $row->[21] = $bestmatch[1]; #MARC001 new 
+                push @iff_doc_missing, $row;
             }
 
         }
@@ -1023,10 +1039,10 @@ close $fh_in;
 $csv->say($fh_notfound, $_) for @notfound;
 $csv->say($fh_unsure, $_) for @unsure;
 $csv->say($fh_journals, $_) for @journals;
-$csv->say($fh_iff_doc_missing, $_) for \@iff_doc_missing;
-$csv->say($fh_re_import, $_) for \@re_import;
-$csv->say($fh_export, $_) for \@export;
-$csv->say($fh_hsg_duplicate, $_) for \@hsg_duplicate;
+$csv->say($fh_iff_doc_missing, $_) for @iff_doc_missing;
+$csv->say($fh_re_import, $_) for @re_import;
+$csv->say($fh_export, $_) for @export;
+$csv->say($fh_hsg_duplicate, $_) for @hsg_duplicate;
 #print Dumper (@export);
 
 close $fh_notfound or die "notfound.csv: $!";
@@ -1061,7 +1077,7 @@ print "\nRECORDS PROCESSED: $rowcounter     ---    TIME ELAPSED: "; printf('%.2f
 
 
 
-####################
+#####################
 
 # SUBROUTINES
 
@@ -1106,10 +1122,12 @@ sub emptyVariables {
     $pages= ''; $source='';     $sourcetitle=''; $sourceauthor=''; $material= ''; $escaped_source='';
     $addendum= '';     $location= '';     $callno= '';     $place= '';     $publisher= '';
     $year= '';    $yearminus1 = ''; $yearplus1 = '';  $note= '';
-    $tsignature= ''; $tsignature_1= ''; $tsignature_2 = ''; $subj1= ''; $subj2= ''; $subj3= '';
+    $code1= ''; $code2= ''; $code3 = ''; $subj1= ''; $subj2= ''; $subj3= '';
     $materialtype = $monograph; # default: most documents are monographs
 
 }
+
+# check for MARC tag
 
 sub hasTag {
     my $tag = $_[0];    # Marc tag
@@ -1125,6 +1143,8 @@ sub hasTag {
     }
 
 }
+
+# get MARC content, compare to CSV content and return match value
 
 sub getMatchValue {
     my $code   = $_[0];    #subfield
@@ -1147,5 +1167,71 @@ sub getMatchValue {
     } else {$matchvalue = 0;}
     
     return $matchvalue;
+	
+}
+
+# create xml file for export / re-import
+
+sub createMARCXML {
+	
+	my $rec = $_[0]; # record
+	my $replace_id = $_[1]; #$bibnr
+	my $delete;
+	my $append;
+	
+	#my $replace_tag = $rec->createElement('replace_ID');
+	#$replace_tag->appendText($replace_id);
+	#$rec->insertBefore($replace_tag,'leader');
+	
+    # TODO: LDR anpassen? ZB Katalevel?
+    # delete all controllfields except 008?
+    for $delete ($rec->findnodes('./controlfield[@tag>="001" and @tag<="007"]')) {
+    	$delete->unbindNode();
+    }
+
+    # delete all 035 fields     	# TODO: leave OCLCNR, or leave all of them?
+    for $delete ($rec->findnodes('./datafield[@tag="035"]')) {
+    	$delete->unbindNode() ; #unless /OCoLC/
+    }
+    # append our code to 040: SzZuIDS HSG
+    # TODO: also $b ger, $e rda?    	
+    for $append ($rec-> findnodes('./datafield[@tag="040"]')) {
+    	$append->appendWellBalancedChunk('<subfield code="d">SzZuIDS HSG</subfield>');
+    }
+    # TODO deal with linking fields, eg. 490, 77X, 78X delete $w, $9
+    for $delete ($rec-> findnodes('./datafield[@tag="773"]')) {
+    	#$delete->unbindNode('./subfield[@code="w"]'); #this is not working
+    	#$delete->removeChild('./subfield[@code="w"]');  #this is not working
+    	
+    }
+    	
+    # create 690 fields with keywords #TODO correct utf-8 (umlaut)
+    $rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D"><subfield code="8">'.$code1.'</subfield>'.
+    '<subfield code="a">'.$subj1.'</subfield></datafield>'); # TODO: keywords from mapping table 
+    	
+    # delete all 949 fields    	# delete all 89# fields (Swissbib internal) # which 900-Fields to keep?
+	for $delete ($rec->findnodes('./datafield[@tag="949"]')) {
+    	$delete->unbindNode();
+    }  	    	
+
+	for $delete ($rec->findnodes('./datafield[@tag>="890" and @tag<="899"]')) {
+    	$delete->unbindNode();
+    }
+    for $delete ($rec->findnodes('./datafield[@tag="986"]')) {
+    	$delete->unbindNode();
+    }
+    	
+    # TODO: 950-fields, what about them? convert to 690?
+    for $delete ($rec->findnodes('./datafield[@tag="950"]')) {
+    	$delete->unbindNode() ; 
+    }
+   
+    
+
+    # create a new 949 field with callno. 
+    $rec->appendWellBalancedChunk('<datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield>'.
+    '<subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">'.$callno.'</subfield></datafield>');
+    	
+    return ('<replace_id>'.$replace_id.'</replace_id>'.$rec->toString);
 	
 }

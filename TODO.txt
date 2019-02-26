@@ -1,6 +1,5 @@
-TODO:
+﻿TODO:
 
-- genaue Nummern IFF-Einspielung (von:... bis:....
 
 - $338 $$b vergleichen, um nicht versehentlich Online-Ressource mit Print zu matchen!! (FUNKTIONIERT NOCH NICHT)
 nc = Band
@@ -105,6 +104,25 @@ PUBLISHERMATCH: 2.5
 
 
 DONE:
+
+- genaue Nummern IFF-Einspielung (von: 000991054 bis: 001000238)
+
+Anzahl betroffener Felder:    9120
+Anzahl veraenderter Records:  0
+Anzahl Commits:               0
+aleph@ux-aleph(a23_1):~/u23_1/hsg_proc>
+
+000991054: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991055: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991056: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991057: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+.....
+
+001000235: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000236: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000237: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000238: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+
 
 - wenn title und authormatch beide 0: automatisch auf unsure.csv?
 - allg: suchen mit Titel = anywhere => findet auch Tippfehler (z.B. Diss: Minsch, Ursachen und Verursacherprinzip im Umweltbereich)

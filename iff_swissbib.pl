@@ -7,7 +7,6 @@ use Text::CSV;
 use String::Util qw(trim);
 use XML::LibXML;
 use XML::LibXML::XPathContext;
-#use XML::LibXML::Element; 
 use Data::Dumper;
 use Getopt::Long;
 use URI::Escape;
@@ -25,7 +24,7 @@ my $starttime = time();
 ##########################################################
 
 my $row;
-my (@notfound, @unsure, @journals, @iff_doc_missing, @iff2replace, @export, @re_import, @hsg_duplicate);
+my (@notfound, @unsure, @journals, @iff_doc_missing, @iff2replace, @export, @hsg_duplicate);
 
 my ($rowcounter, $found_nr, $notfound_nr, $unsure_nr, $journal_nr);
 my ($replace_nr, $hsg_duplicate_nr, $MARC035_counter, $replace_m_nr, $bestcase_nr, $iff_only_nr, $iff_update, $re_import);
@@ -37,7 +36,7 @@ my $HYPHEN_ONLY = qr/\A\-/;       # a '-' in the beginning
 my $EMPTY_CELL  = qr/\A\Z/;       #nothing in the cell
 my $TITLE_SPLIT = qr/\s{2,3}|\s-\s|\.|:/;    #min 2, max 3 whitespaces / ' - ' / ':' / '.'
 my $NO_NAME =  qr/\A(NN|N\.N\.|N\.\sN\.)/; # contains only nn or n.n. or n. n.
-my $CLEAN_TITLE = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/ ; #clean following characters: .()'"/+[]?
+my $CLEAN_TITLE = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/ ; #clean following characters: .()'"/+[]?-
 my $CLEAN_PLACE = qr/D\.C\.|a\.M\.|a\/M/; #D.C., a.M.
 
 # material codes:
@@ -55,7 +54,7 @@ my $test  = "data/test30.csv";     # 30 Dokumente
 
 # input, output, filehandles:
 my $csv;
-my ($fh_in, $fh_notfound, $fh_unsure, $fh_report, $fh_export, $fh_re_import, $fh_hsg_duplicate, $fh_journals, $fh_iff_doc_missing);
+my ($fh_in, $fh_notfound, $fh_report, $fh_export, $fh_hsg_duplicate, $fh_journals);
 my ($fh_XML, $export);
 
 # Swissbib SRU-Service for the complete content of Swissbib: MARC XML-swissbib (less namespaces), default = 10 records
@@ -64,7 +63,7 @@ my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=se
 
 # needed queries
 my $isbnquery   = '+dc.identifier+%3D+';
-my $titlequery  = '+dc.title+%3D+';
+#my $titlequery  = '+dc.title+%3D+';
 #my $yearquery   = '+dc.date+%3D+';
 my $year_st_query = '+dc.date+%3C%3D+'; # <=
 my $year_gt_query = '+dc.date+%3E%3D+'; # >=
@@ -111,6 +110,18 @@ my $replace_M = 			"Msg 203: Match found. See export.csv, ";
 my $bestcase_M = 			"Msg 204: Best case scenario: IFF and HSG already matched!\n";
 my $iff_only_M =			"Msg 205: IFF Record by Felix is the only match - no improvement possible.\n";
 
+# build subject table: (c) Felix Leu 2018
+my $subj_map = "iff_subject_table.map";
+my %subj_hash = ();        # $subj_hash{'1 GB'} ist 'Finanzrecht'
+
+open(MAP, "<$subj_map") or   die "Kann Datei $subj_map nicht oeffnen \n";
+binmode (MAP, ':encoding(iso-8859-1)');   
+while (<MAP>) {
+   my ($level, $code, $subject) = /^(\S+)\s+(\S+)\s+(.*)$/;
+   $subj_hash{"$code $level"}  = $subject;
+}
+close MAP;
+
 
 ##########################################################
 # 	READ AND TREAT THE DATA
@@ -124,14 +135,11 @@ $csv =
 
 open $fh_in, "<:encoding(utf8)", $test or die "$test: $!";
 open $fh_notfound, ">:encoding(utf8)", "notfound.csv" or die "notfound.csv: $!";
-open $fh_unsure,   ">:encoding(utf8)", "unsure.csv"   or die "unsure.csv: $!";
 open $fh_journals, ">:encoding(utf8)", "journals.csv"   or die "journals.csv: $!";
-open $fh_iff_doc_missing, ">:encoding(utf8)", "iff_doc_missing.csv"   or die "iff_doc_missing.csv: $!";
 open $fh_report,   ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 open $fh_export, ">:encoding(utf8)", "export.csv"  or die "export.csv: $!";
-open $fh_re_import, ">:encoding(utf8)", "re_import.csv"  or die "re_import.csv: $!";
 open $fh_hsg_duplicate, ">:encoding(utf8)", "hsg_duplicate.csv"  or die "hsg_duplicate.csv: $!";
-open $fh_XML, ">:encoding(utf8)", "XML_output.xml"  or die "XML_output.xml: $!";
+open $fh_XML, ">:encoding(utf8)", "metadata.xml"  or die "metadata.xml: $!";
 
 # read each line and do...:
 while ( $row = $csv->getline($fh_in) ) {
@@ -257,7 +265,6 @@ while ( $row = $csv->getline($fh_in) ) {
     ##########################
     
     $addendum = trim($addendum);
-    $addendum =~s/$CLEAN_TITLE//g;
     
 	if ( $addendum =~ /^(Band|Bd|Vol|Reg|Gen|Teil|d{1}\sTeil|I{1,3}\sTeil)/)
     {
@@ -271,6 +278,7 @@ while ( $row = $csv->getline($fh_in) ) {
     	$volume = (split / - /, $addendum, 2)[1];
     	$vol_title = (split / - /, $addendum, 2)[0];
     }
+    $addendum =~s/$CLEAN_TITLE//g;
 
     ##########################
     # Deal with TITLE:
@@ -281,6 +289,10 @@ while ( $row = $csv->getline($fh_in) ) {
     
     #check for eidg. in title:  replace with correct umlaut:     
     $title =~ s/eidg\./eidgen\xf6ssischen/i;
+    
+    # check for St. Gall... in title
+    $title =~ s/st\.gall/st gall/i;
+    
 	#check if title has volume information that needs to be removed: (usually: ... - Bd. ...)
     if ( $title =~
         /-\sBd|-\sVol|-\sReg|-\sGen|-\sTeil|-\s\d{1}\.\sTeil|-\sI{1,3}\.\sTeil/
@@ -333,6 +345,7 @@ while ( $row = $csv->getline($fh_in) ) {
         $HAS_TITLEDATE = 1;
     }
     $title =~ s/$CLEAN_TITLE//g;
+    $title =~ s/\-/ /g;
     
     print $fh_report "Titel: $title";
     if (defined $subtitle) {print $fh_report " -- Untertitel: $subtitle";}
@@ -414,7 +427,10 @@ while ( $row = $csv->getline($fh_in) ) {
     # Deal with Material type
     ##########################
     
-    if (($subj1 =~ /Zeitschrift/)  || ($material =~/cd-rom/i)|| ($title =~ /journal|jahrbuch|yearbook|cahiers de droit fiscal international|ifst-schrift|Steuerentscheid StE|Amtsblatt der Europ.ischen Gemeinschaften/i)) {
+    if (($subj1 =~ /Zeitschrift/)  || ($material =~/cd-rom/i)|| 
+    ($title =~ /journal|jahrbuch|yearbook|Schweizerisches Steuer-Lexikon|
+    Internationale Steuern|cahiers de droit fiscal international|
+    ifst-schrift|Steuerentscheid StE|Amtsblatt der Europ.ischen Gemeinschaften/i)) {
         $IS_SERIAL = 1; 
         $materialtype = $serial;
     }
@@ -553,6 +569,7 @@ while ( $row = $csv->getline($fh_in) ) {
             print $fh_report "$notfound_E\n". 
             "ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n\n";
             $notfound_nr++;
+            $row->[19] = "notfound";
             push @notfound, $row;
         }
 
@@ -580,6 +597,7 @@ while ( $row = $csv->getline($fh_in) ) {
             print $fh_report "$toomanyfound_E\n";
             print $fh_report "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
             $notfound_nr++;
+            $row->[19] = "notfound";
             push @notfound, $row;
             next;
         }
@@ -605,6 +623,7 @@ while ( $row = $csv->getline($fh_in) ) {
             print $fh_report "$toomanyfound_E\n".
             print $fh_report "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO\n\n";
             $notfound_nr++;
+            $row->[19] = "notfound";
             push @notfound, $row;
         }
 
@@ -860,9 +879,9 @@ while ( $row = $csv->getline($fh_in) ) {
 
                     if ( $MARC035a =~ /IDSSG/ ) {    # book found in IDSSG
                         $bibnr = substr $MARC035a,-7;    #only the last 7 numbers
-                        if ( $bibnr > 990000 ) {   #this is an IFF record
+                        if ( $bibnr >= 991054 ) {   #this is an IFF record
                         	if ($numberofrecords == 1 || $IS_ANALYTICA) {
-                        		$IFFMATCH = 1;        # few negative points if this is the only result OR if analytica
+                        		$IFFMATCH = 0;        # no negative points if this is the only result OR if analytica
                         	} else {
                         		$IFFMATCH = 15;        # negative points                        		
                         	}
@@ -978,8 +997,8 @@ while ( $row = $csv->getline($fh_in) ) {
 		                    $row->[19] = "reimport";
 		                    $row->[20] = $iff2replace[1]; #old bibnr 
 		                    $row->[21] = $iff2replace[0]; #MARC001 to reimport
-		                    push @re_import, $row;
-		                    $export = createMARCXML($bestmatch[2],$iff2replace[1]);
+		                    push @export, $row;
+		                    $export = createMARCXML($bestmatch[2]);
 		                    
 		                    print $fh_XML $export;
 		                    
@@ -1008,7 +1027,7 @@ while ( $row = $csv->getline($fh_in) ) {
 		                $row->[20] = $iff2replace[1]; #bibnr old
 		                $row->[21] = $bestmatch[1]; #MARC001 new
 		                push @export, $row;
-		                $export = createMARCXML($bestmatch[2],$iff2replace[1]);
+		                $export = createMARCXML($bestmatch[2]);
 		                    
 		                print $fh_XML $export;
          			}
@@ -1028,6 +1047,7 @@ while ( $row = $csv->getline($fh_in) ) {
         else { # no good match was found
         	$unsure_nr++;
             print $fh_report $no_bestmatch_E;
+            $row->[19]  = "unsure";
             push @unsure, $row;
         }
     }
@@ -1037,40 +1057,36 @@ $csv->eof or $csv->error_diag();
 close $fh_in;
 
 $csv->say($fh_notfound, $_) for @notfound;
-$csv->say($fh_unsure, $_) for @unsure;
+$csv->say($fh_notfound, $_) for @unsure;
 $csv->say($fh_journals, $_) for @journals;
-$csv->say($fh_iff_doc_missing, $_) for @iff_doc_missing;
-$csv->say($fh_re_import, $_) for @re_import;
+$csv->say($fh_notfound, $_) for @iff_doc_missing;
 $csv->say($fh_export, $_) for @export;
 $csv->say($fh_hsg_duplicate, $_) for @hsg_duplicate;
-#print Dumper (@export);
 
 close $fh_notfound or die "notfound.csv: $!";
-close $fh_unsure   or die "unsure.csv: $!";
 close $fh_journals or die "journals.csv: $!";
-close $fh_iff_doc_missing or die "iff_doc_missing.csv: $!";
 close $fh_report   or die "report.txt: $!";
 close $fh_export   or die "export.csv: $!";
-close $fh_re_import or die "re_import.csv: $!";
 close $fh_hsg_duplicate or die "hsg_duplicate.csv: $!";
+close $fh_XML		or die "metadata.xml: $!";
 
 my $endtime = time();
 my $timeelapsed = $endtime - $starttime;
 
 print "Total not found (notfound.csv):    $notfound_nr\n";
-print "Total unsure (unsure.csv):         $unsure_nr \n";
+print "Total unsure (notfound.csv):       $unsure_nr \n";
 print "Total journals (journals.csv):     $journal_nr \n";
 print "Total found:                       $found_nr \n";
 
 print "---------------------------------------------------------------------------------------\nTODO with found documents: \n";
 print "Replace with document from Swissbib (export.csv):         $replace_nr \n";
 print "Replace with document from HSB01 (hsg_duplicates.csv):    $hsg_duplicate_nr \n";
-print "Replace where IFF-record not found (iff_doc_missing.csv): $replace_m_nr\n";
-print "Replace by re-importing from Swissbib: (re_import.csv)    $iff_update\n";
+print "Replace where IFF-record not found (notfound.csv):        $replace_m_nr\n";
+print "Replace by re-importing from Swissbib: (export.csv)       $iff_update\n";
 print "---------------------------------------------------------------------------------------\nFound documents without any action needed: \n";
 print "Already matched:                                          $bestcase_nr\n";
 print "Records cannot be improved:                               $iff_only_nr\n";
-print "\nRECORDS PROCESSED: $rowcounter     ---    TIME ELAPSED: "; printf('%.2f',$timeelapsed);
+print "\nRECORDS PROCESSED: $rowcounter     ---                  TIME ELAPSED: "; printf('%.2f',$timeelapsed);
 
 
 
@@ -1175,63 +1191,72 @@ sub getMatchValue {
 sub createMARCXML {
 	
 	my $rec = $_[0]; # record
-	my $replace_id = $_[1]; #$bibnr
 	my $delete;
 	my $append;
+	my $subjectstring1 = '';
+	my $subjectstring2 = '';
+	my $subjectstring3 = '';
 	
-	#my $replace_tag = $rec->createElement('replace_ID');
-	#$replace_tag->appendText($replace_id);
-	#$rec->insertBefore($replace_tag,'leader');
 	
-    # TODO: LDR anpassen? ZB Katalevel?
-    # delete all controllfields except 008?
-    for $delete ($rec->findnodes('./controlfield[@tag>="001" and @tag<="007"]')) {
-    	$delete->unbindNode();
-    }
-
-    # delete all 035 fields     	# TODO: leave OCLCNR, or leave all of them?
-    for $delete ($rec->findnodes('./datafield[@tag="035"]')) {
-    	$delete->unbindNode() ; #unless /OCoLC/
-    }
-    # append our code to 040: SzZuIDS HSG
-    # TODO: also $b ger, $e rda?    	
+    # append our code to 040: SzZuIDS HSG 	
     for $append ($rec-> findnodes('./datafield[@tag="040"]')) {
     	$append->appendWellBalancedChunk('<subfield code="d">SzZuIDS HSG</subfield>');
     }
-    # TODO deal with linking fields, eg. 490, 77X, 78X delete $w, $9
-    for $delete ($rec-> findnodes('./datafield[@tag="773"]')) {
-    	#$delete->unbindNode('./subfield[@code="w"]'); #this is not working
-    	#$delete->removeChild('./subfield[@code="w"]');  #this is not working
     	
-    }
-    	
-    # create 690 fields with keywords #TODO correct utf-8 (umlaut)
-    $rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D"><subfield code="8">'.$code1.'</subfield>'.
-    '<subfield code="a">'.$subj1.'</subfield></datafield>'); # TODO: keywords from mapping table 
-    	
-    # delete all 949 fields    	# delete all 89# fields (Swissbib internal) # which 900-Fields to keep?
+    # delete all 949 fields    
 	for $delete ($rec->findnodes('./datafield[@tag="949"]')) {
     	$delete->unbindNode();
     }  	    	
-
-	for $delete ($rec->findnodes('./datafield[@tag>="890" and @tag<="899"]')) {
-    	$delete->unbindNode();
-    }
-    for $delete ($rec->findnodes('./datafield[@tag="986"]')) {
-    	$delete->unbindNode();
-    }
-    	
-    # TODO: 950-fields, what about them? convert to 690?
-    for $delete ($rec->findnodes('./datafield[@tag="950"]')) {
-    	$delete->unbindNode() ; 
-    }
-   
     
-
-    # create a new 949 field with callno. 
-    $rec->appendWellBalancedChunk('<datafield tag="949" ind1=" " ind2=" "><subfield code="B">IDSSG</subfield>'.
-    '<subfield code="F">HIFF</subfield><subfield code="c">BIB</subfield><subfield code="j">'.$callno.'</subfield></datafield>');
+    # create 690 fields with keywords 
+    $subjectstring1 = $subj_hash{"$code1 1"};
+    if (exists $subj_hash{"$code1 2"}) {
+         $subjectstring1 .= " : ".$subj_hash{"$code1 2"};
+         if (exists $subj_hash{"$code1 3"})   { 
+         	$subjectstring1 .= " : ".$subj_hash{"$code1 3"};
+         }
+    }     
+    
+    $rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
+    	<subfield code="8">'.$code1.'</subfield>
+    	<subfield code="a">'.$subjectstring1.'</subfield>
+    	<subfield code="2">HSG-IFF</subfield>
+    </datafield>');   
+    
+    if ($code2 !~/$EMPTY_CELL/) {
+    	$subjectstring2 = $subj_hash{"$code2 1"};
+    	if (exists $subj_hash{"$code2 2"}) {
+         	$subjectstring2 += " : ".$subj_hash{"$code2 2"};
+         	if (exists $subj_hash{"$code2 3"})   { 
+       			$subjectstring2 += " : ".$subj_hash{"$code2 3"};
+         	}
+    	}     
+    
+    	$rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
+    		<subfield code="8">'.$code2.'</subfield>
+    		<subfield code="a">'.$subjectstring2.'</subfield>
+    		<subfield code="2">HSG-IFF</subfield>
+    	</datafield>'); 
     	
-    return ('<replace_id>'.$replace_id.'</replace_id>'.$rec->toString);
+    } 
+    
+	if ($code3 !~/$EMPTY_CELL/) {
+    	$subjectstring3 = $subj_hash{"$code3 1"};
+    	if (exists $subj_hash{"$code3 2"}) {
+         	$subjectstring3 += " : ".$subj_hash{"$code3 2"};
+         	if (exists $subj_hash{"$code3 3"})   { 
+       			$subjectstring3 += " : ".$subj_hash{"$code3 3"};
+         	}
+    	}     
+    
+    	$rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
+    		<subfield code="8">'.$code3.'</subfield>
+    		<subfield code="a">'.$subjectstring3.'</subfield>
+    		<subfield code="2">HSG-IFF</subfield>
+    	</datafield>'); 
+    	
+    }     
+
+    return ($rec->toString);
 	
 }

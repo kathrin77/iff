@@ -3,12 +3,12 @@ NEW ROW: #1
 *********************************************************************************
 ISBN: 9782839914147  ISBN-2: 
 Autor: ﻿Yerly --- Autor2: 
-Titel: The Political Economy of Budget Rules in the twenty-six Swiss Cantons -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: The Political Economy of Budget Rules in the twenty six Swiss Cantons -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Fribourg --- Verlag: Uni Fribourg --- Jahr: 2013 --- Materialart: m --- Seitenzahlen: 399
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: Institutional analysis, preferences and performances
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+The%20Political%20Economy%20of%20Budget%20Rules%20in%20the%20twenty-six%20Swiss%20Cantons+AND+dc.anywhere+%3D+%EF%BB%BFYerly+AND+dc.date+%3C%3D+2014+AND+dc.date+%3E%3D+2012
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+The%20Political%20Economy%20of%20Budget%20Rules%20in%20the%20twenty%20six%20Swiss%20Cantons+AND+dc.anywhere+%3D+%EF%BB%BFYerly+AND+dc.date+%3C%3D+2014+AND+dc.date+%3E%3D+2012
 Treffer: 1
 
 #Document 1:
@@ -17,7 +17,7 @@ ISBNMATCH: 10
 MARC 100 $a: Yerly
 AUTHOR-1-MATCH: 10
 MARC 245 $a: The political economy of budget rules in the twenty-six Swiss cantons
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 260 $c: cop. 2013
 YEARMATCH: 10
 MARC 260 $a: Fribourg rte du Comptoir 1
@@ -32,8 +32,8 @@ Feld 949: HIFF Signatur: QL 020 Y47 --- callno:
 Error 104: HSB01-MATCH not 100% safe:  Best case: IFF attached, IDSSGMATCH = 30 
 Number of 035 fields: 20
 Matchpoints: IDS: 11, Rero: 6, SGBN: 4
-Totalmatch: 111
-Bestmatch: 111, Bestrecordnr: 314530878, bestrecordnr-HSG: 0646815
+Totalmatch: 101
+Bestmatch: 101, Bestrecordnr: 314530878, bestrecordnr-HSG: 0646815
 Msg 204: Best case scenario: IFF and HSG already matched!
 
 NEW ROW: #2
@@ -78,10 +78,10 @@ LDR Materialart: a
 MATERIALMATCH in LDR: 15 
 MARC 338 CARRIERMATCH: 0 
 Swissbibnr.: 514587318
-MARC 035 (IDSSG)000991054: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991054: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 34
+Totalmatch: 35
 
 #Document 3:
 MARC 100 $a: Schmidhauser
@@ -239,10 +239,10 @@ LDR Materialart: a
 MATERIALMATCH in LDR: 15 
 MARC 338 CARRIERMATCH: 0 
 Swissbibnr.: 514587326
-MARC 035 (IDSSG)000991056: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991056: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 44
+Totalmatch: 45
 
 #Document 2:
 MARC 100 $a: Bohley
@@ -255,7 +255,7 @@ Swissbibnr.: 266758762
 MARC 035 Number of 035 fields: 7
 Matchpoints: IDS: 11, Rero: 0, SGBN: 0
 Totalmatch: 31
-Bestmatch: 44, Bestrecordnr: 514587326, bestrecordnr-HSG: 0991056
+Bestmatch: 45, Bestrecordnr: 514587326, bestrecordnr-HSG: 0991056
 Msg 205: IFF Record by Felix is the only match - no improvement possible.
 
 NEW ROW: #6
@@ -286,11 +286,11 @@ MATERIALMATCH in LDR: 15
 MARC 338 $b: nc
 CARRIERMATCH: 5 
 Swissbibnr.: 515870145
-MARC 035 (IDSSG)000991057: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991057: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 59
-Bestmatch: 59, Bestrecordnr: 515870145, bestrecordnr-HSG: 0991057
+Totalmatch: 60
+Bestmatch: 60, Bestrecordnr: 515870145, bestrecordnr-HSG: 0991057
 Msg 205: IFF Record by Felix is the only match - no improvement possible.
 
 NEW ROW: #7
@@ -622,12 +622,12 @@ NEW ROW: #11
 *********************************************************************************
 ISBN: 3725301328  ISBN-2: 
 Autor: Rölli --- Autor2: 
-Titel: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: Die sozio ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Diessenhofen --- Verlag: Rüegger --- Jahr: 1981 --- Materialart: m --- Seitenzahlen: 297
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: Dissertation der Hochschule StGallen Nr 790
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20sozio-%C3%B6konomischen%20Bestimmungsfaktoren%20der%20Bildung%20von%20Wohneigentum%20in%20der%20Schweiz+AND+dc.anywhere+%3D+R%C3%B6lli+AND+dc.date+%3C%3D+1982+AND+dc.date+%3E%3D+1980
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20sozio%20%C3%B6konomischen%20Bestimmungsfaktoren%20der%20Bildung%20von%20Wohneigentum%20in%20der%20Schweiz+AND+dc.anywhere+%3D+R%C3%B6lli+AND+dc.date+%3C%3D+1982+AND+dc.date+%3E%3D+1980
 Treffer: 3
 
 #Document 1:
@@ -636,7 +636,7 @@ ISBNMATCH: 10
 MARC 100 $a: Rölli
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 264 $c: 1981
 YEARMATCH: 10
 MARC 264 $a: Diessenhofen
@@ -651,7 +651,7 @@ Swissbibnr.: 515870161
 MARC 035 (IDSSG)000991060: Abzug fuer IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 55
+Totalmatch: 45
 
 #Document 2:
 MARC 020 $a: 3725301328
@@ -659,7 +659,7 @@ ISBNMATCH: 10
 MARC 100 $a: Rölli
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 264 $c: 1981
 YEARMATCH: 10
 MARC 264 $a: Diessenhofen
@@ -671,7 +671,7 @@ MATERIALMATCH in LDR: 15
 Swissbibnr.: 271097167
 MARC 035 Number of 035 fields: 30
 Matchpoints: IDS: 11, Rero: 6, SGBN: 4
-Totalmatch: 86
+Totalmatch: 76
 
 #Document 3:
 MARC 020 $a: 3725301328
@@ -679,7 +679,7 @@ ISBNMATCH: 10
 MARC 100 $a: Rölli
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Die sozio-ökonomischen Bestimmungsfaktoren der Bildung von Wohneigentum in der Schweiz
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 264 $c: 1981
 YEARMATCH: 10
 MARC 264 $a: 
@@ -694,20 +694,20 @@ Swissbibnr.: 031361935
 MARC 035 (IDSSG)000076516 Zuschlag fuer altes HSG-Katalogisat: 25 
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 85
-Bestmatch: 86, Bestrecordnr: 271097167, bestrecordnr-HSG: 0
+Totalmatch: 75
+Bestmatch: 76, Bestrecordnr: 271097167, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515870161 with 271097167
 
 NEW ROW: #12
 *********************************************************************************
 ISBN: 3631328001  ISBN-2: 
 Autor: Meerpohl --- Autor2: 
-Titel: Die Mutter-Tochter-Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: Die Mutter Tochter Richtlinie der Europäischen Gemeinschaft und ihre Umsetzung in das Recht der Mitgliedstaaten -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Frankfurt am Main --- Verlag: Peter Lang --- Jahr: 1998 --- Materialart: m --- Seitenzahlen: 225
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: Europäische Hochschulschriften, Reihe II, Rechtswissenschaft, Bd 2334
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20Mutter-Tochter-Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3C%3D+1999+AND+dc.date+%3E%3D+1997
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20Mutter%20Tochter%20Richtlinie%20der%20Europ%C3%A4ischen%20Gemeinschaft%20und%20ihre%20Umsetzung%20in%20das%20Recht%20der%20Mitgliedstaaten+AND+dc.anywhere+%3D+Meerpohl+AND+dc.date+%3C%3D+1999+AND+dc.date+%3E%3D+1997
 Treffer: 1
 
 #Document 1:
@@ -726,11 +726,11 @@ PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH in LDR: 15 
 Swissbibnr.: 264946782
-MARC 035 (IDSSG)000991061: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991061: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 6
 Matchpoints: IDS: 11, Rero: 0, SGBN: 0
-Totalmatch: 65
-Bestmatch: 65, Bestrecordnr: 264946782, bestrecordnr-HSG: 0991061
+Totalmatch: 66
+Bestmatch: 66, Bestrecordnr: 264946782, bestrecordnr-HSG: 0991061
 Msg 201: Re-import this document - better Data available from other libraries.
 
 NEW ROW: #13
@@ -759,11 +759,11 @@ MATERIALMATCH in LDR: 15
 MARC 338 $b: nc
 CARRIERMATCH: 5 
 Swissbibnr.: 515870188
-MARC 035 (IDSSG)000991062: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991062: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 54
-Bestmatch: 54, Bestrecordnr: 515870188, bestrecordnr-HSG: 0991062
+Totalmatch: 55
+Bestmatch: 55, Bestrecordnr: 515870188, bestrecordnr-HSG: 0991062
 Msg 205: IFF Record by Felix is the only match - no improvement possible.
 
 NEW ROW: #14
@@ -863,7 +863,7 @@ NEW ROW: #15
 *********************************************************************************
 ISBN:   ISBN-2: 
 Autor: Stadler --- Autor2: 
-Titel: Controlling in der öffentlichen Verwaltung -- Untertitel:  -- Titeldatum:  -- Bandtitel: Zum Ausgabenaspekt- Bd 1
+Titel: Controlling in der öffentlichen Verwaltung -- Untertitel:  -- Titeldatum:  -- Bandtitel: Zum Ausgabenaspekt- Bd. 1
 Ort: Solothurn --- Verlag:  FkF --- Jahr: 1991 --- Materialart: m --- Seitenzahlen: 84
 Source: 
 Sourcetitle: , Sourceauthor: 
@@ -883,7 +883,7 @@ PLACEMATCH: 5
 MARC 264 $b: Verlag der FkF
 PUBLISHERMATCH: 5
 MARC 245 $b: Zum Ausgabenaspekt- Bd. 1
-TITLEMATCH 245b volumetitle: 10 
+TITLEMATCH 245b volumetitle: 20 
 LDR Materialart: m
 MATERIALMATCH in LDR: 15 
 MARC 338 $b: nc
@@ -892,7 +892,7 @@ Swissbibnr.: 515870196
 MARC 035 (IDSSG)000991063: Abzug fuer IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 45
+Totalmatch: 55
 
 #Document 2:
 MARC 100 $a: Stadler
@@ -1102,19 +1102,19 @@ NEW ROW: #18
 *********************************************************************************
 ISBN:   ISBN-2: 
 Autor: Fries --- Autor2: 
-Titel: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: Die überkantonale und überdiözesane Finanzierung der römisch katholischen Kirche in der Schweiz -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Freiburg --- Verlag: Universität --- Jahr: 1997 --- Materialart: m --- Seitenzahlen: 135
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20%C3%BCberkantonale%20und%20%C3%BCberdi%C3%B6zesane%20Finanzierung%20der%20r%C3%B6misch-katholischen%20Kirche%20in%20der%20Schweiz+AND+dc.anywhere+%3D+Fries+AND+dc.date+%3C%3D+1998+AND+dc.date+%3E%3D+1996
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Die%20%C3%BCberkantonale%20und%20%C3%BCberdi%C3%B6zesane%20Finanzierung%20der%20r%C3%B6misch%20katholischen%20Kirche%20in%20der%20Schweiz+AND+dc.anywhere+%3D+Fries+AND+dc.date+%3C%3D+1998+AND+dc.date+%3E%3D+1996
 Treffer: 1
 
 #Document 1:
 MARC 100 $a: Fries
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Die überkantonale und überdiözesane Finanzierung der römisch-katholischen Kirche in der Schweiz
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 260 $c: 1997
 YEARMATCH: 10
 MARC 260 $a: Freiburg/Schweiz
@@ -1124,11 +1124,11 @@ PUBLISHERMATCH: 0
 LDR Materialart: m
 MATERIALMATCH in LDR: 15 
 Swissbibnr.: 515929271
-MARC 035 (IDSSG)000991066: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991066: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 2
 Matchpoints: IDS: 0, Rero: 6, SGBN: 0
-Totalmatch: 55
-Bestmatch: 55, Bestrecordnr: 515929271, bestrecordnr-HSG: 0991066
+Totalmatch: 46
+Bestmatch: 46, Bestrecordnr: 515929271, bestrecordnr-HSG: 0991066
 Msg 201: Re-import this document - better Data available from other libraries.
 
 NEW ROW: #19
@@ -1330,12 +1330,12 @@ NEW ROW: #21
 *********************************************************************************
 ISBN: 3820454586  ISBN-2: 
 Autor: Grass --- Autor2: 
-Titel: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: Ausweichwirtschaft Abgrenzungen Ausprägungen Ausmasse -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Frankfurt --- Verlag: Peter Lang --- Jahr: 1984 --- Materialart: m --- Seitenzahlen: 399
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: 
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Ausweichwirtschaft%20Abgrenzungen-Auspr%C3%A4gungen-Ausmasse+AND+dc.anywhere+%3D+Grass+AND+dc.date+%3C%3D+1985+AND+dc.date+%3E%3D+1983
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Ausweichwirtschaft%20Abgrenzungen%20Auspr%C3%A4gungen%20Ausmasse+AND+dc.anywhere+%3D+Grass+AND+dc.date+%3C%3D+1985+AND+dc.date+%3E%3D+1983
 Treffer: 2
 
 #Document 1:
@@ -1344,7 +1344,7 @@ ISBNMATCH: 10
 MARC 100 $a: Grass
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Ausweichwirtschaft Abgrenzungen-Ausprägungen-Ausmasse
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 264 $c: 1984
 YEARMATCH: 10
 MARC 264 $a: Frankfurt
@@ -1359,7 +1359,7 @@ Swissbibnr.: 515870234
 MARC 035 (IDSSG)000991067: Abzug fuer IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 55
+Totalmatch: 45
 
 #Document 2:
 MARC 020 $a: 3820454586
@@ -1413,11 +1413,11 @@ MATERIALMATCH in LDR: 15
 MARC 338 $b: nc
 CARRIERMATCH: 5 
 Swissbibnr.: 515870242
-MARC 035 (IDSSG)000991068: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991068: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 49
-Bestmatch: 49, Bestrecordnr: 515870242, bestrecordnr-HSG: 0991068
+Totalmatch: 50
+Bestmatch: 50, Bestrecordnr: 515870242, bestrecordnr-HSG: 0991068
 Msg 205: IFF Record by Felix is the only match - no improvement possible.
 
 NEW ROW: #23
@@ -1471,12 +1471,12 @@ NEW ROW: #24
 *********************************************************************************
 ISBN: 0521333991  ISBN-2: 0521336589
 Autor: Gärdenfors --- Autor2: Sahlin
-Titel: Decision-probability-and utility -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
+Titel: Decision probability and utility -- Untertitel:  -- Titeldatum:  -- Band:  -- Bandtitel: 
 Ort: Cambridge --- Verlag: Cambridge University Press --- Jahr: 1988 --- Materialart: m --- Seitenzahlen: 425
 Source: 
 Sourcetitle: , Sourceauthor: 
 Addendum: Selected Readings
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Decision-probability-utility+AND+dc.anywhere+%3D+G%C3%A4rdenfors+AND+dc.date+%3C%3D+1989+AND+dc.date+%3E%3D+1987
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Decision%20probability%20utility+AND+dc.anywhere+%3D+G%C3%A4rdenfors+AND+dc.date+%3C%3D+1989+AND+dc.date+%3E%3D+1987
 Treffer: 3
 
 #Document 1:
@@ -1512,7 +1512,7 @@ AUTHOR-1-MATCH: 10
 MARC 700 $a: Sahlin
 AUTHOR-2-MATCH: 20
 MARC 245 $a: Decision-probability-and utility
-TITLEMATCH: 10
+TITLEMATCH: 0
 MARC 264 $c: 1988
 YEARMATCH: 10
 MARC 264 $a: Cambridge
@@ -1527,7 +1527,7 @@ Swissbibnr.: 515870250
 MARC 035 (IDSSG)000991069: Abzug fuer IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 55
+Totalmatch: 45
 
 #Document 3:
 MARC 020 $a: 0521333911
@@ -1590,11 +1590,11 @@ MATERIALMATCH in LDR: 15
 MARC 338 $b: nc
 CARRIERMATCH: 5 
 Swissbibnr.: 515870269
-MARC 035 (IDSSG)000991070: Abzug fuer IFF_MATCH: -1
+MARC 035 (IDSSG)000991070: Abzug fuer IFF_MATCH: -0
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
-Totalmatch: 64
-Bestmatch: 64, Bestrecordnr: 515870269, bestrecordnr-HSG: 0991070
+Totalmatch: 65
+Bestmatch: 65, Bestrecordnr: 515870269, bestrecordnr-HSG: 0991070
 Msg 205: IFF Record by Felix is the only match - no improvement possible.
 
 NEW ROW: #26
@@ -1746,24 +1746,6 @@ MARC 245 $a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche
 TITLEMATCH: 10
 MARC 264 $a: Bern
 PLACEMATCH: 5
-MARC 264 $b: Verlag nicht ermittelbar
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 338 $b: nc
-CARRIERMATCH: 5 
-Swissbibnr.: 083239693
-MARC 035 Number of 035 fields: 1
-Matchpoints: IDS: 11, Rero: 0, SGBN: 0
-Totalmatch: 56
-
-#Document 2:
-MARC 100 $a: Bircher
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
-TITLEMATCH: 10
-MARC 264 $a: Bern
-PLACEMATCH: 5
 MARC 264 $b: Seminararbeit
 PUBLISHERMATCH: 5
 LDR Materialart: m
@@ -1775,6 +1757,24 @@ MARC 035 (IDSSG)000991073: Abzug fuer IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints: IDS: 0, Rero: 0, SGBN: 0
 Totalmatch: 35
+
+#Document 2:
+MARC 100 $a: Bircher
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die Finanzierung der öffentlichen Spitäler durch die öffentliche Hand
+TITLEMATCH: 10
+MARC 264 $a: Bern
+PLACEMATCH: 5
+MARC 264 $b: Verlag nicht ermittelbar
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 338 $b: nc
+CARRIERMATCH: 5 
+Swissbibnr.: 083239693
+MARC 035 Number of 035 fields: 1
+Matchpoints: IDS: 11, Rero: 0, SGBN: 0
+Totalmatch: 56
 Bestmatch: 56, Bestrecordnr: 083239693, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515870285 with 083239693
 

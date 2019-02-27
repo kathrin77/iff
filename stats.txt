@@ -73,3 +73,20 @@ Records cannot be improved:                               37
 
 RECORDS PROCESSED: 200     ---    TIME ELAPSED: 24.00
 ***************************************************************************************
+
+Total not found (notfound.csv):    46
+Total unsure (notfound.csv):       5 
+Total journals (journals.csv):     46 
+Total found:                       902 
+---------------------------------------------------------------------------------------
+TODO with found documents: 
+Replace with document from Swissbib (export.csv):         165 
+Replace with document from HSB01 (hsg_duplicates.csv):    207 
+Replace where IFF-record not found (notfound.csv):        10
+Replace by re-importing from Swissbib: (export.csv)       45
+---------------------------------------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                                          234
+Records cannot be improved:                               241
+
+RECORDS PROCESSED: 999     ---                  TIME ELAPSED: 94.21

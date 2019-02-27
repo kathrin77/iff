@@ -37,7 +37,7 @@ my $EMPTY_CELL  = qr/\A\Z/;       #nothing in the cell
 my $TITLE_SPLIT = qr/\s{2,3}|\s-\s|\.|:/;    #min 2, max 3 whitespaces / ' - ' / ':' / '.'
 my $NO_NAME =  qr/\A(NN|N\.N\.|N\.\sN\.)/; # contains only nn or n.n. or n. n.
 my $CLEAN_TITLE = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/ ; #clean following characters: .()'"/+[]?-
-my $CLEAN_PLACE = qr/D\.C\.|a\.M\.|a\/M/; #D.C., a.M.
+my $CLEAN_PLACE = qr/\(|\)|D\.C\.|a\.M\.|a\/M/; # (),D.C., a.M.
 
 # material codes:
 my $analytica = "a";
@@ -47,8 +47,8 @@ my $loseblatt = qr/m|i/;
 
 
 # testfiles
-my $test  = "data/test30.csv";     # 30 Dokumente
-#my $test  = "data/test50.csv";     # 50 Dokumente
+#my $test  = "data/test30.csv";     # 30 Dokumente
+my $test  = "data/test1000.csv";     # 1000 Dokumente
 #my $test = "data/test200.csv";    # 200 Dokumente
 #my $test = "data/test_difficult.csv";    # tricky documents
 
@@ -258,7 +258,9 @@ while ( $row = $csv->getline($fh_in) ) {
     }
 
     #Debug:
-    print $fh_report "Autor: "      . $author      . " --- Autor2: "      . $author2 . "\n";
+    print $fh_report "Autor: $author"; 
+    if (defined $author2) {print $fh_report " --- Autor2: $author2" ;}
+    print $fh_report "\n";
     
     ##########################
     # Deal with ADDENDUM:
@@ -638,12 +640,24 @@ while ( $row = $csv->getline($fh_in) ) {
         # compare fields in record:
         $i = 1;
         foreach $rec (@record) {
+        	
             print $fh_report "\n#Document $i:\n";
             # reset all match variables to default value
-            $AUTHORMATCH = $TITLEMATCH = $YEARMATCH = $PUBLISHERMATCH = $PLACEMATCH = $SOURCEMATCH = 0;
-            $ISBNMATCH  = $MATERIALMATCH = $CARRIERMATCH = $TOTALMATCH  = $IFFTOTAL = $MARC035_counter = 0;
-    		$IDSSGMATCH = $IFFMATCH = $SGBNMATCH = $IDSMATCH = $REROMATCH = 0;
-    		$bibnr = 0;
+            resetMatches();    		
+    		
+            ###########################################
+            # Get Swissbib System Nr., Field 001:
+            ########################################### 
+            # http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
+
+            if ( $xpc->exists( './controlfield[@tag="001"]', $rec ) ) {
+                foreach $el ( $xpc->findnodes( './controlfield[@tag=001]', $rec ))  {
+                    $MARC001 = $el->to_literal;
+                    # debug:
+                    print $fh_report "Swissbibnr.: " . $MARC001 . "\n";
+                }
+            }
+            
 
             ############################################
             # CHECK ISBN MATCH
@@ -770,7 +784,7 @@ while ( $row = $csv->getline($fh_in) ) {
             }
             
             ###########################################
-            # CHECK MEHRBAENDIGE
+            # CHECK VOLUMES
             ###########################################
             
             if ($HAS_VOLUME) {            	
@@ -848,38 +862,26 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 
-            ###########################################
-            # Get Swissbib System Nr., Field 001:
-            ########################################### 
-            # http://www.swissbib.org/wiki/index.php?title=Swissbib_marc
-
-            if ( $xpc->exists( './controlfield[@tag="001"]', $rec ) ) {
-                foreach $el (
-                    $xpc->findnodes( './controlfield[@tag=001]', $rec ) )
-                {
-                    $MARC001 = $el->to_literal;
-
-                    # debug:
-                    print $fh_report "Swissbibnr.: " . $MARC001 . "\n";
-
-                }
-            }
-            
             ############################################
-            # Get 035 Field and check if old IFF data
+            # Get 035 Field and check for network
             ############################################
             
             if ( hasTag("035", $xpc, $rec) ) {
-                foreach $el (
-                    $xpc->findnodes( './datafield[@tag=035 ]', $rec ) )
-                {
+                foreach $el ($xpc->findnodes( './datafield[@tag=035 ]', $rec ) ) {
                    	$MARC035a = $xpc->findnodes( './subfield[@code="a"]', $el )->to_literal;
-                    #print $fh_report $MARC035a . "\n" unless ( $MARC035a =~ /OCoLC/ );
                     $MARC035_counter++ unless ( $MARC035a =~ /OCoLC/ );
+                    
+                    ################################
+                    # check for IDSSG and IFF
+                    ################################
 
                     if ( $MARC035a =~ /IDSSG/ ) {    # book found in IDSSG
-                        $bibnr = substr $MARC035a,-7;    #only the last 7 numbers
-                        if ( $bibnr >= 991054 ) {   #this is an IFF record
+                        $bibnr = substr $MARC035a,-7;    
+                        
+                        #########################
+                        # check if new IFF record
+                        ######################### 
+                        if ( $bibnr >= 991054 ) {   
                         	if ($numberofrecords == 1 || $IS_ANALYTICA) {
                         		$IFFMATCH = 0;        # no negative points if this is the only result OR if analytica
                         	} else {
@@ -893,28 +895,27 @@ while ( $row = $csv->getline($fh_in) ) {
                         	} else {
                         		push @iff2replace, $MARC001, $bibnr, $IFFTOTAL;
                         	}
-
-                            print $fh_report "$MARC035a: Abzug fuer IFF_MATCH: -". $IFFMATCH . "\n";
-                            
+                            print $fh_report "$MARC035a: Deduce points for IFF_MATCH: -". $IFFMATCH . "\n";                            
                             if ($MARC035_counter>1) { # other libraries have added to this bibrecord since upload from IFF => reimport
                             	#print $fh_report "Re-Import this document: $bibnr, No. of 035-fields: $MARC035_counter \n";
                             	$re_import = 1;
-                            	
                             }
                         }
-                        else {
+                        ################################
+                        # else it is an old IDSSG record
+                        ################################
+                        else { 
                             $IDSSGMATCH = 25;    # a lot of plus points so that it definitely becomes $bestmatch.
                             print $fh_report
-                              "$MARC035a Zuschlag fuer altes HSG-Katalogisat: $IDSSGMATCH \n";
-                            if ( $xpc->exists( './datafield[@tag="949"]', $rec ) )
-                            {
-                                foreach $el ($xpc->findnodes('./datafield[@tag=949 ]', $rec))
-                                {
+                              "$MARC035a: add points for old IDSSG: $IDSSGMATCH \n";
+                            if ( hasTag("949", $xpc, $rec)) {
+                                foreach $el ($xpc->findnodes('./datafield[@tag=949 ]', $rec)) {
                                     $MARC949F =  $xpc->findnodes( './subfield[@code="F"]', $el )->to_literal;
                                     if ($xpc->exists('./subfield[@code="j"]', $el)) {
                                     	$MARC949j =  $xpc->findnodes( './subfield[@code="j"]', $el )->to_literal;                                    	
                                     }
-                                    if ( $MARC949F =~ /HIFF/ && $MARC949j =~/$callno/) { # check if this is the same IFF record as $row
+                                    # check if this is the same IFF record as $row:
+                                    if ( $MARC949F =~ /HIFF/ && $MARC949j =~/$callno/) {                                    	
                                         print $fh_report "Feld 949: $MARC949F Signatur: $MARC949j --- callno: $callno \n";
                                         $IDSSGMATCH += 10;
                                         print $fh_report "Best case: IFF attached, IDSSGMATCH = $IDSSGMATCH \n";
@@ -927,37 +928,33 @@ while ( $row = $csv->getline($fh_in) ) {
                                         push @iff2replace, $MARC001, $bibnr, $IFFTOTAL;
                                         $bestcase    = 1;
                                     }
-
                                 }
-
                             }
                         }
-
                     }
+                    
+                    ###########################
+                    # check for other networks
+                    ###########################
                     else {
-                        if ( $MARC035a =~ m/RERO/ )
-                        {    #book from RERO slightly preferred to others
+                        if ( $MARC035a =~ m/RERO/ ) {    
                             $REROMATCH = 6;
-                            #print $fh_report "REROMATCH: ". $REROMATCH . "\n";
                         }
-                        if ( $MARC035a =~ m/SGBN/ )
-                        { #book from SGBN  slight preference over others if not IDS
-
+                        if ( $MARC035a =~ m/SGBN/ ) { 
                             $SGBNMATCH = 4;
-                            #print $fh_report "SGBNMATCH: " . $SGBNMATCH . "\n";
                         }
-                        if (   $MARC035a =~ m/IDS/ || $MARC035a =~ /NEBIS/ )
-                        {    #book from IDS Library preferred
-
+                        if (   $MARC035a =~ m/IDS/ || $MARC035a =~ /NEBIS/ ) {    
                             $IDSMATCH = 11;
-                            #print $fh_report "IDSMATCH: " . $IDSMATCH . "\n";
                         }
                     }
-                }
-                
+                }                
                     print $fh_report "Number of 035 fields: $MARC035_counter\n";
                     print $fh_report "Matchpoints: IDS: $IDSMATCH, Rero: $REROMATCH, SGBN: $SGBNMATCH\n";
             }
+            
+            ######################################
+            # Get TOTALMATCH
+            ######################################
 
             $i++;
             $TOTALMATCH =
@@ -966,85 +963,115 @@ while ( $row = $csv->getline($fh_in) ) {
                   $REROMATCH + $SGBNMATCH + $IDSMATCH + $IDSSGMATCH - $IFFMATCH );
 
             print $fh_report "Totalmatch: " . $TOTALMATCH . "\n";
+            
+            # eliminate totally unsafe matches:
             if (($TITLEMATCH == 0) && ($AUTHORMATCH == 0)) {
-            	#unsafe match, no matter the other fields
             	$TOTALMATCH = 0;
             	print $fh_report "9999: Unsafe Match! $TOTALMATCH\n"
             }
-
-            if ( $TOTALMATCH > $bestmatch[0])
-            { #ist aktueller Match-Total der hoechste aus Trefferliste? wenn ja: 
+            
+            # check if this is currently the best match:
+            if ( $TOTALMATCH > $bestmatch[0]){ 
             	@bestmatch = (); #clear @bestmatch
             	push @bestmatch, $TOTALMATCH, $MARC001, $rec, $bibnr;
             }         
         }
+        
+        ##########################################
+        # Handle best result and export into file:
+        ##########################################
 
         print $fh_report "Bestmatch: $bestmatch[0], Bestrecordnr: $bestmatch[1], bestrecordnr-HSG: $bestmatch[3]\n";
-
-        if ( $bestmatch[0] >= 25 ) {  # a good match was found
-            $found_nr++;            
-            if (defined $iff2replace[0]) { # an IFF record to replace was found
-            
-            	if ( $iff2replace[0] eq $bestmatch[1] ) { # IFF-replace matches with HSG-record
+        
+        # a good match was found:
+        if ( $bestmatch[0] >= 25 ) {  
+            $found_nr++;   
+            # an IFF record to replace was found:                  
+            if (defined $iff2replace[0]) {   
+            	# IFF-replace matches with HSG-record:          
+            	if ( $iff2replace[0] eq $bestmatch[1] ) { 
+            		# HSG record and IFF already matched:
 	                if ($bestcase) {
 	                	$bestcase_nr++;
 	                    print $fh_report $bestcase_M;                      
-	                }
-	                else {
-	                	if ($re_import) { # IFF-replace can be improved by reimporting
+	                } else {
+	                	# IFF-replace can be improved by reimporting:
+	                	if ($re_import) { 
 		                    $iff_update++;
 		                    print $fh_report $re_import_M;
 		                    $row->[19] = "reimport";
 		                    $row->[20] = $iff2replace[1]; #old bibnr 
 		                    $row->[21] = $iff2replace[0]; #MARC001 to reimport
+		                    if (defined $volume && $volume !~ /$EMPTY_CELL/) {
+		                    	 $row->[22] = $volume;
+		                    }
+		                    if (defined $vol_title && $vol_title !~ /$EMPTY_CELL/) {
+		                    	 $row->[23] = $vol_title;
+		                    }
 		                    push @export, $row;
-		                    $export = createMARCXML($bestmatch[2]);
-		                    
-		                    print $fh_XML $export;
-		                    
+		                    $export = createMARCXML($bestmatch[2]);		                    
+		                    print $fh_XML $export;		                    
 		                } else {
+		                # IFF cannot be improved:
 		                    $iff_only_nr++;
 		                   	print $fh_report $iff_only_M;
 		                }
              		}
-         		} else { # IFF-replace and bestmatch are not the same;
-         		
-         			if ($bestmatch[3] != 0) { # bestmatch has a $bibnr and is therefore a HSG document 
-         				# export in separate file
+             		
+         		} else { 
+         			# IFF-replace and bestmatch are not the same:         		
+         			if ($bestmatch[3] != 0) { 
+         				# bestmatch has a $bibnr and is therefore a HSG duplicate:
          				$hsg_duplicate_nr++;
          				print $fh_report $hsg_duplicate_M. "Replace $iff2replace[1] with $bestmatch[3]\n";
-
 	                    $row->[19] = "hsg duplicate";
 		                $row->[20] = $iff2replace[1]; #bibnr old
 		                $row->[21] = $bestmatch[3]; #bibnr HSG
-		                push @hsg_duplicate, $row;
-         				
-         			} else {			
+		                if (defined $volume && $volume !~ /$EMPTY_CELL/) {
+		                	$row->[22] = $volume;
+		                }
+		                if (defined $vol_title && $vol_title !~ /$EMPTY_CELL/) {
+		                   	$row->[23] = $vol_title;
+		                }
+		                push @hsg_duplicate, $row;         				
+         			} else {	
+         				# bestmatch is from Swissbib and can be exported:		
          				$replace_nr++;
-	                    print $fh_report $replace_M ."Replace $iff2replace[0] with $bestmatch[1]\n";
-	                    
+	                    print $fh_report $replace_M ."Replace $iff2replace[0] with $bestmatch[1]\n";	                    
 	                    $row->[19] = "export";
 		                $row->[20] = $iff2replace[1]; #bibnr old
 		                $row->[21] = $bestmatch[1]; #MARC001 new
+		                if (defined $volume && $volume !~ /$EMPTY_CELL/) {
+		                    $row->[22] = $volume;
+		                }
+		                if (defined $vol_title && $vol_title !~ /$EMPTY_CELL/) {
+		                    $row->[23] = $vol_title;
+		                }		                
 		                push @export, $row;
-		                $export = createMARCXML($bestmatch[2]);
-		                    
+		                $export = createMARCXML($bestmatch[2]);		                    
 		                print $fh_XML $export;
          			}
-
                 }
 
-            } else { # no IFF-replace was found
+            } else { 
+            	# no IFF-replace was found
             	$replace_m_nr++;
                 print $fh_report "$iff_doc_missing_E. Output: replace CSV line $rowcounter with $bestmatch[1]\n";
                 $row->[19] = "iff_doc_missing";
 		        $row->[20] = $rowcounter; # row number in original CSV
 		        $row->[21] = $bestmatch[1]; #MARC001 new 
+		        if (defined $volume && $volume !~ /$EMPTY_CELL/) {
+		            $row->[22] = $volume;
+		        }
+		        if (defined $vol_title && $vol_title !~ /$EMPTY_CELL/) {
+		            $row->[23] = $vol_title;
+		        }		        
                 push @iff_doc_missing, $row;
             }
 
         }
-        else { # no good match was found
+        else { 
+        	# no good match was found
         	$unsure_nr++;
             print $fh_report $no_bestmatch_E;
             $row->[19]  = "unsure";
@@ -1052,6 +1079,10 @@ while ( $row = $csv->getline($fh_in) ) {
         }
     }
 }
+
+#######################################
+# Export and close file handles
+#######################################
 
 $csv->eof or $csv->error_diag();
 close $fh_in;
@@ -1089,14 +1120,8 @@ print "Records cannot be improved:                               $iff_only_nr\n"
 print "\nRECORDS PROCESSED: $rowcounter     ---                  TIME ELAPSED: "; printf('%.2f',$timeelapsed);
 
 
-
-
-
-
 #####################
-
 # SUBROUTINES
-
 #####################
 
 # reset all flags to default value
@@ -1132,15 +1157,50 @@ sub resetFlags {
 
 sub emptyVariables {
 
-    $isbn = '';     $isbn2 = '';     $isbnlength = '';
-    $author = '';     $author2 = '';     $author_size = '';
-    $title = '';     $subtitle = '';     $volume = '';     $titledate = ''; $vol_title='';
-    $pages= ''; $source='';     $sourcetitle=''; $sourceauthor=''; $material= ''; $escaped_source='';
-    $addendum= '';     $location= '';     $callno= '';     $place= '';     $publisher= '';
-    $year= '';    $yearminus1 = ''; $yearplus1 = '';  $note= '';
-    $code1= ''; $code2= ''; $code3 = ''; $subj1= ''; $subj2= ''; $subj3= '';
+    $isbn = '';     
+    $isbn2 = '';     
+    $isbnlength = '';
+    $author = '';     
+    $author2 = '';     
+    $author_size = '';
+    $title = '';     
+    $subtitle = '';    
+    $volume = '';
+    $vol_title = '';     
+    $titledate = ''; 
+    $pages= ''; 
+    $source='';     
+    $sourcetitle=''; 
+    $sourceauthor=''; 
+    $material= ''; 
+    $escaped_source='';
+    $addendum= '';     
+    $location= '';     
+    $callno= '';     
+    $place= '';     
+    $publisher= '';
+    $year= '';    
+    $yearminus1 = ''; 
+    $yearplus1 = '';  
+    $note= '';
+    $code1= ''; 
+    $code2= ''; 
+    $code3 = ''; 
+    $subj1= ''; 
+    $subj2= ''; 
+    $subj3= '';
     $materialtype = $monograph; # default: most documents are monographs
 
+}
+
+# reset match values
+
+sub resetMatches {
+	
+	$AUTHORMATCH = $TITLEMATCH = $YEARMATCH = $PUBLISHERMATCH = $PLACEMATCH = $SOURCEMATCH = 0;
+    $ISBNMATCH  = $MATERIALMATCH = $CARRIERMATCH = $TOTALMATCH  = $IFFTOTAL = $MARC035_counter = 0;
+    $IDSSGMATCH = $IFFMATCH = $SGBNMATCH = $IDSMATCH = $REROMATCH = 0;
+   	$bibnr = 0;	
 }
 
 # check for MARC tag
@@ -1172,7 +1232,7 @@ sub getMatchValue {
     my $marcfield;
     
     $marcfield = $xpath->findnodes( './subfield[@code="' . $code . '"]', $element)->to_literal;
-    $marcfield =~ s/\[|\]|\'|\"|\(|\)//g;    # clean fields from special characters
+    $marcfield =~ s/\[|\]|\'|\"|\(|\)|\///g;    # clean fields from special characters
 
     # debug: 
     print $fh_report "\$".$code.": " . $marcfield . "\n";
@@ -1209,52 +1269,49 @@ sub createMARCXML {
     }  	    	
     
     # create 690 fields with keywords 
-    $subjectstring1 = $subj_hash{"$code1 1"};
-    if (exists $subj_hash{"$code1 2"}) {
-         $subjectstring1 .= " : ".$subj_hash{"$code1 2"};
-         if (exists $subj_hash{"$code1 3"})   { 
-         	$subjectstring1 .= " : ".$subj_hash{"$code1 3"};
-         }
-    }     
+    if (defined $code1 && $code1 !~/$EMPTY_CELL/) {
+	    $subjectstring1 = $subj_hash{"$code1 1"};
+	    if (exists $subj_hash{"$code1 2"}) {
+	         $subjectstring1 .= " : ".$subj_hash{"$code1 2"};
+	         if (exists $subj_hash{"$code1 3"})   { 
+	         	$subjectstring1 .= " : ".$subj_hash{"$code1 3"};
+	         }
+	    }     
+	    $rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
+	    	<subfield code="8">'.$code1.'</subfield>
+	    	<subfield code="a">'.$subjectstring1.'</subfield>
+	    	<subfield code="2">HSG-IFF</subfield>
+	    </datafield>');       	
+    }
     
-    $rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
-    	<subfield code="8">'.$code1.'</subfield>
-    	<subfield code="a">'.$subjectstring1.'</subfield>
-    	<subfield code="2">HSG-IFF</subfield>
-    </datafield>');   
-    
-    if ($code2 !~/$EMPTY_CELL/) {
+    if (defined $code2 && $code2 !~/$EMPTY_CELL/) {
     	$subjectstring2 = $subj_hash{"$code2 1"};
     	if (exists $subj_hash{"$code2 2"}) {
-         	$subjectstring2 += " : ".$subj_hash{"$code2 2"};
+         	$subjectstring2 .= " : ".$subj_hash{"$code2 2"};
          	if (exists $subj_hash{"$code2 3"})   { 
-       			$subjectstring2 += " : ".$subj_hash{"$code2 3"};
+       			$subjectstring2 .= " : ".$subj_hash{"$code2 3"};
          	}
-    	}     
-    
+    	}         
     	$rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
     		<subfield code="8">'.$code2.'</subfield>
     		<subfield code="a">'.$subjectstring2.'</subfield>
     		<subfield code="2">HSG-IFF</subfield>
-    	</datafield>'); 
-    	
+    	</datafield>');     	
     } 
     
-	if ($code3 !~/$EMPTY_CELL/) {
+	if (defined $code3 && $code3 !~/$EMPTY_CELL/) {
     	$subjectstring3 = $subj_hash{"$code3 1"};
     	if (exists $subj_hash{"$code3 2"}) {
-         	$subjectstring3 += " : ".$subj_hash{"$code3 2"};
+         	$subjectstring3 .= " : ".$subj_hash{"$code3 2"};
          	if (exists $subj_hash{"$code3 3"})   { 
-       			$subjectstring3 += " : ".$subj_hash{"$code3 3"};
+       			$subjectstring3 .= " : ".$subj_hash{"$code3 3"};
          	}
-    	}     
-    
+    	}  
     	$rec->appendWellBalancedChunk('<datafield tag="690" ind1="H" ind2="D">
     		<subfield code="8">'.$code3.'</subfield>
     		<subfield code="a">'.$subjectstring3.'</subfield>
     		<subfield code="2">HSG-IFF</subfield>
-    	</datafield>'); 
-    	
+    	</datafield>');     	
     }     
 
     return ($rec->toString);

@@ -46,11 +46,11 @@ my $serial = "s";
 my $loseblatt = qr/m|i/;
 
 
-# testfiles
-#my $test  = "data/test30.csv";     # 30 Dokumente
-my $test  = "data/test1000.csv";     # 1000 Dokumente
-#my $test = "data/test200.csv";    # 200 Dokumente
-#my $test = "data/test_difficult.csv";    # tricky documents
+# testfiles: uncomment line as desired:
+my $test  = "data/test30.csv";     		# 30 Dokumente
+#my $test  = "data/test1000.csv";     	# 1000 Dokumente
+#my $test = "data/test200.csv";    		# 200 Dokumente
+#my $test = "data/test_difficult.csv";  # tricky documents
 
 # input, output, filehandles:
 my $csv;
@@ -63,8 +63,6 @@ my $server_endpoint = 'http://sru.swissbib.ch/sru/search/defaultdb?&operation=se
 
 # needed queries
 my $isbnquery   = '+dc.identifier+%3D+';
-#my $titlequery  = '+dc.title+%3D+';
-#my $yearquery   = '+dc.date+%3D+';
 my $year_st_query = '+dc.date+%3C%3D+'; # <=
 my $year_gt_query = '+dc.date+%3E%3D+'; # >=
 my $anyquery    = '+dc.anywhere+%3D+';
@@ -124,8 +122,8 @@ close MAP;
 
 
 ##########################################################
-# 	READ AND TREAT THE DATA
-# Data: IFF_Katalog_FULL.csv contains all data, has been treated (removed \r etc.)
+# READ AND TREAT THE DATA
+# Data: IFF_Katalog_FULL.csv contains all data.
 ##########################################################
 
 # open input/output:
@@ -191,7 +189,7 @@ while ( $row = $csv->getline($fh_in) ) {
 	
     #replace Schweiz. 
     if ($author =~ /Schweiz\./) {
-    	if ($author =~/Nationalfonds|Wissenschaftsrat/i) { # schweizerischer
+    	if ($author =~/Nationalfonds|Wissenschaftsrat/i) { # schweizerischer (male form)
     		$author =~ s/Schweiz./Schweizerischer/i;
     	} else {
     		$author =~ s/Schweiz./Schweizerische/i;

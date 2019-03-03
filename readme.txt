@@ -1,9 +1,8 @@
-To include Path to .\Code in @INC (Windows):
-
-https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-locations
+Input:
+uncomment the testfile that you want to try with: 
+line 50 ff.
 
 Output:
-
 Not found / unsure / found replacement, but not original IFF document: notfound.csv
 May be done manually. See colon V for a good Swissbib replacement, if something was found. 
 
@@ -22,4 +21,10 @@ To replace from HSB01: hsg_duplicates.csv
 
 ---------------------------------------------------------------------------------------
 Found documents without any action needed: 
-Already matched / Records cannot be improved: see report.txt
+Already matched / Records cannot be improved: see report.txt and console output.
+
+-----------------------------------
+
+For Strawberry Perl (Windows)
+To include Path to .\Code in @INC (Windows) see:
+https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-locations

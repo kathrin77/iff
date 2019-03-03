@@ -1,4 +1,5 @@
-﻿TODO:
+﻿TODO - Nice to have:
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 
 - $338 $$b vergleichen, um nicht versehentlich Online-Ressource mit Print zu matchen!! (FUNKTIONIERT NOCH NICHT)
@@ -16,18 +17,6 @@ Sourcetitle: , Sourceauthor:
 Addendum: Festschrift zum 65 Geburtstag von Hans Georg Schachtschabel
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftspolitik%20in%20Theorie%20und%20Praxis+AND+dc.anywhere+%3D+%EF%BB%BFM%C3%A4ndle+AND+dc.date+%3C%3D+1979+AND+dc.date+%3E%3D+1977
 Treffer: 3
-
-
-
-- Falls Bandangaben im Titel etc., sollten diese für Export noch übergeben werden (für Angaben im Exemplar). $volume und $volumetitle wenn vorh. Bsp. 
-ISBN: 347204442X  ISBN-2: 
-Autor: Baudenbacher --- Autor2: 
-Titel: Aktuelle Probleme des Europäischen und Internationalen Wirtschaftsrechts 
-Untertitel:   --- Titeldatum:  --- Band: Band 3  2001 --- Bandtitel: 
-Ort: Neuwied --- Verlag: Hermann Luchterhand  GmbH --- Jahr: 2001 --- Materialart: m --- Seitenzahlen: 512
-Sourcetitle: , Sourceauthor: 
-Addendum: Band 3  2001
-URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aktuelle%20Probleme%20des%20Europ%C3%A4ischen%20und%20Internationalen%20Wirtschaftsrechts+AND+dc.anywhere+%3D+Baudenbacher+AND+dc.date+%3C%3D+2002+AND+dc.date+%3E%3D+2000
 
 - Best record ist analytisch -> Uplink muss mitgeliefert werden. wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen! Wenn Analytica und ISBN vorhanden: ISBN wegspeichern unter sourceisbn, dann eine neue Suche starten & mitliefern, falls an HSG vorhanden? Auch Jahr kann so noch korrigiert werden!
 
@@ -62,8 +51,6 @@ Addendum: Dissertation der HSG, Nr 84, 1955
 URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Rolle%20des%20Postchecks%20im%20Geld-%20und%20Kreditsystem%20unter%20besonderer%20Ber%C3%BCcksichtigung%20der%20Schweiz+AND+dc.anywhere+%3D+Rentsch+AND+dc.date+%3C%3D+1956+AND+dc.date+%3E%3D+1954
 
 
-Nice to have:
-ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
 
 - Mehrbändige werden nicht immer eindeutig korrekt sein. MAnuell bearbeiten lassen?
@@ -104,6 +91,16 @@ PUBLISHERMATCH: 2.5
 
 
 DONE:
+
+- Falls Bandangaben im Titel etc., sollten diese für Export noch übergeben werden (für Angaben im Exemplar). $volume und $volumetitle wenn vorh. Bsp. 
+ISBN: 347204442X  ISBN-2: 
+Autor: Baudenbacher --- Autor2: 
+Titel: Aktuelle Probleme des Europäischen und Internationalen Wirtschaftsrechts 
+Untertitel:   --- Titeldatum:  --- Band: Band 3  2001 --- Bandtitel: 
+Ort: Neuwied --- Verlag: Hermann Luchterhand  GmbH --- Jahr: 2001 --- Materialart: m --- Seitenzahlen: 512
+Sourcetitle: , Sourceauthor: 
+Addendum: Band 3  2001
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aktuelle%20Probleme%20des%20Europ%C3%A4ischen%20und%20Internationalen%20Wirtschaftsrechts+AND+dc.anywhere+%3D+Baudenbacher+AND+dc.date+%3C%3D+2002+AND+dc.date+%3E%3D+2000
 
 - genaue Nummern IFF-Einspielung (von: 000991054 bis: 001000238)
 

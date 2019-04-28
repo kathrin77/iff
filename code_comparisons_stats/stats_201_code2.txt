@@ -1,0 +1,72 @@
+Total not found (notfound.csv):    11
+Total unsure (notfound.csv):       2
+Total journals (journals.csv):     9
+Total found:                       179
+---------------------------------------------------------------------------------------
+TODO with found documents:
+Replace with document from Swissbib (export.csv):         28
+Replace with document from HSB01 (hsg_duplicates.csv):    55
+Replace where IFF-record not found (notfound.csv):        1
+Replace by re-importing from Swissbib: (export.csv)       13
+---------------------------------------------------------------------------------------
+Found documents without any action needed:
+Already matched:                                          31
+Records cannot be improved:                               51
+
+RECORDS PROCESSED: 201     ---                  TIME ELAPSED: 19.31
+
+-- nach korrektur von or:
+
+Total not found (notfound.csv):    8
+Total unsure (notfound.csv):       1
+Total journals (journals.csv):     9
+Total found:                       183
+---------------------------------------------------------------------------------------
+TODO with found documents:
+Replace with document from Swissbib (export.csv):         27
+Replace with document from HSB01 (hsg_duplicates.csv):    57
+Replace where IFF-record not found (notfound.csv):        1
+Replace by re-importing from Swissbib: (export.csv)       13
+---------------------------------------------------------------------------------------
+Found documents without any action needed:
+Already matched:                                          31
+Records cannot be improved:                               54
+
+RECORDS PROCESSED: 201     ---                  TIME ELAPSED: 26.02
+
+--- nach korrektur von titelmatch:
+
+Total not found (notfound.csv):    8
+Total unsure (notfound.csv):       1 
+Total journals (journals.csv):     9 
+Total found:                       183 
+---------------------------------------------------------------------------------------
+TODO with found documents: 
+Replace with document from Swissbib (export.csv):         25 
+Replace with document from HSB01 (hsg_duplicates.csv):    61 
+Replace where IFF-record not found (notfound.csv):        1
+Replace by re-importing from Swissbib: (export.csv)       13
+---------------------------------------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                                          31
+Records cannot be improved:                               52
+
+RECORDS PROCESSED: 201     ---                  TIME ELAPSED: 22.54
+
+
+Total not found (notfound.csv):    4
+Total unsure (notfound.csv):       1 
+Total journals (journals.csv):     10 
+Total found:                       186 
+---------------------------------------------------------------------------------------
+TODO with found documents: 
+Replace with document from Swissbib (export.csv):         25 
+Replace with document from HSB01 (hsg_duplicates.csv):    60 
+Replace where IFF-record not found (notfound.csv):        1
+Replace by re-importing from Swissbib: (export.csv)       13
+---------------------------------------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                                          31
+Records cannot be improved:                               56
+
+RECORDS PROCESSED: 201     ---                  TIME ELAPSED: 9.90

@@ -1,0 +1,49 @@
+## Year: TODO: Feld 264 etc. bereinigen (nur Zahlen vergleichen)
+
+		 	if ($Flag::HAS_YEAR && $xpc->exists('./datafield[@tag="264"]', $rec)){# 264
+		     
+		     foreach $el ($xpc->findnodes( './datafield[@tag=264]', $rec)){
+		         $Marc::MARC264c = $xpc->findnodes('./subfield[@code="c"]', $el )->to_literal;
+
+					# debug: 
+					print $fh_report "Feld 264c: ".$Marc::MARC264c."\n";   
+					#print $fh_report "Jahr: ".$Vari::year."\n"; 
+					if ($Vari::year eq $Marc::MARC264c) {
+						$Match::YEARMATCH = 20;
+					} elsif (($Vari::year+1) eq $Marc::MARC264c || ($Vari::year -1) eq $Marc::MARC264c) { #1 year off is okay.
+						$Match::YEARMATCH = 10;
+					} #else { 						$Match::YEARMATCH = 0; 					}
+					# debug: 
+					print $fh_report "YEARMATCH: ".$Match::YEARMATCH."\n"; 
+		     	}
+
+	 		} elsif ($Flag::HAS_YEAR && $xpc->exists('./datafield[@tag="260"]', $rec)) {#260
+		     foreach $el ($xpc->findnodes( './datafield[@tag=260]', $rec)){
+		         $Marc::MARC260c = $xpc->findnodes('./subfield[@code="c"]', $el )->to_literal;
+
+					# debug: 
+					print $fh_report "Feld 260c: ".$Marc::MARC260c."\n";   
+					#print $fh_report "Jahr: ".$Vari::year."\n"; 
+					if ($Vari::year eq $Marc::MARC260c) {
+						$Match::YEARMATCH = 20;
+					} elsif (($Vari::year+1) eq $Marc::MARC260c || ($Vari::year -1) eq $Marc::MARC260c) { #+/- 1 year is ok.
+						$Match::YEARMATCH = 10;
+					} #else { $Match::YEARMATCH = 0; }
+					# debug: 
+					print $fh_report "YEARMATCH: ".$Match::YEARMATCH."\n"; 
+		     	}
+
+			} elsif ($Flag::HAS_YEAR && $xpc->exists('./datafield[@tag="773"]', $rec)) {#773
+		     foreach $el ($xpc->findnodes( './datafield[@tag=773]', $rec)){
+		         $Marc::MARC773g = $xpc->findnodes('./subfield[@code="g"]', $el )->to_literal;
+
+					# debug: 
+					print $fh_report "Feld 773g: ".$Marc::MARC773g."\n";   
+					#print $fh_report "Jahr: ".$Vari::year."\n"; 
+					if ($Marc::MARC773g=~m/$Vari::year/i) {
+						$Match::YEARMATCH = 20;
+					} #else { $Match::YEARMATCH = 0; }
+					# debug: 
+					print $fh_report "J-Match: ".$Match::YEARMATCH."\n"; 
+		     	}
+			}

@@ -1,0 +1,67 @@
+Erster Durchlauf 6.4.19:
+
+Total not found:    490
+Total unsure:       102 
+Total journals:     3185 
+Total found:        11491 
+--------------------------------------------------------
+TODO with found documents: (see export.csv)
+Replace with document from Swissbib:  1819 
+Replace with document from HSB01 :    2521 
+Replace where IFF-record not found :  365
+Replace by re-importing f/ Swissbib:  584
+--------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                      2577
+Records cannot be improved:           3625
+
+RECORDS PROCESSED:                    15266 
+TIME ELAPSED:                         1398.71
+
+***********************************************************
+Zweiter Durchlauf 6.4.19
+
+Total not found:    368    // 02.4%
+Total unsure:       75     // 00.5%
+Total journals:     3493   // 22.8%
+Total found:        11332  // 74.2%
+--------------------------------------------------------
+TODO with found documents: (see export.csv)
+Replace with document from Swissbib:  1806 
+Replace with document from HSB01 :    2499 
+Replace where IFF-record not found :  273
+Replace by re-importing f/ Swissbib:  586
+--------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                      2570
+Records cannot be improved:           3598
+
+RECORDS PROCESSED:                    15266 
+TIME ELAPSED:                         1245.47 // ca. 20 Minuten
+
+
+1% = 152.66
+
+
+TODO:
+---------------
+
+Kopfzeile löschen vor der Auswertung
+Regexe einiger Titel überprüfen.
+
+
+
+
+
+
+DONE:
+----
+Konsolenoutput: Zähler rein für jeden 100.
+Ein paar Titel aus "unsure" zu Zeitschriftentiteln hinzugefügt. 
+Journal-Keywords aus Untertitel entfernt //  Municipal Finance	The Duke Law Journal Symposium
+Wegnehmen aus journal keywords:
+Geschäftsberich geändert // Der Geschäftsbericht der Aktiengesellschaft. Ein Verlgeich zwischen der schweizerischen-deutschen und französischen Rechtsordnung sowie den Bestimmungen der Securities and Exchange Commission
+Steuerbelastung in der Schweiz. (mit Punkt) // Die effektive Steuerbelastung in der Schweiz 1973
+Staatsrechnung (mit Leerschlag) // Finanz- und Verwaltungsvermögen in öffentlich-rechtlicher und wirtschaftlicher Betrachtungsweise (unter besonderer Berücksichtigung der Staatsrechnungen der Kantone)
+Hinzufügen zu journal titles: viele Titel aus unsure, notfound, iffnotfound.
+Nicht funktioniert mit: Doppelbesteuerung, Budget, Aussensteuerrecht

@@ -1,0 +1,91 @@
+            #alte variante:
+            if (   $Flag::HAS_AUTHOR
+                && $xpc->exists( './datafield[@tag="100" or @tag="110" or @tag="700" or @tag="710"]', $rec ) )
+            {
+                foreach $el ( $xpc->findnodes( './datafield[@tag=100]', $rec ) )
+                {
+                    $Marc::MARC100a =
+                      $xpc->findnodes( './subfield[@code="a"]', $el )
+                      ->to_literal;
+
+                    # debug:
+                    print $fh_report "Feld 100a: " . $Marc::MARC100a . "\n";
+
+                    #print $fh_report "Autor: ".$Vari::author."\n";
+                    if ( $Vari::author =~ m/$Marc::MARC100a/i )
+                    { #kommt Autor in 100a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                        $Match::AUTHORMATCH = 10;
+                    }    #else { $Match::AUTHORMATCH = 0; }
+                         # debug:
+                    print $fh_report "AUTHORMATCH: "
+                      . $Match::AUTHORMATCH . "\n";
+                }
+            }
+            elsif ($Flag::HAS_AUTHOR
+                && $xpc->exists( './datafield[@tag="700"]', $rec ) )
+            {
+                foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
+                {
+                    $Marc::MARC700a =
+                      $xpc->findnodes( './subfield[@code="a"]', $el )
+                      ->to_literal;
+
+                    # debug:
+                    print $fh_report "Feld 700a: " . $Marc::MARC700a . "\n";
+
+                    #print $fh_report "Autor: ".$Vari::author."\n";
+                    if ( $Marc::MARC700a =~ m/$Vari::author/i )
+                    { #kommt Autor in 700a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                        $Match::AUTHORMATCH = 10;
+                    }    #else { $Match::AUTHORMATCH = 0; }
+                         # debug:
+                    print $fh_report "AUTHORMATCH: "
+                      . $Match::AUTHORMATCH . "\n";
+                }
+            }
+
+            if (   $Flag::HAS_AUTHOR2
+                && $xpc->exists( './datafield[@tag="700"]', $rec ) )
+            {
+                foreach $el ( $xpc->findnodes( './datafield[@tag=700]', $rec ) )
+                {
+                    $Marc::MARC700a =
+                      $xpc->findnodes( './subfield[@code="a"]', $el )
+                      ->to_literal;
+
+                    # debug:
+                    print $fh_report "Feld 700a: " . $Marc::MARC700a . "\n";
+                    print $fh_report "Autor2: " . $Vari::author2 . "\n";
+                    if ( $Marc::MARC700a =~ m/$Vari::author2/i )
+                    { #kommt Autor2 in 700a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                        $Match::AUTHORMATCH += 10;    #fÃ¼ge 10 Punkte hinzu.
+                    }
+
+                    # debug:
+                    print $fh_report "AUTHORMATCH: "
+                      . $Match::AUTHORMATCH . "\n";
+                }
+            }
+
+            if (   $Flag::HAS_AUTHORITY
+                && $xpc->exists( './datafield[@tag="110"]', $rec ) )
+            {
+                foreach $el ( $xpc->findnodes( './datafield[@tag=110]', $rec ) )
+                {
+                    $Marc::MARC110a =
+                      $xpc->findnodes( './subfield[@code="a"]', $el )
+                      ->to_literal;
+
+                    # debug:
+                    print $fh_report "Feld 110a: " . $Marc::MARC110a . "\n";
+
+                    #print $fh_report "KÃ¶rperschaft: ".$Vari::author."\n";
+                    if ( $Marc::MARC110a =~ m/$Vari::author/i )
+                    { #kommt KÃ¶rperschaft in 110a vor? (ohne Gross-/Kleinschreibung zu beachten)
+                        $Match::AUTHORMATCH = 10;
+                    }    #else { $Match::AUTHORMATCH = 0; }
+                         # debug:
+                    print $fh_report "AUTHORITYMATCH: "
+                      . $Match::AUTHORMATCH . "\n";
+                }
+            }

@@ -1,0 +1,248 @@
+
+https://www.swissbib.ch/Record/182638006
+Autor: Haas --- Autor2: 
+Titel: Chancen und Gefahren des New Public Managements --- Untertitel: für die Privatwirtschaft --- Titeldatum:  --- Band: 
+Ort: Bern - Verlag: ECOPLAN - Jahr: 1996 - Materialart: m
+-------------- Problem: autor
+
+ISBN: 3504260416
+Autor: Flick --- Autor2: Wassermeyer
+Titel: Aussensteuerrecht --- Untertitel:  --- Titeldatum:  --- Band: Bd III
+Ort: Köln - Verlag: Verlag Dr. Otto Schmidt - Jahr: 2017 - Materialart: abcdis
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aussensteuerrecht+AND+dc.anywhere+%3D+Flick+AND+dc.date+%3D+2017
+Treffer: 0
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+3504260416
+Treffer mit geaendertem Suchstring: 4
+
+- -----------------Wieso wird das (und überhaupt HSg-Dokumente) nicht gefunden.
+https://aleph.unisg.ch/F?func=direct&doc_number=000991058&local_base=hsb01
+
+
+----------------Fehlermeldung index: cql.serverChoice not supported
+Es gibt ein IFF-Treffer und ein IDSSG-Treffer!
+https://www.swissbib.ch/Record/261414798
+Autor: Nystad --- Autor2: 
+Titel: Application of Control and System Theory to Macroeconomics --- Untertitel: A Survey --- Titeldatum:  --- Band: 
+Ort: St. Gallen - Verlag: Forschungsgemeinschaft für Nationalökonomie - Jahr: 1981 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad+AND+dc.date+%3D+1981
+Treffer: 
+URL geaendert, da 0 Treffer: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.anywhere+%3D+Application%20of%20Control%20and%20System%20Theory%20to%20Macroeconomics+AND+dc.anywhere+%3D+Nystad
+Diese Suche taugt auch nichts.
+OOOOOOOOOO
+
+
+ISBN: 9041103929
+Autor: IFA --- Autor2: 
+Titel: Cahiers de Droit Fiscal International --- Untertitel:  --- Titeldatum:  --- Band: Vol LXXXIIb 1997
+Ort: The Hague / London / Boston - Verlag: Kluwer - Jahr: 1997 - Materialart: abcdis
+- -------------------zu viele & falsche Treffer!!
+
+Autor: ﻿Bombach --- Autor2: 
+Titel: Wirtschaft und Bevölkerung im Kanton Aargau --- Untertitel:  --- Titeldatum: 1985 --- Band: 
+Ort: Basel - Verlag: Prognos AG - Jahr: 1965 - Materialart: abcdis
+---------------zahlreiche gute Treffer (ohne Autor Bombach)
+
+https://www.swissbib.ch/Record/450662284
+https://www.swissbib.ch/Record/514583835
+
+ISBN: 0801498600
+ISBN-2: 0801409144
+Autor: Miller --- Autor2: 
+Titel: A Program for Direct and Proxy Voting in the Legislative Process --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: London - Verlag: Cornell University Press - Jahr:  - Materialart: abcdis
+------------ erste Suche: cql.serverChoice not supported, ISBN-Suche: Titel des Werks (ist ein Analytikum)
+
+https://www.swissbib.ch/Record/515874345
+Problem: IFF-Dok. falsch verknüpft, daher nicht gefunden:
+Autor: Winzeler --- Autor2: 
+Titel: Versuch eines interkommunalen Vergleichs von Gemeindeausgaben im Kanton Aargau --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Solothurn - Verlag: Vogt-Schild AG - Jahr: 1968 - Materialart: m
+Bestmatch: 39, Bestrecordnr: 102799504
+Ersetzen. FEHLER: IFF_Kata nicht gefunden. Manuell suchen und ersetzen mit 102799504
+
+
+----
+Autor: Schweiz --- Autor2: Programmleitung
+Titel: Überwälzungshypothesen zur effektiven regionalen Inzidenz des Bundeshaushaltes --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Bern - Verlag:  - Jahr: 1981 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+%C3%9Cberw%C3%A4lzungshypothesen%20zur%20effektiven%20regionalen%20Inzidenz%20des%20Bundeshaushaltes+AND+dc.anywhere+%3D+Schweiz+AND+dc.date+%3D+1981
+Treffer: 6
+Problem: "mehrere" IFF Treffer (davon auch falsche), der letzte wird unter iff2replace abgespeichert => ist der falsche!
+
+----
+ISBN: 3163399029
+Autor: Buchholz --- Autor2: 
+Titel: Zwang zur Freiheit --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Tübingen - Verlag: J. C. B. Mohr (Paul Siebeck) - Jahr: 1977 - Materialart: m
+-------- neu importieren? Hat sich mittlerweile stark verbessert! Hängen 3 andere Bib. dran ausser IFF
+
+Autor: Innenministerium --- Autor2: 
+Titel: Verwaltung --- Untertitel:  --- Titeldatum: 2000 --- Band: Bd 17
+Ort: Stuttgart - Verlag: Schwäbische Druckerei - Jahr: 1996 - Materialart: abcdis
+---- Mit dem Titel/Autor wird das falsche gefunden. Ist ein Analytikum, Titel im Zusatz. 
+
+Autor: Bohley --- Autor2: 
+Titel: Wirtschaftspolitische Massnahmen zur Förderung der Wirtschaftlichkeit des Verkehrs --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Zürich - Verlag: Institut der Universität Zürich - Jahr: 1977 - Materialart: m
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftspolitische%20Massnahmen%20zur%20F%C3%B6rderung%20der%20Wirtschaftlichkeit%20des%20Verkehrs+AND+dc.anywhere+%3D+Bohley+AND+dc.date+%3D+1977
+Treffer: 2
+------ Treffer 2 ist der korrektere, da Analytikum. 
+
+ISBN: 9282592472
+Autor: Statistisches Amt des Eurostat --- Autor2: 
+Titel: Volkswirtschaftliche Gesamtrechnungen ESVG --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Luxembourg - Verlag: Amt der Europäischen Gemeinschaften - Jahr: 1989 - Materialart: m
+------ nur mit Titel: sehr viele Treffer, ist tatsächlich kein passender dabei?
+
+Autor: Leblanc --- Autor2: Allensworth
+Titel: The Politics of States and Urban Communities --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: New York - Verlag: Harper & Row - Jahr: 1971 - Materialart: m
+-------- cql serverchoice not supported
+
+https://www.swissbib.ch/Record/187009562/Description#tabnav
+Autor: Cosciani --- Autor2: und
+Titel: Problemi di Finanza Pubblica --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Milano - Verlag: Guiffrè - Jahr: 1968 - Materialart: m
+-------- Zusatz beachten!
+
+Autor: Furgler --- Autor2: 
+Titel: The Spirit of Competition --- Untertitel: Choice - Challenge - Committment --- Titeldatum:  --- Band: 
+Ort:  - Verlag:  - Jahr:  - Materialart: abcdis
+------ 2. Treffer wäre korrekt, aber hat zuwenig Matchingpunkte 
+
+https://www.swissbib.ch/Search/Results?lookfor=v%C3%B6lkel+umsatzsteuer+2002&type=AllFields&limit=20
+ISBN: 3791021087
+Autor: Völkel --- Autor2: Karg
+Titel: Umsatzsteuer --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Stuttgart - Verlag: Schäffer-Poeschel Verlag - Jahr: 2002 - Materialart: m
+----- falsch eingespielt?
+
+https://www.swissbib.ch/Record/031596355
+Autor: Dürschke --- Autor2: 
+Titel: Vermögensteuergesetz --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: München - Verlag: C. H. Beck'sche Verlagsbuchhandlung - Jahr: 1970 - Materialart: m
+
+--------------
+
+Autor: Borins --- Autor2: Warrington
+Titel: The New Public Administration --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Malta - Verlag: CAPAM - Jahr: 1996 - Materialart: m
+-------------- Dublette innerhalb von IFF?!
+
+ISBN: 3897370654
+Autor: IFSt --- Autor2: 
+Titel: IFSt-Schrift --- Untertitel:  --- Titeldatum:  370 --- Band: 
+Ort: Bonn - Verlag: IFSt - Jahr: 1999 - Materialart: abcdis
+-------- IFSt = Zeitschrift. Manuell erfassen?
+
+https://www.swissbib.ch/Record/220507252
+Autor: UBS --- Autor2: 
+Titel: Thèses Outlook --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Genève - Verlag: UBS - Jahr: 1997 - Materialart: m
+------------- Treffer 2 (RERO) ist korrekt, hat aber zuwenig Punkte, wg. Autor und Titel. 
+
+Titel: Überbauungen Schwabgut und Weiermatt-Mieter --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Bern - Verlag: und Regionalforschungsstelle Bern - Jahr: 1967 - Materialart: m
+
+-------- 1 Treffer aber 2 Einträge (1x HSG alt -> mit UE, 1x IFF neu mit Ü)
+
+ISBN: 3922016170
+Autor: Krelle --- Autor2: 
+Titel: Erich Preisers Wachstums- und Konjunkturtheorie als einheitliche dynamische Theorie --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Passau - Verlag: Passavia Universitätsverlag - Jahr:  - Materialart: abcdis
+----- wert zu tief für IFF-Katalogisat.
+
+ISBN: 3163431615
+ISBN-2: 3163431623
+Autor: Streissler --- Autor2: 
+Titel: Kritik des neoklassischen Gleichgewichtsansatzes als Rechtfertigung marktwirtschaftlicher Ordnungen --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Tübingen - Verlag: J. C. B. Mohr (Paul Siebeck) - Jahr:  - Materialart: abcdis
+----- wert zu tief für IFF-Kata (anlytica)
+
+https://www.swissbib.ch/Record/27482583X
+Autor: Veröffentlichung der Schweiz Verwaltungskurse --- Autor2: 
+Titel: Voranschlag und Rechnung der öffentlichen Gemeinwesen --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Einsiedeln - Verlag: Benziger & Co. - Jahr: 1945 - Materialart: m
+----- HSG-Dublette nicht gefunden!
+
+ISBN: 3445020329
+Autor: Bremer --- Autor2: 
+Titel: Weltmodellstudien --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Königstein - Verlag: Anton Hain - Jahr: 1980 - Materialart: m
+----- zuviele IFF-Treffer, es wird der falsche ersetzt. 
+
+https://www.swissbib.ch/Record/514571284
+Autor: Linder --- Autor2: 
+Titel: Wettbewerb - was ist das? --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort:  - Verlag:  - Jahr:  - Materialart: m
+--------------- 0 Treffer
+
+https://www.swissbib.ch/Search/Results?lookfor=k%C3%A4nzig+wehrsteuer+1982&type=AllFields&limit=20
+Autor: Känzig --- Autor2: 
+Titel: Wehrsteuer Direkte Bundessteuer - I Teil --- Untertitel: Art 1-44 WStB --- Titeldatum:  --- Band: 
+Ort: Basel - Verlag: Verlag für Recht und Gesellschaft AG - Jahr: 1982 - Materialart: m
+--------------- zahlreiche gute Treffer. 
+
+ISBN: 9264038795
+Autor: OECD --- Autor2: 
+Titel: Trends and Policies in Privatisation --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Paris - Verlag: OECD - Jahr: 1993 - Materialart: m
+-------- neu importieren?
+
+Autor: Minsch --- Autor2: 
+Titel: Ursachen und Verursacherprinzip im Umweltbereich --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: St. Gallen - Verlag: Wilhelm Surbir - Jahr: 1988 - Materialart: m
+--------------- HSG-_Diss. Tippfehler im Titel. 
+
+cql.serverChoice not supported:
+Autor: Arthur Andersen & Co --- Autor2: 
+Titel: Tax and Trade Guide  --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort:  - Verlag: Arthur Andersen & Co. - Jahr: 1966 - Materialart: m
+
+https://www.swissbib.ch/Search/Results?sort=relevance&advancedSearchFormRequest=advancedSearchFormRequest&join=AND&bool0%5B%5D=AND&lookfor0%5B%5D=tax+and+trade+guide&type0%5B%5D=Title&lookfor0%5B%5D=andersen&type0%5B%5D=AllFields&lookfor0%5B%5D=&type0%5B%5D=AllFields&daterange%5B%5D=publishDate&publishDatefrom=&publishDateto=&limit=20
+3 Treffer, alles IFF-Dokumente => Dubletten?
+--------------------
+
+cql.serverChoice not supported:
+Autor: Willmott --- Autor2: 
+Titel: Manpower and Education --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort:  - Verlag:  - Jahr:  - Materialart: abcdis
+
+---------
+ISBN: 340604915X
+Autor: Glaser --- Autor2: 
+Titel: Urbanistik --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: München - Verlag: Verlag C.H. Beck - Jahr: 1974 - Materialart: m
+---- es hat zuviele IFF-Treffer, falscher würde ersetzt. 
+
+ISBN: 3503011102
+Autor: Kunze --- Autor2: 
+Titel: Umweltschutz-Investitionen und Wirtschaftswachstum --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Berlin - Verlag: Erich Schmidt Verlag - Jahr: 1975 - Materialart: m
+----------- neu importieren!
+
+Autor: IFSt --- Autor2: 
+Titel: IFSt-Heft --- Untertitel:  --- Titeldatum:  066 --- Band: Bd 2
+Ort: Bonn - Verlag: Verlag Stollberg - Jahr: 1963 - Materialart: abcdis
+----- separat behandeln
+
+ISBN: 3631351305
+Autor: Leist --- Autor2: 
+Titel: Verfassungsrechtliche Schranken des steuerlichen Auskunfts- und Informationsverkehrs --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Frankfurt am Main / Berlin / Bern / Brüssel / New York / Wien - Verlag: Lang- Europäischer Verlag der Wissenschaften - Jahr: 2000 
+----------- neu importieren
+
+Autor: Staatskanzlei Obwalden --- Autor2: 
+Titel: Verwaltungsentscheide des Kantons Obwalden --- Untertitel:  --- Titeldatum: 1966-1970 --- Band: 
+Ort: Sarnen - Verlag: Staatskanzlei Obwalden - Jahr: 1971 - Materialart: abcdis
+----- Titeldatum muss irgendwie in Signatur übergeben werden...
+
+Autor: Amt der Vorarlberger Landesregierung --- Autor2: 
+Titel: Die Realisierung des Vorarlberger Abfallkonzeptes --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: Hard - Verlag: Hecht-Druck - Jahr: 1990 - Materialart: m
+---------- IFF gewinnt immer noch!! 
+
+Autor: Hansjakob --- Autor2: 
+Titel: Kostenarten-Kostenträger und Kostenhöhe im Strafprozess am Beispiel des Kantons StGallen --- Untertitel:  --- Titeldatum:  --- Band: 
+Ort: St.Gallen - Verlag: Leo Fürer - Jahr: 1988 - Materialart: m
+----------- HSG-Dok. wird nicht gefunden. https://www.swissbib.ch/Record/261920561

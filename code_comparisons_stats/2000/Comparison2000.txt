@@ -1,0 +1,725 @@
+SLIGHT IMPROVEMENT
+3, 27, 535, 556, 576, 603, 606, 831, 865, 926, 933, 936, 937, 941-952
+
+BIG IMPROVEMENT
+596, 706, 745, 796, 806
+
+SLIGHTLY WORSE
+24, 189, 510, 531, 541, 564, 640, 754, 755, 775, 783, 787, 789, 795, 798, 799, 800, 805, 826, 868, 892, 896, 901, 1024, 1031, 1073
+
+MUCH WORSE
+310, 608, 746
+
+DIFFERENCE DOESNT MATTER
+143, 660, 760, 804, 899, 914, 915
+
+Erkenntnis:
+IFA wiederherstellen (232 Dokumente, International Fiscal Association)
+
+
+--------------------------------------------------------
+CODE1
+
+Total not found (notfound.csv):    191
+Total unsure (notfound.csv):       5 
+Total journals (journals.csv):     687 
+Total found:                       1118 
+---------------------------------------------------------------------------------------
+TODO with found documents: 
+Replace with document from Swissbib (export.csv):         143 
+Replace with document from HSB01 (hsg_duplicates.csv):    210 
+Replace where IFF-record not found (notfound.csv):        74
+Replace by re-importing from Swissbib: (export.csv)       100
+---------------------------------------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                                          189
+Records cannot be improved:                               402
+
+RECORDS PROCESSED: 2000     ---                  TIME ELAPSED: 187.97
+
+CODE2
+
+Total not found:    188
+Total unsure:       3 
+Total journals:     685 
+Total found:        1124 
+--------------------------------------------------------
+TODO with found documents: (see export.csv)
+Replace with document from Swissbib:  128 
+Replace with document from HSB01 :    193 
+Replace where IFF-record not found :  152
+Replace by re-importing f/ Swissbib:  55
+--------------------------------------------------------
+Found documents without any action needed: 
+Already matched:                      187
+Records cannot be improved:           409
+
+RECORDS PROCESSED:                    2000 
+TIME ELAPSED:                         173.66
+
+
+DIFF:
+$ diff export_2000_1.csv export_2000_2.csv
+3c3
+< notfound;;
+---
+> leave;997629;
+24c24
+< bestcase;88282;
+---
+> notfound;;
+27c27
+< notfound;;
+---
+> leave;997644;
+143c143
+< iff_doc_missing;CSV line 143;261806742
+---
+> iff_doc_missing;CSV line 143;333428102
+189c189
+< HSB01duplicate;997658;170707
+---
+> iff_doc_missing;CSV line 189;34251863
+310c310
+< replacefromSwissbib;992800;263922383
+---
+> HSB01duplicate;992800;542265
+510c510
+< journal;;
+---
+> notfound;;
+531c531
+< HSB01duplicate;997694;161082
+---
+> replacefromSwissbib;997694;94711143
+535c535
+< notfound;;
+---
+> leave;997698;
+541c541
+< replacefromSwissbib;997702;178462268
+---
+> notfound;;
+556c556
+< notfound;;
+---
+> leave;997715;
+564,565d563
+< leave;997722;
+< leave;997723;
+566a565,566
+> leave;997723;
+> leave;997724;
+576c576
+< unsure;;
+---
+> leave;997730;
+596c596
+< replacefromSwissbib;997739;265628040
+---
+> HSB01duplicate;997739;127245
+603c603
+< notfound;;
+---
+> leave;997744;
+606c606
+< notfound;;
+---
+> leave;997746;
+608c608
+< replacefromSwissbib;997748;261028804
+---
+> HSB01duplicate;997748;60644
+640c640
+< replacefromSwissbib;997771;83172297
+---
+> leave;997771;
+646c646
+< leave;997776;
+---
+> bestcase;997776;
+660c660
+< iff_doc_missing;CSV line 660;120774119
+---
+> iff_doc_missing;CSV line 660;523016743
+706c706
+< notfound;;
+---
+> replacefromSwissbib;997790;341859095
+745,746c745,746
+< HSB01duplicate;997816;993860
+< replacefromSwissbib;997817;75497557
+---
+> replacefromSwissbib;997816;544242831
+> HSB01duplicate;997817;99958
+754,755c754,755
+< replacefromSwissbib;997824;262045680
+< replacefromSwissbib;997824;262045680
+---
+> iff_doc_missing;CSV line 754;483947822
+> iff_doc_missing;CSV line 755;483947822
+760c760
+< iff_doc_missing;CSV line 760;120774119
+---
+> iff_doc_missing;CSV line 760;523016743
+775c775
+< leave;997833;
+---
+> notfound;;
+783c783
+< leave;997841;
+---
+> notfound;;
+787c787
+< leave;997922;
+---
+> notfound;;
+789c789
+< leave;997845;
+---
+> notfound;;
+795,796c795,796
+< leave;997849;
+< iff_doc_missing;CSV line 796;299721698
+---
+> notfound;;
+> replacefromSwissbib;997850;284730173
+798,800c798,800
+< replacefromSwissbib;997852;440270111
+< replacefromSwissbib;997827;105981192
+< HSB01duplicate;997853;312025
+---
+> iff_doc_missing;CSV line 798;440270111
+> iff_doc_missing;CSV line 799;292552254
+> iff_doc_missing;CSV line 800;290180635
+804,806c804,806
+< replacefromSwissbib;997856;182964957
+< replacefromSwissbib;997852;440270111
+< notfound;;
+---
+> replacefromSwissbib;997856;434976970
+> iff_doc_missing;CSV line 805;440270111
+> replacefromSwissbib;997857;280717407
+826c826
+< HSB01duplicate;997872;43895
+---
+> leave;997872;
+831c831
+< unsure;;
+---
+> leave;997875;
+865c865
+< notfound;;
+---
+> leave;997899;
+868c868
+< leave;995078;
+---
+> notfound;;
+892c892
+< HSB01duplicate;997919;99231
+---
+> leave;997919;
+896c896
+< leave;997922;
+---
+> notfound;;
+899c899
+< replacefromSwissbib;997925;318657732
+---
+> replacefromSwissbib;997925;532220722
+901c901
+< leave;997927;
+---
+> notfound;;
+914,915c914,915
+< replacefromSwissbib;997925;318657732
+< iff_doc_missing;CSV line 915;36031550
+---
+> replacefromSwissbib;997925;532220722
+> iff_doc_missing;CSV line 915;326054405
+926,927c926
+< notfound;;
+< notfound;;
+---
+> leave;997942;
+934c933
+< HSB01duplicate;997625;997949
+---
+> leave;997625;
+937,938c936,937
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+---
+> leave;997625;
+> leave;997625;
+942,949c941,948
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+---
+> leave;997625;
+> leave;997625;
+> leave;997625;
+> leave;997625;
+> leave;997625;
+> leave;997625;
+> leave;997625;
+> leave;997625;
+951,953c950,952
+< notfound;;
+< HSB01duplicate;997625;997949
+< HSB01duplicate;997625;997949
+---
+> leave;997954;
+> leave;997625;
+> leave;997625;
+1025c1024
+< leave;998012;
+---
+> notfound;;
+1032c1031
+< leave;998016;
+---
+> notfound;;
+1074c1073
+< HSB01duplicate;998051;99170
+---
+> iff_doc_missing;CSV line 1073;35998938
+1076c1075
+< replacefromSwissbib;998053;07495914X
+---
+> iff_doc_missing;CSV line 1075;07495914X
+1079c1078
+< HSB01duplicate;998055;99180
+---
+> iff_doc_missing;CSV line 1078;34183175
+1081,1082c1080,1081
+< replacefromSwissbib;998057;72534664
+< HSB01duplicate;998058;48387
+---
+> iff_doc_missing;CSV line 1080;421638060
+> iff_doc_missing;CSV line 1081;03599889X
+1118c1117
+< replacefromSwissbib;998087;279256795
+---
+> replacefromSwissbib;998087;502817399
+1120c1119
+< notfound;;
+---
+> HSB01duplicate;998089;126617
+1131c1130
+< leave;998097;
+---
+> notfound;;
+1173c1172
+< iff_doc_missing;CSV line 1172;212453114
+---
+> iff_doc_missing;CSV line 1172;265829054
+1185c1184
+< replacefromSwissbib;998133;346084008
+---
+> iff_doc_missing;CSV line 1184;346084008
+1219c1218
+< notfound;;
+---
+> iff_doc_missing;CSV line 1218;541537393
+1280c1279
+< HSB01duplicate;998187;66177
+---
+> notfound;;
+1283,1284c1282,1283
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1282;298973928
+> iff_doc_missing;CSV line 1283;298973928
+1288c1287
+< leave;998147;
+---
+> iff_doc_missing;CSV line 1287;298973928
+1300c1299
+< reimportFromSwissbib;994697;515927848
+---
+> notfound;;
+1303c1302
+< notfound;;
+---
+> reimportFromSwissbib;998159;515925098
+1306c1305
+< leave;998147;
+---
+> iff_doc_missing;CSV line 1305;298973928
+1313c1312
+< leave;998147;
+---
+> iff_doc_missing;CSV line 1312;298973928
+1316c1315
+< reimportFromSwissbib;994697;515927848
+---
+> notfound;;
+1318,1319c1317,1318
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> notfound;;
+> notfound;;
+1321a1321
+> iff_doc_missing;CSV line 1321;28069962X
+1323d1322
+< reimportFromSwissbib;994697;515927848
+1325c1324
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1324;298973928
+1332a1332,1333
+> leave;998179;
+> iff_doc_missing;CSV line 1333;298973928
+1334,1335d1334
+< leave;998147;
+< reimportFromSwissbib;994697;515927848
+1343a1343,1345
+> replacefromSwissbib;998145;134700864
+> iff_doc_missing;CSV line 1344;298973928
+> iff_doc_missing;CSV line 1345;298973928
+1345,1346d1346
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+1348,1349c1348
+< HSB01duplicate;998187;66177
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1348;298973928
+1354c1353
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1353;298973928
+1358c1357
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1357;298973928
+1360,1361c1359,1360
+< HSB01duplicate;998147;997572
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1359;298973928
+> iff_doc_missing;CSV line 1360;298973928
+1365c1364
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1364;298973928
+1370,1373c1369,1372
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1369;298973928
+> iff_doc_missing;CSV line 1370;298973928
+> iff_doc_missing;CSV line 1371;298973928
+> iff_doc_missing;CSV line 1372;298973928
+1378c1377
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1377;298973928
+1380c1379
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1379;298973928
+1383,1384c1382,1383
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1382;298973928
+> iff_doc_missing;CSV line 1383;298973928
+1388,1389c1387,1388
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1387;298973928
+> iff_doc_missing;CSV line 1388;298973928
+1391c1390
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1390;298973928
+1395c1394
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1394;298973928
+1397c1396
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1396;298973928
+1399,1400c1398,1399
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1398;298973928
+> iff_doc_missing;CSV line 1399;298973928
+1404c1403
+< HSB01duplicate;998055;99180
+---
+> iff_doc_missing;CSV line 1403;34183175
+1413c1412
+< bestcase;292;
+---
+> HSB01duplicate;998200;292
+1415c1414
+< HSB01duplicate;998201;125724
+---
+> notfound;;
+1420c1419
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1419;298973928
+1425c1424
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1424;298973928
+1429c1428
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1428;298973928
+1438c1437
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1437;298973928
+1441,1442c1440,1441
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1440;298973928
+> iff_doc_missing;CSV line 1441;298973928
+1444c1443
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1443;298973928
+1450,1451c1449,1450
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1449;298973928
+> iff_doc_missing;CSV line 1450;298973928
+1453,1456c1452,1455
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1452;298973928
+> iff_doc_missing;CSV line 1453;298973928
+> iff_doc_missing;CSV line 1454;298973928
+> iff_doc_missing;CSV line 1455;298973928
+1459,1461c1458,1460
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+< reimportFromSwissbib;994697;515927848
+---
+> iff_doc_missing;CSV line 1458;298973928
+> iff_doc_missing;CSV line 1459;298973928
+> iff_doc_missing;CSV line 1460;298973928
+1572c1571
+< notfound;;
+---
+> reimportFromSwissbib;998218;273671340
+1592c1591
+< bestcase;126350;
+---
+> notfound;;
+1641c1640
+< leave;998237;
+---
+> replacefromSwissbib;998237;270198318
+1665a1665
+> iff_doc_missing;CSV line 1665;428015999
+1667a1668
+> iff_doc_missing;CSV line 1668;428015999
+1676a1678
+> iff_doc_missing;CSV line 1678;428015999
+1678a1681
+> iff_doc_missing;CSV line 1681;428015999
+1680,1684c1683
+< notfound;;
+< notfound;;
+< notfound;;
+< notfound;;
+< notfound;;
+---
+> iff_doc_missing;CSV line 1683;428015999
+1686c1685
+< notfound;;
+---
+> iff_doc_missing;CSV line 1685;407404554
+1691c1690
+< notfound;;
+---
+> iff_doc_missing;CSV line 1690;407404554
+1700c1699
+< replacefromSwissbib;998250;290383528
+---
+> replacefromSwissbib;998250;438533135
+1703c1702
+< replacefromSwissbib;998250;438533135
+---
+> iff_doc_missing;CSV line 1702;438533135
+1706c1705
+< notfound;;
+---
+> bestcase;100032;
+1711c1710
+< leave;998257;
+---
+> notfound;;
+1717,1718c1716,1717
+< replacefromSwissbib;998261;538772840
+< HSB01duplicate;998242;998262
+---
+> reimportFromSwissbib;998261;268458162
+> notfound;;
+1726,1728c1725,1727
+< replacefromSwissbib;998217;509232892
+< replacefromSwissbib;998242;509232892
+< replacefromSwissbib;998217;509232892
+---
+> notfound;;
+> notfound;;
+> notfound;;
+1732c1731
+< iff_doc_missing;CSV line 1731;126728569
+---
+> iff_doc_missing;CSV line 1731;522986706
+1736c1735
+< iff_doc_missing;CSV line 1735;509232892
+---
+> iff_doc_missing;CSV line 1735;522986706
+1738c1737
+< replacefromSwissbib;998217;509232892
+---
+> HSB01duplicate;998217;16806
+1740c1739
+< HSB01duplicate;998276;127101
+---
+> iff_doc_missing;CSV line 1739;291651860
+1743,1744c1742,1743
+< notfound;;
+< notfound;;
+---
+> iff_doc_missing;CSV line 1742;428015999
+> iff_doc_missing;CSV line 1743;439054613
+1749,1750c1748,1749
+< notfound;;
+< notfound;;
+---
+> iff_doc_missing;CSV line 1748;428015999
+> iff_doc_missing;CSV line 1749;428015999
+1754c1753
+< notfound;;
+---
+> iff_doc_missing;CSV line 1753;428015999
+1762c1761
+< HSB01duplicate;998283;99194
+---
+> iff_doc_missing;CSV line 1761;03418323X
+1807c1806
+< replacefromSwissbib;998285;501205950
+---
+> leave;998285;
+1818c1817
+< reimportFromSwissbib;998288;300852193
+---
+> replacefromSwissbib;998288;203559304
+1828c1827
+< HSB01duplicate;998295;99176
+---
+> iff_doc_missing;CSV line 1827;295506881
+1830,1831c1829,1830
+< bestcase;185580;
+< HSB01duplicate;998296;38333
+---
+> notfound;;
+> iff_doc_missing;CSV line 1830;34157425
+1845c1844
+< replacefromSwissbib;998306;263454711
+---
+> HSB01duplicate;998306;8279
+1854,1855c1853,1854
+< notfound;;
+< notfound;;
+---
+> HSB01duplicate;998314;153005
+> HSB01duplicate;998315;139253
+1860c1859
+< replacefromSwissbib;996935;357983645
+---
+> leave;998319;
+1868c1867
+< leave;998325;
+---
+> HSB01duplicate;998325;16683
+1872c1871
+< replacefromSwissbib;998325;139922075
+---
+> HSB01duplicate;998325;16683
+1874c1873
+< replacefromSwissbib;998325;139922075
+---
+> HSB01duplicate;998325;16683
+1880c1879
+< iff_doc_missing;CSV line 1879;139922075
+---
+> iff_doc_missing;CSV line 1879;523012780
+1886,1887c1885,1886
+< replacefromSwissbib;998334;129143235
+< replacefromSwissbib;998335;367357798
+---
+> replacefromSwissbib;998334;501550887
+> replacefromSwissbib;998335;417287208
+1890c1889
+< leave;998338;
+---
+> replacefromSwissbib;998338;412195984
+1897c1896
+< replacefromSwissbib;998342;268640270
+---
+> replacefromSwissbib;998342;258094249
+1922c1921
+< notfound;;
+---
+> leave;998357;
+1924c1923
+< notfound;;
+---
+> HSB01duplicate;998358;126321
+1933c1932
+< HSB01duplicate;998365;6303
+---
+> HSB01duplicate;998366;6306
+1935c1934
+< notfound;;
+---
+> HSB01duplicate;995157;203573
+1940c1939
+< leave;998373;
+---
+> notfound;;
+1979c1978
+< leave;998395;
+---
+> notfound;;
+1984c1983
+< journal;;
+---
+> notfound;;
+1997c1996
+< leave;998410;
+---
+> notfound;;
+1999d1997
+< leave;998411;
+2000a1999
+> replacefromSwissbib;994089;487190637

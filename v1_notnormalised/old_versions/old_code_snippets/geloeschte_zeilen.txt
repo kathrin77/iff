@@ -1,0 +1,134 @@
+						foreach $el ($xpc->findnodes( './datafield[@tag=035 ]', $rec)){
+							$Match::bibnr = $xpc->findnodes('./subfield[@code="a"]', $el )->to_literal;
+							if ($Match::bibnr =~/IDSSG/) { #wenn eine IDSSG-Bibnr. 
+								print $fh_report "Bibnr: ".$Match::bibnr."\n";
+								$Match::bibnr = substr $Match::bibnr, -7; #only the last 7 numbers
+								if ($Match::bibnr > 990000) { #this is a new HSG record and therefore from IFF data
+									$Match::IFFMATCH += 1;
+									#print $fh_report "--------------------------IDSSG - nur ein IFF-Katalogisat!\n"; 
+								} #else {								
+									#print $fh_report "------------------------IDSSG - ein altes HSG-Katalogisat!\n"; 
+								#}
+								
+							}
+							#print $fh_report "Feld 035a: ".$bibnr."\n";
+							
+
+						}
+						
+									## Posessing library network: search for HIFF in subfield F instead of bibnr. // TODO: das funktioniert nicht immer. Besser Feld 035.
+#		 	if ($xpc->exists('./datafield[@tag="949"]', $rec)){
+#
+#		     	foreach $el ($xpc->findnodes( './datafield[@tag=949 ]', $rec)){
+#		         $Marc::MARC949B= $xpc->findnodes('./subfield[@code="B"]', $el )->to_literal;     
+#		         $Marc::MARC949F= $xpc->findnodes('./subfield[@code="F"]', $el )->to_literal;                   
+#					print $fh_report "Feld 949B: ".$Marc::MARC949B."\n";
+#					if ($Marc::MARC949B =~/IDSSG/) {# book found in IDSSG
+#						$Match::IDSSGMATCH = 1; 
+#						#print $fh_report "--------------------------An HSG vorhanden\n"; 
+#						if ($Marc::MARC949F =~/HIFF/) {
+#							print $fh_report "Feld 949F: ".$Marc::MARC949F."\n";
+#							#print $fh_report "--------------------------Leider schon vom IFF eingespielt...\n"; 
+#							$Match::IFFMATCH = 1;
+#						}
+#
+#					} #elsif ($Marc::MARC949B =~/IDSBB|IDSLU|NEBIS/) {
+#						#print $fh_report "--------------------------OK! Im IDS vorhanden\n"; 
+#					#} #else {
+#
+#						#print $fh_report "--------------------------Nur im Rero/SNB vorhanden\n"; 
+#					#}
+#		     	}
+#		 	} 
+
+#			## Posessing library network II: TODO: HIFF anpassen, s.oben
+#		 	if ($xpc->exists('./datafield[@tag="852"]', $rec)){
+#
+#		     	foreach $el ($xpc->findnodes( './datafield[@tag=852 ]', $rec)){
+#		         $Marc::MARC852B = $xpc->findnodes('./subfield[@code="B"]', $el )->to_literal;            
+#					print $fh_report "Feld 852B: ".$Marc::MARC852B."\n";
+#					if ($Marc::MARC852B =~/IDSSG/) {# book or article found in IDSSG
+#						$Match::IDSSGMATCH += 1; 
+#						#get record nr.
+#						foreach $el ($xpc->findnodes( './datafield[@tag=035 ]', $rec)){
+#							$Match::bibnr = $xpc->findnodes('./subfield[@code="a"]', $el )->to_literal;
+#							if ($Match::bibnr =~/IDSSG/) { #wenn eine IDSSG-Bibnr. 
+#								print $fh_report "Bibnr: ".$Match::bibnr."\n";
+#								$Match::bibnr = substr $Match::bibnr, -7; #only the last 7 numbers
+#								if ($Match::bibnr > 990000) { #this is a new HSG record and therefore from IFF data
+									$Match::IFFMATCH += 1;
+									#print $fh_report "--------------------------IDSSG - nur ein IFF-Katalogisat!\n"; 
+								} #else {								
+#									#print $fh_report "------------------------IDSSG - ein altes HSG-Katalogisat!\n"; 
+								#}
+#								
+#							}
+							#print $fh_report "Feld 035a: ".$bibnr."\n";
+							
+
+#						}
+
+#					} #elsif ($Marc::MARC949B =~/IDSBB|IDSLU|NEBIS/) {
+						#print $fh_report "--------------------------OK! Im IDS vorhanden\n"; 
+					#} 
+#		     	} 
+#		 	} 
+## Posessing library network II: TODO: HIFF anpassen, s.oben
+		 	if ($xpc->exists('./datafield[@tag="852"]', $rec)){
+
+		     	foreach $el ($xpc->findnodes( './datafield[@tag=852 ]', $rec)){
+		         $Marc::MARC852B = $xpc->findnodes('./subfield[@code="B"]', $el )->to_literal;            
+					print $fh_report "Feld 852B: ".$Marc::MARC852B."\n";
+					if ($Marc::MARC852B =~/IDSSG/) {# book or article found in IDSSG
+						$Match::IDSSGMATCH += 1; 
+						#get record nr.
+						foreach $el ($xpc->findnodes( './datafield[@tag=035 ]', $rec)){
+							$Match::bibnr = $xpc->findnodes('./subfield[@code="a"]', $el )->to_literal;
+							if ($Match::bibnr =~/IDSSG/) { #wenn eine IDSSG-Bibnr. 
+								print $fh_report "Bibnr: ".$Match::bibnr."\n";
+								$Match::bibnr = substr $Match::bibnr, -7; #only the last 7 numbers
+								if ($Match::bibnr > 990000) { #this is a new HSG record and therefore from IFF data
+									$Match::IFFMATCH += 1;
+									#print $fh_report "--------------------------IDSSG - nur ein IFF-Katalogisat!\n"; 
+								} #else {								
+									#print $fh_report "------------------------IDSSG - ein altes HSG-Katalogisat!\n"; 
+								#}
+								
+							}
+							#print $fh_report "Feld 035a: ".$bibnr."\n";
+							
+
+						}
+
+					} #elsif ($Marc::MARC949B =~/IDSBB|IDSLU|NEBIS/) {
+						#print $fh_report "--------------------------OK! Im IDS vorhanden\n"; 
+					#} 
+		     	} 
+		 	} 
+			
+						## Posessing library network: search for HIFF in subfield F instead of bibnr. // TODO: das funktioniert nicht immer. Besser Feld 035.
+		 	if ($xpc->exists('./datafield[@tag="949"]', $rec)){
+
+		     	foreach $el ($xpc->findnodes( './datafield[@tag=949 ]', $rec)){
+		         $Marc::MARC949B= $xpc->findnodes('./subfield[@code="B"]', $el )->to_literal;     
+		         $Marc::MARC949F= $xpc->findnodes('./subfield[@code="F"]', $el )->to_literal;                   
+					print $fh_report "Feld 949B: ".$Marc::MARC949B."\n";
+					if ($Marc::MARC949B =~/IDSSG/) {# book found in IDSSG
+						$Match::IDSSGMATCH = 1; 
+						#print $fh_report "--------------------------An HSG vorhanden\n"; 
+						if ($Marc::MARC949F =~/HIFF/) {
+							print $fh_report "Feld 949F: ".$Marc::MARC949F."\n";
+							#print $fh_report "--------------------------Leider schon vom IFF eingespielt...\n"; 
+							$Match::IFFMATCH = 1;
+						}
+
+					} #elsif ($Marc::MARC949B =~/IDSBB|IDSLU|NEBIS/) {
+						#print $fh_report "--------------------------OK! Im IDS vorhanden\n"; 
+					#} #else {
+
+						#print $fh_report "--------------------------Nur im Rero/SNB vorhanden\n"; 
+					#}
+		     	}
+		 	} 
+
+			

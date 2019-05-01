@@ -1,9 +1,9 @@
 There are 2 versions of the script. 
-v1_notnormalized (old version, kept for comparison)
-v2_normalized (recommended version)
+v1_notnormalised (old version, kept for comparison)
+v2_normalised (recommended version)
 
-This readme is for the recommended Version v2_normalized.
-The v2_normalized Version works with normalized data input and delivers much better results.
+This readme is for the recommended Version v2_normalised.
+The v2_normalised Version works with normalized data input and delivers much better results.
 
 Prerequisites:
 You need to have perl 5.10 installed. For Strawberry Perl (Windows):
@@ -12,11 +12,11 @@ https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-loc
 
 How to use the script:
 The script can be called on the command line like this:
-cd v2_normalized
+cd v2_normalised
 perl sru-swissbib.pl
 No parameters are needed.
 There is no help function (see this readme file for instructions).
-For use of the old version v1_notnormalized/iff_swissbib.pl, there is a separate readme in the directory v1_notnormalized.
+For use of the old version v1_notnormalised/iff_swissbib.pl, there is a separate readme in the directory v1_notnormalised.
 
 The script calls the Swissbib SRU service for each document in the input file, so you will need an active internet connection.
 Performance depends on internet connection as well as availability of SRU service.

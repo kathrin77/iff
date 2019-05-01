@@ -6,7 +6,9 @@ This readme is for the recommended Version v2_normalised.
 The v2_normalised Version works with normalized data input and delivers much better results.
 
 Prerequisites:
-You need to have perl 5.10 installed. For Strawberry Perl (Windows):
+You need to have perl installed to run this. 
+Developed with Strawberry Perl v5.28.1
+For Strawberry Perl (Windows):
 To include Path to .\Code in @INC (Windows) see:
 https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-locations
 
@@ -44,8 +46,9 @@ Additional mapping info can be found in following columns:
 	- reimportFromSwissbib: replace col. x with col. y, data: see metadata.xml
 	- HSB01duplicate: replace col. x with col. y
 	- iff_doc_missing: original not found, could be replaced manually with docnr. from col. y
-	- notfound: no result
-	- journal: to do manually
+	- notfound: no result from SRU query, do manually
+	- unsure: no certain result (match value too low), do manually
+	- journal: excluded from matching, do manually
 
 
 - x: docnr. of document to be replaced (bibnr. in HSB01)

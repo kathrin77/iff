@@ -667,7 +667,7 @@ while ( $row = $csv->getline($fh_in) ) {
 	            				print $fh_report "TITLEMATCH 505 volume: $TITLEMATCH \n";          					
             				}
             				if (defined $volume2) {
-	              				$TITLEMATCH += getMatchValue("t",$xpc,$el, $volume2,10); # check 505 for volume info
+	              				$TITLEMATCH += getMatchValue("t",$xpc,$el, $volume2,10); # check 505 for volume2 info
 	            				print $fh_report "TITLEMATCH 505 volume2: $TITLEMATCH \n";          					
             				}
             			}
@@ -1110,10 +1110,10 @@ sub hasTag {
 # get MARC content, compare to CSV content and return match value
 
 sub getMatchValue {
-    my $code   = $_[0];    #subfield
-    my $xpath   = $_[1];     #xpc
-    my $element = $_[2];    #el
-    my $vari  = $_[3];    #orignal data from csv
+    my $code   	 = $_[0];    #subfield
+    my $xpath    = $_[1];    #xpc
+    my $element  = $_[2];    #el
+    my $vari  	 = $_[3];    #orignal data from csv
     my $posmatch = $_[4];    #which match value shoud be assigned to positive match?
     my $matchvalue;
     my $marcfield;
@@ -1126,12 +1126,10 @@ sub getMatchValue {
     print $fh_report "\$".$code.": " . $marcfield . "\n";
 
     if ( ($vari =~ m/$marcfield/i ) || ($marcfield =~m/$vari/i)){ #Marc Data matches IFF Data
-        #debug:        print $fh_report "marcfield full match! \n";
         $matchvalue = $posmatch;
     } else {$matchvalue = 0;}
     
-    return $matchvalue;
-	
+    return $matchvalue;	
 }
 
 # create xml file for export / re-import

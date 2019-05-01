@@ -433,24 +433,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 8
 
 #Document 1:
-Swissbibnr.: 001687344
-MARC 100 $a: Schwarzenbach-Hanhart
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Berufliche Vorsorge in Text und Tafeln
-TITLEMATCH: 15 
-MARC 264 $c: 1995
-YEARMATCH: 10
-MARC 264 $a: Zürich
-PLACEMATCH: 5
-MARC 264 $b: Schulthess Polygraphischer Verlag
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 60.5
-
-#Document 2:
 Swissbibnr.: 019361947
 MARC 020 $a: 3725532443
 ISBNMATCH: 10 
@@ -469,6 +451,24 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 70.5
+
+#Document 2:
+Swissbibnr.: 001687344
+MARC 100 $a: Schwarzenbach-Hanhart
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Berufliche Vorsorge in Text und Tafeln
+TITLEMATCH: 15 
+MARC 264 $c: 1995
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Schulthess Polygraphischer Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 60.5
 
 #Document 3:
 Swissbibnr.: 515870498
@@ -2448,21 +2448,6 @@ Matchpoints SLSP: 0
 Totalmatch: 40.5
 
 #Document 2:
-Swissbibnr.: 514575522
-MARC 100 $a: Känzig
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die steuerrechtliche Behandlung der Veräusserung von Unternehmungen und Unternehmungsanteilen
-TITLEMATCH: 15 
-MARC 773 $t: diverse: Festschrift für Irene Blumenstein - Überreicht zum 70 Geburtstag am 23 April 1966
-SOURCEMATCH Analytica: 10 
-LDR Materialart: a
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000991319: IFF_MATCH: -3
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 47.5
-
-#Document 3:
 Swissbibnr.: 350233039
 MARC 100 $a: Känzig
 AUTHOR-1-MATCH: 10
@@ -2481,6 +2466,21 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 40.5
+
+#Document 3:
+Swissbibnr.: 514575522
+MARC 100 $a: Känzig
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die steuerrechtliche Behandlung der Veräusserung von Unternehmungen und Unternehmungsanteilen
+TITLEMATCH: 15 
+MARC 773 $t: diverse: Festschrift für Irene Blumenstein - Überreicht zum 70 Geburtstag am 23 April 1966
+SOURCEMATCH Analytica: 10 
+LDR Materialart: a
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000991319: IFF_MATCH: -3
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 47.5
 
 #Document 4:
 Swissbibnr.: 103683313
@@ -3409,18 +3409,6 @@ Matchpoints SLSP: 11
 Totalmatch: 66.5
 
 #Document 3:
-Swissbibnr.: 047071893
-MARC 100 $a: Ebner
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die gesamtwirtschaftliche Förderung von Berggebieten
-TITLEMATCH: 15 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 4
-Totalmatch: 29.5
-
-#Document 4:
 Swissbibnr.: 240671228
 MARC 100 $a: Ebner
 AUTHOR-1-MATCH: 10
@@ -3433,6 +3421,18 @@ CARRIERMATCH: 5
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 6
 Totalmatch: 36.5
+
+#Document 4:
+Swissbibnr.: 047071893
+MARC 100 $a: Ebner
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die gesamtwirtschaftliche Förderung von Berggebieten
+TITLEMATCH: 15 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 4
+Totalmatch: 29.5
 Bestmatch: 66.5, Bestrecordnr: 17153588X, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 284451983 with 17153588X
 
@@ -3492,47 +3492,6 @@ Matchpoints SLSP: 11
 Totalmatch: 81.5
 
 #Document 3:
-Swissbibnr.: 349806802
-MARC 020 $a: 3725535140
-ISBNMATCH: 10 
-MARC 700 $a: Stauffer
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die berufliche Vorsorge
-TITLEMATCH: 15 
-MARC 260 $c: cop 1996
-YEARMATCH: 10
-MARC 260 $a: Zürich
-PLACEMATCH: 5
-MARC 260 $b: Schulthess
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 70.5
-
-#Document 4:
-Swissbibnr.: 276012445
-MARC 020 $a: 3725535140
-ISBNMATCH: 10 
-MARC 700 $a: Stauffer
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die berufliche Vorsorge BVG - FZG - ZGB - OR
-TITLEMATCH: 0 
-MARC 264 $c: 1996
-YEARMATCH: 10
-MARC 264 $a: Zürich
-PLACEMATCH: 5
-MARC 264 $b: Schulthess
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000119766: IDSSGMATCH: 40 
-MARC 949 Number of 035 fields: 10
-Matchpoints SLSP: 4
-Totalmatch: 104
-
-#Document 5:
 Swissbibnr.: 423913026
 MARC 020 $a: 3725535140
 ISBNMATCH: 10 
@@ -3558,6 +3517,47 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 6
 Matchpoints SLSP: 6
 Totalmatch: 89
+
+#Document 4:
+Swissbibnr.: 349806802
+MARC 020 $a: 3725535140
+ISBNMATCH: 10 
+MARC 700 $a: Stauffer
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die berufliche Vorsorge
+TITLEMATCH: 15 
+MARC 260 $c: cop 1996
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: Schulthess
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 70.5
+
+#Document 5:
+Swissbibnr.: 276012445
+MARC 020 $a: 3725535140
+ISBNMATCH: 10 
+MARC 700 $a: Stauffer
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die berufliche Vorsorge BVG - FZG - ZGB - OR
+TITLEMATCH: 0 
+MARC 264 $c: 1996
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Schulthess
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000119766: IDSSGMATCH: 40 
+MARC 949 Number of 035 fields: 10
+Matchpoints SLSP: 4
+Totalmatch: 104
 
 #Document 6:
 Swissbibnr.: 515875015
@@ -4786,6 +4786,23 @@ Totalmatch: 55.5
 9999: Unsafe Match title-isbn! 0
 
 #Document 6:
+Swissbibnr.: 045814627
+MARC 100 $a: Meier-Schatz
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Meier-Schatz
+AUTHOR-2-MATCH: 10
+MARC 245 $a: Die GmbH und die Private AG
+TITLEMATCH: 0 
+$b: 
+TITLEMATCH subtitle: 0 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 4
+Totalmatch: 14.5
+9999: Unsafe Match title-isbn! 0
+
+#Document 7:
 Swissbibnr.: 038926555
 MARC 100 $a: Meier-Schatz
 AUTHOR-1-MATCH: 10
@@ -4802,7 +4819,7 @@ Matchpoints SLSP: 0
 Totalmatch: 10.5
 9999: Unsafe Match title-isbn! 0
 
-#Document 7:
+#Document 8:
 Swissbibnr.: 480728925
 MARC 100 $a: Meier-Schatz
 AUTHOR-1-MATCH: 10
@@ -4817,23 +4834,6 @@ MATERIALMATCH in LDR: 0
 MARC 035 Number of 035 fields: 6
 Matchpoints SLSP: 6
 Totalmatch: 19
-9999: Unsafe Match title-isbn! 0
-
-#Document 8:
-Swissbibnr.: 045814627
-MARC 100 $a: Meier-Schatz
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Meier-Schatz
-AUTHOR-2-MATCH: 10
-MARC 245 $a: Die GmbH und die Private AG
-TITLEMATCH: 0 
-$b: 
-TITLEMATCH subtitle: 0 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 4
-Totalmatch: 14.5
 9999: Unsafe Match title-isbn! 0
 
 #Document 9:
@@ -8204,6 +8204,24 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
+Swissbibnr.: 090734777
+MARC 100 $a: Ossenbühl
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die gerechte Steuerlast
+TITLEMATCH: 15 
+MARC 264 $c: 1972
+YEARMATCH: 10
+MARC 264 $a: Heidelberg
+PLACEMATCH: 5
+MARC 264 $b: Kerle
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 71.5
+
+#Document 2:
 Swissbibnr.: 515881082
 MARC 100 $a: Ossenbühl Klaus Hermann
 AUTHOR-1-MATCH: 10
@@ -8221,24 +8239,6 @@ MARC 035 (IDSSG)000991968: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
-
-#Document 2:
-Swissbibnr.: 090734777
-MARC 100 $a: Ossenbühl
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die gerechte Steuerlast
-TITLEMATCH: 15 
-MARC 264 $c: 1972
-YEARMATCH: 10
-MARC 264 $a: Heidelberg
-PLACEMATCH: 5
-MARC 264 $b: Kerle
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 71.5
 
 #Document 3:
 Swissbibnr.: 284397113
@@ -14752,43 +14752,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
-Swissbibnr.: 546440770
-MARC 100 $a: Morand
-AUTHOR-1-MATCH: 10
-MARC 245 $a: La législation dans les communautés européennes
-TITLEMATCH: 15 
-MARC 260 $c: 1968
-YEARMATCH: 10
-MARC 260 $a: Sl
-PLACEMATCH: 0
-MARC 260 $b: sn
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 4
-Matchpoints SLSP: 0
-Totalmatch: 52
-
-#Document 2:
-Swissbibnr.: 262514141
-MARC 100 $a: Morand
-AUTHOR-1-MATCH: 10
-MARC 245 $a: La législation dans les Communautés européennes
-TITLEMATCH: 15 
-MARC 264 $c: 1968
-YEARMATCH: 10
-MARC 264 $a: Paris
-PLACEMATCH: 5
-MARC 264 $b: Librairie générale de droit et de jurisprudence
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000127821: IDSSGMATCH: 40 
-MARC 949 Number of 035 fields: 12
-Matchpoints SLSP: 6
-Totalmatch: 112
-
-#Document 3:
 Swissbibnr.: 515893315
 MARC 100 $a: Morand
 AUTHOR-1-MATCH: 10
@@ -14806,6 +14769,43 @@ MARC 035 (IDSSG)000992769: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
+
+#Document 2:
+Swissbibnr.: 546440770
+MARC 100 $a: Morand
+AUTHOR-1-MATCH: 10
+MARC 245 $a: La législation dans les communautés européennes
+TITLEMATCH: 15 
+MARC 260 $c: 1968
+YEARMATCH: 10
+MARC 260 $a: Sl
+PLACEMATCH: 0
+MARC 260 $b: sn
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 4
+Matchpoints SLSP: 0
+Totalmatch: 52
+
+#Document 3:
+Swissbibnr.: 262514141
+MARC 100 $a: Morand
+AUTHOR-1-MATCH: 10
+MARC 245 $a: La législation dans les Communautés européennes
+TITLEMATCH: 15 
+MARC 264 $c: 1968
+YEARMATCH: 10
+MARC 264 $a: Paris
+PLACEMATCH: 5
+MARC 264 $b: Librairie générale de droit et de jurisprudence
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000127821: IDSSGMATCH: 40 
+MARC 949 Number of 035 fields: 12
+Matchpoints SLSP: 6
+Totalmatch: 112
 Bestmatch: 112, Bestrecordnr: 262514141, bestrecordnr-HSG: 0127821
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0992769 with 0127821
 
@@ -15792,6 +15792,26 @@ Matchpoints SLSP: 11
 Totalmatch: 132
 
 #Document 2:
+Swissbibnr.: 370958918
+MARC 020 $a: 9264152792
+ISBNMATCH: 10 
+MARC 710 $a: Organisation for Economic Co-operation and Development
+AUTHOR-1-MATCH: 0
+MARC 245 $a: Integrating people management into public service reform
+TITLEMATCH: 15 
+MARC 260 $c: c1996
+YEARMATCH: 10
+MARC 260 $a: ParisWashington, DC
+PLACEMATCH: 5
+MARC 260 $b: Organisation for Economic Co-operation and DevelopmentOECD Washington Center distributor
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 2
+Matchpoints SLSP: 0
+Totalmatch: 61
+
+#Document 3:
 Swissbibnr.: 487899830
 MARC 020 $a: 9264065067
 ISBNMATCH: 0 
@@ -15811,26 +15831,6 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 9
 Matchpoints SLSP: 0
 Totalmatch: 54.5
-
-#Document 3:
-Swissbibnr.: 370958918
-MARC 020 $a: 9264152792
-ISBNMATCH: 10 
-MARC 710 $a: Organisation for Economic Co-operation and Development
-AUTHOR-1-MATCH: 0
-MARC 245 $a: Integrating people management into public service reform
-TITLEMATCH: 15 
-MARC 260 $c: c1996
-YEARMATCH: 10
-MARC 260 $a: ParisWashington, DC
-PLACEMATCH: 5
-MARC 260 $b: Organisation for Economic Co-operation and DevelopmentOECD Washington Center distributor
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 2
-Matchpoints SLSP: 0
-Totalmatch: 61
 
 #Document 4:
 Swissbibnr.: 34924507X
@@ -17654,20 +17654,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 5
 
 #Document 1:
-Swissbibnr.: 216304288
-MARC 100 $a: Dafflon
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Fédéralisme, coordination et harmonisation fiscales
-TITLEMATCH: 0 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 338 $b: nc
-CARRIERMATCH: 5 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 6
-Totalmatch: 21.5
-
-#Document 2:
 Swissbibnr.: 205007155
 MARC 100 $a: Dafflon
 AUTHOR-1-MATCH: 10
@@ -17685,7 +17671,7 @@ MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 6
 Totalmatch: 41.5
 
-#Document 3:
+#Document 2:
 Swissbibnr.: 515898600
 MARC 100 $a: Dafflon
 AUTHOR-1-MATCH: 10
@@ -17704,7 +17690,7 @@ Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
 
-#Document 4:
+#Document 3:
 Swissbibnr.: 540522120
 MARC 100 $a: Dafflon
 AUTHOR-1-MATCH: 10
@@ -17717,6 +17703,20 @@ CARRIERMATCH: 5
 MARC 035 Number of 035 fields: 4
 Matchpoints SLSP: 0
 Totalmatch: 17
+
+#Document 4:
+Swissbibnr.: 216304288
+MARC 100 $a: Dafflon
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Fédéralisme, coordination et harmonisation fiscales
+TITLEMATCH: 0 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 338 $b: nc
+CARRIERMATCH: 5 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 6
+Totalmatch: 21.5
 
 #Document 5:
 Swissbibnr.: 385915462
@@ -18428,24 +18428,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
-Swissbibnr.: 491936834
-MARC 100 $a: Tretner
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Langfristige Planung von Staatsausgaben
-TITLEMATCH: 15 
-MARC 260 $c: 1965
-YEARMATCH: 10
-MARC 260 $a: Berlin
-PLACEMATCH: 5
-MARC 260 $b: Duncker & Humblot
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 60.5
-
-#Document 2:
 Swissbibnr.: 515901539
 MARC 100 $a: Tretner Carl Heinz
 AUTHOR-1-MATCH: 10
@@ -18463,6 +18445,24 @@ MARC 035 (IDSSG)000993296: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
+
+#Document 2:
+Swissbibnr.: 491936834
+MARC 100 $a: Tretner
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Langfristige Planung von Staatsausgaben
+TITLEMATCH: 15 
+MARC 260 $c: 1965
+YEARMATCH: 10
+MARC 260 $a: Berlin
+PLACEMATCH: 5
+MARC 260 $b: Duncker & Humblot
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 60.5
 
 #Document 3:
 Swissbibnr.: 262284626
@@ -19677,24 +19677,19 @@ Matchpoints SLSP: 4
 Totalmatch: 44.5
 
 #Document 3:
-Swissbibnr.: 349747822
+Swissbibnr.: 514587083
 MARC 100 $a: Reymond
 AUTHOR-1-MATCH: 10
-MARC 245 $a: La fiscalité en désarroi ou les chênes quon abat
+MARC 245 $a: La fiscalité en désarroi ou Les chênes quon abat
 TITLEMATCH: 15 
-MARC 260 $a: Sl
-PLACEMATCH: 0
-MARC 260 $b: sn
-PUBLISHERMATCH: 0
-MARC 773 $t: Steuerrecht im Rechtsstaat : Festschrift für Prof Dr Francis Cagianut zum 65 Geburtstag
-SOURCEMATCH Analytica: 0 
-$t: Reymond, Jacques-AndréDe lautre côté du miroir
-SOURCEMATCH Analytica: 0 
+MARC 773 $t: Höhn, Ernst & Vallender, Klaus A: Steuerrecht im Rechtsstaat - Festschrift für Prof Dr Francis Cagianut zum 65 Geburtstag
+SOURCEMATCH Analytica: 10 
 LDR Materialart: a
 MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
+MARC 035 (IDSSG)000993468: IFF_MATCH: -3
+Number of 035 fields: 1
 Matchpoints SLSP: 0
-Totalmatch: 40.5
+Totalmatch: 47.5
 
 #Document 4:
 Swissbibnr.: 411661221
@@ -19713,19 +19708,24 @@ Matchpoints SLSP: 6
 Totalmatch: 33.5
 
 #Document 5:
-Swissbibnr.: 514587083
+Swissbibnr.: 349747822
 MARC 100 $a: Reymond
 AUTHOR-1-MATCH: 10
-MARC 245 $a: La fiscalité en désarroi ou Les chênes quon abat
+MARC 245 $a: La fiscalité en désarroi ou les chênes quon abat
 TITLEMATCH: 15 
-MARC 773 $t: Höhn, Ernst & Vallender, Klaus A: Steuerrecht im Rechtsstaat - Festschrift für Prof Dr Francis Cagianut zum 65 Geburtstag
-SOURCEMATCH Analytica: 10 
+MARC 260 $a: Sl
+PLACEMATCH: 0
+MARC 260 $b: sn
+PUBLISHERMATCH: 0
+MARC 773 $t: Steuerrecht im Rechtsstaat : Festschrift für Prof Dr Francis Cagianut zum 65 Geburtstag
+SOURCEMATCH Analytica: 0 
+$t: Reymond, Jacques-AndréDe lautre côté du miroir
+SOURCEMATCH Analytica: 0 
 LDR Materialart: a
 MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000993468: IFF_MATCH: -3
-Number of 035 fields: 1
+MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 0
-Totalmatch: 47.5
+Totalmatch: 40.5
 
 #Document 6:
 Swissbibnr.: 046065075
@@ -20150,25 +20150,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 4
 
 #Document 1:
-Swissbibnr.: 51590533X
-MARC 100 $a: Fox
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Intermediate Economic Statistics
-TITLEMATCH: 15 
-MARC 264 $c: 1968
-YEARMATCH: 10
-MARC 264 $a: New York
-PLACEMATCH: 5
-MARC 264 $b: John Wiley & Sons, Inc
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000993523: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 45.5
-
-#Document 2:
 Swissbibnr.: 291835732
 MARC 100 $a: Fox
 AUTHOR-1-MATCH: 10
@@ -20186,6 +20167,25 @@ MARC 035 (IDSSG)000293562: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 2
 Matchpoints SLSP: 11
 Totalmatch: 112
+
+#Document 2:
+Swissbibnr.: 51590533X
+MARC 100 $a: Fox
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Intermediate Economic Statistics
+TITLEMATCH: 15 
+MARC 264 $c: 1968
+YEARMATCH: 10
+MARC 264 $a: New York
+PLACEMATCH: 5
+MARC 264 $b: John Wiley & Sons, Inc
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000993523: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 45.5
 
 #Document 3:
 Swissbibnr.: 38291273X
@@ -20582,27 +20582,6 @@ Matchpoints SLSP: 11
 Totalmatch: 81.5
 
 #Document 2:
-Swissbibnr.: 325134782
-MARC 020 $a: 378902659X
-ISBNMATCH: 10 
-MARC 100 $a: Gornas
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Grundzüge einer Verwaltungskostenrechnung
-TITLEMATCH: 15 
-MARC 264 $c: 1992
-YEARMATCH: 10
-MARC 264 $a: Baden-Baden
-PLACEMATCH: 5
-MARC 264 $b: Nomos
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000047519: IDSSGMATCH: 40 
-MARC 949 Number of 035 fields: 2
-Matchpoints SLSP: 0
-Totalmatch: 111
-
-#Document 3:
 Swissbibnr.: 515905712
 MARC 020 $a: 378902659X
 ISBNMATCH: 10 
@@ -20622,6 +20601,27 @@ MARC 035 (IDSSG)000993583: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 55.5
+
+#Document 3:
+Swissbibnr.: 325134782
+MARC 020 $a: 378902659X
+ISBNMATCH: 10 
+MARC 100 $a: Gornas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Grundzüge einer Verwaltungskostenrechnung
+TITLEMATCH: 15 
+MARC 264 $c: 1992
+YEARMATCH: 10
+MARC 264 $a: Baden-Baden
+PLACEMATCH: 5
+MARC 264 $b: Nomos
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000047519: IDSSGMATCH: 40 
+MARC 949 Number of 035 fields: 2
+Matchpoints SLSP: 0
+Totalmatch: 111
 Bestmatch: 111, Bestrecordnr: 325134782, bestrecordnr-HSG: 0047519
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0993583 with 0047519
 
@@ -24387,27 +24387,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
-Swissbibnr.: 268148708
-MARC 020 $a: 0060471565
-ISBNMATCH: 10 
-MARC 100 $a: Winfrey
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Public finance
-TITLEMATCH: 15 
-MARC 264 $c: 1973
-YEARMATCH: 10
-MARC 264 $a: New York
-PLACEMATCH: 5
-MARC 264 $b: Harper and Row
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000994133: IFF_MATCH: -15
-Number of 035 fields: 2
-Matchpoints SLSP: 11
-Totalmatch: 62
-
-#Document 2:
 Swissbibnr.: 515927007
 MARC 020 $a: 0060471565
 ISBNMATCH: 10 
@@ -24433,6 +24412,27 @@ MARC 035 (IDSSG)000204665: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 3
 Matchpoints SLSP: 11
 Totalmatch: 132.5
+
+#Document 2:
+Swissbibnr.: 268148708
+MARC 020 $a: 0060471565
+ISBNMATCH: 10 
+MARC 100 $a: Winfrey
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Public finance
+TITLEMATCH: 15 
+MARC 264 $c: 1973
+YEARMATCH: 10
+MARC 264 $a: New York
+PLACEMATCH: 5
+MARC 264 $b: Harper and Row
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000994133: IFF_MATCH: -15
+Number of 035 fields: 2
+Matchpoints SLSP: 11
+Totalmatch: 62
 Bestmatch: 132.5, Bestrecordnr: 515927007, bestrecordnr-HSG: 0204665
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0994133 with 0204665
 
@@ -25265,6 +25265,32 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
+Swissbibnr.: 046786104
+MARC 100 $a: Koller
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Stiftungen und Steuern
+TITLEMATCH: 15 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 4
+Totalmatch: 29.5
+
+#Document 2:
+Swissbibnr.: 226846946
+MARC 100 $a: Koller
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Stiftungen und Steuern
+TITLEMATCH: 15 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 338 $b: nc
+CARRIERMATCH: 5 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 6
+Totalmatch: 36.5
+
+#Document 3:
 Swissbibnr.: 515851787
 MARC 100 $a: Koller
 AUTHOR-1-MATCH: 10
@@ -25282,32 +25308,6 @@ MARC 035 (IDSSG)000994279: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
-
-#Document 2:
-Swissbibnr.: 046786104
-MARC 100 $a: Koller
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Stiftungen und Steuern
-TITLEMATCH: 15 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 4
-Totalmatch: 29.5
-
-#Document 3:
-Swissbibnr.: 226846946
-MARC 100 $a: Koller
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Stiftungen und Steuern
-TITLEMATCH: 15 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 338 $b: nc
-CARRIERMATCH: 5 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 6
-Totalmatch: 36.5
 Bestmatch: 45.5, Bestrecordnr: 515851787, bestrecordnr-HSG: 0994279
 Msg 205: IFF Record is the only match - no improvement possible.
 
@@ -25613,6 +25613,27 @@ CQL query narrowed: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searc
 Results with narrowed CQL query: 2
 
 #Document 1:
+Swissbibnr.: 515852139
+MARC 020 $a: 019824598X
+ISBNMATCH: 10 
+MARC 100 $a: Lucas
+AUTHOR-1-MATCH: 10
+MARC 245 $a: On Justice
+TITLEMATCH: 15 
+MARC 264 $c: 1980
+YEARMATCH: 10
+MARC 264 $a: Oxford
+PLACEMATCH: 5
+MARC 264 $b: Clarendon Press
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000994343: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 55.5
+
+#Document 2:
 Swissbibnr.: 265974135
 MARC 020 $a: 019824598X
 ISBNMATCH: 10 
@@ -25633,27 +25654,6 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 8
 Matchpoints SLSP: 6
 Totalmatch: 80
-
-#Document 2:
-Swissbibnr.: 515852139
-MARC 020 $a: 019824598X
-ISBNMATCH: 10 
-MARC 100 $a: Lucas
-AUTHOR-1-MATCH: 10
-MARC 245 $a: On Justice
-TITLEMATCH: 15 
-MARC 264 $c: 1980
-YEARMATCH: 10
-MARC 264 $a: Oxford
-PLACEMATCH: 5
-MARC 264 $b: Clarendon Press
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000994343: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 55.5
 Bestmatch: 80, Bestrecordnr: 265974135, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515852139 with 265974135
 
@@ -27140,6 +27140,26 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
+Swissbibnr.: 321874560
+MARC 020 $a: 3896231812
+ISBNMATCH: 10 
+MARC 100 $a: Merten
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Steueroasen
+TITLEMATCH: 15 
+MARC 260 $c: 2000
+YEARMATCH: 10
+MARC 260 $a: Düsseldorf
+PLACEMATCH: 5
+MARC 260 $b: Metropolitan
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 70.5
+
+#Document 2:
 Swissbibnr.: 515855758
 MARC 020 $a: 3896231812
 ISBNMATCH: 10 
@@ -27159,26 +27179,6 @@ MARC 035 (IDSSG)000994551: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 55.5
-
-#Document 2:
-Swissbibnr.: 321874560
-MARC 020 $a: 3896231812
-ISBNMATCH: 10 
-MARC 100 $a: Merten
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Steueroasen
-TITLEMATCH: 15 
-MARC 260 $c: 2000
-YEARMATCH: 10
-MARC 260 $a: Düsseldorf
-PLACEMATCH: 5
-MARC 260 $b: Metropolitan
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 70.5
 Bestmatch: 70.5, Bestrecordnr: 321874560, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515855758 with 321874560
 
@@ -27691,33 +27691,6 @@ Matchpoints SLSP: 11
 Totalmatch: 71.5
 
 #Document 3:
-Swissbibnr.: 515856533
-MARC 020 $a: 3892041458
-ISBNMATCH: 10 
-MARC 100 $a: Naschold
-$a: Pröhl
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Naschold
-$a: Pröhl
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Produktivität öffentlicher Dienstleistungen - Bd 2
-TITLEMATCH: 15 
-$b: 
-TITLEMATCH subtitle: 15 
-MARC 264 $c: 1995
-YEARMATCH: 10
-MARC 264 $a: Gütersloh
-PLACEMATCH: 5
-MARC 264 $b: Bertelsmann Stiftung
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000994671: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 65.5
-
-#Document 4:
 Swissbibnr.: 515865664
 MARC 020 $a: 3892041091
 ISBNMATCH: 0 
@@ -27743,8 +27716,35 @@ MARC 035 (IDSSG)000995467: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 45.5
+
+#Document 4:
+Swissbibnr.: 515856533
+MARC 020 $a: 3892041458
+ISBNMATCH: 10 
+MARC 100 $a: Naschold
+$a: Pröhl
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Naschold
+$a: Pröhl
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Produktivität öffentlicher Dienstleistungen - Bd 2
+TITLEMATCH: 15 
+$b: 
+TITLEMATCH subtitle: 15 
+MARC 264 $c: 1995
+YEARMATCH: 10
+MARC 264 $a: Gütersloh
+PLACEMATCH: 5
+MARC 264 $b: Bertelsmann Stiftung
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000994671: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 65.5
 Bestmatch: 81.5, Bestrecordnr: 025511998, bestrecordnr-HSG: 0
-Msg 203: Match found. See export.csv, Replace 515856533 with 025511998
+Msg 203: Match found. See export.csv, Replace 515865664 with 025511998
 
 NEW ROW: #483
 *********************************************************************************
@@ -27757,6 +27757,27 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
+Swissbibnr.: 515856606
+MARC 020 $a: 3820496718
+ISBNMATCH: 10 
+MARC 100 $a: Reineke
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Segmentationstheorien des Arbeitsmarktes und Beschäftigungsniveau
+TITLEMATCH: 15 
+MARC 264 $c: 1986
+YEARMATCH: 10
+MARC 264 $a: Frankfurt am Main
+PLACEMATCH: 5
+MARC 264 $b: Peter Lang
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000994679: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 55.5
+
+#Document 2:
 Swissbibnr.: 270359508
 MARC 020 $a: 3820496718
 ISBNMATCH: 10 
@@ -27778,27 +27799,6 @@ MARC 035 (IDSSG)000198456: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 8
 Matchpoints SLSP: 11
 Totalmatch: 125
-
-#Document 2:
-Swissbibnr.: 515856606
-MARC 020 $a: 3820496718
-ISBNMATCH: 10 
-MARC 100 $a: Reineke
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Segmentationstheorien des Arbeitsmarktes und Beschäftigungsniveau
-TITLEMATCH: 15 
-MARC 264 $c: 1986
-YEARMATCH: 10
-MARC 264 $a: Frankfurt am Main
-PLACEMATCH: 5
-MARC 264 $b: Peter Lang
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000994679: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 55.5
 Bestmatch: 125, Bestrecordnr: 270359508, bestrecordnr-HSG: 0198456
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0994679 with 0198456
 
@@ -28773,6 +28773,24 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 6
 
 #Document 1:
+Swissbibnr.: 047062460
+MARC 100 $a: Ochsner
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Persönliche Arbeitstechnik
+TITLEMATCH: 15 
+MARC 260 $c: cop 1987
+YEARMATCH: 10
+MARC 260 $a: Bern
+PLACEMATCH: 5
+MARC 260 $b: Schweizerische Volksbank
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 0 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 4
+Totalmatch: 49.5
+
+#Document 2:
 Swissbibnr.: 552630969
 MARC 100 $a: Ochsner
 AUTHOR-1-MATCH: 10
@@ -28790,24 +28808,6 @@ MARC 338 CARRIERMATCH: 0
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 11
 Totalmatch: 56.5
-
-#Document 2:
-Swissbibnr.: 047062460
-MARC 100 $a: Ochsner
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Persönliche Arbeitstechnik
-TITLEMATCH: 15 
-MARC 260 $c: cop 1987
-YEARMATCH: 10
-MARC 260 $a: Bern
-PLACEMATCH: 5
-MARC 260 $b: Schweizerische Volksbank
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 0 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 4
-Totalmatch: 49.5
 
 #Document 3:
 Swissbibnr.: 108871215
@@ -30601,27 +30601,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
-Swissbibnr.: 312106726
-MARC 020 $a: 9783907496862
-ISBNMATCH: 10 
-MARC 100 $a: Landmann
-$a: Zeyer
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die verschwiegene Geiselnahme
-TITLEMATCH: 15 
-MARC 264 $c: 2013
-YEARMATCH: 10
-MARC 264 $a: Zürich
-PLACEMATCH: 5
-MARC 264 $b: Offizin
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 6
-Matchpoints SLSP: 11
-Totalmatch: 84
-
-#Document 2:
 Swissbibnr.: 309919614
 MARC 020 $a: 9783907496862
 ISBNMATCH: 10 
@@ -30644,6 +30623,27 @@ Best case: IFF attached, IDSSGMATCH = 50
 Number of 035 fields: 10
 Matchpoints SLSP: 11
 Totalmatch: 131
+
+#Document 2:
+Swissbibnr.: 312106726
+MARC 020 $a: 9783907496862
+ISBNMATCH: 10 
+MARC 100 $a: Landmann
+$a: Zeyer
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die verschwiegene Geiselnahme
+TITLEMATCH: 15 
+MARC 264 $c: 2013
+YEARMATCH: 10
+MARC 264 $a: Zürich
+PLACEMATCH: 5
+MARC 264 $b: Offizin
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 6
+Matchpoints SLSP: 11
+Totalmatch: 84
 Bestmatch: 131, Bestrecordnr: 309919614, bestrecordnr-HSG: 0628046
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -31795,31 +31795,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
-Swissbibnr.: 515864463
-MARC 020 $a: 3432903812
-ISBNMATCH: 10 
-MARC 100 $a: Peters
-$a: Zeugin
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Peters
-$a: Zeugin
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Sozialindikatorenforschung
-TITLEMATCH: 15 
-MARC 264 $c: 1979
-YEARMATCH: 10
-MARC 264 $a: Stuttgart
-PLACEMATCH: 5
-MARC 264 $b: Ferdinand Enke Verlag
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000995295: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 65.5
-
-#Document 2:
 Swissbibnr.: 271067268
 MARC 020 $a: 3432903812
 ISBNMATCH: 10 
@@ -31843,6 +31818,31 @@ MARC 035 (IDSSG)000196165: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 18
 Matchpoints SLSP: 6
 Totalmatch: 135
+
+#Document 2:
+Swissbibnr.: 515864463
+MARC 020 $a: 3432903812
+ISBNMATCH: 10 
+MARC 100 $a: Peters
+$a: Zeugin
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Peters
+$a: Zeugin
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Sozialindikatorenforschung
+TITLEMATCH: 15 
+MARC 264 $c: 1979
+YEARMATCH: 10
+MARC 264 $a: Stuttgart
+PLACEMATCH: 5
+MARC 264 $b: Ferdinand Enke Verlag
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000995295: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 65.5
 
 #Document 3:
 Swissbibnr.: 084085797
@@ -32654,26 +32654,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
-Swissbibnr.: 04583153X
-MARC 020 $a: 3258029253
-ISBNMATCH: 10 
-MARC 100 $a: Auer
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Sonderabgaben
-TITLEMATCH: 15 
-MARC 260 $c: 1980
-YEARMATCH: 10
-MARC 260 $a: Bern
-PLACEMATCH: 5
-MARC 260 $b: StuttgartP Haupt
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 4
-Totalmatch: 69.5
-
-#Document 2:
 Swissbibnr.: 270941932
 MARC 020 $a: 3258029253
 ISBNMATCH: 10 
@@ -32695,6 +32675,26 @@ Best case: IFF attached, IDSSGMATCH = 50
 Number of 035 fields: 28
 Matchpoints SLSP: 6
 Totalmatch: 140
+
+#Document 2:
+Swissbibnr.: 04583153X
+MARC 020 $a: 3258029253
+ISBNMATCH: 10 
+MARC 100 $a: Auer
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Sonderabgaben
+TITLEMATCH: 15 
+MARC 260 $c: 1980
+YEARMATCH: 10
+MARC 260 $a: Bern
+PLACEMATCH: 5
+MARC 260 $b: StuttgartP Haupt
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 4
+Totalmatch: 69.5
 Bestmatch: 140, Bestrecordnr: 270941932, bestrecordnr-HSG: 0099655
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -32903,6 +32903,20 @@ Matchpoints SLSP: 6
 Totalmatch: 42
 
 #Document 2:
+Swissbibnr.: 109168321
+MARC 100 $a: Ryser
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Einfluss des Steuerrechts auf das Handelsrecht
+TITLEMATCH: 15 
+LDR Materialart: a
+MATERIALMATCH in LDR: 0 
+MARC 338 $b: nc
+CARRIERMATCH: 5 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 41.5
+
+#Document 3:
 Swissbibnr.: 045444986
 MARC 100 $a: Ryser
 AUTHOR-1-MATCH: 10
@@ -32920,39 +32934,7 @@ MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 4
 Totalmatch: 59.5
 
-#Document 3:
-Swissbibnr.: 109168321
-MARC 100 $a: Ryser
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Einfluss des Steuerrechts auf das Handelsrecht
-TITLEMATCH: 15 
-LDR Materialart: a
-MATERIALMATCH in LDR: 0 
-MARC 338 $b: nc
-CARRIERMATCH: 5 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 41.5
-
 #Document 4:
-Swissbibnr.: 130127701
-MARC 700 $a: Ryser
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Einfluss des Steuerrechts auf das Handelsrecht
-TITLEMATCH: 15 
-MARC 260 $c: 1978
-YEARMATCH: 10
-MARC 260 $a: Basel
-PLACEMATCH: 5
-MARC 260 $b: Helbing & Lichtenhahn
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 71.5
-
-#Document 5:
 Swissbibnr.: 368221946
 MARC 100 $a: Ryser
 AUTHOR-1-MATCH: 10
@@ -32969,6 +32951,24 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 7
 Matchpoints SLSP: 6
 Totalmatch: 64.5
+
+#Document 5:
+Swissbibnr.: 130127701
+MARC 700 $a: Ryser
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Einfluss des Steuerrechts auf das Handelsrecht
+TITLEMATCH: 15 
+MARC 260 $c: 1978
+YEARMATCH: 10
+MARC 260 $a: Basel
+PLACEMATCH: 5
+MARC 260 $b: Helbing & Lichtenhahn
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 71.5
 
 #Document 6:
 Swissbibnr.: 515922196
@@ -33647,26 +33647,6 @@ Matchpoints SLSP: 11
 Totalmatch: 132.5
 
 #Document 3:
-Swissbibnr.: 371336163
-MARC 020 $a: 9264147780
-ISBNMATCH: 10 
-MARC 100 $a: Miller
-AUTHOR-1-MATCH: 0
-MARC 245 $a: Measuring what people know
-TITLEMATCH: 15 
-MARC 260 $c: c1996
-YEARMATCH: 10
-MARC 260 $a: ParisWashington, DC
-PLACEMATCH: 5
-MARC 260 $b: Organisation for Economic Co-operation and DevelopmentOECD Publications and Information Center distributor
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 2
-Matchpoints SLSP: 0
-Totalmatch: 61
-
-#Document 4:
 Swissbibnr.: 487908961
 MARC 020 $a: 9264065482
 ISBNMATCH: 0 
@@ -33692,6 +33672,26 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 9
 Matchpoints SLSP: 0
 Totalmatch: 84.5
+
+#Document 4:
+Swissbibnr.: 371336163
+MARC 020 $a: 9264147780
+ISBNMATCH: 10 
+MARC 100 $a: Miller
+AUTHOR-1-MATCH: 0
+MARC 245 $a: Measuring what people know
+TITLEMATCH: 15 
+MARC 260 $c: c1996
+YEARMATCH: 10
+MARC 260 $a: ParisWashington, DC
+PLACEMATCH: 5
+MARC 260 $b: Organisation for Economic Co-operation and DevelopmentOECD Publications and Information Center distributor
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 2
+Matchpoints SLSP: 0
+Totalmatch: 61
 Bestmatch: 132.5, Bestrecordnr: 293350531, bestrecordnr-HSG: 0155132
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0995523 with 0155132
 
@@ -35149,6 +35149,30 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
+Swissbibnr.: 133936600
+MARC 020 $a: 3428055454
+ISBNMATCH: 10 
+MARC 100 $a: Berthold
+$a: Külp
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Berthold
+$a: Külp
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Regelgebundene Rentenanpassung als Mittel zur langfristigen Sanierung der Gesetzlichen Rentenversicherung
+TITLEMATCH: 15 
+MARC 260 $c: 1984
+YEARMATCH: 10
+MARC 260 $a: Berlin
+PLACEMATCH: 5
+MARC 260 $b: Duncker & Humblot
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 91.5
+
+#Document 2:
 Swissbibnr.: 515867667
 MARC 020 $a: 3428055454
 ISBNMATCH: 10 
@@ -35172,30 +35196,6 @@ MARC 035 (IDSSG)000995763: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 65.5
-
-#Document 2:
-Swissbibnr.: 133936600
-MARC 020 $a: 3428055454
-ISBNMATCH: 10 
-MARC 100 $a: Berthold
-$a: Külp
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Berthold
-$a: Külp
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Regelgebundene Rentenanpassung als Mittel zur langfristigen Sanierung der Gesetzlichen Rentenversicherung
-TITLEMATCH: 15 
-MARC 260 $c: 1984
-YEARMATCH: 10
-MARC 260 $a: Berlin
-PLACEMATCH: 5
-MARC 260 $b: Duncker & Humblot
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 91.5
 Bestmatch: 91.5, Bestrecordnr: 133936600, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515867667 with 133936600
 
@@ -37277,6 +37277,25 @@ Broader CQL query since 0 results: http://sru.swissbib.ch/sru/search/defaultdb?&
 Hits with new CQL query: 2
 
 #Document 1:
+Swissbibnr.: 271913266
+MARC 020 $a: 9282586162
+ISBNMATCH: 10 
+AUTHOR-1-MATCH: 0
+MARC 245 $a: Studies on the economics of integration
+TITLEMATCH: 15 
+MARC 264 $c: 1988
+YEARMATCH: 10
+MARC 264 $a: Luxembourg
+PLACEMATCH: 0
+MARC 264 $b: Office for Official Publications of the European Communities
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 3
+Matchpoints SLSP: 6
+Totalmatch: 57.5
+
+#Document 2:
 Swissbibnr.: 035698357
 MARC 020 $a: 9282586162
 ISBNMATCH: 10 
@@ -37297,25 +37316,6 @@ Best case: IFF attached, IDSSGMATCH = 50
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 105.5
-
-#Document 2:
-Swissbibnr.: 271913266
-MARC 020 $a: 9282586162
-ISBNMATCH: 10 
-AUTHOR-1-MATCH: 0
-MARC 245 $a: Studies on the economics of integration
-TITLEMATCH: 15 
-MARC 264 $c: 1988
-YEARMATCH: 10
-MARC 264 $a: Luxembourg
-PLACEMATCH: 0
-MARC 264 $b: Office for Official Publications of the European Communities
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 3
-Matchpoints SLSP: 6
-Totalmatch: 57.5
 Bestmatch: 105.5, Bestrecordnr: 035698357, bestrecordnr-HSG: 0013280
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -39250,6 +39250,20 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
+Swissbibnr.: 083301984
+MARC 100 $a: Mitchell
+AUTHOR-1-MATCH: 10
+MARC 245 $a: The effectiveness of debt limits on state and local government borrowing
+TITLEMATCH: 15 
+MARC 264 $c: 1967
+YEARMATCH: 10
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 61.5
+
+#Document 2:
 Swissbibnr.: 515873764
 MARC 100 $a: Mitchell
 AUTHOR-1-MATCH: 10
@@ -39263,20 +39277,6 @@ MARC 035 (IDSSG)000996330: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 35.5
-
-#Document 2:
-Swissbibnr.: 083301984
-MARC 100 $a: Mitchell
-AUTHOR-1-MATCH: 10
-MARC 245 $a: The effectiveness of debt limits on state and local government borrowing
-TITLEMATCH: 15 
-MARC 264 $c: 1967
-YEARMATCH: 10
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 61.5
 Bestmatch: 61.5, Bestrecordnr: 083301984, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515873764 with 083301984
 
@@ -42463,6 +42463,26 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
+Swissbibnr.: 187632502
+MARC 020 $a: 1858986540
+ISBNMATCH: 10 
+MARC 100 $a: Rosen
+AUTHOR-1-MATCH: 10
+MARC 245 $a: The fiscal behavior of state and local governments
+TITLEMATCH: 15 
+MARC 260 $c: 1997
+YEARMATCH: 10
+MARC 260 $a: Cheltenham, UK
+PLACEMATCH: 5
+MARC 260 $b: Elgar
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 81.5
+
+#Document 2:
 Swissbibnr.: 036152811
 MARC 020 $a: 1858986540
 ISBNMATCH: 10 
@@ -42485,7 +42505,7 @@ Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 120.5
 
-#Document 2:
+#Document 3:
 Swissbibnr.: 417038224
 MARC 020 $a: 1858986540
 ISBNMATCH: 10 
@@ -42510,26 +42530,6 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 6
 Matchpoints SLSP: 6
 Totalmatch: 84
-
-#Document 3:
-Swissbibnr.: 187632502
-MARC 020 $a: 1858986540
-ISBNMATCH: 10 
-MARC 100 $a: Rosen
-AUTHOR-1-MATCH: 10
-MARC 245 $a: The fiscal behavior of state and local governments
-TITLEMATCH: 15 
-MARC 260 $c: 1997
-YEARMATCH: 10
-MARC 260 $a: Cheltenham, UK
-PLACEMATCH: 5
-MARC 260 $b: Elgar
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 81.5
 Bestmatch: 120.5, Bestrecordnr: 036152811, bestrecordnr-HSG: 0160479
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -42544,30 +42544,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 4
 
 #Document 1:
-Swissbibnr.: 281054142
-MARC 020 $a: 0312234058
-ISBNMATCH: 0 
-MARC 100 $a: Lewis
-$a: Furnham
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Lewis
-$a: Furnham
-AUTHOR-2-MATCH: 20
-MARC 245 $a: The economic mind
-TITLEMATCH: 15 
-MARC 264 $c: 1986
-YEARMATCH: 10
-MARC 264 $a: New York
-PLACEMATCH: 0
-MARC 264 $b: St Martins Press
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 3
-Matchpoints SLSP: 6
-Totalmatch: 67.5
-
-#Document 2:
 Swissbibnr.: 289007453
 MARC 020 $a: 0710802854
 $a: 0710802234
@@ -42592,7 +42568,7 @@ MARC 035 Number of 035 fields: 7
 Matchpoints SLSP: 6
 Totalmatch: 94.5
 
-#Document 3:
+#Document 2:
 Swissbibnr.: 515881678
 MARC 020 $a: 
 ISBNMATCH: 15 
@@ -42616,6 +42592,30 @@ MARC 035 (IDSSG)000996797: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 70.5
+
+#Document 3:
+Swissbibnr.: 281054142
+MARC 020 $a: 0312234058
+ISBNMATCH: 0 
+MARC 100 $a: Lewis
+$a: Furnham
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Lewis
+$a: Furnham
+AUTHOR-2-MATCH: 20
+MARC 245 $a: The economic mind
+TITLEMATCH: 15 
+MARC 264 $c: 1986
+YEARMATCH: 10
+MARC 264 $a: New York
+PLACEMATCH: 0
+MARC 264 $b: St Martins Press
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 3
+Matchpoints SLSP: 6
+Totalmatch: 67.5
 
 #Document 4:
 Swissbibnr.: 035189266
@@ -47880,28 +47880,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 4
 
 #Document 1:
-Swissbibnr.: 527783218
-MARC 020 $a: 9783727200038
-ISBNMATCH: 10 
-MARC 100 $a: Dalla Torre
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die Sanierungsfusion
-TITLEMATCH: 15 
-$b: eine rechtliche und ökonomische Analyse
-TITLEMATCH subtitle: 15 
-MARC 264 $c: 2007
-YEARMATCH: 10
-MARC 264 $a: Bern
-PLACEMATCH: 5
-MARC 264 $b: Stämpfli
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 2
-Matchpoints SLSP: 11
-Totalmatch: 82
-
-#Document 2:
 Swissbibnr.: 269793542
 MARC 020 $a: 9783727200038
 ISBNMATCH: 10 
@@ -47926,7 +47904,7 @@ Number of 035 fields: 16
 Matchpoints SLSP: 6
 Totalmatch: 134
 
-#Document 3:
+#Document 2:
 Swissbibnr.: 269793550
 MARC 020 $a: 9783727200038
 ISBNMATCH: 10 
@@ -47947,6 +47925,28 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 5
 Matchpoints SLSP: 0
 Totalmatch: 72.5
+
+#Document 3:
+Swissbibnr.: 527783218
+MARC 020 $a: 9783727200038
+ISBNMATCH: 10 
+MARC 100 $a: Dalla Torre
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die Sanierungsfusion
+TITLEMATCH: 15 
+$b: eine rechtliche und ökonomische Analyse
+TITLEMATCH subtitle: 15 
+MARC 264 $c: 2007
+YEARMATCH: 10
+MARC 264 $a: Bern
+PLACEMATCH: 5
+MARC 264 $b: Stämpfli
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 2
+Matchpoints SLSP: 11
+Totalmatch: 82
 
 #Document 4:
 Swissbibnr.: 554802724
@@ -50662,22 +50662,6 @@ Matchpoints SLSP: 6
 Totalmatch: 58.5
 
 #Document 3:
-Swissbibnr.: 207108668
-MARC 100 $a: Schwarz
-$a: Wyl
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Schwarz
-$a: Wyl
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Der Finanzplatz Schweiz im internationalen Umfeld
-TITLEMATCH: 15 
-MARC 773 LDR Materialart: a
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 6
-Totalmatch: 56.5
-
-#Document 4:
 Swissbibnr.: 350804168
 MARC 100 $a: Schwarz
 $a: Wyl
@@ -50698,6 +50682,22 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 60.5
+
+#Document 4:
+Swissbibnr.: 207108668
+MARC 100 $a: Schwarz
+$a: Wyl
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Schwarz
+$a: Wyl
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Der Finanzplatz Schweiz im internationalen Umfeld
+TITLEMATCH: 15 
+MARC 773 LDR Materialart: a
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 6
+Totalmatch: 56.5
 Bestmatch: 60.5, Bestrecordnr: 350804168, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 514575190 with 350804168
 
@@ -52402,31 +52402,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 8
 
 #Document 1:
-Swissbibnr.: 034123407
-MARC 020 $a: 3800602458
-$a: 3800606186
-$a: 380060695X
-ISBNMATCH: 0 
-MARC 100 $a: Wöhe
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Betriebswirtschaftliche Steuerlehre
-TITLEMATCH: 15 
-$b: 
-TITLEMATCH subtitle: 15 
-MARC 264 $c: 1972-1982
-YEARMATCH: 0
-MARC 264 $a: München
-PLACEMATCH: 5
-MARC 264 $b: Vahlen
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000013244: IDSSGMATCH: 40 
-MARC 949 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 90.5
-
-#Document 2:
 Swissbibnr.: 028559657
 MARC 020 $a: 3800606119
 $a: 3800606186
@@ -52450,7 +52425,7 @@ MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 11
 Totalmatch: 56.5
 
-#Document 3:
+#Document 2:
 Swissbibnr.: 036280593
 MARC 020 $a: 3800606011
 $a: 3800609193
@@ -52476,7 +52451,52 @@ MARC 949 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 120.5
 
+#Document 3:
+Swissbibnr.: 034123407
+MARC 020 $a: 3800602458
+$a: 3800606186
+$a: 380060695X
+ISBNMATCH: 0 
+MARC 100 $a: Wöhe
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Betriebswirtschaftliche Steuerlehre
+TITLEMATCH: 15 
+$b: 
+TITLEMATCH subtitle: 15 
+MARC 264 $c: 1972-1982
+YEARMATCH: 0
+MARC 264 $a: München
+PLACEMATCH: 5
+MARC 264 $b: Vahlen
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000013244: IDSSGMATCH: 40 
+MARC 949 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 90.5
+
 #Document 4:
+Swissbibnr.: 120785579
+MARC 100 $a: Wöhe
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Betriebswirtschaftliche Steuerlehre
+TITLEMATCH: 15 
+$b: 
+TITLEMATCH subtitle: 15 
+MARC 264 $c: 1965-
+YEARMATCH: 0
+MARC 264 $a: BerlinFrankfurt aM
+PLACEMATCH: 0
+MARC 264 $b: Vahlen
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 56.5
+
+#Document 5:
 Swissbibnr.: 134664361
 MARC 020 $a: 380060919321
 ISBNMATCH: 0 
@@ -52497,26 +52517,6 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 11
 Totalmatch: 71.5
-
-#Document 5:
-Swissbibnr.: 120785579
-MARC 100 $a: Wöhe
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Betriebswirtschaftliche Steuerlehre
-TITLEMATCH: 15 
-$b: 
-TITLEMATCH subtitle: 15 
-MARC 264 $c: 1965-
-YEARMATCH: 0
-MARC 264 $a: BerlinFrankfurt aM
-PLACEMATCH: 0
-MARC 264 $b: Vahlen
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 56.5
 
 #Document 6:
 Swissbibnr.: 515899585
@@ -53827,29 +53827,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
-Swissbibnr.: 51590337X
-MARC 100 $a: Rädler
-$a: Raupach
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Rädler
-$a: Raupach
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Deutsche Steuern bei Auslandsbeziehungen
-TITLEMATCH: 15 
-MARC 264 $c: 1966
-YEARMATCH: 10
-MARC 264 $a: München
-PLACEMATCH: 5
-MARC 264 $b: CH Becksche Verlagsbuchhandlung
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000998238: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 55.5
-
-#Document 2:
 Swissbibnr.: 280169590
 MARC 100 $a: Rädler
 $a: Raupach
@@ -53871,6 +53848,29 @@ MARC 035 (IDSSG)000127274: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 4
 Matchpoints SLSP: 11
 Totalmatch: 118
+
+#Document 2:
+Swissbibnr.: 51590337X
+MARC 100 $a: Rädler
+$a: Raupach
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Rädler
+$a: Raupach
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Deutsche Steuern bei Auslandsbeziehungen
+TITLEMATCH: 15 
+MARC 264 $c: 1966
+YEARMATCH: 10
+MARC 264 $a: München
+PLACEMATCH: 5
+MARC 264 $b: CH Becksche Verlagsbuchhandlung
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000998238: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 55.5
 Bestmatch: 118, Bestrecordnr: 280169590, bestrecordnr-HSG: 0127274
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0998238 with 0127274
 
@@ -57746,28 +57746,6 @@ Matchpoints SLSP: 11
 Totalmatch: 122.5
 
 #Document 4:
-Swissbibnr.: 158458923
-MARC 020 $a: 3725546738
-ISBNMATCH: 10 
-MARC 700 $a: Vito
-AUTHOR-1-MATCH: 0
-MARC 245 $a: Sanierung der AG
-TITLEMATCH: 15 
-MARC 260 $c: 2003
-YEARMATCH: 10
-MARC 260 $a: Zürich
-PLACEMATCH: 5
-MARC 260 $b: Schulthess
-PUBLISHERMATCH: 5
-MARC 245 $b: ausgewählte Rechtsfragen für die Unternehmenspraxis
-TITLEMATCH 245b subtitle: 25 
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 81.5
-
-#Document 5:
 Swissbibnr.: 229630448
 MARC 020 $a: 3725546738
 ISBNMATCH: 10 
@@ -57789,6 +57767,28 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 6
 Totalmatch: 86.5
+
+#Document 5:
+Swissbibnr.: 158458923
+MARC 020 $a: 3725546738
+ISBNMATCH: 10 
+MARC 700 $a: Vito
+AUTHOR-1-MATCH: 0
+MARC 245 $a: Sanierung der AG
+TITLEMATCH: 15 
+MARC 260 $c: 2003
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: Schulthess
+PUBLISHERMATCH: 5
+MARC 245 $b: ausgewählte Rechtsfragen für die Unternehmenspraxis
+TITLEMATCH 245b subtitle: 25 
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 81.5
 Bestmatch: 122.5, Bestrecordnr: 269793690, bestrecordnr-HSG: 0284404
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -59638,6 +59638,24 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 4
 
 #Document 1:
+Swissbibnr.: 174752180
+MARC 100 $a: Blümle
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verteilungstheorie und makroökonomische Steuerüberwälzungslehre
+TITLEMATCH: 15 
+MARC 260 $c: 1967
+YEARMATCH: 0
+MARC 260 $a: Basel
+PLACEMATCH: 0
+MARC 260 $b: Institut für Sozialwissenschaften, Institut für angewandte Wirtschaftsforschung
+PUBLISHERMATCH: 0
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 51.5
+
+#Document 2:
 Swissbibnr.: 486314197
 MARC 100 $a: Blümle
 AUTHOR-1-MATCH: 10
@@ -59655,24 +59673,6 @@ MARC 035 (IDSSG)000291344: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 2
 Matchpoints SLSP: 11
 Totalmatch: 102
-
-#Document 2:
-Swissbibnr.: 174752180
-MARC 100 $a: Blümle
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Verteilungstheorie und makroökonomische Steuerüberwälzungslehre
-TITLEMATCH: 15 
-MARC 260 $c: 1967
-YEARMATCH: 0
-MARC 260 $a: Basel
-PLACEMATCH: 0
-MARC 260 $b: Institut für Sozialwissenschaften, Institut für angewandte Wirtschaftsforschung
-PUBLISHERMATCH: 0
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 51.5
 
 #Document 3:
 Swissbibnr.: 274362570
@@ -59978,24 +59978,6 @@ Matchpoints SLSP: 11
 Totalmatch: 71.5
 
 #Document 2:
-Swissbibnr.: 558298176
-MARC 100 $a: Haussleiter
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Verwaltungssoziologie
-TITLEMATCH: 15 
-MARC 264 $c: cop 1969
-YEARMATCH: 10
-MARC 264 $a: Baden-Baden
-PLACEMATCH: 5
-MARC 264 $b: Nomos
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 8
-Matchpoints SLSP: 6
-Totalmatch: 70
-
-#Document 3:
 Swissbibnr.: 516241168
 MARC 100 $a: Haussleiter
 AUTHOR-1-MATCH: 10
@@ -60015,6 +59997,24 @@ Best case: IFF attached, IDSSGMATCH = 50
 Number of 035 fields: 2
 Matchpoints SLSP: 11
 Totalmatch: 122
+
+#Document 3:
+Swissbibnr.: 558298176
+MARC 100 $a: Haussleiter
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Verwaltungssoziologie
+TITLEMATCH: 15 
+MARC 264 $c: cop 1969
+YEARMATCH: 10
+MARC 264 $a: Baden-Baden
+PLACEMATCH: 5
+MARC 264 $b: Nomos
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 8
+Matchpoints SLSP: 6
+Totalmatch: 70
 Bestmatch: 122, Bestrecordnr: 516241168, bestrecordnr-HSG: 0315811
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -60613,29 +60613,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
-Swissbibnr.: 515853526
-MARC 100 $a: Mushkin
-$a: Cotton
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Mushkin
-$a: Cotton
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Sharing Federal Funds for State and Local Needs
-TITLEMATCH: 15 
-MARC 264 $c: 1969
-YEARMATCH: 10
-MARC 264 $a: America
-PLACEMATCH: 5
-MARC 264 $b: Praeger Publishers
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000999094: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 55.5
-
-#Document 2:
 Swissbibnr.: 270562877
 MARC 100 $a: Mushkin
 $a: Cotton
@@ -60657,6 +60634,29 @@ MARC 035 (IDSSG)000362355: IDSSGMATCH: 40
 MARC 949 Number of 035 fields: 2
 Matchpoints SLSP: 11
 Totalmatch: 117
+
+#Document 2:
+Swissbibnr.: 515853526
+MARC 100 $a: Mushkin
+$a: Cotton
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Mushkin
+$a: Cotton
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Sharing Federal Funds for State and Local Needs
+TITLEMATCH: 15 
+MARC 264 $c: 1969
+YEARMATCH: 10
+MARC 264 $a: America
+PLACEMATCH: 5
+MARC 264 $b: Praeger Publishers
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000999094: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 55.5
 Bestmatch: 117, Bestrecordnr: 270562877, bestrecordnr-HSG: 0362355
 Msg 202: HSB01-Duplicate. See export.csv, Replace 0999094 with 0362355
 
@@ -63111,23 +63111,6 @@ Matchpoints SLSP: 11
 Totalmatch: 36.5
 
 #Document 7:
-Swissbibnr.: 032711581
-MARC 710 $a: Ifst
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Grundlagen und Möglichkeiten einer organischen Finanz- und Steuerreform
-TITLEMATCH: 0 
-$b: zur Neuordnung der Finanzverfassung und des Steuersystems
-TITLEMATCH subtitle: 0 
-MARC 245 $b: zur Neuordnung der Finanzverfassung und des Steuersystems
-TITLEMATCH 245b subtitle: 0 
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000440302: IDSSGMATCH: 20 
-MARC 949 Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 45.5
-
-#Document 8:
 Swissbibnr.: 514565411
 MARC 100 $a: IFSt
 AUTHOR-1-MATCH: 10
@@ -63145,6 +63128,23 @@ MARC 035 (IDSSG)000999385: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 0.5
+
+#Document 8:
+Swissbibnr.: 032711581
+MARC 710 $a: Ifst
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Grundlagen und Möglichkeiten einer organischen Finanz- und Steuerreform
+TITLEMATCH: 0 
+$b: zur Neuordnung der Finanzverfassung und des Steuersystems
+TITLEMATCH subtitle: 0 
+MARC 245 $b: zur Neuordnung der Finanzverfassung und des Steuersystems
+TITLEMATCH 245b subtitle: 0 
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000440302: IDSSGMATCH: 20 
+MARC 949 Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 45.5
 
 #Document 9:
 Swissbibnr.: 514566353
@@ -63503,6 +63503,25 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 3
 
 #Document 1:
+Swissbibnr.: 271560061
+MARC 710 $a: Ifst
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Die Steuerreform in den Vereinigten Staaten
+TITLEMATCH: 15 
+$b: 
+TITLEMATCH subtitle: 15 
+MARC 505 $t: Das Steuergesetz 1964 und die Zinsausgleichsteuer
+TITLEMATCH 505 volume: 25 
+$t: Das Steuergesetz 1964 und die Zinsausgleichsteuer
+TITLEMATCH 505 volume2: 25 
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)000440308: IDSSGMATCH: 20 
+MARC 949 Number of 035 fields: 2
+Matchpoints SLSP: 11
+Totalmatch: 82
+
+#Document 2:
 Swissbibnr.: 172504228
 MARC 110 $a: Ifst
 AUTHOR-1-MATCH: 10
@@ -63523,25 +63542,6 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 1
 Matchpoints SLSP: 11
 Totalmatch: 51.5
-
-#Document 2:
-Swissbibnr.: 271560061
-MARC 710 $a: Ifst
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Die Steuerreform in den Vereinigten Staaten
-TITLEMATCH: 15 
-$b: 
-TITLEMATCH subtitle: 15 
-MARC 505 $t: Das Steuergesetz 1964 und die Zinsausgleichsteuer
-TITLEMATCH 505 volume: 25 
-$t: Das Steuergesetz 1964 und die Zinsausgleichsteuer
-TITLEMATCH 505 volume2: 25 
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)000440308: IDSSGMATCH: 20 
-MARC 949 Number of 035 fields: 2
-Matchpoints SLSP: 11
-Totalmatch: 82
 
 #Document 3:
 Swissbibnr.: 514565500
@@ -64745,22 +64745,6 @@ Matchpoints SLSP: 0
 Totalmatch: 25.5
 
 #Document 2:
-Swissbibnr.: 157941795
-MARC 700 $a: Esser
-$a: Sturm
-AUTHOR-1-MATCH: 10
-MARC 700 $a: Esser
-$a: Sturm
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Die heutige Steuerbelastung der gewerblichen Wirtschaft
-TITLEMATCH: 15 
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 61.5
-
-#Document 3:
 Swissbibnr.: 120209675
 MARC 100 $a: Esser
 $a: Sturm
@@ -64775,6 +64759,22 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 2
 Matchpoints SLSP: 6
 Totalmatch: 57
+
+#Document 3:
+Swissbibnr.: 157941795
+MARC 700 $a: Esser
+$a: Sturm
+AUTHOR-1-MATCH: 10
+MARC 700 $a: Esser
+$a: Sturm
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Die heutige Steuerbelastung der gewerblichen Wirtschaft
+TITLEMATCH: 15 
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 61.5
 
 #Document 4:
 Swissbibnr.: 228098882
@@ -64824,6 +64824,26 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 2
 
 #Document 1:
+Swissbibnr.: 076912086
+MARC 100 $a: Schmitz
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Kommentar zum internationalen Steuerrecht der Bundesrepublik Deutschland
+TITLEMATCH: 15 
+MARC 264 $c: 1957
+YEARMATCH: 10
+MARC 264 $a: Düsseldorf
+PLACEMATCH: 5
+MARC 264 $b: Verlagsbuchhandlung des Instituts der Wirtschaftsprüfer
+PUBLISHERMATCH: 5
+MARC 245 $b: 
+TITLEMATCH 245b subtitle: 15 
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 1
+Matchpoints SLSP: 11
+Totalmatch: 71.5
+
+#Document 2:
 Swissbibnr.: 515903655
 MARC 100 $a: Schmitz Albert R C
 AUTHOR-1-MATCH: 10
@@ -64843,26 +64863,6 @@ MARC 035 (IDSSG)000998279: IFF_MATCH: -15
 Number of 035 fields: 1
 Matchpoints SLSP: 0
 Totalmatch: 40.5
-
-#Document 2:
-Swissbibnr.: 076912086
-MARC 100 $a: Schmitz
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Kommentar zum internationalen Steuerrecht der Bundesrepublik Deutschland
-TITLEMATCH: 15 
-MARC 264 $c: 1957
-YEARMATCH: 10
-MARC 264 $a: Düsseldorf
-PLACEMATCH: 5
-MARC 264 $b: Verlagsbuchhandlung des Instituts der Wirtschaftsprüfer
-PUBLISHERMATCH: 5
-MARC 245 $b: 
-TITLEMATCH 245b subtitle: 15 
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 1
-Matchpoints SLSP: 11
-Totalmatch: 71.5
 Bestmatch: 71.5, Bestrecordnr: 076912086, bestrecordnr-HSG: 0
 Msg 203: Match found. See export.csv, Replace 515903655 with 076912086
 
@@ -68762,6 +68762,35 @@ Matchpoints SLSP: 0
 Totalmatch: 140.5
 
 #Document 4:
+Swissbibnr.: 29006743X
+MARC 020 $a: 3725549079
+$a: 3725551391
+ISBNMATCH: 10 
+MARC 100 $a: Häfelin
+$a: Haller
+$a: Heer
+$a: Keller
+AUTHOR-1-MATCH: 10
+MARC 100 $a: Häfelin
+$a: Haller
+$a: Heer
+$a: Keller
+AUTHOR-2-MATCH: 20
+MARC 245 $a: Schweizerisches Bundesstaatsrecht
+TITLEMATCH: 0 
+MARC 260 $c: 2005-2006
+YEARMATCH: 10
+MARC 260 $a: Zürich
+PLACEMATCH: 5
+MARC 260 $b: Schulthess
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 Number of 035 fields: 2
+Matchpoints SLSP: 11
+Totalmatch: 77
+
+#Document 5:
 Swissbibnr.: 495447528
 MARC 020 $a: 3725549079
 ISBNMATCH: 0 
@@ -68790,35 +68819,6 @@ Number of 035 fields: 20
 Matchpoints SLSP: 6
 Totalmatch: 101
 9999: Unsafe Match title-isbn! 0
-
-#Document 5:
-Swissbibnr.: 29006743X
-MARC 020 $a: 3725549079
-$a: 3725551391
-ISBNMATCH: 10 
-MARC 100 $a: Häfelin
-$a: Haller
-$a: Heer
-$a: Keller
-AUTHOR-1-MATCH: 10
-MARC 100 $a: Häfelin
-$a: Haller
-$a: Heer
-$a: Keller
-AUTHOR-2-MATCH: 20
-MARC 245 $a: Schweizerisches Bundesstaatsrecht
-TITLEMATCH: 0 
-MARC 260 $c: 2005-2006
-YEARMATCH: 10
-MARC 260 $a: Zürich
-PLACEMATCH: 5
-MARC 260 $b: Schulthess
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 2
-Matchpoints SLSP: 11
-Totalmatch: 77
 Bestmatch: 140.5, Bestrecordnr: 035052392, bestrecordnr-HSG: 0340409
 Msg 204: Best case scenario: IFF and HSG already matched!
 
@@ -69925,26 +69925,6 @@ URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recor
 Number of records: 5
 
 #Document 1:
-Swissbibnr.: 32402861X
-MARC 020 $a: 9783848701193
-ISBNMATCH: 10 
-MARC 100 $a: Classen
-AUTHOR-1-MATCH: 10
-MARC 245 $a: Nationales Verfassungsrecht in der Europäischen Union
-TITLEMATCH: 15 
-MARC 260 $c: 2013
-YEARMATCH: 10
-MARC 260 $a: Baden-Baden
-PLACEMATCH: 5
-MARC 260 $b: Nomos
-PUBLISHERMATCH: 5
-LDR Materialart: m
-MATERIALMATCH in LDR: 15 
-MARC 035 Number of 035 fields: 2
-Matchpoints SLSP: 11
-Totalmatch: 82
-
-#Document 2:
 Swissbibnr.: 277048605
 MARC 020 $a: 9783848701193
 ISBNMATCH: 10 
@@ -69963,6 +69943,27 @@ MATERIALMATCH in LDR: 15
 MARC 035 Number of 035 fields: 4
 Matchpoints SLSP: 6
 Totalmatch: 78
+
+#Document 2:
+Swissbibnr.: 515863106
+MARC 020 $a: 9783848701193
+ISBNMATCH: 10 
+MARC 100 $a: Classen Claus Dieter
+AUTHOR-1-MATCH: 10
+MARC 245 $a: Nationales Verfassungsrecht in der Europäischen Union
+TITLEMATCH: 15 
+MARC 264 $c: 2013
+YEARMATCH: 10
+MARC 264 $a: Baden-Baden
+PLACEMATCH: 5
+MARC 264 $b: Nomos Verlagsgesellschaft
+PUBLISHERMATCH: 5
+LDR Materialart: m
+MATERIALMATCH in LDR: 15 
+MARC 035 (IDSSG)001000172: IFF_MATCH: -15
+Number of 035 fields: 1
+Matchpoints SLSP: 0
+Totalmatch: 55.5
 
 #Document 3:
 Swissbibnr.: 527365688
@@ -69991,25 +69992,24 @@ Matchpoints SLSP: 11
 Totalmatch: 84
 
 #Document 4:
-Swissbibnr.: 515863106
+Swissbibnr.: 32402861X
 MARC 020 $a: 9783848701193
 ISBNMATCH: 10 
-MARC 100 $a: Classen Claus Dieter
+MARC 100 $a: Classen
 AUTHOR-1-MATCH: 10
 MARC 245 $a: Nationales Verfassungsrecht in der Europäischen Union
 TITLEMATCH: 15 
-MARC 264 $c: 2013
+MARC 260 $c: 2013
 YEARMATCH: 10
-MARC 264 $a: Baden-Baden
+MARC 260 $a: Baden-Baden
 PLACEMATCH: 5
-MARC 264 $b: Nomos Verlagsgesellschaft
+MARC 260 $b: Nomos
 PUBLISHERMATCH: 5
 LDR Materialart: m
 MATERIALMATCH in LDR: 15 
-MARC 035 (IDSSG)001000172: IFF_MATCH: -15
-Number of 035 fields: 1
-Matchpoints SLSP: 0
-Totalmatch: 55.5
+MARC 035 Number of 035 fields: 2
+Matchpoints SLSP: 11
+Totalmatch: 82
 
 #Document 5:
 Swissbibnr.: 487755154

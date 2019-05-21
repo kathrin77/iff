@@ -141,6 +141,8 @@ open $fh_report, ">:encoding(utf8)", "report.txt"   or die "report.txt: $!";
 #open $fh_out, ">:encoding(utf8)", "export.csv"  or die "export.csv: $!";
 open $fh_out, ">", "export.csv"  or die "export.csv: $!";
 open $fh_XML, ">:encoding(utf8)", "metadata.xml"  or die "metadata.xml: $!";
+print $fh_XML '<?xml version="1.0"?>';
+print $fh_XML '<swissbib>';
 
 # read each line and do...:
 while ( $row = $csv->getline($fh_in) ) {
@@ -870,10 +872,10 @@ while ( $row = $csv->getline($fh_in) ) {
         print $fh_report "Bestmatch: $bestmatch[0], Bestrecordnr: $bestmatch[1], bestrecordnr-HSG: $bestmatch[3]\n";
         
         # a good match was found:
-        if ( $bestmatch[0] >= 25 ) {  
-            $found_nr++;   
+        if ( $bestmatch[0] >= 25 ) {                
             # an IFF record to replace was found:                  
-            if (defined $iff2replace[0]) {   
+            if (defined $iff2replace[0]) {  
+            	$found_nr++;  
             	# IFF-replace matches with HSG-record:          
             	if ( $iff2replace[0] eq $bestmatch[1] ) { 
             		# HSG record and IFF already matched:
@@ -983,6 +985,7 @@ $csv->say($fh_out, $_) for @export;
 
 close $fh_report   	or die "report.txt: $!";
 close $fh_out   	or die "export.csv: $!";
+print $fh_XML '</swissbib>';
 close $fh_XML		or die "metadata.xml: $!";
 
 my $endtime = time();

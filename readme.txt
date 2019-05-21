@@ -6,13 +6,14 @@ This readme is for the recommended Version v2_normalised.
 The v2_normalised Version works with normalized data input and delivers much better results.
 
 Prerequisites:
-You need to have perl installed to run this. 
-Developed with Strawberry Perl v5.28.1
+You need to have perl and libxml2 installed to run this. 
+Developed with Strawberry Perl v5.28.1 (LibXML is included).
 For Strawberry Perl (Windows):
 To include Path to .\Code in @INC (Windows) see:
 https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-locations
 
 How to use the script:
+Open the script with an editor and choose the data file that you want to run it with (line 50ff.)
 The script can be called on the command line like this:
 cd v2_normalised
 perl sru-swissbib.pl
@@ -31,7 +32,6 @@ Testfiles and full metadata are in directory /data
 Notice: Full data will take about 20 - 30 Minutes!
 
 Output: 
-
 Console output will show a progress bar and give you some statistics at the end. 
 
 Output files:

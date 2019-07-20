@@ -51,9 +51,9 @@ my $loseblatt = qr/m|i/;
 
 
 # testfiles: uncomment line as desired:
-#my $datafile = "data/test200.csv";    			# ca. 200 Dokumente
+my $datafile = "data/test200.csv";    			# ca. 200 Dokumente
 #my $datafile  = "data/test1000.csv";     		# ca. 1000 Dokumente
-my $datafile  = "data/test1526.csv";     		# 10% aller Dokumente (jede 10. Zeile)
+#my $datafile  = "data/test1526.csv";     		# 10% aller Dokumente (jede 10. Zeile)
 #my $datafile = "data/IFF_Katalog_FULL_normalized.csv"; #VORSICHT!!! ALLE DOKUMENTE, DAUERT ca. 30 Min.
 
 # input, output, filehandles:
@@ -210,10 +210,8 @@ while ( $row = $csv->getline($fh_in) ) {
 
 
     #check if authority rather than author: check for typical words or if more than 3 words long:
-
     if ($HAS_AUTHOR) {
-        if ( $author =~ /$AUTHORITYWORDS/i ) 
-        {   
+        if ( $author =~ /$AUTHORITYWORDS/i ) {   
             $author_size   = 5;
         }
         else {
@@ -223,16 +221,14 @@ while ( $row = $csv->getline($fh_in) ) {
 
         if ( $author_size <=3 ) {    #probably a person, trim author's last name:
                                                                             
-            if ( $author =~ /\Avon\s|\Ade\s|\Ale\s/i )
-            {                              
+            if ( $author =~ /\Avon\s|\Ade\s|\Ale\s/i ) {                              
                 $author = ( split /\s/, $author, 3 )[1];
             }
             else {
                 $author = ( split /\s/, $author, 2 )[0];
             }
             if ($HAS_AUTHOR2) {
-                if ( $author2 =~ /\Avon\s|\Ade\s|\Ale\s/i )
-                {                          
+                if ( $author2 =~ /\Avon\s|\Ade\s|\Ale\s/i ) {                          
                     $author2 = ( split /\s/, $author2, 3 )[1];
                 }
                 else {
@@ -240,8 +236,7 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
 			if ($HAS_AUTHOR3) {
-                if ( $author3 =~ /\Avon\s|\Ade\s|\Ale\s/i )
-                {                          
+                if ( $author3 =~ /\Avon\s|\Ade\s|\Ale\s/i ) {                          
                     $author3 = ( split /\s/, $author3, 3 )[1];
                 }
                 else {
@@ -249,7 +244,6 @@ while ( $row = $csv->getline($fh_in) ) {
                 }
             }
         }
-
     }
     
     #Debug:

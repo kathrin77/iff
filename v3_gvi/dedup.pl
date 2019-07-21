@@ -2,8 +2,9 @@
 #
 # @File dedup.pl
 # @Author Kathrin Heim
-# @Created 06.07.2019 17:13:08
-#
+# @Created 06.07.2019 
+# Perl script for data deduplication by SRU service
+# Documentation: see ./readme.txt
 
 use strict;
 use warnings;
@@ -31,11 +32,6 @@ $config = Config::Tiny->read('app.conf');
 
 # global config values:
 my $base_url  = build_base_url($config);
-my $t_query   = $config->{sru}->{title_query};
-my $a_query   = $config->{sru}->{author_query};
-my $i_query   = $config->{sru}->{isbn_query};
-my $p_query   = $config->{sru}->{publisher_query};
-my $any_query = $config->{sru}->{any_query};
 my $window    = $config->{sru}->{max_records};
 my $m_safe    = $config->{match}->{safe};
 
@@ -48,27 +44,19 @@ if ( $#ARGV >= 0 ) {
     exit;
 }
 
-# import, export and counter variables:
+# import and export variables:
 my $line;            # a data line from csv file
 my @export;          # array for export data
 my @bestmatch;       # array for best matching record
-my $line_ctr    = 0; # counter for input records (csv lines)
-my $ign_ctr     = 0; # counter for documents that are not treated with this script
-my $nf_ctr      = 0; # counter for documents that are not found with SRU
-my $f_ctr       = 0; # counter for documents that are found with SRU
-my $uns_ctr     = 0; # counter for documents with an unsafe match value.
 
-# build subject table: (c) Felix Leu 2018
-my $subj_map    = "iff_subject_table.map";
-my %subj_hash   = ();        
-open(MAP, "<$subj_map") or die "Cannot open file $subj_map \n";
-binmode (MAP, ':encoding(iso-8859-1)');   
-while (<MAP>) {
-   my ($level, $code, $subject) = /^(\S+)\s+(\S+)\s+(.*)$/;
-   # Example: $subj_hash{'1 GB'} is 'Finanzrecht'
-   $subj_hash{"$code $level"}  = decode('iso-8859-1', $subject);      
-}
-close MAP;
+# counters for input, ignored, not found, found and unsafely matched records:
+$_ = '0' for my ($line_ctr, $ign_ctr, $nf_ctr, $f_ctr, $uns_ctr);
+
+# build subject hash
+my %subj_hash = build_subject_table();
+
+# get difficult titles
+my $trouble_titles = list_of_journals();
 
 # create a new csv object:
 my $csv = Text::CSV->new( { binary => 1, sep_char => ";" } ) or die "Cannot use CSV: " . Text::CSV->error_diag();
@@ -91,59 +79,41 @@ while ( $line = $csv->getline($fh_in) ) {
     $line_ctr++;
     printReportHeader( $fh_report, $line_ctr );
     printProgressBar($line_ctr);
+    $bestmatch[0] = 0; 
     my ( $aut1,  $aut2, $tit,  $stit,  $v1,    $v2,  $isbn,  $pag,  $mat,  $add,   $loc,   $callno,
-        $place, $pub,  $year, $code1, $code2, $code3  ) = getVariablesFromCsv($line);
-    $bestmatch[0] = 0; # set best match value to zero.
+        $place, $pub,  $year, $code1, $code2, $code3  ) = getVariablesFromCsv($line);      
+ 
+    if ($line_ctr == 1) {
+    	$aut1 = removeBOM($aut1);
+    }
 
     # ------
     # normalize the data:
     # ------
-
-    my ( $n_isbn1, $n_isbn2, $has_isbn1, $has_isbn2 ) = normalize_isbn($isbn);
-    my ( $n_aut1, $has_aut1 ) = normalize_author($aut1);
-    my ( $n_aut2, $has_aut2 ) = normalize_author($aut2);
-    my $n_tit = normalize_title($tit);
-    my ( $has_stit, $n_stit, $has_tvol, $tvol1, $tvol2 ) = check_subtitles( $stit, $v1, $v2 );
-    my ( $has_add, $n_add, $has_avol, $avol_no, $avol_tit ) = check_addendum($add);
-    my ( $is_ana, $src, $srctit, $srcaut )  = check_analytica($n_add);
-    my ( $has_year, $n_year, $n_year_p1, $n_year_m1 ) = normalize_year($year);
-    my ( $has_range, $has_pub, $has_place ) = check_ppp( $pag, $pub, $place );
-
-    # -----
-    # deal with material codes
-    # -----
+    my %norm; 			# hash for all needed, normalized values
+    my %flag;           # hash for all needed flag values
     
-    my $doctype = 'm';    # default value = monograph
-
-    if ($has_range) {
-        $is_ana = 1;
-    }                     # should be treated like analytica
-    if ($is_ana) {
-        $has_isbn1 = $has_isbn2 = 0;    # disable isbn search => wrong results
-        $doctype   = 'a';
-    }
-    if ( $mat =~ /Loseblatt/ ) {
-        $has_year = 0;                  # year for Loseblatt is usually wrong
-        $doctype  = qr/m|i/;            # doctype can be both.
-    }
-
-    if ( $year =~ /online/i ) {
-        $mat = "online";
-    }
+    ( $norm{isbn1}, $norm{isbn2}, $flag{isbn1}, $flag{isbn2} )                    = normalize_isbn($isbn);
+    ( $norm{aut1}, $flag{aut1} )                                                  = normalize_author($aut1);
+    ( $norm{aut2}, $flag{aut2} )                                                  = normalize_author($aut2);
+	$norm{tit}                                                                    = normalize_title($tit);
+    ( $flag{stit}, $norm{stit}, $flag{tvol}, $norm{tvol1}, $norm{tvol2} )         = check_subtitles( $stit, $v1, $v2 );
+    ( $norm{add}, $flag{avol}, $norm{avol_no}, $norm{avol_tit} )                  = check_addendum($add);
+    ( $flag{ana}, $norm{src}, $norm{srctit}, $norm{srcaut} )                      = check_analytica($add);
+    ( $flag{year}, $norm{year}, $norm{year_p1}, $norm{year_m1} )                  = normalize_year($year);
+    ( $flag{range}, $flag{pub}, $flag{place}, $norm{place}, $norm{pub} )          = check_ppp( $pag, $pub, $place );   
+    ( $norm{doctype}, $flag{ana}, $flag{isbn1}, $flag{isbn2}, $flag{year}, $mat ) = set_material_codes(\%flag, $mat, $year);
 
     # debug:
-    print $fh_report Dumper( $n_isbn1, $n_isbn2, $n_aut1, $n_aut2, $n_tit, $n_stit, $tvol1, $tvol2, $n_add);
-    print $fh_report Dumper( $avol_no, $avol_tit, $src, $srctit, $srcaut, $n_year, $pag, $pub, $place, $mat, $doctype );
+    print_hash(\%flag, $fh_report);
+    print_hash(\%norm, $fh_report);
 
 	# -----
 	# check if record should be ignored => if yes, skip this record:
 	# -----
 
-    my $trouble_titles = list_of_journals();
-    if ( ( $code1 =~ /^Z/ ) || ( $mat =~ /CD-ROM|online/ ) || ( $n_tit =~ m/$trouble_titles/i ) )    {
-        print $fh_report "DOCUMENT IGNORED (SERIAL, CD-ROM, ONLINE OR TROUBLE-TITLE)\n";
-        $line->[22] = "ignored";
-        push @export, $line;
+    if ( ( $code1 =~ /^Z/ ) || ( $mat =~ /CD-ROM|online/ ) || ( $norm{tit} =~ m/$trouble_titles/i ) )    {
+        @export = prepare_export($line, \@export, "ignore");
         $ign_ctr++;
         next;
     }
@@ -151,46 +121,24 @@ while ( $line = $csv->getline($fh_in) ) {
     # ----
     # start search: build sru query, escape title & author strings
     # ----
-    my $sruquery;
-    my $e_tit   = clean_search_params($n_tit);
-    my $e_aut   = clean_search_params($n_aut1);
-    my $e_pub   = clean_search_params($pub);
-    my $e_place = clean_search_params($place);
+    
+    my @records;
+    my %esc;     # escaped search terms
+    ($esc{isbn}, $esc{year}, $esc{tit}, $esc{aut}, $esc{pub}, $esc{place}) = clean_search_params(\%norm, \%flag);
 
-    if ($has_isbn1) {
-        $sruquery = $base_url . $i_query . $n_isbn1;
-    } else {
-        $sruquery = $base_url . $t_query . $e_tit;
-        if ($has_aut1) {
-            $sruquery .= "+AND" . $a_query . $e_aut;
-        } elsif ($has_pub) {
-            $sruquery .= "+AND" . $p_query . $e_pub;
-        }
-    }
-
+    my $sruquery = build_sruquery_basic($base_url, $config, \%flag, \%esc);
     my $xpc = get_xpc($sruquery);
     my $resultSetNo = get_recordNumbers($xpc);
     print $fh_report Dumper( $sruquery, $resultSetNo );
-    my @records;
+
     if ( $resultSetNo == 0 ) {
-
-        # try a different search query with broader parameters, otherwise next;
-        my $sruquery2 = $base_url . $any_query . $e_tit;
-        if ($has_aut1) {
-            $sruquery2 .= "+AND" . $any_query . $e_aut;
-        } elsif ($has_pub) {
-            $sruquery2 .= "+AND" . $any_query . $e_pub;
-        } elsif ($has_year) {
-            $sruquery2 .= "+AND" . $any_query . $n_year;
-        }
-
-        $xpc         = get_xpc($sruquery2);
+    	# try a different search query with broader parameters, otherwise next;
+    	$sruquery = build_sruquery_broad($base_url, $config, \%flag, \%esc);
+        $xpc      = get_xpc($sruquery);
         $resultSetNo = get_recordNumbers($xpc);
-        print $fh_report Dumper( $sruquery2, $resultSetNo );
+        print $fh_report Dumper( $sruquery, $resultSetNo );
         if ( $resultSetNo == 0 || $resultSetNo >= $window ) {
-            print $fh_report "ZERO OR TOO MANY RESULTS AFTER BROADER SEARCH\n";
-            $line->[22] = "notfound";
-            push @export, $line;
+            @export = prepare_export($line, \@export, "notfound");
             $nf_ctr++;
             next;
         } else {
@@ -199,24 +147,12 @@ while ( $line = $csv->getline($fh_in) ) {
     } elsif ( $resultSetNo >= $window ) {
 
         # try a different search with narrower parameters, otherwise next;
-        my $sruquery3 = $base_url . $t_query . $e_tit;
-        if ($has_aut1) {
-            $sruquery3 .= "+AND" . $a_query . $e_aut;
-        } elsif ($has_pub) {
-            $sruquery3 .= "+AND" . $p_query . $e_pub;
-        } elsif ($has_place) {
-            $sruquery3 .= "+AND" . $any_query . $e_place;
-        } elsif ($has_year) {
-            $sruquery3 .= "+AND" . $any_query . $n_year;
-        }
-
-        $xpc         = get_xpc($sruquery3);
+        $sruquery = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
+        $xpc      = get_xpc($sruquery);
         $resultSetNo = get_recordNumbers($xpc);
-        print $fh_report Dumper( $sruquery3, $resultSetNo );
+        print $fh_report Dumper( $sruquery, $resultSetNo );
         if ( $resultSetNo == 0 || $resultSetNo >= $window ) {
-            print $fh_report "ZERO OR TOO MANY RESULTS AFTER NARROWER QUERY\n";
-            $line->[22] = "notfound";
-            push @export, $line;
+            @export = prepare_export($line, \@export, "notfound");
             $nf_ctr++;
             next;
         } else {
@@ -235,174 +171,10 @@ while ( $line = $csv->getline($fh_in) ) {
         $i++;
         printDocumentHeader( $fh_report, $i );
         my $sysno = getControlfield( '001', $rec, $xpc );
+        
+        my $total = evaluate_records(\%flag, \%norm, $config, $rec, $xpc);
+        print "$line_ctr: $i: $total\n";    
 
-        # compare ISBN:
-        my $i_match = 0;
-        if ( $has_isbn1 && ( hasTag( "020", $rec, $xpc ) ) ) {
-            $i_match = checkIsbnMatch( $rec, $xpc, $n_isbn1 );
-        }
-        if ( $has_isbn2 && ( hasTag( "020", $rec, $xpc ) ) ) {
-            $i_match += checkIsbnMatch( $rec, $xpc, $n_isbn2 );
-        }
-
-        # compare Author/Authority/other associated persons
-        my $a1_match = 0;
-        my $a2_match = 0;
-        my $a1_conf  = $config->{match}->{aut1};
-        my $a2_conf  = $config->{match}->{aut2};
-        if ($has_aut1) {
-            if ( hasTag( "100", $rec, $xpc ) ) {
-                $a1_match = getMatchValue( "100", "a", $n_aut1, $a1_conf, $rec, $xpc );
-            } elsif ( hasTag( "700", $rec, $xpc ) ) {
-                $a1_match = getMatchValue( "700", "a", $n_aut1, $a1_conf, $rec, $xpc );
-            } elsif ( hasTag( "110", $rec, $xpc ) ) {
-                $a1_match = getMatchValue( "110", "a", $n_aut1, $a1_conf, $rec, $xpc );
-            } elsif ( hasTag( "710", $rec, $xpc ) ) {
-                $a1_match = getMatchValue( "710", "a", $n_aut1, $a1_conf, $rec, $xpc );
-            }
-        }
-        if ($has_aut2) {
-            if ( hasTag( "100", $rec, $xpc ) ) {
-                $a2_match = getMatchValue( "100", "a", $n_aut2, $a2_conf, $rec, $xpc );
-            } elsif ( hasTag( "700", $rec, $xpc ) ) {
-                $a2_match = getMatchValue( "700", "a", $n_aut2, $a2_conf, $rec, $xpc );
-            } elsif ( hasTag( "110", $rec, $xpc ) ) {
-                $a2_match = getMatchValue( "110", "a", $n_aut2, $a2_conf, $rec, $xpc );
-            } elsif ( hasTag( "710", $rec, $xpc ) ) {
-                $a2_match = getMatchValue( "710", "a", $n_aut2, $a2_conf, $rec, $xpc );
-            }
-        }
-
-        # compare Title & subtitle fields
-        my $t_match  = 0;
-        my $st_match = 0;
-        my $t_conf   = $config->{match}->{title};
-        my $st_conf  = $config->{match}->{subtitle};
-
-        if ( hasTag( "245", $rec, $xpc ) ) {
-            $t_match = getMatchValue( "245", "a", $n_tit, $t_conf, $rec, $xpc );
-            if ($has_stit) {
-                $st_match = getMatchValue( "245", "b", $n_stit, $st_conf, $rec, $xpc );
-            }
-        } elsif ( hasTag( "246", $rec, $xpc ) ) {
-            $t_match = getMatchValue( "246", "a", $n_tit, $t_conf, $rec, $xpc );
-            if ($has_stit) {
-                $st_match = getMatchValue( "246", "b", $n_stit, $st_conf, $rec, $xpc );
-            }
-        }
-
-        # compare year: check also if year diverges by 1
-        my $y_exactmatch = 0;
-        my $y_nearmatch  = 0;
-        my $y_exactconf  = $config->{match}->{yearexact};
-        my $y_nearconf   = $config->{match}->{yearalmost};
-
-        if ($has_year) {
-            if ( hasTag( "264", $rec, $xpc ) ) {
-                $y_exactmatch = getMatchValue( "264", "c", $n_year, $y_exactconf, $rec, $xpc );
-                if ( $y_exactmatch == 0 ) {
-                    $y_nearmatch = getMatchValue( "264", "c", $n_year_p1, $y_nearconf, $rec, $xpc );
-                    if ( $y_nearmatch == 0 ) {
-                        $y_nearmatch = getMatchValue( "264", "c", $n_year_m1, $y_nearconf, $rec, $xpc );
-                    }
-                }
-            } elsif ( hasTag( "260", $rec, $xpc ) ) {
-                $y_exactmatch = getMatchValue( "260", "c", $n_year, $y_exactconf, $rec, $xpc );
-                if ( $y_exactmatch == 0 ) {
-                    $y_nearmatch = getMatchValue( "260", "c", $n_year_p1, $y_nearconf, $rec, $xpc );
-                    if ( $y_nearmatch == 0 ) {
-                        $y_nearmatch = getMatchValue( "260", "c", $n_year_m1, $y_nearconf, $rec, $xpc );
-                    }
-                }
-            }
-        }
-
-        # check place and publisher
-        my $pl_match = 0;
-        my $pu_match = 0;
-        my $pl_conf  = $config->{match}->{place};
-        my $pu_conf  = $config->{match}->{publisher};
-
-        if ($has_place) {
-            if ( hasTag( "264", $rec, $xpc ) ) {
-                $pl_match = getMatchValue( "264", "a", $place, $pl_conf, $rec, $xpc );
-            } elsif ( hasTag( "260", $rec, $xpc ) ) {
-                $pl_match = getMatchValue( "260", "a", $place, $pl_conf, $rec, $xpc );
-            }
-        }
-        if ($has_pub) {
-            if ( hasTag( "264", $rec, $xpc ) ) {
-                $pu_match = getMatchValue( "264", "b", $pub, $pu_conf, $rec, $xpc );
-            } elsif ( hasTag( "260", $rec, $xpc ) ) {
-                $pu_match = getMatchValue( "260", "b", $pub, $pu_conf, $rec, $xpc );
-            }
-        }
-
-        # check volume titles:
-        my $tv_match = 0;
-        my $av_match = 0;
-        my $tv_conf  = $config->{match}->{voltitle};
-        my $av_conf  = $config->{match}->{voladd};
-
-        if ($has_tvol) {
-            if ( hasTag( "505", $rec, $xpc ) ) {
-                $tv_match = getMatchValue( "505", "t", $tvol1, $tv_conf, $rec, $xpc );
-            } elsif ( hasTag( "245", $rec, $xpc ) ) {
-                $tv_match = getMatchValue( "245", "a", $tvol1, $tv_conf, $rec, $xpc );
-            }
-        }
-        if ($has_avol) {
-            if ( hasTag( "505", $rec, $xpc ) ) {
-                $av_match = getMatchValue( "505", "t", $avol_tit, $av_conf, $rec, $xpc );
-            } elsif ( hasTag( "245", $rec, $xpc ) ) {
-                $av_match = getMatchValue( "245", "a", $avol_tit, $av_conf, $rec, $xpc );
-                if ( $av_match == 0 ) {
-                    $av_match = getMatchValue( "245", "b", $avol_tit, $av_conf, $rec, $xpc );
-                }
-            }
-        }
-
-        # check analytica for additional source info:
-        my $src_match = 0;
-        my $src_conf  = $config->{match}->{source};
-
-        if ($is_ana) {
-            if ( hasTag( "773", $rec, $xpc ) && defined $srctit ) {
-                $src_match = getMatchValue( "773", "t", $srctit, $src_conf, $rec, $xpc );
-            } elsif ( hasTag( "500", $rec, $xpc ) && defined $src ) {
-                $src_match = getMatchValue( "500", "a", $src, $src_conf, $rec, $xpc );
-            }
-        }
-
-        # check material types and carrier
-        my $mat_match = 0;
-        my $car_match = 0;
-        my $mat_conf  = $config->{match}->{material};
-        my $car_conf  = $config->{match}->{carrier};
-
-        $mat_match = checkMaterial( $doctype, $mat_conf, $rec, $xpc );
-
-        if ( ( $mat_match == 0 ) && hasTag( "338", $rec, $xpc ) ) {
-            my $car_type = "nc";    # carrier type code for printed volume (= documents in input file)
-            $car_match = getMatchValue( "338", "b", $car_type, $car_conf, $rec, $xpc );
-        }
-
-        # Get 035 Field number and check for best network (origin)
-        my $m035_counter = 0;
-        my $nw_match     = 0;
-        if ( hasTag( "035", $rec, $xpc ) ) {
-            ( $m035_counter, $nw_match ) = checkNetwork( $config, $rec, $xpc );
-        }
-
-        my $total = $i_match +  $a1_match + $a2_match + $t_match + $st_match +
-          $y_exactmatch + $y_nearmatch + $pl_match + $pu_match + $tv_match +
-          $av_match + $src_match + $mat_match + $car_match + $m035_counter + $nw_match;
-          
-        # eliminate totally unsafe matches:
-        if (($t_match == 0) && ($a1_match == 0) && ($i_match == 0)) {
-            $total = 0;
-            print $fh_report "@@@ Unsafe Match author-title-isbn! \n"
-        }
         # check if this is currently the best match and safe the record:
         if ( $total > $bestmatch[0]){ 
             @bestmatch = (); #clear @bestmatch
@@ -410,13 +182,8 @@ while ( $line = $csv->getline($fh_in) ) {
             print $fh_report "NEW BEST MATCH: $total\n";
         }
 
-        # debug
-        print $fh_report Dumper( $sysno, $i_match, $a1_match, $a2_match, $t_match, $st_match );
-        print $fh_report Dumper( $y_exactmatch, $y_nearmatch, $pl_match, $pu_match );
-        print $fh_report Dumper( $tv_match, $av_match, $src_match, $mat_match, $car_match );
-        print $fh_report Dumper( $m035_counter, $nw_match, $total );
-
     } # end of foreach loop (going through each record in results list)
+	
     print $fh_report "Bestmatch: $bestmatch[0], Bestrecordnr: $bestmatch[1] \n";
     
     # ----------------
@@ -424,18 +191,14 @@ while ( $line = $csv->getline($fh_in) ) {
     # ----------------
      
     if ($bestmatch[0] >= $m_safe) {
+        @export = prepare_export($line, \@export, "found", $bestmatch[1]);
         $f_ctr++;
-        $line->[22] = "found";
-        $line->[23] = $bestmatch[1];          
-        push @export, $line;
         my $xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);		                    
         print $fh_XML $xml;        
         
     } else {
-        $uns_ctr++;
-        print $fh_report "@@@ Unsafe match total!";
-        $line->[22] = "unsafe";
-        push @export, $line;        
+        @export = prepare_export($line, \@export, "unsafe");
+        $uns_ctr++;      
     }
     
 } # end of while loop (going through every input line)
@@ -465,7 +228,7 @@ printStatistics($f_ctr, $nf_ctr, $ign_ctr, $uns_ctr, $line_ctr, $timeelapsed);
 
 
 
-
+######################################################################################
 # ------------------------------------------------------------------------------------
 # SUBROUTINES for dedup.pl
 # ------------------------------------------------------------------------------------
@@ -585,35 +348,33 @@ sub normalize_author {
 
 sub check_addendum {
     my $origAddendum = shift;
-    my ( $add_flag, $volume_flag, $vol_title, $vol_number );
+    my ( $volume_flag, $vol_title, $vol_number );
 
     if ( $origAddendum =~ /\A\Z/ ) {
-        $add_flag     = 0;
         $origAddendum = undef;
     }
     elsif (
-        $origAddendum =~ /^(Band|Bd|Vol|Reg|Gen|Teil|d{1}\sTeil|I{1,3}\sTeil)/ )
+        $origAddendum =~ /^(Band|Bd|Vol\.|Volume|Reg|Gen|Teil|d{1}\sTeil|I{1,3}\sTeil).*:/ )
     {
         # volume title information at beginning of addendum
-        $add_flag   = $volume_flag = 1;
+        $volume_flag = 1;
         $vol_title  = ( split /: /, $origAddendum, 2 )[1];
         $vol_number = ( split /: /, $origAddendum, 2 )[0];
     }
-    elsif ( $origAddendum =~ /\- (Bd|Band|Vol)/ ) {
+    elsif ( $origAddendum =~ /\- (Bd|Band|Vol\.|Volume)/ ) {
 
         # volume title information in the middle/end of addendum
-        $add_flag   = $volume_flag = 1;
+        $volume_flag = 1;
         $vol_number = ( split /- /, $origAddendum, 2 )[1];
         $vol_title  = ( split /- /, $origAddendum, 2 )[0];
     }
     else {
-        $add_flag    = 1;
         $volume_flag = 0;
         $vol_number  = undef;
         $vol_title   = undef;
     }
 
-    return ( $add_flag, $origAddendum, $volume_flag, $vol_number, $vol_title );
+    return ($origAddendum, $volume_flag, $vol_number, $vol_title );
 }
 
 # -----
@@ -634,8 +395,7 @@ sub check_analytica {
         $citation =~ s/^in: //i;    #replace "in: "
         $src_title  = ( split /: /, $citation, 2 )[1];
         $src_author = ( split /: /, $citation, 2 )[0];
-    }
-    else {
+    } else {
         $analytica_flag   = 0;
         $originaladdendum = $citation = $src_title = $src_author = undef;
     }
@@ -759,32 +519,97 @@ sub check_ppp {
     }
     else { $place_flag = 1; }
 
-    return ( $pagerange_flag, $pub_flag, $place_flag );
+    return ( $pagerange_flag, $pub_flag, $place_flag, $originalPlace, $originalPublisher );
 }
+# ----
+# function deals with diverse material codes and returns correct type and changes some flags.
+# ----
+
+sub set_material_codes {
+	my $flag_ref = shift;
+	my $material = shift;
+	my $year = shift;
+	my $type = 'm'; # default LDR value: monographs
+	my %flag = %{$flag_ref};
+	
+	# following documents should be treated like analytica and therefore isbn-search disabled:
+	if ($flag{range} ==1 || $flag{ana} ==1) {
+		$flag{ana} = 1;
+		$flag{isbn1} = 0;
+		$flag{isbn2} = 0;
+		$type = 'a';
+	}
+	if ($material =~ /Loseblatt/ ) {
+        $flag{year} = 0;               # year for Loseblatt is usually wrong
+        $type  = qr/m|i/;            # doctype can be both.
+    }
+	if ( $year =~ /online/i ) {
+        $material = "online";
+    }
+    return ($type, $flag{ana}, $flag{isbn1}, $flag{isbn2}, $flag{year}, $material);
+	
+}
+                  
+
+
+
 
 # -----
 # function clean_search_params() tidies the normalized title/author strings
 # and escapes them for the sru query building.
-# argumet: normalized title or author string
+# argument: normalized title or author strings
 # retunrns: escaped title or author string
 
 sub clean_search_params {
-    my $originalString = shift;
-    if ( defined $originalString ) {
-        my $CLEAN_TROUBLE_CHAR =
-          qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/;    #clean characters: .()'"/+[]?
-        my $escapedString;
-        $originalString =~ s/$CLEAN_TROUBLE_CHAR//g;
-        $originalString =~
-          s/ and / /g;    #remove " and " from title to avoid CQL error
-        $originalString =~
-          s/ or / /g;     #remove " or " from title to avoid CQL error
-        $escapedString = uri_escape_utf8($originalString);
-        return $escapedString;
-    }
-    else {
-        return undef;
-    }
+	
+	my $norm_ref = shift;
+	my $flag_ref = shift;
+	my %norm = %{$norm_ref};
+	my %flag = %{$flag_ref};
+	my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?| and | or /;    #clean characters: .()'"/+[]? and remove and / or
+	my ($escaped_isbn, $escaped_year, $escaped_title, $escaped_author, $escaped_publisher, $escaped_place);
+	
+	if ($flag{isbn1}) {
+		$escaped_isbn = $norm{isbn1};
+	} else {
+		$escaped_isbn = '';
+	}
+	if ($flag{year}) {
+		$escaped_year = $norm{year};
+	} else {
+		$escaped_year = '';
+	}
+	
+	$escaped_title = $norm{tit};
+	$escaped_title =~ s/$CLEAN_TROUBLE_CHAR//g;
+    $escaped_title = uri_escape_utf8($escaped_title);
+    
+	if ($flag{aut1}) {
+	    $escaped_author = $norm{aut1};
+		$escaped_author =~ s/$CLEAN_TROUBLE_CHAR//g;
+    	$escaped_author = uri_escape_utf8($escaped_author); 
+	} else {
+		$escaped_author = '';
+	}
+	
+	if ($flag{pub}) {
+	    $escaped_publisher = $norm{pub};
+		$escaped_publisher =~ s/$CLEAN_TROUBLE_CHAR//g;
+	    $escaped_publisher = uri_escape_utf8($escaped_publisher); 		
+	} else {
+		$escaped_publisher = '';
+	}
+	
+	if ($flag{place}) {
+		$escaped_place = $norm{place};
+		$escaped_place =~ s/$CLEAN_TROUBLE_CHAR//g;
+    	$escaped_place = uri_escape_utf8($escaped_place); 
+	} else {
+		$escaped_place = '';
+	}
+    
+    return ($escaped_isbn, $escaped_year, $escaped_title, $escaped_author, $escaped_publisher, $escaped_place );
+
 }
 
 # 2) MATCH ROUTINES:
@@ -849,6 +674,28 @@ sub hasTag {
 
 }
 
+# ----DELETE?
+# hasCode checks if a MARC subfield exists.
+# argument: MARC subfield code
+# returns:  1 (true) or 0 (false)
+# ----
+
+sub hasCode {
+    my $code         = shift;   # subfield code
+    my $record       = shift;    # record node
+    my $xpathcontext = shift;    # xpc
+
+    if ($xpathcontext->exists( './rec:subfield[@code="' . $code . '"]', $record ) ){
+        #debug
+        print "hascode returned 1!\n";
+        return 1;
+    }
+    else {
+        return 0;
+    }
+
+}
+
 # ----
 # function checkIsbnMatch() to check if ISBN numbers match.
 # arguments: current record, current XPATH, isbn number from original data
@@ -859,13 +706,12 @@ sub checkIsbnMatch {
     my $record        = shift;
     my $xpath         = shift;
     my $original_isbn = shift;
+    my $config        = shift;
     my $isbn_match    = $config->{match}->{isbn};
     my $matchvalue    = 0;
 
-    foreach my $el ( $xpath->findnodes( './rec:datafield[@tag=020]', $record ) )
-    {
-        my $marc_20_a =
-          $xpath->findnodes( './rec:subfield[@code="a"]', $el )->to_literal;
+    foreach my $el ( $xpath->findnodes( './rec:datafield[@tag=020]', $record ) ) {
+        my $marc_20_a = $xpath->findnodes( './rec:subfield[@code="a"]', $el )->to_literal;
         $marc_20_a =~ s/[^0-9xX]//g;
         print $fh_report "020 a $marc_20_a\n";
 
@@ -886,45 +732,40 @@ sub checkIsbnMatch {
 sub getMatchValue {
     my $datafield      = shift;
     my $subfield       = shift;
-    my $originalstring = shift;
-    my $matchvalue     = shift;
+    my $hash_ref       = shift;
+    my $key            = shift;
+    my $config         = shift;
+
     my $record         = shift;
     my $xpath          = shift;
-    my $CLEAN_TROUBLE_CHAR =
-      qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/; #clean following characters: .()'"/+[]?
-
-    foreach my $el (
-        $xpath->findnodes(
-            './rec:datafield[@tag="' . $datafield . '"]', $record
-        )
-      )
-    {
-
-        my $marcfield =
-          $xpath->findnodes( './rec:subfield[@code="' . $subfield . '"]', $el )
-          ->to_literal;
-        $marcfield =~
-          s/$CLEAN_TROUBLE_CHAR//g;    # clean fields from special characters
-        print $fh_report "$datafield $subfield $marcfield\n";
-
-        #print $fh_report Dumper ($datafield, $subfield, $marcfield);
-        $originalstring =~
-          s/$CLEAN_TROUBLE_CHAR//g;    # clean fields from special characters
-
-        if ( $marcfield =~ /\A\Z/ ) {
-
-            # subfield is empty and therefore does not exist:
-            return 0;
-        }
-        elsif (( $originalstring =~ m/$marcfield/i )
-            || ( $marcfield =~ m/$originalstring/i ) )
-        {
-            #Marc data matches original data
-            return $matchvalue;
-        }
-        else {
-            return 0;
-        }
+    my %norm 		   = %{$hash_ref};
+    my $originalstring = $norm{$key};
+   	my $matchvalue     = $config->{match}->{$key};
+    my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/; #clean following characters: .()'"/+[]?
+    
+    if (defined $originalstring ) {
+    	# continue with comparison
+    	foreach my $el ( $xpath->findnodes('./rec:datafield[@tag="' . $datafield . '"]', $record  ) ) {
+   			my $marcfield = $xpath->findnodes( './rec:subfield[@code="' . $subfield . '"]', $el )->to_literal;
+        	$marcfield =~ s/$CLEAN_TROUBLE_CHAR//g;    # clean fields from special characters
+	        if ( $marcfield =~ /\A\Z/ ) {
+	            # subfield is empty and therefore does not exist:
+	            return 0;
+	        } else {
+	        	print $fh_report "$datafield $subfield $marcfield\n";
+	        	$originalstring =~ s/$CLEAN_TROUBLE_CHAR//g;    # clean fields from special characters  
+	        	if (( $originalstring =~ m/$marcfield/i ) || ( $marcfield =~ m/$originalstring/i ) ) {
+		            #Marc data matches original data
+		            return $matchvalue;	        	
+		        } else {
+		        	#Marc data does not match original data
+		        	return 0;
+		        }
+	        }
+    	}    	
+    } else {
+    	# original string is not initialized, abort
+    	return 0;
     }
 }
 
@@ -935,19 +776,21 @@ sub getMatchValue {
 # return: matchvalue
 # -----
 sub checkMaterial {
+	my $hash_ref = shift;
     my $type     = shift;
     my $posmatch = shift;
     my $record   = shift;
     my $xpath    = shift;
     my $ldr;
     my $matchvalue;
+    my %norm = %{$hash_ref};
 
     if ( $xpath->exists( './rec:leader', $record ) ) {
         foreach my $el ( $xpath->findnodes( './rec:leader', $record ) ) {
             $ldr = $el->to_literal;
             $ldr = substr $ldr, 7, 1;    #LDR pos07
             print $fh_report Dumper $ldr;
-            if ( $type =~ m/$ldr/ ) {
+            if ( $norm{$type} =~ m/$ldr/ ) {
                 $matchvalue = $posmatch;
             }
             else {
@@ -1033,6 +876,198 @@ sub checkNetwork {
         }
     }
     return ( $m035_counter, $addedmatchvalue );
+}
+
+#----
+# main sub which deals with all the matching for each record in result set
+# arguments: reference for hashes flag and norm, record & xpath object, config
+# returns: total match value
+# ----
+
+sub evaluate_records {
+	
+	my $flag_ref = shift;
+	my $norm_ref = shift;
+	my $config = shift;
+	my $rec = shift;
+	my $xpc = shift;
+    my %norm = %{$norm_ref};
+    my %flag = %{$flag_ref};
+    my $total = 0;
+    
+    # compare ISBN:
+    my $i_match = 0;
+    if ( $flag{isbn1}  && ( hasTag( "020", $rec, $xpc ) ) ) {
+    	$i_match = checkIsbnMatch( $rec, $xpc, $norm{isbn1}, $config);
+    }
+    if ( $flag{isbn2}  && ( hasTag( "020", $rec, $xpc ) ) ) {
+        $i_match += checkIsbnMatch( $rec, $xpc, $norm{isbn2}, $config);
+    }
+    print $fh_report Dumper $i_match;
+    $total += $i_match;
+    
+    # compare Author/Authority/other associated persons
+   	my $a1_match = 0;
+	my $a2_match = 0;
+	if ($flag{aut1}) {
+		if ( hasTag( "100", $rec, $xpc ) ) {
+			$a1_match = getMatchValue( "100", "a", \%norm, "aut1", $config, $rec, $xpc );
+        } elsif ( hasTag( "700", $rec, $xpc ) ) {
+			$a1_match = getMatchValue( "700", "a", \%norm, "aut1", $config, $rec, $xpc );
+		} elsif ( hasTag( "110", $rec, $xpc ) ) {
+            $a1_match = getMatchValue( "110", "a", \%norm, "aut1", $config, $rec, $xpc );
+        } elsif ( hasTag( "710", $rec, $xpc ) ) {
+            $a1_match = getMatchValue( "710", "a", \%norm, "aut1", $config, $rec, $xpc );
+        }
+    }
+    if ($flag{aut2}) {
+    	if ( hasTag( "100", $rec, $xpc ) ) {
+    		$a2_match = getMatchValue( "100", "a", \%norm, "aut2", $config, $rec, $xpc );
+    	} elsif ( hasTag( "700", $rec, $xpc ) ) {
+    		$a2_match = getMatchValue( "700", "a", \%norm, "aut2", $config, $rec, $xpc );
+    	} elsif ( hasTag( "110", $rec, $xpc ) ) {
+    		$a2_match = getMatchValue( "110", "a", \%norm, "aut2", $config, $rec, $xpc );
+    	} elsif ( hasTag( "710", $rec, $xpc ) ) {
+    		$a2_match = getMatchValue( "710", "a", \%norm, "aut2", $config, $rec, $xpc );
+    	}
+    }
+    print $fh_report Dumper $a1_match;
+    print $fh_report Dumper $a2_match;
+    $total += ($a1_match + $a2_match);
+    
+	# compare title & subtitle fields
+	my $t_match  = 0;
+	my $st_match = 0;
+	if ( hasTag( "245", $rec, $xpc ) ) {
+		$t_match = getMatchValue( "245", "a", \%norm, "tit", $config, $rec, $xpc );
+		if ($flag{stit}) {
+			$st_match = getMatchValue( "245", "b", \%norm, "stit", $config, $rec, $xpc );
+		}
+	} elsif ( hasTag( "246", $rec, $xpc ) ) {
+		$t_match = getMatchValue( "246", "a", \%norm, "tit", $config, $rec, $xpc );
+		if ($flag{stit}) {
+			$st_match = getMatchValue( "246", "b", \%norm, "stit", $config, $rec, $xpc );
+		}
+	}
+	print $fh_report Dumper $t_match;
+    print $fh_report Dumper $st_match;
+    $total += ($t_match + $st_match);
+	
+	# compare year: check also if year diverges by 1
+	my $y_exactmatch = 0;
+	my $y_nearmatch  = 0;
+    if ($flag{year}) {
+    	if ( hasTag( "264", $rec, $xpc ) ) {
+    		$y_exactmatch = getMatchValue( "264", "c", \%norm, "year", $config, $rec, $xpc );
+    		if ( $y_exactmatch == 0 ) {
+    			$y_nearmatch = getMatchValue( "264", "c", \%norm, "year_p1", $config, $rec, $xpc );
+    			if ( $y_nearmatch == 0 ) {
+    				$y_nearmatch = getMatchValue( "264", "c", \%norm, "year_m1", $config, $rec, $xpc );
+    			}
+    		}
+    	} elsif ( hasTag( "260", $rec, $xpc ) ) {
+    		$y_exactmatch = getMatchValue( "260", "c", \%norm, "year", $config, $rec, $xpc );
+    		if ( $y_exactmatch == 0 ) {
+    			$y_nearmatch = getMatchValue( "260", "c", \%norm, "year_p1", $config, $rec, $xpc );
+    			if ( $y_nearmatch == 0 ) {
+    				$y_nearmatch = getMatchValue( "260", "c", \%norm, "year_m1", $config, $rec, $xpc );
+    			}
+    		}
+    	}
+    }
+	print $fh_report Dumper $y_exactmatch;
+    print $fh_report Dumper $y_nearmatch;
+    $total += ($y_exactmatch + $y_nearmatch);
+    
+    # check place and publisher
+    my $pl_match = 0;
+    my $pu_match = 0;
+    if ($flag{place}) {
+    	if ( hasTag( "264", $rec, $xpc ) ) {
+    		$pl_match = getMatchValue( "264", "a", \%norm, "place", $config, $rec, $xpc );
+        } elsif ( hasTag( "260", $rec, $xpc ) ) {
+            $pl_match = getMatchValue( "260", "a", \%norm, "place", $config, $rec, $xpc );
+        }
+    }
+    if ($flag{pub}) {
+        if ( hasTag( "264", $rec, $xpc ) ) {
+            $pu_match = getMatchValue( "264", "b", \%norm, "pub", $config, $rec, $xpc );
+        } elsif ( hasTag( "260", $rec, $xpc ) ) {
+            $pu_match = getMatchValue( "260", "b", \%norm, "pub", $config, $rec, $xpc );
+        }
+    }
+	print $fh_report Dumper $pl_match;
+    print $fh_report Dumper $pu_match;
+    $total += ($pl_match + $pu_match);
+    
+	# check analytica for additional source info:
+	my $src_match = 0;
+	if ($flag{ana}) {
+		if ( hasTag( "773", $rec, $xpc ) && defined $norm{srctit} ) {
+			$src_match = getMatchValue( "773", "t", \%norm, "srctit", $config, $rec, $xpc );
+		} elsif ( hasTag( "500", $rec, $xpc ) && defined $norm{src} ) {
+			$src_match = getMatchValue( "500", "a", \%norm, "src", $config, $rec, $xpc );
+		}
+	}
+	print $fh_report Dumper $src_match;
+    $total += $src_match;
+	
+	# check material types and carrier
+	my $mat_match = 0;
+    my $car_match = 0;
+	$norm{carrier} = 'nc'; # carrier type code for printed volume (= documents in input file)
+    my $mat_conf  = $config->{match}->{material};
+
+	$mat_match = checkMaterial( \%norm, "doctype", $mat_conf, $rec, $xpc );
+	if ( ( $mat_match == 0 ) && hasTag( "338", $rec, $xpc ) ) {
+		$car_match = getMatchValue( "338", "b", \%norm, "carrier", $config, $rec, $xpc );
+	}  
+	print $fh_report Dumper $mat_match;
+    print $fh_report Dumper $car_match;
+    $total += ($mat_match + $car_match);	  
+    
+	# check volume titles:
+    my $tv_match = 0;
+    my $av_match = 0;
+    if ($flag{tvol}) {
+        if ( hasTag( "505", $rec, $xpc ) ) {
+        	$tv_match = getMatchValue( "505", "t", \%norm, "tvol1", $config, $rec, $xpc );
+        } elsif ( hasTag( "245", $rec, $xpc ) ) {
+            $tv_match = getMatchValue( "245", "a", \%norm, "tvol1", $config, $rec, $xpc );
+        }
+    }
+    if ($flag{avol}) {
+        if ( hasTag( "505", $rec, $xpc ) ) {
+            $av_match = getMatchValue( "505", "t", \%norm, "avol_tit", $config, $rec, $xpc );
+        } elsif ( hasTag( "245", $rec, $xpc ) ) {
+            $av_match = getMatchValue( "245", "a", \%norm, "avol_tit", $config, $rec, $xpc );
+            if ( $av_match == 0 ) {
+                $av_match = getMatchValue( "245", "b", \%norm, "avol_tit", $config, $rec, $xpc );
+            }
+        }
+    }  
+	print $fh_report Dumper $tv_match;
+    print $fh_report Dumper $av_match;
+    $total += ($tv_match + $av_match);	
+    
+    # Get 035 Field number and check for best network (origin)
+    my $m035_counter = 0;
+    my $nw_match     = 0;
+    if ( hasTag( "035", $rec, $xpc ) ) {
+    	( $m035_counter, $nw_match ) = checkNetwork( $config, $rec, $xpc );
+    } 
+	print $fh_report Dumper $m035_counter;
+    print $fh_report Dumper $nw_match;
+    $total += ($m035_counter + $nw_match);   
+    
+	# eliminate totally unsafe matches:
+	if (($t_match == 0) && ($a1_match == 0)) {
+		$total = 0;
+		print $fh_report "@@@ Unsafe Match author-title! \n"
+	}    
+	print $fh_report Dumper $total;
+    return $total;
+          
 }
 
 # SERVICE ROUTINES:
@@ -1143,6 +1178,108 @@ sub build_base_url {
       . $max_records
       . "&query=";
     return $base_url;
+}
+
+# ----
+# build_sruquery_basic () builds the first sru search (basic version)
+# based on either isbn or title/author or title/publisher combo.
+# arguments: configuration, flags and normalized search values.
+# returns: query string
+# ----
+
+sub build_sruquery_basic {
+
+	my $base_url = shift;
+	my $conf = shift;
+	my $flag_ref = shift;
+	my $esc_ref = shift;
+	my $query = '';
+	
+	my %flag = %{$flag_ref};
+	my %esc = %{$esc_ref};
+
+	my $isbnquery 		= $conf->{sru}->{isbn_query};
+	my $titlequery   	= $conf->{sru}->{title_query};
+	my $authorquery   	= $conf->{sru}->{author_query};
+	my $publisherquery  = $conf->{sru}->{publisher_query};
+	if ($flag{isbn1}) {
+        $query = $base_url . $isbnquery . $esc{isbn};
+    } else {
+        $query = $base_url . $titlequery . $esc{tit};
+        if ($flag{aut1}) {
+            $query .= "+AND" . $authorquery . $esc{aut};
+        } elsif ($flag{pub}) {
+            $query .= "+AND" . $publisherquery . $esc{pub};
+        }
+    }
+    return $query;
+}
+
+# ----
+# build_sruquery_broad () builds the broad sru search using cql.all/anywhere
+# based on either title/author or title/publisher or title/year combo.
+# arguments: configuration, flags and normalized search values.
+# returns: query string
+# ----
+
+sub build_sruquery_broad {
+
+	my $baseurl = shift;
+	my $conf = shift;
+	my $flag_ref = shift;
+	my $esc_ref = shift;
+
+	my %flag = %{$flag_ref};
+	my %esc = %{$esc_ref};
+	my $query = '';	
+	
+	my $any_query = $conf->{sru}->{any_query};
+	$query = $baseurl . $any_query . $esc{tit};
+	if ($flag{aut1}) {
+		$query .= "+AND" . $any_query . $esc{aut};
+	} elsif ($flag{pub}) {
+		$query .= "+AND" . $any_query . $esc{pub};
+	} elsif ($flag{year}) {
+        $query .= "+AND" . $any_query . $esc{year};
+    }
+    return $query;
+}
+
+# ----
+# build_sruquery_narrow () builds the narrow sru search using 
+# based on either title/author or title/publisher or title/year combo.
+# arguments: configuration, flags and normalized search values.
+# returns: query string
+# ----
+
+sub build_sruquery_narrow {
+	
+	my $baseurl = shift;
+	my $conf = shift;
+	my $flag_ref = shift;
+	my $esc_ref = shift;
+
+	my %flag = %{$flag_ref};
+	my %esc = %{$esc_ref};
+	my $query = '';	
+
+	my $titlequery   	= $conf->{sru}->{title_query};
+	my $authorquery   	= $conf->{sru}->{author_query};
+	my $publisherquery  = $conf->{sru}->{publisher_query};
+	my $any_query 		= $conf->{sru}->{any_query};
+		
+	$query = $baseurl . $titlequery . $esc{tit};
+	if ($flag{aut1}) {
+		$query .= "+AND" . $authorquery . $esc{aut};
+    } elsif ($flag{pub}) {
+        $query .= "+AND" . $publisherquery . $esc{pub};
+    } elsif ($flag{place}) {
+        $query .= "+AND" . $any_query . $esc{place};
+    } elsif ($flag{year}) {
+        $query .= "+AND" . $any_query . $esc{year};
+    }
+    return $query;
+	
 }
 
 # -----
@@ -1304,13 +1441,6 @@ sub printStatistics {
 	
 }
 
-
-
-
-
-
-# REGEX SUBS
-
 # -----
 # list_of_journals() lists possible titles that indicate
 # journals, yearbooks, legislative texts with difficult match criteria.
@@ -1402,6 +1532,7 @@ sub list_of_journals {
         "Taxation and Investment in Central & East European Countries",
         "Thurgauische Verwaltungsrechtspflege",
         "Umsatzsteuergesetz",
+        "Vertr.ge zur Gr.ndung der Europ.ischen Gemeinschaften",
         "Verwaltungspraxis der Bundesbeh.rden",
         "Verwaltungs- und Verwaltungsgerichtsentscheide",
         "Voranschlag",
@@ -1414,4 +1545,90 @@ sub list_of_journals {
     my $journaltitles = join "|", @journal_keywords;
     return $journaltitles;
 }
+
+# ----
+# function to build subject table: (c) Felix Leu 2018
+# read a map file with all possible subject combinations from iff institute
+# and build hash accordingly. 
+# Example: $subj_hash{'1 GB'} is 'Finanzrecht'
+# ----
+
+sub build_subject_table {
+	
+	my $subj_map    = "iff_subject_table.map";
+	my %subject_hash   = ();        
+	open(MAP, "<$subj_map") or die "Cannot open file $subj_map \n";
+	binmode (MAP, ':encoding(iso-8859-1)');   
+	while (<MAP>) {
+	   my ($level, $code, $subject) = /^(\S+)\s+(\S+)\s+(.*)$/;
+	   
+	   $subject_hash{"$code $level"}  = decode('iso-8859-1', $subject);      
+	}
+	close MAP;
+	return %subject_hash;
+	
+}
+
+# ----
+# function to remove BOM (Microsoft fileheader for Unicode)
+# argument: first value from first line
+# returns: value without bom characters
+# ----
+
+sub removeBOM {
+	my $var = shift;
+	# remove BOM ( 
+	$var =~ s/\xEF\xBB\xBF//;
+	$var =~ s/^\x{FEFF}//;
+	$var =~ s/^\x{feff}//;
+	$var =~ s/^\N{U+FEFF}//;
+	$var =~ s/^\N{ZERO WIDTH NO-BREAK SPACE}//;
+	$var =~ s/^\N{BOM}//; 
+
+	return $var;
+}
+
+# ----
+# function to prepare the export array:
+# add a row [22] to the current csv line with the selected export message
+# if defined, add row [23] with the best match docnr. 
+# add the line to the export array. 
+# arguments: csv line, export array reference, result string, bestmatch nr.
+# returns: export array
+# ----
+
+sub prepare_export {
+	my $l = shift;
+	my $e_ref = shift;
+	my $RESULT = shift;
+	my $bestmatch = shift;
+	
+	my @e = @{ $e_ref };
+	print $fh_report Dumper $RESULT;	
+	print $fh_report Dumper $bestmatch;
+	$l->[22] = "$RESULT";
+	if (defined $bestmatch) {
+		$l->[23] = $bestmatch
+	}
+    push @e, $l;
+    return @e;
+	
+}
+
+sub print_hash {
+	
+	my $hash_ref = shift;
+	my $fh = shift;
+	my %hash = %{$hash_ref};
+	
+	foreach my $key (keys %hash) {
+        #print "Exists\n"    if exists $hash{$key};
+        print $fh "$key: $hash{$key}\n"   if defined $hash{$key};
+        #print "True\n"      if $hash{$key};
+		}
+
+}
+
+
+
 

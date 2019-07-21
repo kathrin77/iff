@@ -2355,79 +2355,6 @@
             <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Allgemeines</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>00868caa a22002532  4500</leader>
-  <controlfield tag="001">(DE-627)488234972</controlfield>
-  <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20170909090407.0</controlfield>
-  <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">050607s1976    xx |||||      00| ||und c</controlfield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)488234972</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)GBV488234972</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">DE-627</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="c">DE-627</subfield>
-    <subfield code="e">rakwb</subfield>
-  </datafield>
-  <datafield tag="100" ind1="1" ind2=" ">
-    <subfield code="a">Solow, Robert M.</subfield>
-  </datafield>
-  <datafield tag="245" ind1="1" ind2="0">
-    <subfield code="a">Science and ideology in economics</subfield>
-    <subfield code="c">Robert M. Solow</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="c">1976</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="a">Text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield tag="337" ind1=" " ind2=" ">
-    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield tag="338" ind1=" " ind2=" ">
-    <subfield code="a">Band</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield tag="500" ind1=" " ind2=" ">
-    <subfield code="a">aus: The Public Interest. 21. 1970, fall.</subfield>
-  </datafield>
-  <datafield tag="773" ind1="0" ind2="8">
-    <subfield code="i">In</subfield>
-    <subfield code="t">The economic approach to public policy</subfield>
-    <subfield code="d">Ithaca [u.a.] : Cornell University Press, 1976</subfield>
-    <subfield code="g">(1976), Seite 67-79</subfield>
-    <subfield code="h">528 S</subfield>
-    <subfield code="w">(DE-627)165428759</subfield>
-    <subfield code="z">0801409144</subfield>
-    <subfield code="z">0801498600</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">723121850</subfield>
-    <subfield code="b">DE-206</subfield>
-    <subfield code="c">GBV</subfield>
-  </datafield>
-  <datafield tag="935" ind1=" " ind2=" ">
-    <subfield code="i">ZBWRetro</subfield>
-  </datafield>
-  <datafield tag="936" ind1="u" ind2="w">
-    <subfield code="j">1976</subfield>
-    <subfield code="h">67-79</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YQ</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Spezielle Betriebswirtschaftslehren</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>01556cam a2200433   4500</leader>
   <controlfield tag="001">(DE-627)010946136</controlfield>
   <controlfield tag="003">DE-627</controlfield>
@@ -4386,32 +4313,35 @@
             <subfield code="a">Wirtschaftswissenschaften : Allgemeine Betriebswirtschaftslehre</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>04119cam a2200805   4500</leader>
-  <controlfield tag="001">(DE-627)422872997</controlfield>
+  <leader>02948cam a2200673   4500</leader>
+  <controlfield tag="001">(DE-627)023314168</controlfield>
   <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20171110103913.0</controlfield>
+  <controlfield tag="005">20180510115757.0</controlfield>
   <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">850101s1978    xx ||||| m    00| ||ger c</controlfield>
+  <controlfield tag="008">710101s1978    xx ||||| m    00| ||ger c</controlfield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">78,N36,0086</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="015" ind1=" " ind2=" ">
+    <subfield code="a">78,A50,0239</subfield>
+    <subfield code="2">dnb</subfield>
+  </datafield>
+  <datafield tag="016" ind1="7" ind2=" ">
+    <subfield code="a">780488814</subfield>
+    <subfield code="2">DE-101</subfield>
+  </datafield>
   <datafield tag="020" ind1=" " ind2=" ">
     <subfield code="a">3593323052</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)422872997</subfield>
+    <subfield code="a">(DE-627)023314168</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-576)007003811</subfield>
+    <subfield code="a">(DE-599)GBV023314168</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)GBV422872997</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)310657159</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)310657159</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-604)8032910487</subfield>
+    <subfield code="a">(OCoLC)5705928</subfield>
   </datafield>
   <datafield tag="040" ind1=" " ind2=" ">
     <subfield code="a">DE-627</subfield>
@@ -4422,21 +4352,14 @@
   <datafield tag="041" ind1=" " ind2=" ">
     <subfield code="a">ger</subfield>
   </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">MR 5300</subfield>
-    <subfield code="2">rvk</subfield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+    <subfield code="c">XD-US</subfield>
   </datafield>
   <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">QE 500</subfield>
-    <subfield code="2">rvk</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">QC 340</subfield>
-    <subfield code="2">rvk</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">QL 000</subfield>
-    <subfield code="2">rvk</subfield>
+    <subfield code="a">05a</subfield>
+    <subfield code="a">05b</subfield>
+    <subfield code="2">sdnb</subfield>
   </datafield>
   <datafield tag="100" ind1="1" ind2=" ">
     <subfield code="a">Japp, Klaus Peter</subfield>
@@ -4446,18 +4369,18 @@
     <subfield code="0">(DE-576)161575846</subfield>
   </datafield>
   <datafield tag="245" ind1="1" ind2="0">
-    <subfield code="a">Theorie des oeffentlichen Sektors</subfield>
-    <subfield code="b">zur Verbindung ökonomischer u. soziologischer Ansätze</subfield>
+    <subfield code="a">Theorie des öffentlichen Sektors</subfield>
+    <subfield code="b">zur Verbindung ökonomischer und soziologischer Ansätze</subfield>
     <subfield code="c">Klaus Peter Japp</subfield>
   </datafield>
   <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">Frankfurt/Main [u.a.]</subfield>
-    <subfield code="b">Campus-Verlag</subfield>
+    <subfield code="a">Frankfurt a.M. [u.a.]</subfield>
+    <subfield code="b">Campus-Verl.</subfield>
     <subfield code="c">1978</subfield>
   </datafield>
   <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">263 S.</subfield>
-    <subfield code="c">8"</subfield>
+    <subfield code="a">263 S</subfield>
+    <subfield code="c">8°</subfield>
   </datafield>
   <datafield tag="336" ind1=" " ind2=" ">
     <subfield code="a">Text</subfield>
@@ -4475,39 +4398,11 @@
     <subfield code="2">rdacarrier</subfield>
   </datafield>
   <datafield tag="490" ind1="1" ind2=" ">
-    <subfield code="a">Campus-Forschung</subfield>
-    <subfield code="v">46</subfield>
+    <subfield code="a">Campus</subfield>
     <subfield code="a">Forschung</subfield>
   </datafield>
   <datafield tag="502" ind1=" " ind2=" ">
-    <subfield code="a">Zugl.: Frankfurt (Main), Univ.,  Diss., 1975.</subfield>
-  </datafield>
-  <datafield tag="591" ind1=" " ind2=" ">
-    <subfield code="a">720 ff. bvb; 580 ff. bvb ; IMD-Felder und 1131 maschinell ergänzt (SWB). - SBB Retrokonversion (GBV)</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Politische Ökonomie</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Kapitalismus</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Marxismus</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Gesellschaftstheorie</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Marxismus / Einz</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Staatssektor</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Funktionalismus &lt;Soz.&gt;</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="4">
-    <subfield code="a">Systemtheorie</subfield>
+    <subfield code="a">Zugl.: Frankfurt, Univ., Diss., 1975</subfield>
   </datafield>
   <datafield tag="655" ind1=" " ind2="7">
     <subfield code="a">Hochschulschrift</subfield>
@@ -4516,240 +4411,227 @@
     <subfield code="0">(DE-576)209480580</subfield>
     <subfield code="2">gnd-content</subfield>
   </datafield>
-  <datafield tag="689" ind1="0" ind2="0">
-    <subfield code="D">s</subfield>
-    <subfield code="0">(DE-588)4056673-0</subfield>
-    <subfield code="0">(DE-627)10479142X</subfield>
-    <subfield code="0">(DE-576)209118504</subfield>
-    <subfield code="a">Öffentlicher Sektor</subfield>
-    <subfield code="2">gnd</subfield>
-  </datafield>
-  <datafield tag="689" ind1="0" ind2="1">
-    <subfield code="D">s</subfield>
-    <subfield code="0">(DE-588)4059787-8</subfield>
-    <subfield code="0">(DE-627)106142275</subfield>
-    <subfield code="0">(DE-576)209132256</subfield>
-    <subfield code="a">Theorie</subfield>
-    <subfield code="2">gnd</subfield>
-  </datafield>
-  <datafield tag="689" ind1="0" ind2=" ">
-    <subfield code="5">DE-576</subfield>
-  </datafield>
   <datafield tag="751" ind1=" " ind2=" ">
-    <subfield code="a">Frankfurt am Main</subfield>
-    <subfield code="0">(DE-588)4018118-2</subfield>
-    <subfield code="0">(DE-627)106327356</subfield>
-    <subfield code="0">(DE-576)208922695</subfield>
+    <subfield code="a">Frankfurt</subfield>
     <subfield code="4">uvp</subfield>
   </datafield>
   <datafield tag="830" ind1=" " ind2="0">
     <subfield code="a">Campus Forschung</subfield>
-    <subfield code="v">46 : Forschung</subfield>
-    <subfield code="9">46</subfield>
+    <subfield code="v">46</subfield>
+    <subfield code="g">4600</subfield>
     <subfield code="w">(DE-627)12996798X</subfield>
     <subfield code="w">(DE-576)028415078</subfield>
-    <subfield code="w">(DE-600)409345-8</subfield>
+    <subfield code="0">(DE-600)409345-8</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">410256471</subfield>
-    <subfield code="b">DE-1a</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">152856269</subfield>
+    <subfield code="b">DE-84</subfield>
     <subfield code="c">GBV</subfield>
     <subfield code="d">L</subfield>
-    <subfield code="g">Ser. 26948-46</subfield>
-    <subfield code="i">6</subfield>
+    <subfield code="g">2529-5861</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">1226306306</subfield>
-    <subfield code="b">DE-B1532</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">228666910</subfield>
+    <subfield code="b">DE-46</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="g">a vwl 427.8/215</subfield>
+    <subfield code="d">L</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">228666929</subfield>
+    <subfield code="b">DE-46</subfield>
     <subfield code="c">GBV</subfield>
     <subfield code="d">L</subfield>
-    <subfield code="g">E 78/3020</subfield>
+    <subfield code="g">02.n.4660</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136401786</subfield>
-    <subfield code="b">DE-21</subfield>
-    <subfield code="9">21</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">19 A 5578</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">085904325</subfield>
+    <subfield code="b">DE-18</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">SUB</subfield>
+    <subfield code="g">A 1979/7881</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136401859</subfield>
-    <subfield code="b">DE-21-58</subfield>
-    <subfield code="9">21/58</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">b</subfield>
-    <subfield code="g">C II 746</subfield>
-    <subfield code="9">p</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">387642080</subfield>
+    <subfield code="b">DE-18</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">N047604</subfield>
+    <subfield code="g">V m 203</subfield>
+    <subfield code="i">SUB-SBHH</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136401921</subfield>
-    <subfield code="b">DE-25</subfield>
-    <subfield code="9">25</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">SW 78/2776</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">167328743</subfield>
+    <subfield code="b">DE-830</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">2474-9143</subfield>
+    <subfield code="i">24</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136401980</subfield>
-    <subfield code="b">DE-25-10</subfield>
-    <subfield code="9">25/10</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">b</subfield>
-    <subfield code="g">Frei 10: B2/1397</subfield>
-    <subfield code="9">p</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">780210204</subfield>
+    <subfield code="b">DE-8</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">8/10</subfield>
+    <subfield code="g">Wi IIIa25  2</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">Bereich Soziologie</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402065</subfield>
-    <subfield code="b">DE-291-109</subfield>
-    <subfield code="9">291/109</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">b</subfield>
-    <subfield code="9">p</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">841308853</subfield>
+    <subfield code="b">DE-8</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">V 8-1-2322</subfield>
+    <subfield code="i">8/9</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402197</subfield>
-    <subfield code="b">DE-352</subfield>
-    <subfield code="9">352</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">wrq 420/j16</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">73482551X</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">K:</subfield>
+    <subfield code="g">A 118868</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402243</subfield>
-    <subfield code="b">DE-24</subfield>
-    <subfield code="9">24</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">28/18371</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">851212018</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">1978 A 3223</subfield>
+    <subfield code="h">206/1</subfield>
+    <subfield code="i">A:</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402324</subfield>
-    <subfield code="b">DE-180</subfield>
-    <subfield code="9">180</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">d</subfield>
-    <subfield code="g">300 QL 000 J35</subfield>
-    <subfield code="h">300</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">027477355</subfield>
+    <subfield code="b">DE-7</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="g">ZA 46179:46</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402340</subfield>
-    <subfield code="b">DE-180</subfield>
-    <subfield code="9">180</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">AH 0649</subfield>
-    <subfield code="h">AUS02</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">289841909</subfield>
+    <subfield code="b">DE-7</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">1 : 400 Jap</subfield>
+    <subfield code="h">7/148</subfield>
+    <subfield code="i">BBWISO</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402421</subfield>
-    <subfield code="b">DE-16</subfield>
-    <subfield code="9">16</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">79 A 123</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">02747738x</subfield>
+    <subfield code="b">DE-705</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">WOW</subfield>
+    <subfield code="g">VWL 305:I0001</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402510</subfield>
-    <subfield code="b">DE-16-160</subfield>
-    <subfield code="9">16/160</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">WS/QE 500 J35</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">027477398</subfield>
+    <subfield code="b">DE-705</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="g">ABGANG</subfield>
+    <subfield code="d">N</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">313640260X</subfield>
-    <subfield code="b">DE-90</subfield>
-    <subfield code="9">90</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">78 A 3747</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">027477401</subfield>
+    <subfield code="b">DE-705</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">ABGANG</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">313640274X</subfield>
-    <subfield code="b">DE-31</subfield>
-    <subfield code="9">31</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">78 A 19648</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">21956471X</subfield>
+    <subfield code="b">DE-28</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">MR 5100 J34</subfield>
+    <subfield code="g">91 A 17004</subfield>
+    <subfield code="i">28/BB3</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402804</subfield>
-    <subfield code="b">DE-100</subfield>
-    <subfield code="9">100</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">d</subfield>
-    <subfield code="g">2320/47</subfield>
-    <subfield code="h">31</subfield>
-    <subfield code="9">p</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">287497879</subfield>
+    <subfield code="b">DE-89</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="h">89/15</subfield>
+    <subfield code="i">FBE</subfield>
+    <subfield code="g">79-2103</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402847</subfield>
-    <subfield code="b">DE-Sp3</subfield>
-    <subfield code="9">Sp 3</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">b</subfield>
-    <subfield code="g">C V 3637</subfield>
-    <subfield code="9">p</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">383924944</subfield>
+    <subfield code="b">DE-89</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">oek 3055/004</subfield>
+    <subfield code="h">89/18</subfield>
+    <subfield code="i">FBW</subfield>
   </datafield>
-  <datafield tag="924" ind1="0" ind2=" ">
-    <subfield code="a">3136402979</subfield>
-    <subfield code="b">DE-Rt3</subfield>
-    <subfield code="9">Rt 3</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">Gd Jap</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">027477363</subfield>
+    <subfield code="b">DE-35</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">ZEN</subfield>
+    <subfield code="g">79/3312</subfield>
+    <subfield code="d">L</subfield>
   </datafield>
-  <datafield tag="935" ind1=" " ind2=" ">
-    <subfield code="i">Blocktest</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">287497879</subfield>
+    <subfield code="b">DE-35</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="h">35/15</subfield>
+    <subfield code="i">FBE</subfield>
+    <subfield code="g">79-2103</subfield>
+    <subfield code="d">N</subfield>
   </datafield>
-  <datafield tag="936" ind1="r" ind2="v">
-    <subfield code="a">MR 5300</subfield>
-    <subfield code="b">Konflikttheorien</subfield>
-    <subfield code="k">Soziologie</subfield>
-    <subfield code="k">Sozialwissenschaftliche Theorien und Methoden</subfield>
-    <subfield code="k">Jüngere soziologische Theorie</subfield>
-    <subfield code="k">Konflikttheorien</subfield>
-    <subfield code="0">1271428121</subfield>
-    <subfield code="0">(DE-627)1271428121</subfield>
-    <subfield code="0">(DE-576)201428121</subfield>
-    <subfield code="0">(DE-625)123514:</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">383924944</subfield>
+    <subfield code="b">DE-35</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">FBW</subfield>
+    <subfield code="g">oek 3055/004</subfield>
+    <subfield code="d">N</subfield>
   </datafield>
-  <datafield tag="936" ind1="r" ind2="v">
-    <subfield code="a">QE 500</subfield>
-    <subfield code="b">Sozialistische Schulen</subfield>
-    <subfield code="k">Wirtschaftswissenschaften</subfield>
-    <subfield code="k">Geschichte der Lehrmeinungen</subfield>
-    <subfield code="k">Sozialistische Schulen</subfield>
-    <subfield code="0">1271533448</subfield>
-    <subfield code="0">(DE-627)1271533448</subfield>
-    <subfield code="0">(DE-576)201533448</subfield>
-    <subfield code="0">(DE-625)141299:</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">530974606</subfield>
+    <subfield code="b">DE-35</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="i">FBW ZB</subfield>
+    <subfield code="g">Inst. für Volkswirtschaftslehre, Abt. Öffentliche Finanzen *** QL300Ja78</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">QL300Ja78</subfield>
+    <subfield code="h">FBW ZB</subfield>
   </datafield>
-  <datafield tag="936" ind1="r" ind2="v">
-    <subfield code="a">QC 340</subfield>
-    <subfield code="b">Allgemeines</subfield>
-    <subfield code="k">Wirtschaftswissenschaften</subfield>
-    <subfield code="k">Wirtschaftstheorie, einschließlich Geldtheorie</subfield>
-    <subfield code="k">Wert-, Preis- und Allokationstheorie</subfield>
-    <subfield code="k">Makroökonomische Theorie. Geldtheorie. Konjunkturtheorie. Wachstumstheorie</subfield>
-    <subfield code="k">Wachstums- und Entwicklungstheorie</subfield>
-    <subfield code="k">Allgemeines</subfield>
-    <subfield code="0">1270742566</subfield>
-    <subfield code="0">(DE-627)1270742566</subfield>
-    <subfield code="0">(DE-576)200742566</subfield>
-    <subfield code="0">(DE-625)141271:</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">276509889</subfield>
+    <subfield code="b">DE-35</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">Wirtschaftswiss., Frank *** QD 110 J</subfield>
+    <subfield code="i">FBR LG</subfield>
   </datafield>
-  <datafield tag="936" ind1="r" ind2="v">
-    <subfield code="a">QL 000</subfield>
-    <subfield code="b">Allgemeines</subfield>
-    <subfield code="k">Wirtschaftswissenschaften</subfield>
-    <subfield code="k">Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre</subfield>
-    <subfield code="k">Allgemeines</subfield>
-    <subfield code="0">1270708139</subfield>
-    <subfield code="0">(DE-627)1270708139</subfield>
-    <subfield code="0">(DE-576)200708139</subfield>
-    <subfield code="0">(DE-625)141690:</subfield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">73984007X</subfield>
+    <subfield code="b">DE-Hil2</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">40147</subfield>
+    <subfield code="i">MAGAZIN</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">147778727</subfield>
+    <subfield code="b">DE-45</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">L</subfield>
+    <subfield code="g">78-3996</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">128252049</subfield>
+    <subfield code="b">DE-755</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">N</subfield>
+    <subfield code="g">PJW / Jap</subfield>
   </datafield>
 <datafield tag="690" ind1="H" ind2="D">
             <subfield code="8">YL1</subfield>
@@ -7083,23 +6965,23 @@
             <subfield code="a">Wirtschaftswissenschaften : Konjunkturschwankungen, Stabilitätspolitik</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>02444cam a2200469   4500</leader>
-  <controlfield tag="001">(DE-627)1605875570</controlfield>
+  <leader>02994cam a2200553   4500</leader>
+  <controlfield tag="001">(DE-627)1651587221</controlfield>
   <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20180717134917.0</controlfield>
+  <controlfield tag="005">20180718105900.0</controlfield>
   <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">850101s1977    xx |||||      00| ||und c</controlfield>
+  <controlfield tag="008">910205s1977    xx |||||      00| ||eng c</controlfield>
   <datafield tag="020" ind1=" " ind2=" ">
     <subfield code="a">0262021250</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)1605875570</subfield>
+    <subfield code="a">(DE-627)1651587221</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-576)005922070</subfield>
+    <subfield code="a">(DE-576)023157097</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)BSZ005922070</subfield>
+    <subfield code="a">(DE-599)BSZ023157097</subfield>
   </datafield>
   <datafield tag="035" ind1=" " ind2=" ">
     <subfield code="a">(OCoLC)02646171</subfield>
@@ -7112,6 +6994,9 @@
     <subfield code="b">ger</subfield>
     <subfield code="c">DE-627</subfield>
     <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
   </datafield>
   <datafield tag="082" ind1="0" ind2=" ">
     <subfield code="a">309.212</subfield>
@@ -7139,16 +7024,13 @@
     <subfield code="b">what happens after a bill becomes a law</subfield>
     <subfield code="c">Eugene Bardach</subfield>
   </datafield>
-  <datafield tag="250" ind1=" " ind2=" ">
-    <subfield code="a">2. print.</subfield>
-  </datafield>
   <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">Cambridge, Mass.</subfield>
+    <subfield code="a">Cambridge, Mass. [u.a.]</subfield>
     <subfield code="b">MIT Pr.</subfield>
     <subfield code="c">1977</subfield>
   </datafield>
   <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">322 S.</subfield>
+    <subfield code="a">X, 323 S.</subfield>
   </datafield>
   <datafield tag="336" ind1=" " ind2=" ">
     <subfield code="a">Text</subfield>
@@ -7166,7 +7048,7 @@
     <subfield code="2">rdacarrier</subfield>
   </datafield>
   <datafield tag="490" ind1="1" ind2=" ">
-    <subfield code="a">MIT studies in american politics and public policy</subfield>
+    <subfield code="a">MIT studies in American politics and public policy</subfield>
     <subfield code="v">1</subfield>
   </datafield>
   <datafield tag="591" ind1=" " ind2=" ">
@@ -7210,13 +7092,74 @@
   <datafield tag="689" ind1="1" ind2=" ">
     <subfield code="5">DE-576</subfield>
   </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">3115518544</subfield>
-    <subfield code="b">DE-352</subfield>
-    <subfield code="9">352</subfield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Massachusetts Institute of Technology</subfield>
+    <subfield code="9">1</subfield>
+    <subfield code="t">MIT studies in American politics and public policy</subfield>
+    <subfield code="v">1</subfield>
+    <subfield code="w">(DE-627)130036722</subfield>
+    <subfield code="w">(DE-576)008585016</subfield>
+    <subfield code="w">(DE-600)428782-4</subfield>
+    <subfield code="x">0886-8735</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611370</subfield>
+    <subfield code="b">DE-21</subfield>
+    <subfield code="9">21</subfield>
     <subfield code="c">BSZ</subfield>
     <subfield code="d">c</subfield>
-    <subfield code="g">pol 650/b17</subfield>
+    <subfield code="g">KB 11 A 936</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611389</subfield>
+    <subfield code="b">DE-25</subfield>
+    <subfield code="9">25</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">SW 79/688</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611397</subfield>
+    <subfield code="b">DE-180</subfield>
+    <subfield code="9">180</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">c</subfield>
+    <subfield code="g">AG 1415</subfield>
+    <subfield code="h">AUS02</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611400</subfield>
+    <subfield code="b">DE-90-147</subfield>
+    <subfield code="9">90/147</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="9">p</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611427</subfield>
+    <subfield code="b">DE-B208</subfield>
+    <subfield code="9">B 208</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">US: X Qa: 28</subfield>
+    <subfield code="9">p</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611435</subfield>
+    <subfield code="b">DE-Sp3</subfield>
+    <subfield code="9">Sp 3</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="9">p</subfield>
+  </datafield>
+  <datafield tag="924" ind1="0" ind2=" ">
+    <subfield code="a">3350611451</subfield>
+    <subfield code="b">DE-Frei119</subfield>
+    <subfield code="9">Frei 119</subfield>
+    <subfield code="c">BSZ</subfield>
+    <subfield code="d">b</subfield>
+    <subfield code="g">Frei 119: SN-I-D-0043</subfield>
+    <subfield code="9">p</subfield>
   </datafield>
   <datafield tag="936" ind1="r" ind2="v">
     <subfield code="a">MG 70920</subfield>
@@ -7231,7 +7174,7 @@
     <subfield code="0">1271510162</subfield>
     <subfield code="0">(DE-627)1271510162</subfield>
     <subfield code="0">(DE-576)201510162</subfield>
-    <subfield code="0">(DE-625)rvk/122860:12224</subfield>
+    <subfield code="0">(DE-625)122860:12224</subfield>
   </datafield>
   <datafield tag="936" ind1="r" ind2="v">
     <subfield code="a">PL 733</subfield>
@@ -7244,7 +7187,7 @@
     <subfield code="0">1271298236</subfield>
     <subfield code="0">(DE-627)1271298236</subfield>
     <subfield code="0">(DE-576)201298236</subfield>
-    <subfield code="0">(DE-625)rvk/137269:</subfield>
+    <subfield code="0">(DE-625)137269:</subfield>
   </datafield>
   <datafield tag="936" ind1="r" ind2="v">
     <subfield code="a">MF 7400</subfield>
@@ -7257,7 +7200,7 @@
     <subfield code="0">1271429594</subfield>
     <subfield code="0">(DE-627)1271429594</subfield>
     <subfield code="0">(DE-576)201429594</subfield>
-    <subfield code="0">(DE-625)rvk/122779:</subfield>
+    <subfield code="0">(DE-625)122779:</subfield>
   </datafield>
 <datafield tag="690" ind1="H" ind2="D">
             <subfield code="8">YC</subfield>
@@ -14187,74 +14130,6 @@
             <subfield code="a">Wirtschaftswissenschaften : Spezielle Betriebswirtschaftslehren</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>00705nam a2200253 c 4500</leader>
-  <controlfield tag="001">(DE-604)BV007220070</controlfield>
-  <controlfield tag="003">DE-604</controlfield>
-  <controlfield tag="005">00000000000000.0</controlfield>
-  <controlfield tag="007">t</controlfield>
-  <controlfield tag="008">930421s1967             |||| 00||| eng d</controlfield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)634519313</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)BVBBV007220070</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">DE-604</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="e">rakddb</subfield>
-  </datafield>
-  <datafield tag="041" ind1="0" ind2=" ">
-    <subfield code="a">eng</subfield>
-  </datafield>
-  <datafield tag="049" ind1=" " ind2=" ">
-    <subfield code="a">DE-355</subfield>
-    <subfield code="a">DE-11</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">QL 270</subfield>
-    <subfield code="2">rvk</subfield>
-  </datafield>
-  <datafield tag="100" ind1="1" ind2=" ">
-    <subfield code="a">Johnson, James A.</subfield>
-    <subfield code="e">Verfasser</subfield>
-    <subfield code="0">(DE-588)153100192</subfield>
-    <subfield code="4">aut</subfield>
-  </datafield>
-  <datafield tag="245" ind1="1" ind2="0">
-    <subfield code="a">The incidence of government revenues and expenditures</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">Toronto</subfield>
-    <subfield code="b">Fogg</subfield>
-    <subfield code="c">1967</subfield>
-  </datafield>
-  <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">IV,107 S.m.Tab.</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield tag="337" ind1=" " ind2=" ">
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield tag="338" ind1=" " ind2=" ">
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield tag="924" ind1=" " ind2=" ">
-    <subfield code="a">BV007220070</subfield>
-    <subfield code="b">DE-355</subfield>
-    <subfield code="c">BVB</subfield>
-    <subfield code="d">l</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YL1</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Allgemeines</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>01103cam a2200301  c4500</leader>
   <controlfield tag="001">(DE-627)033845085</controlfield>
   <controlfield tag="003">DE-627</controlfield>
@@ -17905,80 +17780,6 @@
             <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Betriebswirtschaftliche Steuerlehre</subfield>
             <subfield code="2">HSG-IFF</subfield>
             </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>00905caa a22002532  4500</leader>
-  <controlfield tag="001">(DE-627)476404312</controlfield>
-  <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20170913200527.0</controlfield>
-  <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">050104s1976    xx |||||      00| ||und c</controlfield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)476404312</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)GBV476404312</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">DE-627</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="c">DE-627</subfield>
-    <subfield code="e">rakwb</subfield>
-  </datafield>
-  <datafield tag="100" ind1="1" ind2=" ">
-    <subfield code="a">Miller", James C.</subfield>
-    <subfield code="c">III.</subfield>
-  </datafield>
-  <datafield tag="245" ind1="1" ind2="2">
-    <subfield code="a">A program for direct and proxy voting in the legislative process</subfield>
-    <subfield code="c">James C. Miller" III.</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="c">1976</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="a">Text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield tag="337" ind1=" " ind2=" ">
-    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield tag="338" ind1=" " ind2=" ">
-    <subfield code="a">Band</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield tag="500" ind1=" " ind2=" ">
-    <subfield code="a">aus: Public Choice. 1969, fall</subfield>
-  </datafield>
-  <datafield tag="773" ind1="0" ind2="8">
-    <subfield code="i">In</subfield>
-    <subfield code="t">The economic approach to public policy</subfield>
-    <subfield code="d">Ithaca [u.a.] : Cornell University Press, 1976</subfield>
-    <subfield code="g">(1976), Seite 369-375</subfield>
-    <subfield code="h">528 S</subfield>
-    <subfield code="w">(DE-627)165428759</subfield>
-    <subfield code="z">0801409144</subfield>
-    <subfield code="z">0801498600</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">691852901</subfield>
-    <subfield code="b">DE-206</subfield>
-    <subfield code="c">GBV</subfield>
-  </datafield>
-  <datafield tag="935" ind1=" " ind2=" ">
-    <subfield code="i">ZBWRetro</subfield>
-  </datafield>
-  <datafield tag="936" ind1="u" ind2="w">
-    <subfield code="j">1976</subfield>
-    <subfield code="h">369-375</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YQ</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Spezielle Betriebswirtschaftslehren</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>01235caa a22002772  4500</leader>
   <controlfield tag="001">(DE-627)1406405469</controlfield>
   <controlfield tag="003">DE-627</controlfield>
@@ -20920,177 +20721,6 @@
             <subfield code="a">179 Uebrige Literatur : 179 Oeffentliches Recht</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>03120cam a22006252  4500</leader>
-  <controlfield tag="001">(DE-627)799417726</controlfield>
-  <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20180729143243.0</controlfield>
-  <controlfield tag="007">cr uuu---uuuuu</controlfield>
-  <controlfield tag="008">141219s2012    xx |||||o     00| ||eng c</controlfield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="a">088173702X</subfield>
-    <subfield code="c">electronic bk.</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="a">9780881737028</subfield>
-    <subfield code="c">: electronic bk.</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="z">0881737011</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="z">9780881737011</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="z">9781466571532</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="z">1466571535</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)799417726</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-576)423756117</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)GBV799417726</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)824698108</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)824698108</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(EbpS)494545</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">DE-627</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="c">DE-627</subfield>
-    <subfield code="e">rakwb</subfield>
-  </datafield>
-  <datafield tag="041" ind1=" " ind2=" ">
-    <subfield code="a">eng</subfield>
-  </datafield>
-  <datafield tag="044" ind1=" " ind2=" ">
-    <subfield code="c">XD-US</subfield>
-  </datafield>
-  <datafield tag="050" ind1=" " ind2="0">
-    <subfield code="a">HD9502.A2</subfield>
-  </datafield>
-  <datafield tag="082" ind1="0" ind2=" ">
-    <subfield code="a">658.26</subfield>
-  </datafield>
-  <datafield tag="082" ind1="0" ind2=" ">
-    <subfield code="a">658.2/6</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">BUS093000</subfield>
-    <subfield code="2">bisacsh</subfield>
-  </datafield>
-  <datafield tag="245" ind1="1" ind2="0">
-    <subfield code="a">How to finance energy management projects</subfield>
-    <subfield code="b">solving the "lack of capital problem"</subfield>
-    <subfield code="c">Albert Thumann, Eric A. Woodroof</subfield>
-  </datafield>
-  <datafield tag="250" ind1=" " ind2=" ">
-    <subfield code="a">1st ed.</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">Lilburn, GA</subfield>
-    <subfield code="b">Fairmont Press</subfield>
-    <subfield code="c">c2012</subfield>
-  </datafield>
-  <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">Online Ressource</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="a">Text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield tag="337" ind1=" " ind2=" ">
-    <subfield code="a">Computermedien</subfield>
-    <subfield code="b">c</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield tag="338" ind1=" " ind2=" ">
-    <subfield code="a">Online-Ressource</subfield>
-    <subfield code="b">cr</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield tag="500" ind1=" " ind2=" ">
-    <subfield code="a">Includes bibliographical references and index. - Description based on print version record.</subfield>
-  </datafield>
-  <datafield tag="501" ind1=" " ind2=" ">
-    <subfield code="a">Why &amp; howIf you read anything -- do this first -- A simple introduction to financing energy management projects -- Tools and echniques -- Choosing the right financing and how to use energy star tools -- The evolution of performance contracts as a financial solution -- Power purchase agreements for solar electric systems -- Pace financing -- How to make it easy for the lender to work with you -- Extra information that can make the difference between "yes" and "no" -- How energy projects improve stock prices -- Energy conservation also yields : capital, operations, recognition and environmental benefits -- Overcoming the barriers that delay "good" projects -- Opportunities via codes,standards and legislation -- Appendix a: fundamentals : time value of money calculations -- Appendix b: links to m&amp;v guidelines -- Appendix c: energy auditing basics -- Appendix d: sample project development agreement -- Appendix e: a sample performance contract -- Appendix f: explanations of sample performance contract -- Index.</subfield>
-  </datafield>
-  <datafield tag="533" ind1=" " ind2=" ">
-    <subfield code="a">Online-Ausg.</subfield>
-  </datafield>
-  <datafield tag="591" ind1=" " ind2=" ">
-    <subfield code="a">IMD-Felder und 1131 maschinell ergänzt (SWB)</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="0">
-    <subfield code="a">Energy conservation</subfield>
-    <subfield code="x">Finance</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="0">
-    <subfield code="a">Project management</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="0">
-    <subfield code="a">Project management</subfield>
-  </datafield>
-  <datafield tag="650" ind1=" " ind2="0">
-    <subfield code="a">Energy conservation</subfield>
-    <subfield code="x">Finance</subfield>
-  </datafield>
-  <datafield tag="655" ind1=" " ind2="4">
-    <subfield code="a">Electronic books</subfield>
-  </datafield>
-  <datafield tag="700" ind1="1" ind2=" ">
-    <subfield code="a">Thumann, Albert</subfield>
-  </datafield>
-  <datafield tag="700" ind1="1" ind2=" ">
-    <subfield code="a">Woodroof, Eric A.</subfield>
-  </datafield>
-  <datafield tag="776" ind1="1" ind2=" ">
-    <subfield code="z">0881737011</subfield>
-  </datafield>
-  <datafield tag="776" ind1="1" ind2=" ">
-    <subfield code="z">1466571535</subfield>
-  </datafield>
-  <datafield tag="776" ind1="1" ind2=" ">
-    <subfield code="z">9780881737011</subfield>
-  </datafield>
-  <datafield tag="776" ind1="1" ind2=" ">
-    <subfield code="z">9781466571532</subfield>
-  </datafield>
-  <datafield tag="776" ind1="0" ind2="8">
-    <subfield code="i">Print version</subfield>
-    <subfield code="a">How to finance energy management projects</subfield>
-  </datafield>
-  <datafield tag="856" ind1="4" ind2="0">
-    <subfield code="u">http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=494545</subfield>
-    <subfield code="x">Verlag</subfield>
-    <subfield code="3">Volltext</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">1557129789</subfield>
-    <subfield code="b">DE-H376</subfield>
-    <subfield code="c">GBV</subfield>
-    <subfield code="d">d</subfield>
-    <subfield code="k">http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=nlebk&amp;db=nlabk&amp;AN=494545</subfield>
-  </datafield>
-  <datafield tag="935" ind1=" " ind2=" ">
-    <subfield code="i">Blocktest</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YL2</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Haushaltsaufstellung, -verwaltung und -kontrolle</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>01852cam a2200421   4500</leader>
   <controlfield tag="001">(DE-627)255480539</controlfield>
   <controlfield tag="003">DE-627</controlfield>
@@ -21465,126 +21095,6 @@
 <datafield tag="690" ind1="H" ind2="D">
             <subfield code="8">KB</subfield>
             <subfield code="a">Ausländisches Steuerrecht : Deutschland</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>01484cam a22003372  4500</leader>
-  <controlfield tag="001">(DE-627)1073744760</controlfield>
-  <controlfield tag="003">DE-627</controlfield>
-  <controlfield tag="005">20171114152817.0</controlfield>
-  <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">850101s1971    xx |||||      00| ||und c</controlfield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-627)1073744760</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-576)003744760</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)BSZ003744760</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)00154029</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-604)8073982067</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">DE-627</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="c">DE-627</subfield>
-    <subfield code="e">rakwb</subfield>
-  </datafield>
-  <datafield tag="082" ind1="0" ind2=" ">
-    <subfield code="a">320.4/73</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">MG 70986</subfield>
-    <subfield code="2">rvk</subfield>
-  </datafield>
-  <datafield tag="100" ind1="1" ind2=" ">
-    <subfield code="a">LeBlanc, Hugh L.</subfield>
-    <subfield code="0">(DE-627)1231980613</subfield>
-    <subfield code="0">(DE-576)161980619</subfield>
-  </datafield>
-  <datafield tag="245" ind1="1" ind2="4">
-    <subfield code="a">The Politics of states and urban communities</subfield>
-    <subfield code="c">Hugh L. LeBlanc; D. T. Allensworth</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">New York [u.a.]</subfield>
-    <subfield code="b">Harper   Row</subfield>
-    <subfield code="c">1971</subfield>
-  </datafield>
-  <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">VIII, 469 S.</subfield>
-  </datafield>
-  <datafield tag="336" ind1=" " ind2=" ">
-    <subfield code="a">Text</subfield>
-    <subfield code="b">txt</subfield>
-    <subfield code="2">rdacontent</subfield>
-  </datafield>
-  <datafield tag="337" ind1=" " ind2=" ">
-    <subfield code="a">ohne Hilfsmittel zu benutzen</subfield>
-    <subfield code="b">n</subfield>
-    <subfield code="2">rdamedia</subfield>
-  </datafield>
-  <datafield tag="338" ind1=" " ind2=" ">
-    <subfield code="a">Band</subfield>
-    <subfield code="b">nc</subfield>
-    <subfield code="2">rdacarrier</subfield>
-  </datafield>
-  <datafield tag="591" ind1=" " ind2=" ">
-    <subfield code="a">720 ff. bvb ; IMD-Felder und 1131 maschinell ergänzt (SWB)</subfield>
-  </datafield>
-  <datafield tag="700" ind1="1" ind2=" ">
-    <subfield code="a">Allensworth, D. T.</subfield>
-    <subfield code="0">(DE-627)1230057633</subfield>
-    <subfield code="0">(DE-576)160057639</subfield>
-    <subfield code="4">aut</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">2028103825</subfield>
-    <subfield code="b">DE-352</subfield>
-    <subfield code="9">352</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">pol 767/l21</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">2815995654</subfield>
-    <subfield code="b">DE-24</subfield>
-    <subfield code="9">24</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">c</subfield>
-    <subfield code="g">23/8322</subfield>
-  </datafield>
-  <datafield tag="924" ind1="1" ind2=" ">
-    <subfield code="a">2875455710</subfield>
-    <subfield code="b">DE-Frei119</subfield>
-    <subfield code="9">Frei 119</subfield>
-    <subfield code="c">BSZ</subfield>
-    <subfield code="d">b</subfield>
-    <subfield code="g">Frei 119: Q-XI-C-0117</subfield>
-    <subfield code="9">p</subfield>
-  </datafield>
-  <datafield tag="936" ind1="r" ind2="v">
-    <subfield code="a">MG 70986</subfield>
-    <subfield code="b">Beziehungen, Selbstverwaltung -Länder-Bund-EU</subfield>
-    <subfield code="k">Politologie</subfield>
-    <subfield code="k">Politische Systeme einzelner Länder</subfield>
-    <subfield code="k">Europa, Nordamerika</subfield>
-    <subfield code="k">Nordamerika</subfield>
-    <subfield code="k">USA</subfield>
-    <subfield code="k">Föderalismus</subfield>
-    <subfield code="k">Beziehungen, Selbstverwaltung -Länder-Bund-EU</subfield>
-    <subfield code="0">1271525496</subfield>
-    <subfield code="0">(DE-627)1271525496</subfield>
-    <subfield code="0">(DE-576)201525496</subfield>
-    <subfield code="0">(DE-625)rvk/122860:12238</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YL1</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Allgemeines</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>05046cam a2200757   4500</leader>
@@ -23815,89 +23325,6 @@
 <datafield tag="690" ind1="H" ind2="D">
             <subfield code="8">YL7</subfield>
             <subfield code="a">Wirtschaftswissenschaften : Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre : Finanzpolitik. Fiscal Policy. Finanzwirtschaft und Finanzpolitik einzelner Länder</subfield>
-            <subfield code="2">HSG-IFF</subfield>
-        </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
-  <leader>00992nam a2200301 c 4500</leader>
-  <controlfield tag="001">(DE-101)97953514X</controlfield>
-  <controlfield tag="003">DE-101</controlfield>
-  <controlfield tag="005">20070222080219.0</controlfield>
-  <controlfield tag="007">tu</controlfield>
-  <controlfield tag="008">060502s2000    sz ||||| |||| 00||||ger  </controlfield>
-  <datafield tag="016" ind1="7" ind2=" ">
-    <subfield code="2">DE-101</subfield>
-    <subfield code="a">97953514X</subfield>
-  </datafield>
-  <datafield tag="020" ind1=" " ind2=" ">
-    <subfield code="c">geh.</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(DE-599)DNB97953514X</subfield>
-  </datafield>
-  <datafield tag="035" ind1=" " ind2=" ">
-    <subfield code="a">(OCoLC)635590789</subfield>
-  </datafield>
-  <datafield tag="040" ind1=" " ind2=" ">
-    <subfield code="a">1131</subfield>
-    <subfield code="b">ger</subfield>
-    <subfield code="c">DE-101</subfield>
-    <subfield code="d">1150</subfield>
-  </datafield>
-  <datafield tag="041" ind1=" " ind2=" ">
-    <subfield code="a">ger</subfield>
-  </datafield>
-  <datafield tag="044" ind1=" " ind2=" ">
-    <subfield code="c">XA-CH</subfield>
-  </datafield>
-  <datafield tag="082" ind1="7" ind2="4">
-    <subfield code="a">350</subfield>
-    <subfield code="q">DE-101</subfield>
-    <subfield code="2">22sdnb</subfield>
-  </datafield>
-  <datafield tag="084" ind1=" " ind2=" ">
-    <subfield code="a">350</subfield>
-    <subfield code="q">DE-101</subfield>
-    <subfield code="2">sdnb</subfield>
-  </datafield>
-  <datafield tag="090" ind1=" " ind2=" ">
-    <subfield code="a">b</subfield>
-  </datafield>
-  <datafield tag="245" ind1="0" ind2="0">
-    <subfield code="a">Verwaltungsmanagement</subfield>
-    <subfield code="b">11 Thesen zur Entwicklung der öffentlichen Verwaltungen in der Schweiz</subfield>
-    <subfield code="c">[hrsg. von UBS AG, Outlook Veranstaltungen und Publikationen]</subfield>
-  </datafield>
-  <datafield tag="250" ind1=" " ind2=" ">
-    <subfield code="a">Neuaufl.</subfield>
-  </datafield>
-  <datafield tag="259" ind1=" " ind2=" ">
-    <subfield code="a">ne</subfield>
-  </datafield>
-  <datafield tag="264" ind1=" " ind2="1">
-    <subfield code="a">Zürich</subfield>
-    <subfield code="b">UBS AG, Outlook Veranstaltungen und Publ.</subfield>
-    <subfield code="c">2000</subfield>
-  </datafield>
-  <datafield tag="300" ind1=" " ind2=" ">
-    <subfield code="a">31 S.</subfield>
-    <subfield code="b">graph. Darst.</subfield>
-    <subfield code="c">30 cm</subfield>
-  </datafield>
-  <datafield tag="490" ind1="0" ind2=" ">
-    <subfield code="a">UBS outlook</subfield>
-  </datafield>
-  <datafield tag="710" ind1="2" ind2=" ">
-    <subfield code="0">(DE-588)10161665-X</subfield>
-    <subfield code="0">http://d-nb.info/gnd/10161665-X</subfield>
-    <subfield code="0">(DE-101)983158746</subfield>
-    <subfield code="a">UBS AG</subfield>
-    <subfield code="b">Outlook Veranstaltungen und Publikationen</subfield>
-  </datafield>
-  <datafield tag="850" ind1=" " ind2=" ">
-    <subfield code="a">DE-101a</subfield>
-  </datafield>
-<datafield tag="690" ind1="H" ind2="D">
-            <subfield code="8">YQ</subfield>
-            <subfield code="a">Wirtschaftswissenschaften : Spezielle Betriebswirtschaftslehren</subfield>
             <subfield code="2">HSG-IFF</subfield>
         </datafield></record><record xmlns="http://www.loc.gov/MARC21/slim">
   <leader>05152cam a2200853   4500</leader>

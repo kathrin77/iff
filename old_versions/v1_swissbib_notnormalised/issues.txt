@@ -1,0 +1,195 @@
+﻿TODO: issues need to be updated./28.4.19
+
+
+TODO - Nice to have:
+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+
+- $338 $$b vergleichen, um nicht versehentlich Online-Ressource mit Print zu matchen!! (FUNKTIONIERT NOCH NICHT)
+nc = Band
+cr = Online-Ressource
+evtl. AV Medien: vd, sd, cd
+
+Beispiel:
+ISBN: 3409600019  ISBN-2: 
+Autor: ﻿Mändle --- Autor2: Möller
+Titel: Wirtschaftspolitik in Theorie und Praxis 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Wiesbaden --- Verlag:  Dr. Th. Gabler KG --- Jahr: 1978 --- Materialart: m --- Seitenzahlen: 358
+Sourcetitle: , Sourceauthor: 
+Addendum: Festschrift zum 65 Geburtstag von Hans Georg Schachtschabel
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Wirtschaftspolitik%20in%20Theorie%20und%20Praxis+AND+dc.anywhere+%3D+%EF%BB%BFM%C3%A4ndle+AND+dc.date+%3C%3D+1979+AND+dc.date+%3E%3D+1977
+Treffer: 3
+
+- Best record ist analytisch -> Uplink muss mitgeliefert werden. wenn Analytica (in: ) --> mit diesem Titel suchen, und den Rest verknüpfen! Wenn Analytica und ISBN vorhanden: ISBN wegspeichern unter sourceisbn, dann eine neue Suche starten & mitliefern, falls an HSG vorhanden? Auch Jahr kann so noch korrigiert werden!
+
+ISBN: 3428056035  ISBN-2: 
+Autor: Hutter --- Autor2: 
+Titel: Vom vollständigen zum vollständig produzierten Wettbewerb 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Berlin --- Verlag: Duncker & Humblot --- Jahr:  --- Materialart: a --- Seitenzahlen: 495-518
+Sourcetitle: Ansprüche, Eigentums- und Verfügungsrechte, Sourceauthor: Neumann Manfred Hrsg
+Addendum: In: Neumann Manfred Hrsg: Ansprüche, Eigentums- und Verfügungsrechte
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Vom%20vollst%C3%A4ndigen%20zum%20vollst%C3%A4ndig%20produzierten%20Wettbewerb+AND+dc.anywhere+%3D+Hutter
+
+
+ISBN: 0815768923  ISBN-2: 
+Autor: Greenberg --- Autor2: 
+Titel: Participation in Public Employment Programs 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Washington --- Verlag: Brookings Institution --- Jahr: 1978 --- Materialart: a --- Seitenzahlen: 323-367
+Sourcetitle: Creating Jobs - Public Employment Programs and Wage Subsidies, Sourceauthor: Palmer-John L Hrsg
+Addendum: In: Palmer-John L Hrsg: Creating Jobs - Public Employment Programs and Wage Subsidies
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Participation%20in%20Public%20Employment%20Programs+AND+dc.anywhere+%3D+Greenberg+AND+dc.date+%3C%3D+1979+AND+dc.date+%3E%3D+1977
+
+- wenn HSG-Dublette: IFF-Stichworte fehlen??
+
+https://aleph.unisg.ch/F?func=direct&doc_number=000136117&local_base=hsb01
+Autor: Rentsch --- Autor2: 
+Titel: Die Rolle des Postchecks im Geld- und Kreditsystem unter besonderer Berücksichtigung der Schweiz 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Winterthur --- Verlag:  P. G. Keller --- Jahr: 1955 --- Materialart: m --- Seitenzahlen: 170
+Sourcetitle: , Sourceauthor: 
+Addendum: Dissertation der HSG, Nr 84, 1955
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Die%20Rolle%20des%20Postchecks%20im%20Geld-%20und%20Kreditsystem%20unter%20besonderer%20Ber%C3%BCcksichtigung%20der%20Schweiz+AND+dc.anywhere+%3D+Rentsch+AND+dc.date+%3C%3D+1956+AND+dc.date+%3E%3D+1954
+
+
+
+
+- Mehrbändige werden nicht immer eindeutig korrekt sein. MAnuell bearbeiten lassen?
+- Autoren auf Vornamen prüfen, Bsp. Linder, Wettbewerb => ergibt falschen Treffer. 
+- Flick, Aussensteuerrecht, Bd. III -> Loseblattsammlung. Evtl. nach Materialtyp suchen und auf Liste der manuell zu bereinigenden?
+- Statistisches Bundesamt: Zusatz wird nicht beachtet.
+- Lösung für Kommentare o.ä.
+- HSG-Dissertationen beachten.
+- 0 Treffer: dritte Suche starten, aber welche? Nur Titel?
+- Problem, wenn IFF Dubletten hat => 2 Treffer in Suche, die sich ggs. überschreiben. Bsp.
+
+Autor: Borins --- Autor2: Warrington
+Titel: The New Public Administration 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Malta --- Verlag: CAPAM --- Jahr: 1996 --- Materialart: m --- Seitenzahlen: 32
+Sourcetitle: , Sourceauthor: 
+Addendum: Global Challenges, Local Solutions
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+The%20New%20Public%20Administration+AND+dc.anywhere+%3D+Borins+AND+dc.date+%3D+1996
+Treffer: 2
+
+
+- verkürzte Suche ergibt manchmal willkürliche Resultate. Verkürzte Suche für Jahr macht keinen Sinn => Mindestlänge für verkürzte SUche einführen?
+
+MARC 264 $c: 1998
+marcfield short match! 
+
+Bsp.
+
+MARC 260 $a: S.l.
+PLACEMATCH: 0
+MARC 260 $b: s.n.
+marcfield short match! 
+PUBLISHERMATCH: 2.5
+
+
+
+00000000000000000000000000000000000000000000000000000000000000000000000000
+
+
+DONE:
+
+- Falls Bandangaben im Titel etc., sollten diese für Export noch übergeben werden (für Angaben im Exemplar). $volume und $volumetitle wenn vorh. Bsp. 
+ISBN: 347204442X  ISBN-2: 
+Autor: Baudenbacher --- Autor2: 
+Titel: Aktuelle Probleme des Europäischen und Internationalen Wirtschaftsrechts 
+Untertitel:   --- Titeldatum:  --- Band: Band 3  2001 --- Bandtitel: 
+Ort: Neuwied --- Verlag: Hermann Luchterhand  GmbH --- Jahr: 2001 --- Materialart: m --- Seitenzahlen: 512
+Sourcetitle: , Sourceauthor: 
+Addendum: Band 3  2001
+URL: http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Aktuelle%20Probleme%20des%20Europ%C3%A4ischen%20und%20Internationalen%20Wirtschaftsrechts+AND+dc.anywhere+%3D+Baudenbacher+AND+dc.date+%3C%3D+2002+AND+dc.date+%3E%3D+2000
+
+- genaue Nummern IFF-Einspielung (von: 000991054 bis: 001000238)
+
+Anzahl betroffener Felder:    9120
+Anzahl veraenderter Records:  0
+Anzahl Commits:               0
+aleph@ux-aleph(a23_1):~/u23_1/hsg_proc>
+
+000991054: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991055: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991056: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+000991057: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+.....
+
+001000235: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000236: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000237: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+001000238: CAT  L$$aHSG-IFF_Migration.pl$$c20180606
+
+
+- wenn title und authormatch beide 0: automatisch auf unsure.csv?
+- allg: suchen mit Titel = anywhere => findet auch Tippfehler (z.B. Diss: Minsch, Ursachen und Verursacherprinzip im Umweltbereich)
+- Fehlermeldung: index: cql.serverChoice not supported, siehe notfound.csv
+- Loseblattsammlung: Jahr löschen, da Nulltreffer verursacht. 
+- 1 Jahr daneben: sollte einige Punkte geben und auch in Suche zugelassen werden. 
+
+ Bsp. ISBN: 3908567513  ISBN-2: 
+Autor: Neuhaus --- Autor2: Zumoffen
+Titel: Verdeckte Gewinnausschüttungen 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Winterthur --- Verlag: Hans Schellenberg --- Jahr: 1996 --- Materialart: m --- Seitenzahlen: 182
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+Verdeckte%20Gewinnaussch%C3%BCttungen+AND+dc.anywhere+%3D+Neuhaus+AND+dc.date+%3D+1996
+Treffer: 1
+Es gibt aber noch weitere:
+https://www.swissbib.ch/Search/Results?lookfor=3908567513&type=AllFields
+
+- wenn iff bestes Dok: prüfen, ob noch anders 035-Feld und neu importieren. Dann sind Daten evtl. besser.
+- Seitenzahlen-Auswertung weglassen -> bringt nichts
+- Fehler im Titel: Wenn Hochkomma vorkommen, müssen entfernt werden!!(oder ersetzt mit "") 
+- ISBN-Suche geändert. 
+- IDSSG - IFF-Kata: Punkte abziehen
+- Wenn 0 Treffer, aber ISBN vorhanden: mit ISBN suchen!
+- wenn FLE bereits an korrektes altes HSG-Doc angehängt hat und der einzige treffer ist, kommt falsche Meldung (IFF-Kata nicht gefunden). 
+- Materialart auswerten: LDR:	
+"m" - Monografie/Exemplar
+"a" - Unselbstständiger Teil einer Monografie
+"b" - Unselbstständiger Teil eines fortlaufenden Sammelwerkes 
+"i" - Integrierende Ressource
+"s" - Fortlaufendes Sammelwerk
+
+- Schreibweisen St. Gallen / St.Gallen (Ort)
+- Verlag: -Verlag wegschneiden
+- Problem: ISBN-Suche findent IFF-Katalogisate nicht, wenn dort 2 ISBN. ISBN-Suche wird nicht mehr als erstes durchgeführt
+
+- Cahiers de Droit fiscale wird als Zeitschrift behandelt. 
+- IFSt-Schrift: auf Zeitschriftenliste => manuell bereinigen, wenn Titel IFSt-Schrift <Nr.>. Es funktioniert, wenn im Titel etwas sinnvolles steht, bsp. 
+IFSt	Wirtschaft und Finanzen im Ausland - Grossbritannien und Dänemark	-	101	Druckerzeugnis	05.12.2003 08:38	IFSt-Heft 066 Bd. 1	Haupt-Bibliothek	-	-	-	-		YL1			Wirtschaftswissenschaften	Finanzwissenschaft. Betriebswirtschaftliche Steuerlehre	Allgemeines
+- Die Realisierung des Vorarlberger Abfallkonzeptes / wieso wird  nur IFF-Treffer gefunden? => Autor ist nur im 245 $c => search anywhere statt authorsearch
+- wenn gleich viele Punkte: wer hat am meisten angehängte Bibliotheken? (aktuell wird nach IDS  RERO dann SGBN bevorzugt --> willkürlich)
+- Vorzug RERO vor Alex etc.?!! Ja, Rero ist fast immer besser. 
+- Reihenfolge der MAtches ändern (oder eigene Matchvariablen für RERO und SGBN. 
+SGBN braucht mehr Punkte! 
+- wenn Seitenzahlen mit ff. und/oder von..bis: (wird bereits in ein flag gschrieben) -- Analytica! Beispiel:
+Eiermann Rudolf	Ein öffentliches Unternehmen zwischen Markt und Staat: Die Unternehmensverfassung der Deutschen Bundesbahn	3-7890-1683-7	204-213	Druckerzeugnis	05.12.2003 08:38	In: Eichhorn Peter: Unternehmensverfassung in der privaten und öffentlichen Wirtschaft	Haupt-Bibliothek	-	Baden-Baden	Nomos	-		YQ			Wirtschaftswissenschaften	Spezielle Betriebswirtschaftslehren	
+Korrekter Treffer: https://www.swissbib.ch/Record/074813935/Details#tabnav
+773 	0 	U 	|t Unternehmensverfassung in der privaten und öffentlichen Wirtschaft : Festschrift für Erich Potthoff zur Vollendung des 75. Lebensjahres  |d Baden-Baden : Nomos Verlagsges., 1989  |g S. 204-212  |j 204-212  |w (IDSBB)000511269  |9 273769014  
+
+- Wenn im titel Bd. oder ähnlich: Zusatz prüfen, dort ist meist der korrekte Titel.
+- Wenn 0 Treffer: gibt es dann das Feld "Treffer" überhaupt? Wenn nein: manuell auf 0 setzen. 
+- Bei Analytica braucht es mehr Punkte, sonst fallen sie durch (kein Jahr, kein Ort, kein Verlag...) => Stichworte aus Zusatz vergleichen?
+- Problem: Am IFF-Katalogisat haben sich schon andere angehängt. Nun wurde es sogar verbessert... Jetzt sollte man das doch neu importieren, oder?
+- Mehrere IFF-Treffer gefunden, welches ist der "richtigste" => der mit der höchsten Punktzahl. 
+- wenn es in der Trefferliste mehrere IFF_Dokumente hat, dann muss nur 1 ersetzt werden, das relevanteste. Immer das erste?
+- wenn replace by ein HSG-Dokument ist: eigener output!! Muss nicht von Swissbib importiert werden
+- wenn an HSG ein Treffer vorhanden: HSG-Bibnr. liefern zusätzlich zu Swissbibnr 
+Beispiele: 
+ISBN: 9783727285028  ISBN-2: 
+Autor: Marantelli --- Autor2: Opel
+Titel: Einführung in das internationale Steuerrecht der Schweiz 
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.identifier+%3D+9783727285028
+
+
+ISBN: 9783727285011  ISBN-2: 
+Autor: Lienhard --- Autor2: Mächler
+Titel: Öffentliches Finanzrecht 
+Untertitel:   --- Titeldatum:  --- Band:  --- Bandtitel: 
+Ort: Bern --- Verlag: Stämpfli  AG --- Jahr: 2017 --- Materialart: m --- Seitenzahlen: 477
+http://sru.swissbib.ch/sru/search/defaultdb?&operation=searchRetrieve&recordSchema=info%3Asrw%2Fschema%2F1%2Fmarcxml-v1.1-light&maximumRecords=10&query=+dc.title+%3D+%C3%96ffentliches%20Finanzrecht+AND+dc.anywhere+%3D+Lienhard+AND+dc.date+%3D+2017
+

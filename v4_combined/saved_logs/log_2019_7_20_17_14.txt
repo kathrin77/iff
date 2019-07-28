@@ -1,8 +1,0 @@
-Final Statistics: 2019_7_20_17_14
---------------------------------------------------------
-RECORDS PROCESSED:     20
-TIME ELAPSED (sec)     10.66
-FOUND:      70.00% (14)
-NOT FOUND:  30.00% (6)
-IGNORED:    0.00% (0)
-UNSAFE:     0.00% (0)

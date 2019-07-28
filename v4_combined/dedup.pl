@@ -1,22 +1,56 @@
 #!/usr/bin/perl
-#
-# ------------------------------------------------------------- #
-# @File dedup.pl
-# @Author Kathrin Heim
-# @Created 21.07.2019 
-# Perl script for data deduplication by SRU service
-# Documentation: see ./readme.txt
-#                                                               #								
-# ------------------------------------------------------------- #
-# Usage: dedup.pl [-c config] [-f file] [-h]                    #
-# Parameters:                                                   #
-#  -c    desired SRU / matching configuration (gvi or swissbib) #
-#  -f    input data file (csv format, more info: readme.txt)    #
-#  -h    little help text                                       #
-# ------------------------------------------------------------- #
 
 use strict;
 use warnings;
+
+=pod
+
+=head1 METADATA DEDUPLICATION FOR IFF RECORDS
+
+=head2 NAME
+
+dedup.pl - Perl script for data deduplication by SRU service
+
+=head2 DESCRIPTION
+
+Usage: dedup.pl [-c config] [-f file] [-h]
+
+Parameters:
+
+-c    desired SRU / matching configuration (gvi or swissbib)
+
+-f    input data file (.csv)
+
+-h    help text
+
+More information on script in Readme on GitHub.
+
+=head2 AVAILABILITY 
+
+This script is shared and documented on GitHub: L<https://github.com/kathrin77/iff>
+
+=head2 AUTHOR
+
+Kathrin Heim, July 2019 (kathrin.heim@gmail.com)
+
+=head2 SEE ALSO
+
+XML-Parser: L<XML::LibXML|https://metacpan.org/pod/XML::LibXML>
+
+XPath Module: L<XML::LibXML::XPathContext|https://metacpan.org/pod/XML::LibXML::XPathContext>
+
+CSV Module: L<Text::CSV|https://metacpan.org/pod/Text::CSV>
+
+Timer: L<Time::HiRes|https://metacpan.org/pod/Time::HiRes>
+
+Config: L<Config::Tiny|https://metacpan.org/pod/Config::Tiny>
+
+Command Line Options: L<Getopt::Std|https://metacpan.org/pod/Getopt::Std>
+
+Debugging: L<Data::Dumper::Names|https://metacpan.org/pod/Data::Dumper::Names>
+
+=cut
+
 use Time::HiRes qw ( time );
 use Text::CSV;
 use String::Util qw(trim);
@@ -30,16 +64,16 @@ use Encode;
 use Getopt::Std;
 
 # ----
-# DECLARATION OF GLOBAL VARIABLES for dedup.pl
+# DECLARATION OF GLOBAL VARIABLES
 # ----
 
-# start timer: see https://metacpan.org/pod/Time::HiRes
+# start timer: 
 my $starttime = time();
 
-# create a config file: see https://metacpan.org/pod/Config::Tiny
+# create a config file: 
 my $config = Config::Tiny->new;
 
-# get input options from command line: see http://perldoc.perl.org/Getopt/Std.html
+# get input options from command line:
 my %opts;
 my $datafile;
 getopts('c:f:h', \%opts);
@@ -82,7 +116,7 @@ my %subj_hash = build_subject_table();
 # get blacklisted titles
 my $blacklist = list_of_journals();
 
-# create a new csv object: see https://metacpan.org/pod/Text::CSV
+# create a new csv object
 my $csv = Text::CSV->new( { binary => 1, sep_char => ";" } ) or die "Cannot use CSV: " . Text::CSV->error_diag();
   
 # create file handles and open files
@@ -161,7 +195,7 @@ while ( $line = $csv->getline($fh_in) ) {
     my $rec_nrs   	= get_record_nrs($xpc, $config);
 
     if ( $rec_nrs == 0 ) {
-    	# try again with broader parameters;
+    	# broader query:
     	$xpc        = build_sruquery_broad($base_url, $config, \%flag, \%esc);
         $rec_nrs    = get_record_nrs($xpc, $config);
 
@@ -174,8 +208,7 @@ while ( $line = $csv->getline($fh_in) ) {
             @records = get_xpc_nodes($xpc, $config);
         }
     } elsif ( $rec_nrs >= $window ) {
-
-        # try again with narrower parameters
+        # narrower query:
         $xpc         = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
         $rec_nrs     = get_record_nrs($xpc, $config);
         if ( $rec_nrs == 0 || $rec_nrs >= $window ) {
@@ -195,7 +228,7 @@ while ( $line = $csv->getline($fh_in) ) {
     # -------------
 
     my $i = 0;
-    my @replace = ();     # array for swissbib routine where IFF duplicates exist
+    my @replace = ();     
     foreach my $rec (@records) {
         $i++;
         print_doc_header( $fh_report, $i, $opts{c} );
@@ -210,7 +243,10 @@ while ( $line = $csv->getline($fh_in) ) {
         	next;
         }
                 
-        # check for best network (origin): different process depending on GVI or swissbib routine
+        # ----
+        # check for best network (origin): 
+		# ----
+		
     	my $m035_counter = 0;
     	my $nw_match     = 0;
     	my ($r_ref, $case);
@@ -235,34 +271,38 @@ while ( $line = $csv->getline($fh_in) ) {
     		}    		
     	}
 
-        # check if this is currently the best match and safe the record:
+        # ----
+        # safe record if best match 
+		# ----
+		
         if ( $total > $bestmatch[0]){ 
-            @bestmatch = (); #clear @bestmatch
+            @bestmatch = (); 
             push @bestmatch, $total, $sysno, $rec;
             print $fh_report "NEW BEST MATCH: $total\n";
         }
 
-    } # end of foreach loop (going through each record in results list)
+    } 
+    # end of foreach loop (going through each record in results list)
 	
     print $fh_report "Bestmatch: $bestmatch[0], Bestrecordnr: $bestmatch[1] \n";
     
     # ----------------
     # handle best result:
     # ----------------
-     
-    # differ between GVI and swissbib:
+    
     my $xml;
     if ($bestmatch[0] >= $m_safe) {
     	if ($GVI) {
+    		# for GVI results:
     		$ctr{found}++;
     		@export = prepare_export($line, \@export, "found", $bestmatch[1]);
-    		$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
+    		$xml = create_MARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     		print $fh_XML $xml;   
     	} else {
-    		# for swissbib records only:
+    		# for swissbib results:
 			if (defined $flag{case} && $flag{case} eq 'iffonly') {
 				# only the original import was found:
-	    		@export = prepare_export($line, \@export, "iffonly");
+	    		@export = prepare_export($line, \@export, "iffonly", undef, $replace[0]);
 	    		$ctr{ignore}++;
 	    		$ctr{iffonly}++;
 	    		next; 
@@ -279,25 +319,22 @@ while ( $line = $csv->getline($fh_in) ) {
     					$ctr{reimport}++;
     					$ctr{found}++;
     					@export = prepare_export($line, \@export, "reimport", $bestmatch[1], $replace[0]);
-						$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
+						$xml = create_MARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     					print $fh_XML $xml;
     				}
- 			
 	    		} else {
 	    			# document needs to be replaced:
 	    			$ctr{replace}++;
 	    			@export = prepare_export($line, \@export, "replace", $bestmatch[1], $replace[0]);
-					$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
+					$xml = create_MARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     				print $fh_XML $xml;
     				$ctr{found}++;
 	    		}
-    		
 	    	} else {
 	    		# the original iff record was not found:
 	    		@export = prepare_export($line, \@export, "iffnotfound", $bestmatch[1]);
 	    		$ctr{iffnotfound}++;
-	    		$ctr{notfound}++;
-	    		
+	    		$ctr{notfound}++;	    		
 	    	}    		
     	}
     } else {
@@ -307,16 +344,16 @@ while ( $line = $csv->getline($fh_in) ) {
         $ctr{ignore}++;     
     }
     
-} # end of while loop (going through every input line)
+} 
+# end of while loop (going through every input line)
 
 # --------------------------
-# Finish: create output, count time, create statistics
+# Create output, count time, create statistics
 # --------------------------
 
-# print last xml line
+# print out files
 print $fh_XML '</data>';
 
-# print export file
 $csv->eof or $csv->error_diag();
 $csv->say( $fh_out, $_ ) for @export;
 
@@ -332,22 +369,31 @@ my $timeelapsed = $endtime - $starttime;
 
 printStatistics(\%ctr, $timeelapsed);
 
-
-
 ######################################################################################
-# ------------------------------------------------------------------------------------
-# SUBROUTINES for dedup.pl
-# ------------------------------------------------------------------------------------
+# End of main script
+######################################################################################
 
-# 1) NORMALIZATION ROUTINES:
-# ------------------------------------------------------------------------------------
+=head1 SUBROUTINES
 
-# -----
-# function normalize_isbn() normalizes isbn numbers, checks if one or two isbn are present,
-# sets flags and returns the normalized isbn and flags.
-# argument: isbn
-# returns: normalized isbn(s) and flag(s)
-# -----
+=head2 NORMALISATION ROUTINES
+
+=over 4
+
+=item normalize_isbn()
+
+This function normalizes isbn numbers, checks if one or two isbn are present, 
+sets flags and returns the normalized isbn and flags.
+
+Arguments: 
+$originalIsbn: string with original isbn
+
+Returns: 
+$n_isbn1, $n_isbn2: strings, 
+$flag_isbn1, $flag_isbn2: numbers (1 or 0) 
+
+=back
+
+=cut
 
 sub normalize_isbn {
     my $originalIsbn = shift;
@@ -393,12 +439,22 @@ sub normalize_isbn {
     return ( $n_isbn1, $n_isbn2, $flag_isbn1, $flag_isbn2 );
 }
 
-# -----
-# function normalize_author() normalizes authors, checks for authorities,
-# sets flags and returns the normalized authors and flags.
-# argument: author variable
-# returns: normalized author and flag
-# -----
+=over 4
+
+=item normalize_author()
+
+This function normalizes authors, checks for authorities, sets flags and returns the normalized authors and flags.
+
+Arguments: 
+$originalAuthor: original author string
+
+Returns: 
+$normalizedauthor: string, 
+$flag: number (0 or 1)
+
+=back
+
+=cut
 
 sub normalize_author {
     my $originalAuthor = shift;
@@ -445,12 +501,23 @@ sub normalize_author {
     return ( $lastname, $authorflag );
 }
 
-# -----
-# function check_addendum() checks addendum for volume information,
-# sets flags and returns the volume information and flags.
-# argument: addendum variable
-# returns: volume title, volume number and flag
-# -----
+
+=over 4
+
+=item check_addendum()
+
+This function checks addendum for volume information, sets flags and returns the volume information and flags.
+
+Arguments: 
+$origAddendum: original addendum string
+
+Returns: 
+$origAddendum, $vol_number, $vol_title: strings, 
+$volume_flag: number (0 or 1)
+
+=back
+
+=cut
 
 sub check_addendum {
     my $origAddendum = shift;
@@ -483,12 +550,24 @@ sub check_addendum {
     return ($origAddendum, $volume_flag, $vol_number, $vol_title );
 }
 
-# -----
-# function check_analytica() checks if there is source information for an analyticum
-# in the addendum.
-# argument: addendum
-# returns: analytica flag, citation, source title, source author
-# -----
+
+=over 4
+
+=item check_analytica() 
+
+This function checks if there is source information for an analyticum in the addendum.
+
+Arguments: 
+$originaladdendum: original addendum string
+
+Returns: 
+$citation, $src_title, $src_author: strings, 
+$analytica_flag: number (0 or 1)
+
+=back
+
+=cut
+
 
 sub check_analytica {
 
@@ -508,12 +587,22 @@ sub check_analytica {
     return ( $analytica_flag, $citation, $src_title, $src_author );
 }
 
-# -----
-# function normalize_title() normalizes the title,
-# and returns the title
-# argument: title
-# returns: title
-# -----
+
+=over 4
+
+=item normalize_title()
+
+This function normalizes the title and returns it.
+
+Arguments: 
+$originalTitle: original title string
+
+Returns: 
+$originalTitle: string
+
+=back
+
+=cut
 
 sub normalize_title {
 
@@ -527,13 +616,24 @@ sub normalize_title {
     return $originalTitle;
 }
 
-# -----
-# function check_subtitles() checks rows subtitle, volume1 and volume2
-# for sensible information, sets flag accordingly
-# and normalizes the strings.
-# arguments: subtitle, title volume information
-# returns: subtitle flag, subtitle, volume flag, volumes
-# -----
+=over 4
+
+=item check_subtitles()
+
+This function checks rows subtitle, volume1 and volume2 for sensible information, 
+sets flag accordingly and normalizes the strings.
+
+Arguments: 
+$originalSubtitle, $originalTitVol1, $originalTitVol2: original subtitle strings
+
+Returns: 
+$stit_flag, $volume_flag: numbers (0 or 1), 
+$n_stit, $volumeTitle1, $volumeTitle2: strings
+
+=back
+
+=cut
+
 
 sub check_subtitles {
     my $originalSubtitle = shift;
@@ -566,13 +666,24 @@ sub check_subtitles {
     return ( $stit_flag, $n_stit, $volume_flag, $volumeTitle1, $volumeTitle2 );
 }
 
-# -----
-# function normalize_year() ensures that the year variable contains
-# four digits and selects the latest year.
-# It calculates the year-range for the sru query (one year above and below original value).
-# arguments: year
-# returns: flag for year, year-plus-one, year-minus-one
-# -----
+=over 4
+
+=item normalize_year()
+
+This function ensures that the year variable contains four digits and selects the latest year.
+It calculates the year-range for the sru query (one year above and below original value).
+
+Arguments: 
+$originalYear: string
+
+Returns: 
+$year_flag: number (0 or 1), 
+$originalYear, $ym1, $yp1: numbers (d{4})
+
+=back
+
+=cut
+
 
 sub normalize_year {
     my $originalYear = shift;
@@ -595,12 +706,23 @@ sub normalize_year {
     return ( $year_flag, $originalYear, $ym1, $yp1 );
 }
 
-# -----
-# function check_ppp() checks if pages, publisher and place contain information.
-# it also checks if pages contain a range and are therefore analytica.
-# argument: pages, publisher, place
-# return: flags for pagerange, publisher, place
-# -----
+=over 4
+
+=item check_ppp() 
+
+This function checks if pages, publisher and place contain information.
+It also checks if pages contain a range and are therefore analytica.
+
+Arguments: 
+$originalPages, $originalPublisher, $originalPlace: strings
+
+Returns: 
+$pagerange_flag, $pub_flag, $place_flag: number (0 or 1), 
+$originalPlace, $originalPublisher: strings
+
+=back
+
+=cut
 
 sub check_ppp {
 
@@ -627,9 +749,28 @@ sub check_ppp {
 
     return ( $pagerange_flag, $pub_flag, $place_flag, $originalPlace, $originalPublisher );
 }
-# ----
-# function deals with diverse material codes and returns correct type and changes some flags.
-# ----
+
+
+=over 4
+
+=item set_material_codes() 
+
+This function deals with diverse material codes and returns correct type and changes some flags.
+It also disables some search values depending on material code.
+
+Arguments: 
+$flag_ref: hash reference to %flag, 
+$material: string, 
+$year: number
+
+Returns: 
+$type: character (m, a or i), 
+$flag{ana}, $flag{isbn1}, $flag{isbn2}, $flag{year}: number (0 or 1), 
+$material: string
+
+=back
+
+=cut
 
 sub set_material_codes {
 	my $flag_ref = shift;
@@ -647,7 +788,7 @@ sub set_material_codes {
 	}
 	if ($material =~ /Loseblatt/ ) {
         $flag{year} = 0;               # year for Loseblatt is usually wrong
-        $type  = qr/m|i/;            # doctype can be both.
+        $type  = qr/m|i/;              # doctype can be both.
     }
 	if ( $year =~ /online/i ) {
         $material = "online";
@@ -657,14 +798,22 @@ sub set_material_codes {
 }
                   
 
+=over 4
 
+=item clean_search_params() 
 
+This function tidies the normalized title/author strings and escapes them for the sru query building.
 
-# -----
-# function clean_search_params() tidies the normalized title/author strings
-# and escapes them for the sru query building.
-# argument: normalized title or author strings
-# retunrns: escaped title or author string
+Arguments: 
+$flag_ref, $norm_ref: hash references (%flag, %norm)
+
+Returns: 
+$escaped_isbn, $escaped_year, $escaped_title, $escaped_author, $escaped_publisher, $escaped_place: strings
+
+=back
+
+=cut
+
 
 sub clean_search_params {
 	
@@ -672,7 +821,9 @@ sub clean_search_params {
 	my $flag_ref = shift;
 	my %norm = %{$norm_ref};
 	my %flag = %{$flag_ref};
-	my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?| and | or /;    #clean characters: .()'"/+[]? and remove and / or
+	# clean characters: .()'"/+[]? and remove and / or / within
+	my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/; 
+	my $stopwords = qr/ and | or | within /;   
 	my ($escaped_isbn, $escaped_year, $escaped_title, $escaped_author, $escaped_publisher, $escaped_place);
 	
 	if ($flag{isbn1}) {
@@ -688,11 +839,13 @@ sub clean_search_params {
 	
 	$escaped_title = $norm{tit};
 	$escaped_title =~ s/$CLEAN_TROUBLE_CHAR//g;
+	$escaped_title =~ s/$stopwords/ /g;
     $escaped_title = uri_escape_utf8($escaped_title);
     
 	if ($flag{aut1}) {
 	    $escaped_author = $norm{aut1};
 		$escaped_author =~ s/$CLEAN_TROUBLE_CHAR//g;
+		$escaped_author =~ s/$stopwords/ /g;
     	$escaped_author = uri_escape_utf8($escaped_author); 
 	} else {
 		$escaped_author = '';
@@ -701,6 +854,7 @@ sub clean_search_params {
 	if ($flag{pub}) {
 	    $escaped_publisher = $norm{pub};
 		$escaped_publisher =~ s/$CLEAN_TROUBLE_CHAR//g;
+		$escaped_publisher =~ s/$stopwords/ /g;
 	    $escaped_publisher = uri_escape_utf8($escaped_publisher); 		
 	} else {
 		$escaped_publisher = '';
@@ -709,6 +863,7 @@ sub clean_search_params {
 	if ($flag{place}) {
 		$escaped_place = $norm{place};
 		$escaped_place =~ s/$CLEAN_TROUBLE_CHAR//g;
+		$escaped_place =~ s/$stopwords/ /g;
     	$escaped_place = uri_escape_utf8($escaped_place); 
 	} else {
 		$escaped_place = '';
@@ -718,14 +873,27 @@ sub clean_search_params {
 
 }
 
-# 2) MATCH ROUTINES:
-# --------------------------------------------------------------------------------------
 
-# ----
-# get_controlfield checks if a specific MARC controlfield exists and returns its content.
-# argument: MARC controlfield number, current record node, current xpath context
-# returns:  controlfield content (string or undef)
-# ----
+=head2 MATCH ROUTINES
+
+=over 4
+
+=item get_controlfield() 
+
+This function checks if a specific MARC controlfield exists and returns its content.
+
+Arguments: 
+$controlfield_nr: number (MARC controlfield), 
+$conf: configuration object, 
+$record: object (current record node) , 
+$xpath: object (current xpath context), 
+
+Returns: 
+$controlfield_content: string or undef
+
+=back
+
+=cut
 
 sub get_controlfield {
     my $controlfield_nr = shift;
@@ -746,21 +914,34 @@ sub get_controlfield {
     return $controlfield_content;
 }
 
-# ----
-# hasTag checks if a MARC field (datafield) exists.
-# argument: MARC field number
-# returns:  1 (true) or 0 (false)
-# ----
+=over 4
+
+=item hasTag() 
+
+This function checks if a MARC field (datafield) exists.
+
+Arguments: 
+$tag: number (MARC datafield), 
+$conf: configuration object, 
+$record: object (current record node) , 
+$xpath: object (current xpath context), 
+
+Returns: 
+1 or 0 (true or false)
+
+=back
+
+=cut
+
 
 sub hasTag {
-    my $tag          = shift;    # Marc tag
-    my $conf         = shift;    # Config file
-    my $record       = shift;    # record node
-    my $xpath        = shift;    # XPATH context
+    my $tag          = shift;    
+    my $conf         = shift;    
+    my $record       = shift;    
+    my $xpath        = shift;    
     my $datafield    = $conf->{sru}->{datafield};
 
     if ($xpath->exists( $datafield.'[@tag='. $tag . ']', $record ) ) {
-        #debug
         return 1;
     } else {
         return 0;
@@ -768,11 +949,25 @@ sub hasTag {
 
 }
 
-# ----
-# function checkIsbnMatch() to check if ISBN numbers match.
-# arguments: current record, current XPATH, isbn number from original data
-# returns: match value
-# -----
+
+=over 4
+
+=item checkIsbnMatch() 
+
+This function checks if ISBN numbers match.
+
+Arguments:
+$record: object (current record node),  
+$xpath: object (current xpath context), 
+$original_isbn: number (isbn number from original data), 
+$conf: configuration object
+
+Returns: 
+$matchvalue: number
+
+=back
+
+=cut
 
 sub checkIsbnMatch {
     my $record        = shift;
@@ -796,12 +991,27 @@ sub checkIsbnMatch {
     return $matchvalue;
 }
 
-# ------
-# sub getMatchValue() compares the content of a MARC field to an original string
-# and returns a positive or negative match value.
-# arguments: MARC field and subfield, string to compare against, match value, context
-# returns: match value
-# ------
+=over 4
+
+=item getMatchValue() 
+
+This function compares the content of a MARC field to an original string and returns a match value.
+
+Arguments:
+$df_content: number (MARC datafield), 
+$sf_content: number (MARC subfield), 
+$hash_ref: hash reference (%norm), 
+$key: string (hash key), 
+$conf: configuration object, 
+$record: object (current record node), 
+$xpath: object (current xpath context), 
+
+Returns: 
+$matchvalue: number
+
+=back
+
+=cut
 
 sub getMatchValue {
     my $df_content     = shift;
@@ -844,12 +1054,26 @@ sub getMatchValue {
     }
 }
 
-# -----
-# checkMaterial() checks the LDR field in the MARC record,
-# cuts aut position 07 and compares it to the doctype.
-# arguments: doctype, matchvalue, $rec, $xpc
-# return: matchvalue
-# -----
+=over 4
+
+=item checkMaterial() 
+
+This function checks the LDR field in the MARC record, cuts aut position 07 and compares it to the doctype.
+
+Arguments:
+$hash_ref: hash reference (%norm), 
+$type: character, 
+$conf: configuration object, 
+$record: object (current record node),  
+$xpath: object (current xpath context) 
+
+Returns: 
+$matchvalue: number
+
+=back
+
+=cut
+
 sub checkMaterial {
 	my $hash_ref = shift;
     my $type     = shift;
@@ -878,16 +1102,35 @@ sub checkMaterial {
     return $matchvalue;
 }
 
-# ----
-# checkNetwork($config, $rec, $xpc);
-# ----
+=over 4
+
+=item check_network_g() 
+
+This function checks origins of each record in the GVI (= which network is the currently evaluated record coming from?). 
+It gets the MARC field 035 from the record and decides on a network match value based on the configuration.
+It also counts the number of MARC fields 035, based on the assumption that 
+the more networks contributed to this record, the better the quality will be.
+
+Arguments:
+$conf: configuration object, 
+$record: object (current record node),  
+$xpath: object (current xpath context) 
+
+Returns: 
+$m035_counter, $highestvalue: number
+
+The function also returns two undef values to be compliant with check_network_s() (see below).
+
+=back
+
+=cut
 
 sub check_network_g {
     my $conf   = shift;
     my $record = shift;
     my $xpath  = shift;
 
-    # which network should be ranked how? get values from conf.
+    # GVI best networks:
     my $bsz             = $conf->{net}->{BSZ};
     my $bvb             = $conf->{net}->{BVB};
     my $gbv             = $conf->{net}->{GBV};
@@ -936,10 +1179,44 @@ sub check_network_g {
     		}
     	}
     } 
-    # last 2 values: $r_ref, $case analog to swissbib routine, see check_network_s
+    # last 2 values: $r_ref, $case analog to swissbib routine
     print $fh_report Dumper ($m035_counter, $highestvalue);
     return ( $m035_counter, $highestvalue, undef, undef);
 }
+
+=over 4
+
+=item check_network_s() 
+
+This function checks origins of each record in Swissbib (= which network is the currently evaluated record coming from?). 
+It gets the MARC field 035 from the record and decides on a network match value based on the configuration.
+It also counts the number of MARC fields 035, based on the assumption that 
+the more networks contributed to this record, the better the quality will be.
+Additionaly, this routine checks if the current record is an IDSSG record. 
+If yes, the age of the record is evaluated. If this record is in a certain number range, it is from the
+original IFF upload from May 2018 and therefore needs to be replaced, if a better match is found.
+If this is the only result, it is marked with "iffonly" and returned immediately. 
+Otherwise the IFF number is stored in an array and returned. 
+If it is an older IDSSG document, the function checks whether the IFF document was already attached. 
+If this is the case, it is marked with "bestcase".
+A lot of points get alloted for old IDSSG documents so that they should always be the winner to reduce local duplicates.
+
+Arguments:
+$conf: configuration object, 
+$record: object (current record node), 
+$xpath: object (current xpath context), 
+$rec_nrs, $subtotal, : number, 
+$flag_ref, $replace_ref: hash references, 
+$sysno, $callno: strings
+
+Returns: 
+$m035_counter, $highestvalue: number, 
+\@iff2replace: array reference, 
+$case: string
+
+=back
+
+=cut
 
 sub check_network_s {
     my $conf   = shift;
@@ -956,7 +1233,7 @@ sub check_network_s {
     my $MARC035a;
     my $case = undef;
 
-    # which network should be ranked how? get values from conf.
+    # Swissbib best networks:
     my $ids             = $conf->{net}->{IDS};
     my $sgbn            = $conf->{net}->{SGBN};
     my $rero            = $conf->{net}->{RERO};
@@ -1008,12 +1285,13 @@ sub check_network_s {
             	}
 
     		} else {
-    			# IDSSG-RECORDS: check if an old IDSSG record or one of the batch from first IFF migration, May 2018:    			
+    			# IDSSG-RECORDS: check age (number range):    			
 				$hsb01_nr = substr $MARC035a,-7;  
 				if ( $hsb01_nr >= 991054 ) {
-					# IFF original upload number
+					# IFF original upload, May 2018:
 					if (($rec_nrs) == 1 && ($m035_counter <= 1)) {
-						# this is the only result: no need for further evaluation, record cannot be improved.	
+						# this is the only result: no need for further evaluation, record cannot be improved.
+						push @iff2replace, $sysno, $hsb01_nr, $subtotal;
 						return ( $m035_counter, $highestvalue, \@iff2replace, "iffonly");
 					} elsif ($rec_nrs == 1 ) { 
 						# there is only 1 result but several 035-fields: reimport case
@@ -1069,13 +1347,28 @@ sub check_network_s {
     return ( $m035_counter, $highestvalue, \@iff2replace, $case);
 }
 
+=over 4
 
+=item evaluate_records() 
 
-#----
-# main sub which deals with all the matching for each record in result set
-# arguments: reference for hashes flag and norm, record & xpath object, config
-# returns: total match value
-# ----
+This function deals with all the matching for each record in the result set. 
+It compares the different input values with the according MARC fields/subfields:
+ISBN, Author/Authority, Title, Subtitle, Year, Place, etc.
+The function also eliminates totally unsafe matches.
+
+Arguments:
+$flag_ref, $norm_ref: hash references, 
+$config: configuration object, 
+$rec: object (current record node), 
+$xpc: object (current xpath context) 
+
+Returns: 
+$total: number, 
+$unsafe: number (1 or 0);
+
+=back
+
+=cut
 
 sub evaluate_records {
 	
@@ -1257,14 +1550,25 @@ sub evaluate_records {
           
 }
 
-# SERVICE ROUTINES:
+=head2 SERVICE ROUTINES
 
-# ------------
-# reads all rows from the csv file and returns it as separate variables.
-# rows a until s contain data that is needed for deduplication.
-# rows t, u, v (19-21) are not needed, these values come are mapped from a mapping file.
-# argument: csv line
-# return: rows A - S
+=over 4
+
+=item get_vars_from_csv() 
+
+This function reads all rows from the csv file and returns it as separate variables.
+rows a until s contain data that is needed for deduplication.
+rows t, u, v (19-21) are not needed, these values come are mapped from a mapping file.
+
+Arguments:
+$currLine: CSV object (current csv line)
+
+Returns: 
+$row_a ... $row_s: strings
+
+=back
+
+=cut
 
 sub get_vars_from_csv {
 
@@ -1289,7 +1593,7 @@ sub get_vars_from_csv {
     my $row_q = $currLine->[16];    # subject code 1
     my $row_r = $currLine->[17];    # subject code 2
     my $row_s = $currLine->[18];    # subject code 3
-         # rows 19-21 are not needed but will stay in the file.
+	# rows 19-21 are not needed but will stay in the file.
 
     return (
         $row_a, $row_b, $row_d, $row_e, $row_f, $row_g,
@@ -1299,10 +1603,19 @@ sub get_vars_from_csv {
 
 }
 
-# -----
-# prints a header for each entry in the debug report
-# argument: line counter and filehandle
-# -----
+=over 4
+
+=item print_rep_header() 
+
+This function prints a header for each entry in the debug report.
+
+Arguments:
+$filehandle, $database: strings, 
+$docnumber: number
+
+=back
+
+=cut
 
 sub print_rep_header {
     my $filehandle = shift;
@@ -1312,10 +1625,20 @@ sub print_rep_header {
     print $filehandle "**************************************************\n";
 }
 
-# -----
-# prints a header for each document in the result set in the debug report
-# argument: doc counter and filehandle
-# -----
+=over 4
+
+=item print_doc_header() 
+
+This function prints a header for each document in the result set in the debug report.
+
+Arguments:
+$filehandle, $database: strings, 
+$docnumber: number
+
+=back
+
+=cut
+
 
 sub print_doc_header {
     my $filehandle = shift;
@@ -1325,11 +1648,20 @@ sub print_doc_header {
     print $filehandle "--------------------------------\n";
 }
 
-# -----
-# prints a progress bar on the console: a * for every CSV line treated,
-# every 100th line, the number is printed.
-# argument: line counter
-# -----
+=over 4
+
+=item print_progress() 
+
+This function prints a progress bar on the output console: 
+a * for every CSV line treated, every 100th line, the number is printed.
+
+Arguments:
+$progressnumber: number
+
+=back
+
+=cut
+
 
 sub print_progress {
     my $progressnumber = shift;
@@ -1343,12 +1675,22 @@ sub print_progress {
     }
 }
 
-# -----
-# this function builds the base url for the SRU query based on values from
-# a config file.
-# arguments: config file object
-# returns: base url string
-# -----
+=over 4
+
+=item build_base_url() 
+
+This function builds the base url for the SRU query based on values from 
+a config file.
+
+Arguments:
+$conf: configuration object
+
+Return:
+$base_url: string
+
+=back
+
+=cut
 
 sub build_base_url {
 
@@ -1369,16 +1711,27 @@ sub build_base_url {
     return $base_url;
 }
 
-# ----
-# build_sruquery_basic () builds the first sru search (basic version)
-# based on either isbn or title/author or title/publisher combo.
-# arguments: configuration, flags and normalized search values.
-# -----
-# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
-# registers namespaces of xml if GVI is used.
-# argument: sru query
-# returns: xpath object (xpc)
-# -----
+=over 4
+
+=item build_sruquery_basic() 
+
+This function builds the first sru search (basic version)
+based on either isbn or title/author or title/publisher combo.
+It gets the response from the Server, loads the XML as DOM object 
+and gets the XPATH context for a libxml dom.
+The function also registers namespaces of xml if GVI is used.
+
+Arguments:
+$base_url: string, 
+$conf: configuration object, 
+$flag_ref, $esc_ref: hash references (%flag, %esc)
+
+Return:
+$xpathcontext: xpath object (xpc)
+
+=back
+
+=cut
 
 sub build_sruquery_basic {
 
@@ -1423,16 +1776,27 @@ sub build_sruquery_basic {
     return $xpathcontext;
 }
 
-# ----
-# build_sruquery_broad () builds the broad sru search using cql.all/anywhere
-# based on either title/author or title/publisher or title/year combo.
-# arguments: configuration, flags and normalized search values.
-# -----
-# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
-# registers namespaces of xml if GVI is used.
-# argument: sru query
-# returns: xpath object (xpc)
-# -----
+=over 4
+
+=item build_sruquery_broad() 
+
+This function builds the broad sru search using cql.all/anywhere
+based on either title/author or title/publisher  or title/year combo.
+It gets the response from the Server, loads the XML as DOM object 
+and gets the XPATH context for a libxml dom.
+The function also registers namespaces of xml if GVI is used.
+
+Arguments:
+$base_url: string, 
+$conf: configuration object, 
+$flag_ref, $esc_ref: hash references (%flag, %esc)
+
+Return:
+$xpathcontext: xpath object (xpc)
+
+=back
+
+=cut
 
 sub build_sruquery_broad {
 
@@ -1467,16 +1831,27 @@ sub build_sruquery_broad {
     return $xpathcontext;
 }
 
-# ----
-# build_sruquery_narrow () builds the narrow sru search using 
-# based on either title/author or title/publisher or title/year combo.
-# arguments: configuration, flags and normalized search values.
-# -----
-# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
-# registers namespaces of xml if GVI is used.
-# argument: sru query
-# returns: xpath object (xpc)
-# -----
+=over 4
+
+=item build_sruquery_narrow() 
+
+This function builds the the narrow sru search
+based on either title/author or title/publisher or title/year combo.
+It gets the response from the Server, loads the XML as DOM object 
+and gets the XPATH context for a libxml dom.
+The function also registers namespaces of xml if GVI is used.
+
+Arguments:
+$base_url: string, 
+$conf: configuration object, 
+$flag_ref, $esc_ref: hash references (%flag, %esc)
+
+Return:
+$xpathcontext: xpath object (xpc)
+
+=back
+
+=cut
 
 sub build_sruquery_narrow {
 	
@@ -1519,12 +1894,22 @@ sub build_sruquery_narrow {
     return $xpathcontext;	
 }
 
+=over 4
 
-# -----
-# retrieves number of records from XPATH
-# argument: xpath context, configuration
-# returns: number of records
-# -----
+=item get_record_nrs() 
+
+This function retrieves number of records from XPATH.
+
+Arguments:
+$xpathcontext: xpath object (xpc), 
+$conf: configuration object
+
+Return:
+$numberofrecords: number
+
+=back
+
+=cut
 
 sub get_record_nrs {
 
@@ -1536,18 +1921,30 @@ sub get_record_nrs {
     if ($xpathcontext->exists($nr_records) ) {
         $numberofrecords = $xpathcontext->findvalue($nr_records);
     } else {
-        print "xpc path not found! \n";
+    	# debug:
+        print "xpc path not found! $ctr{line}\n";
         $numberofrecords = undef;
     }
     print $fh_report Dumper $numberofrecords;
     return $numberofrecords;
 }
 
-# -----
-# get_xpc_nodes() get nodes of records with XPATH,
-# argument: xpath context
-# returns: array of records
-# -----
+=over 4
+
+=item get_xpc_nodes() 
+
+This function gets nodes of records with XPATH into an array.
+
+Arguments:
+$xpath: xpath object (xpc), 
+$conf: configuration object
+
+Return:
+@recordNodes: array 
+
+=back
+
+=cut
 
 sub get_xpc_nodes {
     my $xpath = shift;
@@ -1558,13 +1955,27 @@ sub get_xpc_nodes {
     return @recordNodes;
 }
 
-# -----
-# create xml file for export / re-import, add subjects from original data.
-# argument: a record object (libxml), subject codes from original file, subject hash from MAP
-# returns: xml string
-# -----
+=over 4
 
-sub createMARCXML {
+=item create_MARCXML() 
+
+This function creates an xml file for export / re-import and adds subjects from original IFF data, 
+based on the iff_subject_table.map. 
+
+
+Arguments:
+$record: record object, 
+$hash_ref: hash reference (%subject_hash), 
+$code 1, $code2, $code3: strings
+
+Return:
+XML string
+
+=back
+
+=cut
+
+sub create_MARCXML {
 	
     my $record = shift; 
     my $hash_ref = shift;
@@ -1577,7 +1988,7 @@ sub createMARCXML {
     my $subjectstring1 = '';
     my $subjectstring2 = '';
     my $subjectstring3 = '';
-    my %subject_hash = %$hash_ref; # dereference $hashref to get back the hash
+    my %subject_hash = %$hash_ref; 
     
     # create and add 690 fields with keywords 
     if (defined $code1 && $code1 !~/\A\Z/ && exists $subject_hash{"$code1 1"}) {
@@ -1632,10 +2043,19 @@ sub createMARCXML {
 	
 }
 
-# ----
-# print final statistics in a log file
-# arguments: all counters, final timer
-# ----
+=over 4
+
+=item printStatistics() 
+
+This function prints final statistics in a log file.
+
+Arguments:
+$ctr_ref: hash reference (%ctr), 
+$time: timestamp
+
+=back
+
+=cut
 
 sub printStatistics {
 	
@@ -1673,7 +2093,7 @@ sub printStatistics {
 	print $log " - IFF N/F:    "; printf $log ('%.2f', $iff_notfound/($totaldocs/100)); print $log "\% ($iff_notfound)\n";	
 	print $log " - NO HITS:    "; printf $log ('%.2f', $sru_noresults/($totaldocs/100)); print $log "\% ($sru_noresults)\n";	
 	print $log "IGNORED:       "; printf $log ('%.2f', $ignored/($totaldocs/100)); print $log "\% ($ignored)\n";
-	print $log " - JOURNALS:   "; printf $log ('%.2f', $journals/($totaldocs/100)); print $log "\% ($journals)\n";		
+	print $log " - BLACKLIST:  "; printf $log ('%.2f', $journals/($totaldocs/100)); print $log "\% ($journals)\n";		
 	print $log " - IFF ONLY:   "; printf $log ('%.2f', $iffonly/($totaldocs/100)); print $log "\% ($iffonly)\n";	
 	print $log " - UNSAFE:     "; printf $log ('%.2f', $unsafe/($totaldocs/100)); print $log "\% ($unsafe)\n";
 
@@ -1682,11 +2102,21 @@ sub printStatistics {
 	
 }
 
-# -----
-# list_of_journals() lists possible titles that indicate
-# journals, yearbooks, legislative texts with difficult match criteria.
-# records that match this list should be excempted from dedup.
-# -----
+
+=over 4
+
+=item list_of_journals() 
+
+This function lists possible titles that indicate journals, yearbooks, legislative texts with difficult match criteria.
+Records that match this list are blacklisted and excempted from dedup.
+
+Return: 
+$journaltitles: string
+
+=back
+
+=cut
+
 
 sub list_of_journals {
 
@@ -1787,12 +2217,21 @@ sub list_of_journals {
     return $journaltitles;
 }
 
-# ----
-# function to build subject table: (c) Felix Leu 2018
-# read a map file with all possible subject combinations from iff institute
-# and build hash accordingly. 
-# Example: $subj_hash{'1 GB'} is 'Finanzrecht'
-# ----
+
+=over 4
+
+=item build_subject_table() 
+
+Function to build subject table: (c) Felix Leu 2018
+Read a map file with all possible subject combinations from IFF institute and build hash accordingly. 
+Example: $subj_hash{'1 GB'} is 'Finanzrecht'
+
+Return: 
+%subject_hash: hash with subject keys and subject strings.
+
+=back
+
+=cut
 
 sub build_subject_table {
 	
@@ -1810,15 +2249,25 @@ sub build_subject_table {
 	
 }
 
-# ----
-# function to remove BOM (Microsoft fileheader for Unicode)
-# argument: first value from first line
-# returns: value without bom characters
-# ----
+=over 4
+
+=item remove_bom() 
+
+Function removes the BOM (Microsoft fileheader for Unicode) from the first value in the first line.
+
+Argument:
+$var: string 
+
+Return: 
+$var: string
+
+=back
+
+=cut
 
 sub remove_bom {
 	my $var = shift;
-	# remove BOM ( 
+
 	$var =~ s/\xEF\xBB\xBF//;
 	$var =~ s/^\x{FEFF}//;
 	$var =~ s/^\x{feff}//;
@@ -1829,14 +2278,29 @@ sub remove_bom {
 	return $var;
 }
 
-# ----
-# function to prepare the export array:
-# add a row [22] to the current csv line with the selected export message
-# if defined, add row [23] with the best match docnr. 
-# add the line to the export array. 
-# arguments: csv line, export array reference, result string, bestmatch nr.
-# returns: export array
-# ----
+=over 4
+
+=item prepare_export() 
+
+Function prepares the export array:
+add a row [22] to the current csv line with the selected export message
+if defined, add row [23] with the iff docnr. to be replaced
+if defined, add row [24] with the best match docnr. 
+add the line to the export array. 
+
+Argument:
+$l: CSV object ($line), 
+$e_ref: array reference, 
+$RESULT: string, 
+$bestmatch: string, 
+$replacenr: string, 
+
+Return: 
+@e: array (export)
+
+=back
+
+=cut
 
 sub prepare_export {
 	my $l = shift;
@@ -1849,16 +2313,33 @@ sub prepare_export {
 	print $fh_report Dumper $RESULT;	
 	print $fh_report Dumper $bestmatch;
 	$l->[22] = "$RESULT";
-	if (defined $bestmatch) {
-		$l->[23] = $bestmatch
-	}
+	# first: possible iff record to replace
 	if (defined $replacenr) {
-		$l->[24] = $replacenr
+		$l->[23] = $replacenr
 	}
+	# second: recordnumber to import
+	if (defined $bestmatch) {
+		$l->[24] = $bestmatch
+	}
+
     push @e, $l;
     return @e;
 	
 }
+
+=over 4
+
+=item print_hash() 
+
+Function prints a hash for debugging.
+
+Argument:
+$hash_ref: hash reference, 
+$fh: filehandle
+
+=back
+
+=cut
 
 sub print_hash {
 	
@@ -1867,12 +2348,19 @@ sub print_hash {
 	my %hash = %{$hash_ref};
 	
 	foreach my $key (keys %hash) {
-        #print "Exists\n"    if exists $hash{$key};
         print $fh "$key: $hash{$key}\n"   if defined $hash{$key};
-        #print "True\n"      if $hash{$key};
-		}
-
+	}
 }
+
+=over 4
+
+=item print_help() 
+
+Function prints a little helptext if script is called without options or with option -h.
+
+=back
+
+=cut
 
 sub print_help {
 	print "--------------------------------------------------\n";

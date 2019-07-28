@@ -1,0 +1,19 @@
+--------------------------------------------------------
+TOTAL TO DO MANUALLY:       27.76% (4236)
+- Not found:                2.41% (367)
+- IFF original not found :  1.70% (260)
+- Match not safe:           0.47% (71)
+- Journals, vols, legis.:   23.19% (3538)
+
+--------------------------------------------------------
+TOTAL FOUND:                73.95% (11024)
+Replace from Swissbib:      11.97% (1826)
+Re-importing f/ Swissbib:   3.97%) (605)
+Replace within HSB01:       16.04% (2448)
+--------------------------------------------------------
+No action needed: 
+Already matched:            16.49% (2516)
+Record c/not be improved:   23.78% (3629)
+
+RECORDS PROCESSED:          15258
+TIME ELAPSED (seconds)      1310.18

@@ -74,9 +74,7 @@ my @export;          # array for export data
 my @bestmatch;       # array for best matching record
 
 # initialize counters, set counters to zero:
-#my %ctr = map { $_ => 0; } qw(line ign jou nf srunf found uns inf rpl rei best iffo);
-
-$_ = '0' for my ($line_ctr, $ign_ctr, $j_ctr, $nf_ctr, $srunf_ctr, $f_ctr, $uns_ctr, $inf_ctr, $rpl_ctr, $rei_ctr, $best_nr, $iffo_ctr);
+my %ctr = map { $_ => 0; } qw(line ignore journal notfound nohits found unsafe iffnotfound replace reimport best iffonly);
 
 # build subject hash
 my %subj_hash = build_subject_table();
@@ -102,15 +100,15 @@ print $fh_XML '<?xml version="1.0"?><data>';
 
 while ( $line = $csv->getline($fh_in) ) {
 
-    $line_ctr++;
-    printReportHeader( $fh_report, $line_ctr, $opts{c});
-    printProgressBar($line_ctr);
+    $ctr{line}++;
+    print_rep_header( $fh_report, $ctr{line}, $opts{c});
+    print_progress($ctr{line});
     $bestmatch[0] = 0; 
-    my ( $aut1,  $aut2, $tit,  $stit,  $v1,    $v2,  $isbn,  $pag,  $mat,  $add,   $loc,   $callno,
-        $place, $pub,  $year, $code1, $code2, $code3  ) = getVariablesFromCsv($line);      
+    my ( $aut1, $aut2, $tit, $stit, $v1, $v2, $isbn, $pag, $mat, $add, $loc, 
+    	$callno, $place, $pub, $year, $code1, $code2, $code3 ) = get_vars_from_csv($line);      
  
-    if ($line_ctr == 1) {
-    	$aut1 = removeBOM($aut1);
+    if ($ctr{line} == 1) {
+    	$aut1 = remove_bom($aut1);
     }
 
     # ------
@@ -140,11 +138,11 @@ while ( $line = $csv->getline($fh_in) ) {
 
     if ( ( $code1 =~ /^Z/ ) || ( $mat =~ /CD-ROM|online/ ) || ( $norm{tit} =~ m/$blacklist/i ) )    {
         @export = prepare_export($line, \@export, "ignore");
-        $ign_ctr++;
-        $j_ctr++;
+        $ctr{ignore}++;
+        $ctr{journal}++;
         next;
     } else {
-    	$norm{carrier} = 'nc'; # carrier type code for printed volume (= remaining documents in input file)
+    	$norm{carrier} = 'nc'; # carrier type code for printed volume (= remaining documents)
     }
 
 	# ----
@@ -155,42 +153,35 @@ while ( $line = $csv->getline($fh_in) ) {
     ($esc{isbn}, $esc{year}, $esc{tit}, $esc{aut}, $esc{pub}, $esc{place}) = clean_search_params(\%norm, \%flag);
     
     # -----
-    # start search: build sru query and get result set in an array
+    # start search: build sru query, get xpath and result set
     # -----
     
-    my @records;  # array for records in result set
-    my $sruquery  = build_sruquery_basic($base_url, $config, \%flag, \%esc);
-    my $xpc       = get_xpc($sruquery);
-    my $rec_nrs   = get_recordNumbers($xpc, $config);
-    # debug:
-    print $fh_report Dumper( $sruquery, $rec_nrs );
+    my @records;    # array for records in result set
+    my $xpc  		= build_sruquery_basic($base_url, $config, \%flag, \%esc);
+    my $rec_nrs   	= get_record_nrs($xpc, $config);
 
     if ( $rec_nrs == 0 ) {
-    	# try a different search query with broader parameters, otherwise next;
-    	$sruquery = build_sruquery_broad($base_url, $config, \%flag, \%esc);
-        $xpc      = get_xpc($sruquery);
-        $rec_nrs  = get_recordNumbers($xpc, $config);
-        # debug:
-        print $fh_report Dumper( $sruquery, $rec_nrs );
+    	# try again with broader parameters;
+    	$xpc        = build_sruquery_broad($base_url, $config, \%flag, \%esc);
+        $rec_nrs    = get_record_nrs($xpc, $config);
+
         if ( $rec_nrs == 0 || $rec_nrs >= $window ) {
             @export = prepare_export($line, \@export, "notfound");
-            $nf_ctr++;
-            $srunf_ctr++;
+            $ctr{notfound}++;
+            $ctr{nohits}++;
             next;
         } else {
             @records = get_xpc_nodes($xpc, $config);
         }
     } elsif ( $rec_nrs >= $window ) {
 
-        # try a different search with narrower parameters, otherwise next;
-        $sruquery = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
-        $xpc      = get_xpc($sruquery);
-        $rec_nrs = get_recordNumbers($xpc, $config);
-        print $fh_report Dumper( $sruquery, $rec_nrs );
+        # try again with narrower parameters
+        $xpc         = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
+        $rec_nrs     = get_record_nrs($xpc, $config);
         if ( $rec_nrs == 0 || $rec_nrs >= $window ) {
-            @export = prepare_export($line, \@export, "notfound");
-            $nf_ctr++;
-            $srunf_ctr++;
+            @export  = prepare_export($line, \@export, "notfound");
+            $ctr{notfound}++;
+            $ctr{nohits}++;
             next;
         } else {
             @records = get_xpc_nodes($xpc, $config);
@@ -207,14 +198,17 @@ while ( $line = $csv->getline($fh_in) ) {
     my @replace = ();     # array for swissbib routine where IFF duplicates exist
     foreach my $rec (@records) {
         $i++;
-        printDocumentHeader( $fh_report, $i, $opts{c} );
-        my $sysno = getControlfield( '001', $config, $rec, $xpc );
-        print $fh_report Dumper $sysno;
+        print_doc_header( $fh_report, $i, $opts{c} );
+        my $sysno = get_controlfield( '001', $config, $rec, $xpc );
+
         # ----
         # compare selected values in result set and get match values
         # ----
         
-        my $subtotal = evaluate_records(\%flag, \%norm, $config, $rec, $xpc);   
+        my ($subtotal, $unsafe) = evaluate_records(\%flag, \%norm, $config, $rec, $xpc);   
+        if ($unsafe) {
+        	next;
+        }
                 
         # check for best network (origin): different process depending on GVI or swissbib routine
     	my $m035_counter = 0;
@@ -232,12 +226,8 @@ while ( $line = $csv->getline($fh_in) ) {
 
     	my $total = $subtotal + $m035_counter + $nw_match; 
 		# debug:
-    	print $fh_report Dumper ($m035_counter, $nw_match, $total);
-    	
-		if (defined $case) {
-    		$flag{case} = $case;
-    		print $fh_report Dumper $case;
-    	}
+    	print $fh_report Dumper $total;
+
 		if (defined $r_ref) {
     		@replace = @{$r_ref};
     		if (defined $replace[0]) {
@@ -264,7 +254,7 @@ while ( $line = $csv->getline($fh_in) ) {
     my $xml;
     if ($bestmatch[0] >= $m_safe) {
     	if ($GVI) {
-    		$f_ctr++;
+    		$ctr{found}++;
     		@export = prepare_export($line, \@export, "found", $bestmatch[1]);
     		$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     		print $fh_XML $xml;   
@@ -273,21 +263,21 @@ while ( $line = $csv->getline($fh_in) ) {
 			if (defined $flag{case} && $flag{case} eq 'iffonly') {
 				# only the original import was found:
 	    		@export = prepare_export($line, \@export, "iffonly");
-	    		$ign_ctr++;
-	    		$iffo_ctr++;
+	    		$ctr{ignore}++;
+	    		$ctr{iffonly}++;
 	    		next; 
 	    	}
     		if (defined $replace[0]) {
     			if ( $replace[0] eq $bestmatch[1] ) {
     				if (defined $flag{case} && $flag{case} eq 'bestcase') {
     					# best case scenario: old and new IDSSG already matched.
-    					$best_nr++;
-    					$f_ctr++;
+    					$ctr{best}++;
+    					$ctr{found}++;
 	    				@export = prepare_export($line, \@export, "bestcase");  
     				} else {
     					# document needs to be reimported
-    					$rei_ctr++;
-    					$f_ctr++;
+    					$ctr{reimport}++;
+    					$ctr{found}++;
     					@export = prepare_export($line, \@export, "reimport", $bestmatch[1], $replace[0]);
 						$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     					print $fh_XML $xml;
@@ -295,26 +285,26 @@ while ( $line = $csv->getline($fh_in) ) {
  			
 	    		} else {
 	    			# document needs to be replaced:
-	    			$rpl_ctr++;
+	    			$ctr{replace}++;
 	    			@export = prepare_export($line, \@export, "replace", $bestmatch[1], $replace[0]);
 					$xml = createMARCXML($bestmatch[2], \%subj_hash, $code1, $code2, $code3);
     				print $fh_XML $xml;
-    				$f_ctr++;
+    				$ctr{found}++;
 	    		}
     		
 	    	} else {
 	    		# the original iff record was not found:
 	    		@export = prepare_export($line, \@export, "iffnotfound", $bestmatch[1]);
-	    		$inf_ctr++;
-	    		$nf_ctr++;
+	    		$ctr{iffnotfound}++;
+	    		$ctr{notfound}++;
 	    		
 	    	}    		
     	}
     } else {
     	# unsafe match
         @export = prepare_export($line, \@export, "unsafe");
-        $uns_ctr++; 
-        $ign_ctr++;     
+        $ctr{unsafe}++; 
+        $ctr{ignore}++;     
     }
     
 } # end of while loop (going through every input line)
@@ -340,7 +330,7 @@ close $fh_XML    or die "metadata.xml: $!";
 my $endtime     = time();
 my $timeelapsed = $endtime - $starttime;
 
-printStatistics($f_ctr, $nf_ctr, $srunf_ctr, $ign_ctr, $j_ctr, $uns_ctr, , $inf_ctr, $rpl_ctr, $rei_ctr, $best_nr, $iffo_ctr, $line_ctr, $timeelapsed);
+printStatistics(\%ctr, $timeelapsed);
 
 
 
@@ -732,12 +722,12 @@ sub clean_search_params {
 # --------------------------------------------------------------------------------------
 
 # ----
-# getControlfield checks if a specific MARC controlfield exists and returns its content.
+# get_controlfield checks if a specific MARC controlfield exists and returns its content.
 # argument: MARC controlfield number, current record node, current xpath context
 # returns:  controlfield content (string or undef)
 # ----
 
-sub getControlfield {
+sub get_controlfield {
     my $controlfield_nr = shift;
     my $conf            = shift;
     my $record          = shift;
@@ -748,7 +738,7 @@ sub getControlfield {
     if ($xpath->exists($ctrlfield .'[@tag='. $controlfield_nr . ']', $record ))  {
         foreach my $el ( $xpath->findnodes($ctrlfield .'[@tag='. $controlfield_nr . ']', $record )) {
             $controlfield_content = $el->to_literal;
-            #print $fh_report Dumper ($controlfield_nr, $controlfield_content);
+            print $fh_report "$controlfield_nr: $controlfield_content";
         }
     } else {
         $controlfield_content = undef;
@@ -826,7 +816,7 @@ sub getMatchValue {
    	my $matchvalue     = $conf->{match}->{$key};
 	my $datafield      = $conf->{sru}->{datafield};
     my $subfield       = $conf->{sru}->{subfield};
-    my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/; #clean following characters: .()'"/+[]?
+    my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?|\,|/; #clean following characters: .()'"/+[]?,
     
     if (defined $originalstring ) {
     	# continue with comparison
@@ -910,7 +900,7 @@ sub check_network_g {
     my $subfield        = $conf->{sru}->{subfield};
     my $MARC035a;
     my $matchvalue      = 0;
-    my $highestvalue = 0;
+    my $highestvalue    = 0;
     my $m035_counter    = 0;
     
     if (hasTag( "035", $conf, $record, $xpath )) {
@@ -940,15 +930,14 @@ sub check_network_g {
             		# all other networks
             		$matchvalue = 0;
             	}
-            	print $fh_report Dumper $matchvalue;
             	if ($matchvalue >= $highestvalue) {
             		$highestvalue = $matchvalue;
-            	}
-            	    			
+            	}            	    			
     		}
     	}
     } 
     # last 2 values: $r_ref, $case analog to swissbib routine, see check_network_s
+    print $fh_report Dumper ($m035_counter, $highestvalue);
     return ( $m035_counter, $highestvalue, undef, undef);
 }
 
@@ -1076,6 +1065,7 @@ sub check_network_s {
     		}
     	}
     } 
+    print $fh_report Dumper ($m035_counter, $highestvalue);
     return ( $m035_counter, $highestvalue, \@iff2replace, $case);
 }
 
@@ -1097,6 +1087,7 @@ sub evaluate_records {
     my %norm = %{$norm_ref};
     my %flag = %{$flag_ref};
     my $total = 0;
+    my $unsafe = 0;
     
     # compare ISBN:
     my $i_match = 0;
@@ -1252,15 +1243,17 @@ sub evaluate_records {
     print $fh_report Dumper $av_match;
     $total += ($tv_match + $av_match);	
     
-
-    
 	# eliminate totally unsafe matches:
 	if (($t_match == 0) && ($a1_match == 0)) {
 		$total = 0;
-		print $fh_report "@@@ Unsafe Match author-title! \n"
+		$unsafe = 1;
+		
 	}    
 	print $fh_report "Subtotal: ". $total. "\n";
-    return $total;
+	if ($unsafe) {
+		print $fh_report "UNSAFE MATCH - NEXT ___________________________ !!!!!!!!!!!!!!!!\n";
+	}
+    return $total, $unsafe;
           
 }
 
@@ -1273,7 +1266,7 @@ sub evaluate_records {
 # argument: csv line
 # return: rows A - S
 
-sub getVariablesFromCsv {
+sub get_vars_from_csv {
 
     my $currLine = shift;
 
@@ -1311,7 +1304,7 @@ sub getVariablesFromCsv {
 # argument: line counter and filehandle
 # -----
 
-sub printReportHeader {
+sub print_rep_header {
     my $filehandle = shift;
     my $docnumber  = shift;
     my $database = shift;
@@ -1324,7 +1317,7 @@ sub printReportHeader {
 # argument: doc counter and filehandle
 # -----
 
-sub printDocumentHeader {
+sub print_doc_header {
     my $filehandle = shift;
     my $docnumber  = shift;
     my $database   = shift;
@@ -1338,7 +1331,7 @@ sub printDocumentHeader {
 # argument: line counter
 # -----
 
-sub printProgressBar {
+sub print_progress {
     my $progressnumber = shift;
 
     if ( $progressnumber % 100 != 0 ) {
@@ -1380,8 +1373,12 @@ sub build_base_url {
 # build_sruquery_basic () builds the first sru search (basic version)
 # based on either isbn or title/author or title/publisher combo.
 # arguments: configuration, flags and normalized search values.
-# returns: query string
-# ----
+# -----
+# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
+# registers namespaces of xml if GVI is used.
+# argument: sru query
+# returns: xpath object (xpc)
+# -----
 
 sub build_sruquery_basic {
 
@@ -1412,15 +1409,30 @@ sub build_sruquery_basic {
             $query .= "+AND" . $publisherquery . $esc{pub};
         }
     }
-    return $query;
+
+    print $fh_report Dumper $query;
+    
+    my $dom   = XML::LibXML->load_xml( location => $query );
+    my $xpathcontext = XML::LibXML::XPathContext->new($dom);
+    
+    if ($query =~ /gvi/) {
+		# important: register both namespaces:
+    	$xpathcontext->registerNs( 'zs',  'http://www.loc.gov/zing/srw/' );
+    	$xpathcontext->registerNs( 'rec', 'http://www.loc.gov/MARC21/slim' );
+    }
+    return $xpathcontext;
 }
 
 # ----
 # build_sruquery_broad () builds the broad sru search using cql.all/anywhere
 # based on either title/author or title/publisher or title/year combo.
 # arguments: configuration, flags and normalized search values.
-# returns: query string
-# ----
+# -----
+# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
+# registers namespaces of xml if GVI is used.
+# argument: sru query
+# returns: xpath object (xpc)
+# -----
 
 sub build_sruquery_broad {
 
@@ -1442,15 +1454,29 @@ sub build_sruquery_broad {
 	} elsif ($flag{year}) {
         $query .= "+AND" . $any_query . $esc{year};
     }
-    return $query;
+    print $fh_report Dumper $query;
+	
+    my $dom   = XML::LibXML->load_xml( location => $query );
+    my $xpathcontext = XML::LibXML::XPathContext->new($dom);
+    
+    if ($query =~ /gvi/) {
+		# important: register both namespaces:
+    	$xpathcontext->registerNs( 'zs',  'http://www.loc.gov/zing/srw/' );
+    	$xpathcontext->registerNs( 'rec', 'http://www.loc.gov/MARC21/slim' );
+    }
+    return $xpathcontext;
 }
 
 # ----
 # build_sruquery_narrow () builds the narrow sru search using 
 # based on either title/author or title/publisher or title/year combo.
 # arguments: configuration, flags and normalized search values.
-# returns: query string
-# ----
+# -----
+# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
+# registers namespaces of xml if GVI is used.
+# argument: sru query
+# returns: xpath object (xpc)
+# -----
 
 sub build_sruquery_narrow {
 	
@@ -1480,20 +1506,8 @@ sub build_sruquery_narrow {
     } elsif ($flag{place}) {
         $query .= "+AND" . $any_query . $esc{place};
     } 
-    return $query;
+    print $fh_report Dumper $query;
 	
-}
-
-# -----
-# get_xpc loads xml as DOM object and gets the XPATH context for a libxml dom, 
-# registers namespaces of xml if GVI is used.
-# argument: sru query
-# returns: xpath object (xpc)
-# -----
-
-sub get_xpc {
-	
-    my $query = shift;
     my $dom   = XML::LibXML->load_xml( location => $query );
     my $xpathcontext = XML::LibXML::XPathContext->new($dom);
     
@@ -1502,8 +1516,9 @@ sub get_xpc {
     	$xpathcontext->registerNs( 'zs',  'http://www.loc.gov/zing/srw/' );
     	$xpathcontext->registerNs( 'rec', 'http://www.loc.gov/MARC21/slim' );
     }
-    return $xpathcontext;
+    return $xpathcontext;	
 }
+
 
 # -----
 # retrieves number of records from XPATH
@@ -1511,7 +1526,7 @@ sub get_xpc {
 # returns: number of records
 # -----
 
-sub get_recordNumbers {
+sub get_record_nrs {
 
     my $xpathcontext = shift;
     my $conf = shift;
@@ -1524,6 +1539,7 @@ sub get_recordNumbers {
         print "xpc path not found! \n";
         $numberofrecords = undef;
     }
+    print $fh_report Dumper $numberofrecords;
     return $numberofrecords;
 }
 
@@ -1623,19 +1639,21 @@ sub createMARCXML {
 
 sub printStatistics {
 	
-	my $found = shift;
-	my $notfound = shift;
-	my $sru_noresults = shift;
-	my $ignored = shift;
-	my $journals = shift;
-	my $unsafe = shift;
-	my $iff_notfound = shift;
-	my $replace = shift;
-	my $reimport = shift;
-	my $bestcase = shift;
-	my $iffonly = shift;
-	my $totaldocs = shift;
+	my $ctr_ref = shift;
 	my $time = shift;
+	my %ctr = %{$ctr_ref};		
+	my $found = $ctr{found};
+	my $notfound = $ctr{notfound};
+	my $sru_noresults = $ctr{nohits};
+	my $ignored = $ctr{ignore};
+	my $journals = $ctr{journal};
+	my $unsafe = $ctr{unsafe};
+	my $iff_notfound = $ctr{iffnotfound};
+	my $replace = $ctr{replace};
+	my $reimport = $ctr{reimport};
+	my $bestcase = $ctr{best};
+	my $iffonly = $ctr{iffonly};
+	my $totaldocs = $ctr{line};
 
 	my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
 	my $timestamp = ($year+1900).'_'.($mon+1).'_'.$mday.'_'.$hour.'_'.$min;
@@ -1798,7 +1816,7 @@ sub build_subject_table {
 # returns: value without bom characters
 # ----
 
-sub removeBOM {
+sub remove_bom {
 	my $var = shift;
 	# remove BOM ( 
 	$var =~ s/\xEF\xBB\xBF//;

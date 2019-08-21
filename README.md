@@ -1,4 +1,4 @@
-
+## Metadata deduplication via SRU search
 
 # Description
 
@@ -21,7 +21,8 @@ For Strawberry Perl (Windows):
 include path to .\iff in @INC [see here](https://perlmaven.com/how-to-change-inc-to-find-perl-modules-in-non-standard-locations)
 
 An image for Ubuntu (VM) with all necessary modules installed can be downloaded here:
-[switch drive]()
+[switch drive](https://drive.switch.ch/index.php/s/Tub2XFQLxU3NIXY).
+
 Please read the installation notes.
 
 # Usage

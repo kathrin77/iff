@@ -44,14 +44,17 @@ You can choose between swissbib or GVI SRU interface.
 - You choose the service with command line parameter -c gvi or -c swissbib.
 - Currently, there are no other SRU interfaces implemented. 
 - To implement another SRU interface, the new interface needs its own .conf file.
+
 The dedup.pl script would also need to be adapted slightly when getting the options from command line.
 In the configuration file, you can parametrize several values:
 - weights for matching fields and preferred origin
 - sru server configuration and query strings
-Each section in the configuration file needs a header.
-Each value needs its own line. 
+
+Each section in the configuration file needs a header, each value needs its own line. 
 Full documentation on the configuration file (how to edit or add entries, how to call it in the script) can be found here: 
-Config: [Config::Tiny](https://metacpan.org/pod/Config::Tiny)
+Config:
+
+[Config::Tiny](https://metacpan.org/pod/Config::Tiny)
 
 
 ###### Input file (Data)
@@ -61,29 +64,29 @@ You can feed this script with an input file of your choice. It needs to be in cs
 
 The data needs to be arranged in rows like the example files in subdirectory ./data, otherwise this script will not work.
 Data needs to be in the following rows (rows may be empty unless stated otherwise):
-1: author1
-2: author2
-3: author3
-4: title (mandatory)
-5: subtitle
-6: vol-info1
-7: vol-info2
-8: isbn
-9: pages
-10: material type (possible values: Druckerzeugnis, CD-ROM/DVD, Loseblattwerk, Online-Publikation, Zeitung)
-11: addendum
-12: library or collection
-13: call no.
-14: place of publication
-15: publisher
-16: year
-17: code1 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
-18: code2 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
-19: code3 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
-20: subj1 (see above)
-21: subj2 (see above)
-23: subj3 (see above)
-rows 24ff. need to be empty.
+- 1: author1
+- 2: author2
+- 3: author3
+- 4: title (mandatory)
+- 5: subtitle
+- 6: vol-info1
+- 7: vol-info2
+- 8: isbn
+- 9: pages
+- 10: material type (possible values: Druckerzeugnis, CD-ROM/DVD, Loseblattwerk, Online-Publikation, Zeitung)
+- 11: addendum
+- 12: library or collection
+- 13: call no.
+- 14: place of publication
+- 15: publisher
+- 16: year
+- 17: code1 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
+- 18: code2 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
+- 19: code3 (refers to a subject table, see [map](v4_combined/iff_subject_table.map))
+- 20: subj1 (see above)
+- 21: subj2 (see above)
+- 23: subj3 (see above)
+- rows 24ff. need to be empty.
 
 
 ## Output
@@ -96,7 +99,7 @@ The script creates the following output:
 - a report with debugging info: report.txt
 - a logfile: log_<timestamp>.txt
 
-###### 1) export.csv
+###### export.csv
 It contains all documents (equal to input file) 
 Additional mapping info can be found in following columns:
 - w: what to do with the documents. Cases:
@@ -113,12 +116,12 @@ Additional mapping info can be found in following columns:
 - y: docnr. of replacement document (system number from swissbib or gvi: MARC field 001)
 
 
-###### 2) metadata.xml
+###### metadata.xml
 MARCXML-Export for cases reimport and replace. Docnr. can be found in controlfield 001 and corresponds to the export file .
 
 
-###### 3) report.txt
+###### report.txt
 Contains debugging info (quite chatty) for each document, its result set and matching values.
 
-###### 4) log_<timestamp>.txt
+###### log_timestamp.txt
 Logfile with statistics

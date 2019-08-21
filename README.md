@@ -1,4 +1,4 @@
-## Metadata deduplication via SRU search
+# METADATA DEDUPLICATION VIA SRU SEARCH
 
 # Description
 
@@ -38,15 +38,23 @@ For more information about the script, see the [POD documentation for dedup.pl](
 
 ## Parameters
 
-###### SRU Service
+###### SRU Service (Configuration file)
 You can choose between swissbib or GVI SRU interface. 
 - There is a .conf file for each of these SRU interfaces.
 - You choose the service with command line parameter -c gvi or -c swissbib.
 - Currently, there are no other SRU interfaces implemented. 
 - To implement another SRU interface, the new interface needs its own .conf file.
 The dedup.pl script would also need to be adapted slightly when getting the options from command line.
+In the configuration file, you can parametrize several values:
+- weights for matching fields and preferred origin
+- sru server configuration and query strings
+Each section in the configuration file needs a header.
+Each value needs its own line. 
+Full documentation on the configuration file (how to edit or add entries, how to call it in the script) can be found here: 
+Config: [Config::Tiny](https://metacpan.org/pod/Config::Tiny)
 
-###### Input file
+
+###### Input file (Data)
 You can feed this script with an input file of your choice. It needs to be in csv format. 
 - Several testfiles and the full metadata file for the IFF library catalogue are in subdirectory ./data.
 - Warning: IFF_Katalog_FULL_normalized will take about 20 - 30 minutes, depending on network. Try a smaller file first!

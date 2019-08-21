@@ -69,6 +69,7 @@ use Getopt::Std;
 
 # start timer: 
 my $starttime = time();
+my $searchtime = 0;
 
 # create a config file: 
 my $config = Config::Tiny->new;
@@ -78,7 +79,7 @@ my %opts;
 my $datafile;
 getopts('c:f:h', \%opts);
 
-if (defined $opts{h} || (! (defined $opts{c} | defined $opts{f} ))) {
+if (defined $opts{h} || !(defined $opts{c}) || !(defined $opts{f})) {
     print_help();
     exit(1);
 }
@@ -100,12 +101,12 @@ if (defined $opts{f}) {
 my $base_url  = build_base_url($config);
 my $window    = $config->{sru}->{max_records};
 my $m_safe    = $config->{match}->{safe};
-my $GVI       = $config->{net}->{GVI};
+my $SWISSBIB  = $config->{net}->{swissbib};
 
 # set import and export variables:
-my $line;            # a data line from csv file
-my @export;          # array for export data
-my @bestmatch;       # array for best matching record
+my $line;       # a data line from csv file
+my @export;     # array for export data
+my @bestmatch;  # array for best matching record
 
 # initialize counters, set counters to zero:
 my %ctr = map { $_ => 0; } qw(line ignore journal notfound nohits found unsafe iffnotfound replace reimport best iffonly);
@@ -136,7 +137,7 @@ while ( $line = $csv->getline($fh_in) ) {
 
     $ctr{line}++;
     print_rep_header( $fh_report, $ctr{line}, $opts{c});
-    print_progress($ctr{line});
+    print_progress($ctr{line}, $searchtime);
     $bestmatch[0] = 0; 
     my ( $aut1, $aut2, $tit, $stit, $v1, $v2, $isbn, $pag, $mat, $add, $loc, 
     	$callno, $place, $pub, $year, $code1, $code2, $code3 ) = get_vars_from_csv($line);      
@@ -190,14 +191,20 @@ while ( $line = $csv->getline($fh_in) ) {
     # start search: build sru query, get xpath and result set
     # -----
     
-    my @records;    # array for records in result set
-    my $xpc  		= build_sruquery_basic($base_url, $config, \%flag, \%esc);
-    my $rec_nrs   	= get_record_nrs($xpc, $config);
+    my @records;         # array for records in result set
+	my $start_sru_time = time();
+    my $xpc  		   = build_sruquery_basic($base_url, $config, \%flag, \%esc);
+    my $rec_nrs   	   = get_record_nrs($xpc, $config);
+	my $end_sru_time   = time();
+	$searchtime       += ($end_sru_time - $start_sru_time);
 
     if ( $rec_nrs == 0 ) {
     	# broader query:
-    	$xpc        = build_sruquery_broad($base_url, $config, \%flag, \%esc);
-        $rec_nrs    = get_record_nrs($xpc, $config);
+		$start_sru_time = time();
+    	$xpc            = build_sruquery_broad($base_url, $config, \%flag, \%esc);
+        $rec_nrs        = get_record_nrs($xpc, $config);
+		$end_sru_time   = time();
+		$searchtime    += ($end_sru_time - $start_sru_time);
 
         if ( $rec_nrs == 0 || $rec_nrs >= $window ) {
             @export = prepare_export($line, \@export, "notfound");
@@ -209,8 +216,12 @@ while ( $line = $csv->getline($fh_in) ) {
         }
     } elsif ( $rec_nrs >= $window ) {
         # narrower query:
-        $xpc         = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
-        $rec_nrs     = get_record_nrs($xpc, $config);
+		$start_sru_time = time();
+        $xpc            = build_sruquery_narrow($base_url, $config, \%flag, \%esc);
+        $rec_nrs        = get_record_nrs($xpc, $config);
+		$end_sru_time   = time();
+		$searchtime    += ($end_sru_time - $start_sru_time);
+		
         if ( $rec_nrs == 0 || $rec_nrs >= $window ) {
             @export  = prepare_export($line, \@export, "notfound");
             $ctr{notfound}++;
@@ -250,10 +261,10 @@ while ( $line = $csv->getline($fh_in) ) {
     	my $m035_counter = 0;
     	my $nw_match     = 0;
     	my ($r_ref, $case);
-	    if ($GVI) {
-	    	( $m035_counter, $nw_match, $r_ref, $case ) = check_network_g ( $config, $rec, $xpc );
-	    } else {
+	    if ($SWISSBIB) {
 	    	( $m035_counter, $nw_match, $r_ref, $case ) = check_network_s ( $config, $rec, $xpc, $rec_nrs, \%flag, $subtotal, \@replace, $sysno, $callno);
+	    } else {
+			( $m035_counter, $nw_match, $r_ref, $case ) = check_network_g ( $config, $rec, $xpc );
 	    }
 		if (defined $case) {
     		$flag{case} = $case;
@@ -292,7 +303,7 @@ while ( $line = $csv->getline($fh_in) ) {
     
     my $xml;
     if ($bestmatch[0] >= $m_safe) {
-    	if ($GVI) {
+    	if (!($SWISSBIB)) {
     		# for GVI results:
     		$ctr{found}++;
     		@export = prepare_export($line, \@export, "found", $bestmatch[1]);
@@ -367,7 +378,7 @@ close $fh_XML    or die "metadata.xml: $!";
 my $endtime     = time();
 my $timeelapsed = $endtime - $starttime;
 
-printStatistics(\%ctr, $timeelapsed);
+printStatistics(\%ctr, $timeelapsed, $searchtime);
 
 ######################################################################################
 # End of main script
@@ -607,12 +618,12 @@ $originalTitle: string
 sub normalize_title {
 
     my $originalTitle = shift;
-
-    $originalTitle =~ s/^L\'//g;    #remove L' in the beginning
-    $originalTitle =~
-      s/eidg\./eidgen\xf6ssischen/i;    #replace with correct umlaut
+	#remove L' in the beginning:
+    $originalTitle =~ s/^L\'//g;    
+	#replace with correct umlaut and punctuation:
+    $originalTitle =~ s/eidg\./eidgen\xf6ssischen/i;    
     $originalTitle =~ s/st\.gall/st gall/i;
-    $originalTitle = trim($originalTitle);    # remove whitespaces
+    $originalTitle = trim($originalTitle);    
     return $originalTitle;
 }
 
@@ -692,12 +703,13 @@ sub normalize_year {
 
         # year contains 4 digits
         $year_flag    = 1;
-        $originalYear = substr $originalYear,
-          -4;    # in case of several years, take the last one
+		# in case of several years, take the last one:
+        $originalYear = substr $originalYear,-4;    
         $ym1 = ( $originalYear - 1 );
         $yp1 = ( $originalYear + 1 );
     }
-    else {       # no usable year, eg. "online" or "aktuell"
+    else {       
+		# no usable year, eg. "online" or "aktuell"
         $year_flag    = 0;
         $originalYear = undef;
         $ym1          = undef;
@@ -731,7 +743,6 @@ sub check_ppp {
     my $originalPlace     = shift;
     my ( $pagerange_flag, $pub_flag, $place_flag );
     if ( $originalPages !~ /\A\Z/ && $originalPages =~ /\-/ ) {
-
         #very likely not a monograph but a volume or article
         $pagerange_flag = 1;
     }
@@ -821,9 +832,9 @@ sub clean_search_params {
 	my $flag_ref = shift;
 	my %norm = %{$norm_ref};
 	my %flag = %{$flag_ref};
-	# clean characters: .()'"/+[]? and remove and / or / within
-	my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?/; 
-	my $stopwords = qr/ and | or | within /;   
+	# clean characters: .()'"/+[]? and remove and/or/etc.
+	my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\{|\}|\'|\"|\/|\+|\[|\]|\?/; 
+	my $stopwords = qr/ not | and | or | within /i;   
 	my ($escaped_isbn, $escaped_year, $escaped_title, $escaped_author, $escaped_publisher, $escaped_place);
 	
 	if ($flag{isbn1}) {
@@ -1026,7 +1037,7 @@ sub getMatchValue {
    	my $matchvalue     = $conf->{match}->{$key};
 	my $datafield      = $conf->{sru}->{datafield};
     my $subfield       = $conf->{sru}->{subfield};
-    my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\'|\"|\/|\+|\[|\]|\?|\,|/; #clean following characters: .()'"/+[]?,
+    my $CLEAN_TROUBLE_CHAR = qr/\.|\(|\)|\{|\}|\'|\"|\/|\+|\[|\]|\?|\,|/; #clean following characters: .(){}'"/+[]?,
     
     if (defined $originalstring ) {
     	# continue with comparison
@@ -1653,7 +1664,7 @@ sub print_doc_header {
 =item print_progress() 
 
 This function prints a progress bar on the output console: 
-a * for every CSV line treated, every 100th line, the number is printed.
+a * for every CSV line treated, every 100th line, the number and remote progress time is printed.
 
 Arguments:
 $progressnumber: number
@@ -1665,12 +1676,14 @@ $progressnumber: number
 
 sub print_progress {
     my $progressnumber = shift;
+	my $networktime = shift;
 
     if ( $progressnumber % 100 != 0 ) {
         print "*";
     }
     else {
-        print $progressnumber;
+        print $progressnumber . " - ";
+		printf ('%.2f',$networktime);
         print " \n";
     }
 }
@@ -2061,6 +2074,8 @@ sub printStatistics {
 	
 	my $ctr_ref = shift;
 	my $time = shift;
+	my $networktime = shift;
+	my $runtime = $time - $networktime;
 	my %ctr = %{$ctr_ref};		
 	my $found = $ctr{found};
 	my $notfound = $ctr{notfound};
@@ -2082,10 +2097,12 @@ sub printStatistics {
 	open my $log, ">:encoding(utf8)", $logfilename    or die "$logfilename: $!";
 	
 	print $log "Final Statistics: $timestamp\n--------------------------------------------------------\n";
-	print $log "RECORDS PROCESSED:     $totaldocs\n";  
-	print $log "TIME ELAPSED (sec)     "; printf $log ('%.2f',$time);
+	print $log "RECORDS PROCESSED:             $totaldocs\n";  
+	print $log "Total time (sec)              "; printf $log ('%.2f',$time);
+	print $log "\nRemote query time (sec)     "; printf $log ('%.2f',$networktime);
+	print $log "\nLocal processing time (sec) "; printf $log ('%.2f',$runtime);
 	print $log "\n";
-	print $log "FOUND:         "; printf $log ('%.2f', $found/($totaldocs/100)); print $log "\% ($found)\n";
+	print $log "\nFOUND:         "; printf $log ('%.2f', $found/($totaldocs/100)); print $log "\% ($found)\n";
 	print $log " - REPLACED:   "; printf $log ('%.2f', $replace/($totaldocs/100)); print $log "\% ($replace)\n";
 	print $log " - REIMPORTED: "; printf $log ('%.2f', $reimport/($totaldocs/100)); print $log "\% ($reimport)\n";
 	print $log " - BEST CASE:  "; printf $log ('%.2f', $bestcase/($totaldocs/100)); print $log "\% ($bestcase)\n";
@@ -2364,14 +2381,17 @@ Function prints a little helptext if script is called without options or with op
 
 sub print_help {
 	print "--------------------------------------------------\n";
-	print "Usage: dedup.pl [-c config] [-f file] [-h]\n";
+	print "This perl script deduplicates data from an input file with an SRU search.\n";
+	print "Usage: dedup.pl [-c configuration] [-f file] [-h]\n";
 	print "Parameters:  \n";
-	print "-c    desired SRU / matching configuration (gvi or swissbib)\n";
-	print "-f    input data file (csv format, more info: readme.txt)\n";
-	print "-h    little help text\n";
+	print "-c    interface configuration (gvi or swissbib, mandatory)\n";
+	print "-f    input data file (csv format, mandatory)\n";
+	print "-h    help text\n\n";
 
-	print "Some data files are in directory ./data/ for testing\n";
-	print "Example: perl dedup.pl -c gvi -f data/test1526.csv \n";
+	
+	print "Example: perl dedup.pl -c gvi -f data/test1526.csv \n\n";
+	print "Some data files are in directory ./data for testing. \n";
+	print "See the readme file for more information on how the csv file must be built.\n";
 
 }
 

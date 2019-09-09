@@ -1,0 +1,18 @@
+Final Statistics: 2019_9_9_21_22
+--------------------------------------------------------
+RECORDS PROCESSED:             15
+Total time (sec)              6.54
+Remote query time (sec)     6.14
+Local processing time (sec) 0.40
+
+FOUND:         73.33% (11)
+ - REPLACED:   0.00% (0)
+ - REIMPORTED: 0.00% (0)
+ - BEST CASE:  0.00% (0)
+NOT FOUND:     20.00% (3)
+ - IFF N/F:    0.00% (0)
+ - NO HITS:    20.00% (3)
+IGNORED:       6.67% (1)
+ - BLACKLIST:  6.67% (1)
+ - IFF ONLY:   0.00% (0)
+ - UNSAFE:     0.00% (0)

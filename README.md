@@ -34,7 +34,7 @@ Call the script like this:
 perl dedup.pl -c [swissbib|gvi] -f [filename]
 ```
 
-For more information about the script, see the [POD documentation for dedup.pl](v4_combined/dedup_pod.md)
+For more information about the script, see the [POD documentation for dedup.pl](v4_combined/dedup_pod.md).
 
 ## Parameters
 

@@ -1,0 +1,15 @@
+Final Statistics: 2019_7_28_2_5
+--------------------------------------------------------
+RECORDS PROCESSED:     201
+TIME ELAPSED (sec)     126.81
+FOUND:         68.66% (138)
+ - REPLACED:   0.00% (0)
+ - REIMPORTED: 0.00% (0)
+ - BEST CASE:  0.00% (0)
+NOT FOUND:     21.89% (44)
+ - IFF N/F:    0.00% (0)
+ - NO HITS:    21.89% (44)
+IGNORED:       9.45% (19)
+ - JOURNALS:   5.97% (12)
+ - IFF ONLY:   0.00% (0)
+ - UNSAFE:     3.48% (7)

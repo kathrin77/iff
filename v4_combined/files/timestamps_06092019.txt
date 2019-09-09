@@ -1,0 +1,54 @@
+C:\Users\kathr\Dropbox\Masterarbeit\Code\v4_combined>perl dedup_timer.pl -c swissbib -f data/test200.csv
+***************************************************************************************************100 - 2.71
+***************************************************************************************************200 - 8.74
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+***
+Time spent in while loop: 10.4822371006012
+Time spent outside while loop: 0.0463309288024902
+Total time: 10.52867603302
+Statistics: see log_2019_9_6_12_16.txt
+
+C:\Users\kathr\Dropbox\Masterarbeit\Code\v4_combined>perl dedup_timer.pl -c swissbib -f data/test200.csv
+***************************************************************************************************100 - 2.68
+***************************************************************************************************200 - 5.59
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+***
+Time spent in while loop: 7.08
+Time spent outside while loop: 0.03
+Total time: 7.11
+Statistics: see log_2019_9_6_12_23.txt
+
+C:\Users\kathr\Dropbox\Masterarbeit\Code\v4_combined>perl dedup_timer.pl -c gvi -f data/test200.csv
+***************************************************************************************************100 - 58.19
+***************************************************************************************************200 - 120.19
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+***
+Time spent in while loop: 129.83
+Time spent outside while loop: 0.07
+Total time: 129.89
+Statistics: see log_2019_9_6_12_26.txt
+
+C:\Users\kathr\Dropbox\Masterarbeit\Code\v4_combined>perl dedup_timer.pl -c gvi -f data/test200.csv
+***************************************************************************************************100 - 48.39
+***************************************************************************************************200 - 104.93
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+***
+Time spent in while loop: 115.32
+Time spent outside while loop: 0.09
+Total time: 115.41
+Statistics: see log_2019_9_6_12_29.txt
+
+C:\Users\kathr\Dropbox\Masterarbeit\Code\v4_combined>perl dedup_timer.pl -c gvi -f data/test200.csv
+***************************************************************************************************100 - 50.25
+***************************************************************************************************200 - 110.61
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+Wide character in print at C:/Strawberry/perl/lib/IO/Handle.pm line 418, <$fh_in> line 203.
+***
+Time spent in while loop: 119.60
+Time spent outside while loop: 0.10
+Total time: 119.70
+Statistics: see log_2019_9_6_12_31.txt
